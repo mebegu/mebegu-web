@@ -1,3 +1,5 @@
+import { initCarouselGestures } from './carousel-gestures';
+
 /** Lightweight carousel and native shelf scrolling; cards themselves are CSS + links. */
 export function initBlogCatalog(catalog: HTMLElement) {
   const featured = catalog.querySelector<HTMLElement>('.catalog-featured')!;
@@ -10,12 +12,14 @@ export function initBlogCatalog(catalog: HTMLElement) {
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let current = 0;
   let paused = motion.matches;
+  let gestureBusy = false;
   let timer: ReturnType<typeof setTimeout> | undefined;
 
   function schedule() {
     clearTimeout(timer);
     if (
       paused ||
+      gestureBusy ||
       document.hidden ||
       slides.length < 2 ||
       featured.querySelector('[data-feature-copy]:hover') ||
@@ -69,6 +73,14 @@ export function initBlogCatalog(catalog: HTMLElement) {
   });
   featured.addEventListener('focusin', schedule);
   featured.addEventListener('focusout', () => queueMicrotask(schedule));
+  initCarouselGestures(
+    featured,
+    (direction) => show(current + direction, true),
+    (busy) => {
+      gestureBusy = busy;
+      schedule();
+    },
+  );
   document.addEventListener('visibilitychange', schedule);
   motion.addEventListener('change', () => {
     if (motion.matches) {

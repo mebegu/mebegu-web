@@ -1,5 +1,12 @@
 # Doğrulama
 
+## Blog banner swipe ve kart dönüşü — 22 Ekim 2026
+
+- Kartın 180° dönüşü 780 ms, daha uzak perspektif ve yumuşak hızlanma/yavaşlama kullanır. Azaltılmış hareket tercihi dönüşü kapatmayı sürdürür.
+- Banner’a touchpad yatay wheel ve dokunmatik swipe eklendi. Her hareket bir slayt değiştirir; atalet kuyruğu yutulur. Dikey kaydırma/pinch korunur; swipe sırasında autoplay bekler. Bağlantıya dokunmak yeni sekme açar, bağlantıdan swipe yapmak açmaz.
+- Yedi Node olay simülasyonu geçti: küçük delta birikimi, atalet, ters yön, wheel birimleri, dikey/çapraz hareket/pinch, dokunma/swipe/iptal/çoklu parmak, klavye tıklaması ve mouse ayrımı. Bunlar fiziksel cihaz veya tarayıcı testleri değildir. CI aynı testleri çalıştırır.
+- `pnpm validate`: 63 kaynak dosyada sıfır hata/uyarı/ipucu, 41 HTML ve 998 yerel referans; iki RSS doğrulandı. Tarayıcı envanteri yine boş (`apps: [], browsers: []`); gerçek touchpad/dokunmatik hissi ve görsel akıcılık canlı sayfada değerlendirilmelidir.
+
 ## Minimal blog wireframe’i — 22 Ekim 2026
 
 - Tam genişlikte öne çıkan arka plan, dört otomatik slayt, üç rafta 12 dönen kart ve popup yerine yeni sekmede örnek okuma sayfaları eklendi. Masaüstü/mobil/etkileşim çizimi `docs/wireframes/blog.svg` içinde; SVG PNG’ye çevrilerek çizimin yerleşimi incelendi.

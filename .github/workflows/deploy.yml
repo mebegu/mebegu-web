@@ -43,6 +43,8 @@ jobs:
           pnpm --version
       - name: Install locked dependencies
         run: pnpm install --frozen-lockfile
+      - name: Check carousel gestures
+        run: pnpm test:gestures
       - name: Check Astro and TypeScript
         run: pnpm check
       - name: Configure Pages

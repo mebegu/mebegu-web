@@ -12,6 +12,8 @@ Güncel yön: **çerçevesiz, tam genişlikte öne çıkan yazı arka planı ve 
 ## Etkileşim
 
 - Hover veya klavye odağında kart Y ekseninde 180° döner; arka yüz kategori, kısa özet ve yazıyı açma ipucunu gösterir. Kart dışındaki odak çerçevesi dönmez.
+- Dönüş 780 ms sürer; daha uzak perspektif ve yumuşak hızlanma/yavaşlama kullanır. Hover başlangıcındaki 50 ms bekleme, fare kartın üzerinden geçerken gereksiz dönüşleri azaltır; klavye odağı beklemez.
+- Banner touchpad’de yatay iki parmak kaydırmayla, dokunmatikte sağa/sola swipe ile değişir. Tek hareket bir slayt ilerletir; touchpad atalet kuyruğu peş peşe geçiş yapmaz. Dikey kaydırma ve pinch zoom tarayıcıda kalır. Swipe sırasında otomatik geçiş bekler, ardından yeniden zamanlanır. Yazı bağlantısına dokunma korunur; bağlantıdan başlayan swipe yeni sekme açmaz.
 - Banner ve kart bağlantıları `target="_blank"` ile yazı sayfasını yeni sekmede açar; popup/dialog kullanılmaz. Yeni sekme bilgisi erişilebilir ad/açıklamada yer alır.
 - Dokunmatikte tek dokunuş yazıyı açar; kısa özet iki satır halinde görselin üzerinde görünür, hover veya ikinci dokunuş gerekmez. Raflar doğal yatay kaydırmayı kullanır.
 - Azaltılmış hareket tercihinde otomatik geçiş başlangıçta kapalıdır, çapraz geçiş ve 3D dönüş animasyonu uygulanmaz; hover/odak özet yüzünü anında gösterir.
@@ -31,6 +33,8 @@ Weebly’den aktarılan dokuz yazı `draft: true` olarak korunur; wireframe çal
 - `src/components/pages/WritingPage.astro`: tam genişlikte banner ve iki yüzlü bağlantı kartları.
 - `src/styles/blog-catalog.css`: arka plan geçişi, raflar, 3D dönüş, mobil ve azaltılmış hareket davranışları.
 - `src/lib/blog-catalog.ts`: küçük carousel ve raf kaydırma kodu; kartlar JS gerektirmez.
+- `src/lib/carousel-gestures.ts`: banner’ın yatay wheel ve dokunmatik pointer hareketleri; harici kütüphane kullanmaz.
+- `scripts/test-carousel-gestures.mjs`: yön, atalet, dikey kaydırma/pinch, dokunma ve swipe sonrası bağlantı davranışı için yedi olay simülasyonu; `pnpm test:gestures` ile çalışır ve CI’da uygulanır.
 - `src/components/pages/SampleArticlePage.astro`: örnek yazının ayrı sayfa iskeleti.
 - `docs/wireframes/blog.svg`: şematik masaüstü/mobil görünüm ve hover → tıklama akışı. Tarayıcı ekran görüntüsü değildir.
 
