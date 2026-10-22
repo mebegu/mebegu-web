@@ -35,12 +35,12 @@ Bu çalışma klasöründe üretilmiş `dist/` dosyalarını yalnızca görünt�
 
 Ana sayfa: aşağıda yalnız karakter ve zemin, yukarıda **Profesyonel / Blog / Alamori / Projects** dilimleri. Yıldız parıltısı, hover genişlemesi, dokuz baş pozu ile yumuşak imleç takibi ve azaltılmış hareket desteği içerir. Logo, bölüm menüsü ve dil seçimi bütün sayfalarda ortak üst bardadır. Tasarım/modül haritası: [NIGHT-HOME](docs/NIGHT-HOME.md). Sosyal hesaplar kullanıcı isteğiyle placeholder; gerçek adresler `src/data/socials.ts` üzerinden eklenir.
 
-- Profesyonel sayfa: tek sütunlu CV şablonu, yalnız CV’yi yazdıran A4 baskı stili ve web portföyü.
+- Profesyonel sayfa: paylaşılan güncel CV’den hazırlanmış İngilizce özgeçmiş, yalnız CV’yi yazdıran A4 baskı stili ve altı seçilmiş çalışma.
 - Blog: dört banner ve üç kategori rafında 12 örnek içerikle sabit katalog prototipi.
 - Alamori: tanıtım, geçici kapak, henüz pasif PDF ve geri bildirim alanları.
-- Projects: oyunlar/yazılımlar/deneyler için filtrelenebilir beş temsili proje kartı.
+- Projects: güncel ve eski CV’lerden hazırlanmış on bir İngilizce proje özeti; oyun/etkileşim ve yazılım filtreleri. Görseller henüz temsili.
 - Önceki Hakkımda ve Atlantis sayfaları ile ortak 404 adresi korunur.
-- İngilizce `/`, Türkçe `/tr/`; sayfa karşılığına giden dil geçişi.
+- İngilizce `/`, Türkçe `/tr/`; sayfa karşılığına giden dil geçişi. CV ve portföy içeriği kullanıcı tercihiyle her iki rotada İngilizce kalır.
 - Markdown yazı koleksiyonu; taslakların detay ve RSS’den hariç tutulması. Blog kataloğu şu an ayrı örnek veriler kullanır.
 - Atlantis etiketli yazıların eser sayfasında otomatik listelenmesi.
 - Her dil için RSS, canonical/hreflang adresleri, temel paylaşım metaverileri ve favicon.
@@ -48,7 +48,7 @@ Ana sayfa: aşağıda yalnız karakter ve zemin, yukarıda **Profesyonel / Blog 
 - Kök domain ve `/repo-adı/` altında çalışan yerel bağlantılar.
 - GitHub Actions üzerinde kontrol, build ve Pages dağıtım akışı.
 
-Gerçek CV içeriği, seçilmiş çalışmalar, fotoğraf albümü, arama ve çalışan geri bildirim formu sonraki aşamalardır. Kitabın konusu, yayın tarihi, ilerleme yüzdesi veya kariyer bilgileri uydurulmadı. Örnek kartlar ve geçici kapaklar açıkça etiketlidir; gerçek yayımlanmış içerik iddiası değildir.
+CV ve portföyün ilk içerik iskeleti hazırdır; görseller, gerçek proje bağlantıları ve ayrıntılı vaka incelemeleri sonraki aşamalardır. Fotoğraf albümü, arama ve çalışan geri bildirim formu da ileride eklenebilir. Kitabın konusu, yayın tarihi, ilerleme yüzdesi veya kariyer bilgileri uydurulmadı. Örnek blog kartları, temsili proje görselleri ve geçici kitap kapağı açıkça etiketlidir.
 
 ## Klasör yapısı
 
@@ -86,7 +86,7 @@ Gerçek CV içeriği, seçilmiş çalışmalar, fotoğraf albümü, arama ve ça
 - Renkler, tipografi, responsive düzen: `src/styles/global.css`
 - Ana sayfa: `src/components/night/NightLanding.astro`; route dosyaları `src/pages/` içinde.
 - Ortak üst bar: `src/components/SiteToolbar.astro`.
-- CV: `src/data/resume.ts`; kitap: `src/data/alamori.ts`; projeler: `src/data/projects.ts`.
+- CV: `src/data/resume.ts`; ortak İngilizce portföy: `src/data/portfolio.ts`; kitap: `src/data/alamori.ts`; proje vitrin ayarları: `src/data/projects.ts`.
 - Yeni yazı: `src/content/writing/` içine `.md` ekleyin; [içerik rehberi](docs/CONTENT.md).
 - Tasarım kararları: [DESIGN](docs/DESIGN.md)
 - Teknik kararlar: [ARCHITECTURE](docs/ARCHITECTURE.md)

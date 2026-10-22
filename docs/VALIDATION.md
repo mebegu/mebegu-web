@@ -1,5 +1,13 @@
 # Doğrulama
 
+## CV ve portföy içerik aktarımı — 22 Ekim 2026
+
+- Güncel CV’den üç iş deneyimi, beş yetkinlik grubu, iki eğitim ve üç dil seviyesi; iki belgeden on bir ortak portföy özeti eklendi. Bunların altısı profesyonel sayfada seçilmiş çalışma olarak gösterilir.
+- `pnpm validate`: 56 kaynak dosyada sıfır hata/uyarı, 17 HTML sayfası ve 424 yerel referans; üretim `/mebegu-web` alt yolu, canonical, dil geçişleri ve RSS kontrolleri geçti.
+- Üretilen İngilizce/Türkçe rotaların CV ve proje içerik metinleri aynı İngilizce metni kullanır; içerik kapsayıcıları `lang="en"` taşır. Ortak gezinme seçilen dilde kalır.
+- Kaynak PDF’ler, tam sokak adresi ve telefon yayımlanmaz. Proje görselleri temsili olarak etiketlidir; var olmayan demo/kod bağlantıları oluşturulmaz.
+- Tarayıcı envanteri boş: gerçek masaüstü/mobil görünüm, filtre etkileşimi ve A4 PDF sayfa akışı görsel olarak doğrulanamadı. CV’yi portföyden ayıran mevcut baskı stilleri korunur.
+
 ## GitHub Pages teslimi — 22 Ekim 2026
 
 - Güncel sürüm: ortak üst bar, yazdırılabilir CV, blog katalog prototipi, Alamori şablonu, proje vitrini ve dokuz pozlu karakter atlası.

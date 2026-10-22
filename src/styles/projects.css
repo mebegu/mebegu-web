@@ -346,6 +346,21 @@
   line-height: 1.8;
   margin: 30px 0 0;
 }
+.project-outline {
+  margin: 18px 0;
+  color: #afb9c2;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.project-outline summary {
+  width: fit-content;
+  padding-block: 8px;
+  color: var(--project-accent);
+  cursor: pointer;
+}
+.project-outline p {
+  margin: 10px 0 0;
+}
 @media (max-width: 900px) {
   .projects-heading {
     gap: 35px;

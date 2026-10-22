@@ -40,13 +40,13 @@ Son görsel tasarım daha sonra bu iskelet üzerinde ayrıca yapılacak.
 
 ## Projeler
 
-`src/components/pages/ProjectsPage.astro` proje vitrininin iki dilde ortak şablonudur. İlk kart büyük bir Unity oyunu alanı, diğerleri iki sütunlu kartlardır; mobilde tek sütuna geçer. Blogdaki yatay katalogdan bağımsız bir yerleşimdir. Kategoriler oyunlar, yazılımlar ve deneylerdir. Küçük bir istemci filtresi kartları süzer; JavaScript kapalıysa bütün kartlar görünür.
+`src/components/pages/ProjectsPage.astro` proje vitrininin iki rota için ortak şablonudur. Kullanıcının tercihiyle CV ve portföy yalnız İngilizcedir; Türkçe rotada ortak gezinme Türkçe kalır. İlk kart büyük Unity telemetri demosudur, diğerleri iki sütunlu kartlardır; mobilde tek sütuna geçer. Kategoriler oyun/etkileşim ve yazılımdır. Küçük bir istemci filtresi kartları süzer; JavaScript kapalıysa bütün kartlar görünür.
 
-`src/data/projects.ts` şimdilik beş açıkça etiketlenmiş örnek proje içerir. Gerçek oyun, bitmiş proje veya kullanılan teknoloji iddiası değildir. Her kayıt için iki dilde `title` ve `description`, `kind`, `technologies`, `visual`, `image`, `demoUrl`, `codeUrl`, `placeholder` alanları vardır.
+`src/data/portfolio.ts` verilen iki CV’den derlenen on bir gerçek proje özetinin ortak kaynağıdır. `title`, `context`, `contribution`, `outcome`, `organization`, isteğe bağlı `period`, `kind`, `technologies` ve `visual` alanları İngilizcedir. Profesyonel sayfa altı kaydı seçer; `src/data/projects.ts` bütün kayıtları vitrine taşıyarak `image`, `demoUrl` ve `codeUrl` alanlarını ekler. Ayrıntılı kaynak eşleştirmesi [CV-IMPORT.md](CV-IMPORT.md) içindedir.
 
-- Gerçek proje eklendiğinde metin ve teknoloji listesini değiştirip `placeholder: false` yapın.
+- Metin ve teknoloji değişikliklerini ortak `portfolio.ts` dosyasında yapın. Tek bir kaynağın hem profesyonel portföyü hem proje vitrinini beslemesi korunur.
 - `image` için `public/` altındaki ekran görüntüsünün yolunu kullanın; örneğin `projects/my-game.webp`. `public/` öneki yazılmaz. `null` ise `ProjectVisual.astro` içindeki temsili SVG gösterilir.
-- `demoUrl` ve `codeUrl` gerçek bağlantılardır; boş (`null`) değerler sahte bağlantı oluşturmaz, yalnız “eklenmedi” metni gösterilir.
+- `demoUrl` ve `codeUrl` gerçek bağlantılardır; boş (`null`) değerlerde bağlantı gösterilmez. Görseller henüz temsili olarak işaretlidir.
 - İlk kayıt büyük kart olarak gösterilir. Sıralamayı veri dosyasında değiştirebilirsiniz.
 
 Gerçek proje detay sayfası, oyun çalıştırıcısı veya video oynatıcısı bu prototipe eklenmedi; görsel ve bağlantı alanları hazır bırakıldı. Tarayıcı yüzeyi erişilemediği için bu yerleşim görsel olarak doğrulanamadı; build ve yerel bağlantı kontrolleri görsel QA yerine geçmez.

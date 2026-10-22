@@ -4,7 +4,7 @@
 
 ## İçerik ve tasarım kararları
 
-- Kısa profil, deneyim, teknik yetkinlikler, eğitim ve diller. Bölümler gerçek içerik geldikçe açılır; `ready` durumunda boş bölümler gösterilmez.
+- Kısa profil, deneyim, teknik yetkinlikler, eğitim ve diller. Güncel CV’den alınan içerik, kullanıcının tercihiyle yalnız İngilizce sunulur.
 - Tek sütunlu belge, belirgin başlıklar, gerçek HTML metni ve tutarlı tarih biçimi. Yetenek yüzdeleri, dekoratif grafikler ve fotoğraf eklenmedi. Bu tasarımın herhangi bir ATS ile uyumluluk garantisi yoktur.
 - Deneyim ve eğitim kayıtları en yeniden eskiye girilir. Deneyim maddeleri yapılan iş, kullanılan yöntem ve doğrulanabilir sonuç üzerinden yazılır. Ölçüm yoksa sayı uydurulmaz.
 - Web portföyü CV’den sonra gelir; her çalışma problem, kişisel katkı ve sonuç olarak anlatılır. Ayrıntılı vaka incelemeleri CV baskısına girmez.
@@ -15,14 +15,14 @@ Bu kararların dayanakları: [Harvard MCS](https://careerservices.fas.harvard.ed
 
 ## İçeriği doldurma
 
-`resume.ts` içinde yalnız isim ve yazılım geliştirici rolü doğrulanmıştır. Diğer alanlar `null` veya boş dizidir; bunlar gerçek kariyer iddiaları üretmez. `status: 'draft'` iken köşeli parantezli rehber alanlar ve belirgin taslak notu hem ekranda hem çıktıda görünür.
+22 Ekim 2026’da kullanıcı tarafından verilen güncel CV (`mehmetgurcay_cv_.pdf`) üzerinden profil, üç iş deneyimi, teknik yetkinlikler, iki eğitim ve diller eklendi. Eski belge (`mehmetgurcaycv (14).pdf`) portföy ayrıntılarını tamamlar. Kullanıcının tercihiyle **CV ve portföy yalnız İngilizcedir; çevrilmez**. Türkçe rotalarda ortak gezinme Türkçe kalır, içerik kapsayıcısında `lang="en"` bulunur.
 
-1. `summary`, `location`, `role` gibi metinleri `{ tr: '…', en: '…' }` olarak girin. Türkçe ve İngilizce deneyim ifadeleri aynı bilgileri aktarmalıdır.
-2. `email`, `phone`, `linkedin`, `github`, `website` için gerçek değerleri ekleyin. `null` adresler sahte bağlantı oluşturmaz. Bunlar sosyal şeridin bağımsız, bilinçli olarak boş bırakılmış kayıtlarını değiştirmez.
-3. `experience`: `role`, `organization`, `period`, isteğe bağlı `location`, `highlights`. `period` için iki dilde tutarlı ay/yıl aralığı; her katkı için kısa, somut bir madde yazın.
-4. `skills`: her grupta iki dilde `label` ve gerçek teknoloji isimlerinden `skills` dizisi. `education`: `degree`, `institution`, `period`, isteğe bağlı `detail`. `languages`: dil ve seviye metinleri.
-5. `work`: `title`, `context`, `contribution`, `outcome`, `technologies`, isteğe bağlı gerçek `url`. Gizli iş bilgilerini paylaşmayın; paylaşılabilir katkıyı anlatın.
-6. İçeriği kontrol ettikten sonra `status: 'ready'` yapın. Taslak etiketleri kalkar. Tekrar build edin ve iki dilin baskı önizlemesini kontrol edin.
+1. `resume.ts` İngilizce metinler kullanır: `summary`, `role`, `experience`, `skills`, `education`, `languages`. Boş CV şablonu kaldırıldı.
+2. `portfolio.ts` on bir projenin ortak kaynağıdır. `resume.work` bunlardan altısını profesyonel sayfada gösterir; `projects.ts` tamamını Projects vitrinine taşır. Aynı projeyi iki yerde ayrı ayrı düzenlemeyin.
+3. Her portföy kaydı `context`, `contribution`, `outcome`, `technologies` ve `organization` içerir. `period` varsa kaynak belgedeki süredir; takvim tarihi tahmin edilmez.
+4. E-posta, şehir ve önceden bilinen GitHub adresi kullanılır. Tam sokak adresi, telefon ve kaynak PDF dosyaları public dizine/repo içeriğine eklenmedi. Sosyal şeridin placeholder kayıtları korunur.
+5. Gerçek proje görselleri ve demo/kod adresleri henüz yoktur. Görseller açıkça temsili olarak etiketlenir; var olmayan bağlantılar gösterilmez. İlk portföy sürümü bir içerik iskeletidir.
+6. Kaynak öncelikleri, dışarıda bırakılan eski aktiviteler ve sonraki düzenlemeler için [CV-IMPORT.md](CV-IMPORT.md) dosyasına bakın. Güncel tarihler ve kişisel tanıtım metni son kullanıcı incelemesinden geçirilebilir.
 
 ## Yazdırma
 
