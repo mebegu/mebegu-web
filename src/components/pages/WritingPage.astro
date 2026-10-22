@@ -6,8 +6,9 @@ import {
   catalogShelves,
   featuredPostIds,
 } from '../../data/blog-catalog';
-import { type Lang } from '../../lib/i18n';
+import { localPath, type Lang } from '../../lib/i18n';
 import '../../styles/blog-catalog.css';
+
 interface Props {
   lang: Lang;
 }
@@ -16,59 +17,51 @@ const tr = lang === 'tr';
 const featured = featuredPostIds
   .map((id) => catalogPosts.find((post) => post.id === id))
   .filter((post): post is (typeof catalogPosts)[number] => Boolean(post));
-const text = {
-  preview: tr ? 'Önizle' : 'Preview',
-  sample: tr ? 'Örnek içerik' : 'Sample content',
-  previous: tr ? 'Önceki yazı' : 'Previous post',
-  next: tr ? 'Sonraki yazı' : 'Next post',
-  pause: tr ? 'Otomatik geçişi duraklat' : 'Pause automatic slides',
-  play: tr ? 'Otomatik geçişi başlat' : 'Play automatic slides',
-  pauseText: tr ? 'Duraklat' : 'Pause',
-  playText: tr ? 'Devam et' : 'Play',
-};
+const postPath = (id: string) => localPath(`writing/sample/${id}/`, lang);
+const newTab = tr ? 'Yeni sekmede açılır' : 'Opens in a new tab';
+const open = tr ? 'Yazıyı aç' : 'Read post';
 ---
 
 <BaseLayout
   title="Blog"
+  lang={lang}
+  bodyClass="blog-body"
   description={
     tr
       ? 'Yazılım, yol notları, hikâyeler ve fikirler. Kişisel yazı kütüphanesi.'
       : 'Code, travel notes, stories and ideas. A personal writing library.'
   }
-  lang={lang}
-  bodyClass="blog-body"
 >
   <div class="blog-catalog" data-blog-catalog>
-    <header class="catalog-heading">
-      <div>
-        <p class="eyebrow">{tr ? 'Kişisel kütüphane' : 'A personal library'}</p>
-        <h1>
-          Blog<span class="accent">.</span>
-        </h1>
-      </div>
-      <p class="catalog-prototype">
-        {tr ? 'Prototip · örnek içerikler' : 'Prototype · sample content'}
-      </p>
-    </header>
-
     <section
       class="catalog-featured"
       aria-label={tr ? 'Öne çıkan yazılar' : 'Featured posts'}
       aria-roledescription={tr ? 'Slayt gösterisi' : 'Carousel'}
     >
+      <header class="catalog-heading">
+        <h1>
+          Blog<span class="accent">.</span>
+        </h1>
+        <p>{tr ? 'Yerleşim taslağı' : 'Layout preview'}</p>
+      </header>
       {featured.map((post, index) => (
         <div
-          class={`catalog-slide tone-${post.tone}`}
+          class:list={[
+            'catalog-slide',
+            `tone-${post.tone}`,
+            { 'is-active': index === 0 },
+          ]}
           data-slide
-          hidden={index !== 0}
           role="group"
           aria-roledescription={tr ? 'Slayt' : 'Slide'}
           aria-label={`${index + 1} / ${featured.length}`}
+          aria-hidden={index !== 0 ? 'true' : 'false'}
+          inert={index !== 0}
         >
           <div class="feature-art" aria-hidden="true">
             <CatalogArtwork art={post.art} />
           </div>
-          <div class="feature-copy">
+          <div class="feature-copy" data-feature-copy>
             <p class="feature-kicker">
               {tr ? 'Öne çıkan' : 'Featured'} <span aria-hidden="true">/</span>{' '}
               {
@@ -79,18 +72,15 @@ const text = {
             </p>
             <h2>{post.title[lang]}</h2>
             <p class="feature-description">{post.description[lang]}</p>
-            <button
-              class="feature-preview"
-              type="button"
-              data-preview
-              data-title={post.title[lang]}
-              data-summary={post.description[lang]}
-              disabled
+            <a
+              class="feature-open"
+              href={postPath(post.id)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${post.title[lang]} — ${newTab}`}
             >
-              {text.preview}
-              <span aria-hidden="true">↗</span>
-            </button>
-            <span class="feature-sample">{text.sample}</span>
+              {open} <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
       ))}
@@ -117,33 +107,34 @@ const text = {
             class="feature-pause"
             data-slide-pause
             aria-pressed="false"
-            aria-label={text.pause}
-            data-pause-label={text.pause}
-            data-play-label={text.play}
-            data-pause-text={text.pauseText}
-            data-play-text={text.playText}
+            aria-label={
+              tr ? 'Otomatik geçişi duraklat' : 'Pause automatic slides'
+            }
+            data-pause-label={
+              tr ? 'Otomatik geçişi duraklat' : 'Pause automatic slides'
+            }
+            data-play-label={
+              tr ? 'Otomatik geçişi başlat' : 'Play automatic slides'
+            }
           >
             <svg class="pause-icon" viewBox="0 0 20 20" aria-hidden="true">
-              <path d="M6 5v10M14 5v10" />
+              <path d="M7 5v10M13 5v10" />
             </svg>
             <svg class="play-icon" viewBox="0 0 20 20" aria-hidden="true">
               <path d="m7 5 7 5-7 5Z" />
             </svg>
-            <span data-pause-text>{text.pauseText}</span>
           </button>
           <button
             type="button"
-            class="feature-arrow"
             data-slide-prev
-            aria-label={text.previous}
+            aria-label={tr ? 'Önceki yazı' : 'Previous post'}
           >
             ←
           </button>
           <button
             type="button"
-            class="feature-arrow"
             data-slide-next
-            aria-label={text.next}
+            aria-label={tr ? 'Sonraki yazı' : 'Next post'}
           >
             →
           </button>
@@ -157,243 +148,96 @@ const text = {
       ></p>
     </section>
 
-    <nav
-      class="catalog-jumps"
-      aria-label={tr ? 'Yazı kategorileri' : 'Post categories'}
-    >
-      {catalogShelves.map((shelf) => (
-        <a href={`#shelf-${shelf.id}`}>
-          {shelf.title[lang]}
-          <span aria-hidden="true">↓</span>
-        </a>
-      ))}
-    </nav>
-
-    {catalogShelves.map((shelf) => (
-      <section
-        class="catalog-shelf"
-        id={`shelf-${shelf.id}`}
-        aria-labelledby={`heading-${shelf.id}`}
-        data-shelf
+    <div class="catalog-library">
+      <nav
+        class="catalog-jumps"
+        aria-label={tr ? 'Yazı kategorileri' : 'Post categories'}
       >
-        <div class="shelf-heading">
-          <div>
-            <h2 id={`heading-${shelf.id}`}>{shelf.title[lang]}</h2>
-            <p>{shelf.subtitle[lang]}</p>
-          </div>
-          <div class="shelf-controls" data-shelf-controls hidden>
-            <button
-              type="button"
-              data-shelf-prev
-              aria-label={`${shelf.title[lang]}: ${tr ? 'sola kaydır' : 'scroll left'}`}
-              aria-controls={`track-${shelf.id}`}
-            >
-              ←
-            </button>
-            <button
-              type="button"
-              data-shelf-next
-              aria-label={`${shelf.title[lang]}: ${tr ? 'sağa kaydır' : 'scroll right'}`}
-              aria-controls={`track-${shelf.id}`}
-            >
-              →
-            </button>
-          </div>
-        </div>
-        <div class="shelf-track" id={`track-${shelf.id}`} data-shelf-track>
-          {catalogPosts
-            .filter((post) => post.shelf === shelf.id)
-            .map((post, index) => (
-              <article class={`catalog-card tone-${post.tone}`}>
-                <h3>
-                  <button
-                    type="button"
-                    class="catalog-card-button"
-                    data-preview
-                    data-title={post.title[lang]}
-                    data-summary={post.description[lang]}
-                    disabled
-                    aria-label={`${post.title[lang]} — ${text.preview}`}
-                  >
-                    <span class="card-cover">
-                      <CatalogArtwork art={post.art} />
-                      <span class="card-index" aria-hidden="true">
-                        0{index + 1}
-                      </span>
-                      <span class="card-open" aria-hidden="true">
-                        ↗
-                      </span>
-                    </span>
-                    <span class="card-meta">
-                      {shelf.title[lang]}
-                      <span>{tr ? 'Örnek' : 'Sample'}</span>
-                    </span>
-                    <span class="card-title">{post.title[lang]}</span>
-                  </button>
-                </h3>
-                <p class="card-description">{post.description[lang]}</p>
-              </article>
-            ))}
-        </div>
-      </section>
-    ))}
-
-    <dialog
-      class="catalog-dialog"
-      data-catalog-dialog
-      aria-labelledby="catalog-dialog-title"
-      aria-describedby="catalog-dialog-summary catalog-dialog-note"
-    >
-      <div class="catalog-dialog-top">
-        <p class="eyebrow">{text.sample}</p>
-        <button
-          type="button"
-          class="catalog-dialog-close"
-          data-dialog-close
-          aria-label={tr ? 'Önizlemeyi kapat' : 'Close preview'}
-          autofocus
+        {catalogShelves.map((shelf) => (
+          <a href={`#shelf-${shelf.id}`}>{shelf.title[lang]}</a>
+        ))}
+      </nav>
+      {catalogShelves.map((shelf) => (
+        <section
+          class="catalog-shelf"
+          id={`shelf-${shelf.id}`}
+          aria-labelledby={`heading-${shelf.id}`}
+          data-shelf
         >
-          ×
-        </button>
-      </div>
-      <h2 id="catalog-dialog-title" data-dialog-title></h2>
-      <p id="catalog-dialog-summary" data-dialog-summary></p>
-      <p id="catalog-dialog-note" class="catalog-dialog-note">
-        {tr
-          ? 'Bu, kütüphane tasarımını göstermek için hazırlanmış bir örnek kart. Henüz yayımlanmış bir yazı değil.'
-          : 'This sample card demonstrates the library design. It is not a published article yet.'}
-      </p>
-    </dialog>
+          <div class="shelf-heading">
+            <h2 id={`heading-${shelf.id}`}>{shelf.title[lang]}</h2>
+            <div class="shelf-controls" data-shelf-controls hidden>
+              <button
+                type="button"
+                data-shelf-prev
+                aria-label={`${shelf.title[lang]}: ${tr ? 'sola kaydır' : 'scroll left'}`}
+                aria-controls={`track-${shelf.id}`}
+              >
+                ←
+              </button>
+              <button
+                type="button"
+                data-shelf-next
+                aria-label={`${shelf.title[lang]}: ${tr ? 'sağa kaydır' : 'scroll right'}`}
+                aria-controls={`track-${shelf.id}`}
+              >
+                →
+              </button>
+            </div>
+          </div>
+          <div class="shelf-track" id={`track-${shelf.id}`} data-shelf-track>
+            {catalogPosts
+              .filter((post) => post.shelf === shelf.id)
+              .map((post) => (
+                <article class={`catalog-card tone-${post.tone}`}>
+                  <h3>
+                    <a
+                      class="catalog-card-link"
+                      href={postPath(post.id)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-describedby={`summary-${post.id}`}
+                    >
+                      <span class="card-turn">
+                        <span class="card-face card-front">
+                          <CatalogArtwork art={post.art} />
+                          <span class="card-front-copy">
+                            <span class="card-title">{post.title[lang]}</span>
+                            <span class="card-touch-summary" aria-hidden="true">
+                              {post.description[lang]}
+                            </span>
+                          </span>
+                        </span>
+                        <span class="card-face card-back" aria-hidden="true">
+                          <span class="card-back-category">
+                            {shelf.title[lang]}
+                          </span>
+                          <span class="card-summary">
+                            {post.description[lang]}
+                          </span>
+                          <span class="card-read">
+                            {open}
+                            <span>↗</span>
+                          </span>
+                        </span>
+                      </span>
+                    </a>
+                  </h3>
+                  <p id={`summary-${post.id}`} class="sr-only">
+                    {post.description[lang]} {newTab}.
+                  </p>
+                </article>
+              ))}
+          </div>
+        </section>
+      ))}
+    </div>
   </div>
 </BaseLayout>
 
 <script>
-  const catalog = document.querySelector<HTMLElement>('[data-blog-catalog]');
-  if (catalog) {
-    const featured = catalog.querySelector<HTMLElement>('.catalog-featured')!;
-    const slides = [...featured.querySelectorAll<HTMLElement>('[data-slide]')];
-    const dots = [
-      ...featured.querySelectorAll<HTMLButtonElement>('[data-slide-to]'),
-    ];
-    const pauseButton =
-      featured.querySelector<HTMLButtonElement>('[data-slide-pause]')!;
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const dialog = catalog.querySelector<HTMLDialogElement>(
-      '[data-catalog-dialog]',
-    )!;
-    let current = 0;
-    let paused = reducedMotion.matches;
-    let timer: ReturnType<typeof setTimeout> | undefined;
-
-    function schedule() {
-      clearTimeout(timer);
-      if (
-        paused ||
-        document.hidden ||
-        dialog.open ||
-        featured.matches(':hover') ||
-        featured.contains(document.activeElement)
-      )
-        return;
-      timer = setTimeout(() => show(current + 1), 6500);
-    }
-    function show(index: number, manual = false) {
-      current = (index + slides.length) % slides.length;
-      slides.forEach((slide, i) => {
-        slide.hidden = i !== current;
-      });
-      dots.forEach((dot, i) => {
-        if (i === current) dot.setAttribute('aria-current', 'true');
-        else dot.removeAttribute('aria-current');
-      });
-      if (manual)
-        featured.querySelector('[data-slide-status]')!.textContent =
-          `${current + 1} / ${slides.length}: ${slides[current].querySelector('h2')!.textContent}`;
-      schedule();
-    }
-    function updatePause() {
-      pauseButton.setAttribute('aria-pressed', String(paused));
-      pauseButton.setAttribute(
-        'aria-label',
-        (paused
-          ? pauseButton.dataset.playLabel
-          : pauseButton.dataset.pauseLabel)!,
-      );
-      pauseButton.querySelector('[data-pause-text]')!.textContent = (
-        paused ? pauseButton.dataset.playText : pauseButton.dataset.pauseText
-      )!;
-      schedule();
-    }
-    featured.querySelector<HTMLElement>('[data-feature-controls]')!.hidden =
-      false;
-    featured
-      .querySelector('[data-slide-prev]')!
-      .addEventListener('click', () => show(current - 1, true));
-    featured
-      .querySelector('[data-slide-next]')!
-      .addEventListener('click', () => show(current + 1, true));
-    dots.forEach((dot, index) =>
-      dot.addEventListener('click', () => show(index, true)),
-    );
-    pauseButton.addEventListener('click', () => {
-      paused = !paused;
-      updatePause();
-    });
-    featured.addEventListener('mouseenter', schedule);
-    featured.addEventListener('mouseleave', schedule);
-    featured.addEventListener('focusin', schedule);
-    featured.addEventListener('focusout', () => queueMicrotask(schedule));
-    document.addEventListener('visibilitychange', schedule);
-    reducedMotion.addEventListener('change', () => {
-      if (reducedMotion.matches) {
-        paused = true;
-        updatePause();
-      }
-    });
-
-    catalog
-      .querySelectorAll<HTMLButtonElement>('[data-preview]')
-      .forEach((button) => {
-        button.disabled = false;
-        button.addEventListener('click', () => {
-          dialog.querySelector('[data-dialog-title]')!.textContent =
-            button.dataset.title!;
-          dialog.querySelector('[data-dialog-summary]')!.textContent =
-            button.dataset.summary!;
-          dialog.showModal();
-          schedule();
-        });
-      });
-    dialog
-      .querySelector('[data-dialog-close]')!
-      .addEventListener('click', () => dialog.close());
-    dialog.addEventListener('click', (event) => {
-      if (event.target === dialog) dialog.close();
-    });
-    dialog.addEventListener('close', schedule);
-
-    catalog.querySelectorAll<HTMLElement>('[data-shelf]').forEach((shelf) => {
-      const track = shelf.querySelector<HTMLElement>('[data-shelf-track]')!;
-      const previous =
-        shelf.querySelector<HTMLButtonElement>('[data-shelf-prev]')!;
-      const next = shelf.querySelector<HTMLButtonElement>('[data-shelf-next]')!;
-      shelf.querySelector<HTMLElement>('[data-shelf-controls]')!.hidden = false;
-      const update = () => {
-        previous.disabled = track.scrollLeft <= 2;
-        next.disabled =
-          track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
-      };
-      const scroll = (direction: number) =>
-        track.scrollBy({
-          left: direction * track.clientWidth * 0.85,
-          behavior: reducedMotion.matches ? 'instant' : 'smooth',
-        });
-      previous.addEventListener('click', () => scroll(-1));
-      next.addEventListener('click', () => scroll(1));
-      track.addEventListener('scroll', update, { passive: true });
-      window.addEventListener('resize', update);
-      update();
-    });
-    updatePause();
-  }
+  import { initBlogCatalog } from '../../lib/blog-catalog';
+  document
+    .querySelectorAll<HTMLElement>('[data-blog-catalog]')
+    .forEach(initBlogCatalog);
 </script>

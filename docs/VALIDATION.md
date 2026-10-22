@@ -1,5 +1,12 @@
 # Doğrulama
 
+## Minimal blog wireframe’i — 22 Ekim 2026
+
+- Tam genişlikte öne çıkan arka plan, dört otomatik slayt, üç rafta 12 dönen kart ve popup yerine yeni sekmede örnek okuma sayfaları eklendi. Masaüstü/mobil/etkileşim çizimi `docs/wireframes/blog.svg` içinde; SVG PNG’ye çevrilerek çizimin yerleşimi incelendi.
+- `pnpm validate`: 61 kaynak dosyada sıfır hata/uyarı/ipucu, 41 HTML sayfası ve 998 yerel referans. İki dilde her kart/banner’ın yeni sekme hedefi ve hedef sayfanın varlığı; 24 örnek yazıda `noindex`; popup ve kart altı metinlerin kaldırılması kontrol edildi.
+- Görünmeyen üç slayt `inert` taşır. Azaltılmış hareket ve dokunmatik davranışları CSS/JS’de tanımlı; gerçek tarayıcı envanteri boş olduğundan görsel dönüş, zamanlama ve mobil kırpma gerçek ekranda doğrulanamadı.
+- Örnek sayfalar RSS’e girmez. Weebly’den gelen dokuz yazı taslak olarak korundu; bu çalışma onları yayımlamadı.
+
 ## Weebly blog arşivinin ilk aktarımı — 22 Ekim 2026
 
 - RSS, sitemap ve 15 kategori/ay arşivi sayfasından bulunan 9 yazının tamamı Markdown taslağına dönüştürüldü: 2 İngilizce, 7 Türkçe.

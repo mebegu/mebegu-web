@@ -1,5 +1,9 @@
 # İlk yerleşim çalışması
 
+## Blog — güncel wireframe
+
+[Blog wireframe’ini aç](blog.svg): tam genişlikte öne çıkan arka plan, minimal görsel raflar, kartın ön/arka yüzü ve yeni sekmede okuma akışı. Masaüstü ve mobil birlikte gösterilir. Çalışan prototip `/writing/` ve `/tr/writing/` adreslerinde; davranışlar [BLOG-CATALOG.md](../BLOG-CATALOG.md) içindedir. Bu şematik çizim tarayıcı ekran görüntüsü değildir.
+
 ## Güncel küçük başlangıç önerisi
 
 [Seyrek güncellemeye uygun tek sayfa](quiet-home.html): 1–3 ay arayla güncellenebilecek kalıcı tanıtım, bağlantı yerleşimi ve kısa Atlantis alanı. Türkçe/İngilizce geçişi ile desktop ve mobil düzen birlikte gösterilir. CV, LinkedIn ve e-posta işaretleri henüz gerçek adreslere bağlı olmayan yerleşim örnekleridir. Küçük kişisel görsel ve ileride bir yazı/albüm seçkisi isteğe bağlıdır.

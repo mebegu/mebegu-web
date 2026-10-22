@@ -37,7 +37,7 @@ Bu çalışma klasöründe üretilmiş `dist/` dosyalarını yalnızca görünt�
 Ana sayfa: aşağıda yalnız karakter ve zemin, yukarıda **Profesyonel / Blog / Alamori / Atölye** dilimleri. Yıldız parıltısı, hover genişlemesi, dokuz baş pozu ile yumuşak imleç takibi ve azaltılmış hareket desteği içerir. Kapak tam ekran gökyüzüdür; logo sol üstte, sade `EN / TR` seçimi sağ üstte doğrudan sahnenin üzerinde durur. İç sayfalarda logo, bölüm menüsü ve dil seçimi ortak üst bardadır. Tasarım/modül haritası: [NIGHT-HOME](docs/NIGHT-HOME.md). Sosyal hesaplar kullanıcı isteğiyle placeholder; gerçek adresler `src/data/socials.ts` üzerinden eklenir.
 
 - Profesyonel sayfa: paylaşılan güncel CV’den hazırlanmış İngilizce özgeçmiş, yalnız CV’yi yazdıran A4 baskı stili ve on bir profesyonel çalışma özeti (Selected work).
-- Blog: dört banner ve üç kategori rafında 12 örnek içerikle sabit katalog prototipi.
+- Blog: tam genişlikte otomatik değişen arka plan, üç rafta 12 görsel kart; hover/odakta 180° dönerek özet gösterir, yazı iskeletini yeni sekmede açar. İçerikler tasarım örneğidir.
 - Alamori: tanıtım, geçici kapak, henüz pasif PDF ve geri bildirim alanları.
 - Atölye / Workshop: hobi oyunları, kişisel yazılım ve deneyler için beş temsili kart. Profesyonel müşteri işleri burada yer almaz. Mevcut `/projects/` adresi korunur.
 - Önceki Hakkımda ve Atlantis sayfaları ile ortak 404 adresi korunur.
@@ -97,7 +97,7 @@ CV ve portföyün ilk içerik iskeleti hazırdır; görseller, gerçek proje ba�
 - Yapılan kontroller ve sınırlar: [doğrulama kaydı](docs/VALIDATION.md)
 - Dört renkli gökyüzü, yırtık kâğıt ve fırça katmanları: [NIGHT-HOME](docs/NIGHT-HOME.md)
 - Profesyonel sayfa, CV içeriği ve tarayıcıdan PDF/yazdırma: [CV rehberi](docs/CV.md); içerik `src/data/resume.ts` içinde.
-- Blog için banner ve kategori raflarından oluşan sabit katalog prototipi: [BLOG-CATALOG](docs/BLOG-CATALOG.md); örnek kartlar `src/data/blog-catalog.ts` içinde.
+- Blog için çalışan katalog prototipi: [BLOG-CATALOG](docs/BLOG-CATALOG.md); [masaüstü/mobil wireframe](docs/wireframes/blog.svg), örnek veriler `src/data/blog-catalog.ts` içinde.
 - Görsel kaynakları ve üretim prompt’ları: [ART](docs/ART.md)
 
 ## GitHub Pages’e yayınlama

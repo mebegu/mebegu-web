@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1120" viewBox="0 0 1440 1120" role="img" aria-labelledby="title desc">
+  <title id="title">Blog: tam genişlikte arka plan ve dönen kartlar</title>
+  <desc id="desc">Masaüstü ve mobil blog yerleşimi. Öne çıkan yazılar çerçevesiz bir arka planda otomatik değişir. Raflardaki görsel kartlar hover veya klavye odağında 180 derece dönerek özet gösterir. Tıklamak yeni sekmede yazı sayfasını açar.</desc>
+  <defs>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#13171c"/><stop offset="1" stop-color="#48505a"/></linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#101419" stop-opacity="0"/><stop offset="1" stop-color="#101419"/></linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#49535d"/><stop offset="1" stop-color="#252d36"/></linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#080b10" stop-opacity="0"/><stop offset="1" stop-color="#080b10" stop-opacity=".95"/></linearGradient>
+    <clipPath id="desktop"><rect x="28" y="72" width="1000" height="650" rx="7"/></clipPath>
+    <clipPath id="mobile"><rect x="1060" y="72" width="352" height="650" rx="7"/></clipPath>
+    <style>
+      text{font-family:Arial,sans-serif;fill:#e6e7e9} .muted{fill:#9ba4af} .caption{font-size:12px;letter-spacing:1px;fill:#8a96a4} .line{stroke:#8e9aa6;stroke-width:2;fill:none} .tiny{font-size:11px;fill:#b7c0ca}
+    </style>
+  </defs>
+  <rect width="1440" height="1120" fill="#e8e8e4"/>
+  <text x="28" y="34" style="font-size:14px;letter-spacing:2px;fill:#252b33">MEBEGU / BLOG · WIREFRAME 01</text>
+  <text x="28" y="57" class="caption">MASAÜSTÜ · ARKA PLAN KENARLARA KADAR UZANIR</text>
+  <text x="1060" y="57" class="caption">MOBİL · YATAY RAF KAYDIRMA</text>
+  <g clip-path="url(#desktop)">
+    <rect x="28" y="72" width="1000" height="650" fill="#101419"/>
+    <rect x="28" y="72" width="1000" height="52" fill="#0d131c"/>
+    <text x="60" y="104" font-size="23" font-weight="bold">mebegu.</text>
+    <g class="tiny"><text x="356" y="103">Profesyonel</text><text x="441" y="103">Blog</text><text x="490" y="103">Alamori</text><text x="560" y="103">Atölye</text></g>
+    <text x="932" y="103" class="tiny">EN / TR</text>
+    <rect x="28" y="124" width="1000" height="425" fill="url(#hero)"/>
+    <g opacity=".45" transform="translate(590 145)">
+      <circle cx="200" cy="112" r="92" fill="#77818b"/>
+      <path d="M-80 230 100 50 260 230 360 130 500 280" stroke="#a1a9b2" stroke-width="2" fill="none"/>
+      <path d="M-120 280H500M-80 300H480" stroke="#a1a9b2"/>
+    </g>
+    <rect x="28" y="300" width="1000" height="250" fill="url(#fade)"/>
+    <text x="60" y="160" font-size="14">Blog.</text>
+    <text x="60" y="213" class="tiny">ÖNE ÇIKAN / YAZILIM</text>
+    <text x="60" y="265" font-size="43" font-weight="bold" letter-spacing="-2">Sessiz arayüzler</text>
+    <text x="60" y="300" font-size="13" class="muted">Daha az öğeyle daha çok şey anlatmak.</text>
+    <text x="60" y="321" font-size="13" class="muted">Başlık ve kısa özet doğrudan görselin üzerinde.</text>
+    <text x="60" y="365" font-size="12">Yazıyı aç ↗</text><path d="M60 374h86" stroke="#cbbda7"/>
+    <path d="M60 419h28" stroke="#d9c5a8" stroke-width="2"/><path d="M98 419h28m10 0h28m10 0h28" stroke="#6a737e" stroke-width="2"/>
+    <text x="935" y="424" font-size="17">Ⅱ ← →</text>
+    <text x="60" y="459" class="tiny">Yazılım &amp; üretim        Yol notları        Hikâyeler &amp; fikirler</text>
+    <text x="60" y="495" font-size="17">Yazılım &amp; üretim</text>
+    <g transform="translate(60 510)">
+      <rect width="216" height="135" rx="3" fill="url(#card)"/><rect x="48" y="23" width="120" height="75" rx="3" class="line"/><path d="M48 42h120M82 42v56" class="line"/>
+      <rect width="216" height="135" fill="url(#shade)"/><text x="16" y="115" font-size="17">Sessiz arayüzler</text>
+    </g>
+    <g transform="translate(292 510)">
+      <rect width="216" height="135" rx="3" fill="#26303b"/>
+      <text x="16" y="25" class="tiny">YAZILIM &amp; ÜRETİM</text>
+      <text x="16" y="53" font-size="12"><tspan x="16">Bir fikri küçük başlatmak,</tspan><tspan x="16" dy="19">denemek ve öğrendikçe</tspan><tspan x="16" dy="19">geliştirmek üzerine notlar.</tspan></text>
+      <text x="16" y="117" class="tiny">Yazıyı aç                        ↗</text>
+    </g>
+    <g transform="translate(524 510)">
+      <rect width="216" height="135" rx="3" fill="url(#card)"/><circle cx="115" cy="60" r="40" class="line"/><path d="M32 75h151M115 15v90" class="line"/>
+      <rect width="216" height="135" fill="url(#shade)"/><text x="16" y="115" font-size="17">Arayüzün ardında</text>
+    </g>
+    <g transform="translate(756 510)">
+      <rect width="216" height="135" rx="3" fill="url(#card)"/><path d="m50 64 38-35 38 35-38 35Zm40 0 38-35 38 35-38 35Z" class="line"/>
+      <rect width="216" height="135" fill="url(#shade)"/><text x="16" y="115" font-size="17">Hafif web</text>
+    </g>
+    <text x="60" y="684" font-size="17">Yol notları</text>
+    <rect x="60" y="700" width="216" height="120" fill="url(#card)"/><rect x="292" y="700" width="216" height="120" fill="url(#card)"/><rect x="524" y="700" width="216" height="120" fill="url(#card)"/><rect x="756" y="700" width="216" height="120" fill="url(#card)"/>
+  </g>
+  <g clip-path="url(#mobile)">
+    <rect x="1060" y="72" width="352" height="650" fill="#101419"/>
+    <rect x="1060" y="72" width="352" height="84" fill="#0d131c"/>
+    <text x="1080" y="104" font-size="21" font-weight="bold">mebegu.</text><text x="1328" y="101" class="tiny">EN / TR</text>
+    <g class="tiny"><text x="1080" y="139">Profesyonel</text><text x="1171" y="139">Blog</text><text x="1233" y="139">Alamori</text><text x="1320" y="139">Atölye</text></g>
+    <rect x="1060" y="156" width="352" height="400" fill="url(#hero)"/>
+    <circle cx="1340" cy="276" r="75" fill="#8a949e" opacity=".25"/>
+    <rect x="1060" y="330" width="352" height="235" fill="url(#fade)"/>
+    <text x="1080" y="188" font-size="13">Blog.</text>
+    <text x="1080" y="247" class="tiny">ÖNE ÇIKAN</text>
+    <text x="1080" y="286" font-size="33" font-weight="bold"><tspan>Sessiz</tspan><tspan x="1080" dy="36">arayüzler</tspan></text>
+    <text x="1080" y="357" font-size="12" class="muted"><tspan>Daha az öğeyle daha çok</tspan><tspan x="1080" dy="20">şey anlatmak üzerine notlar.</tspan></text>
+    <text x="1080" y="417" font-size="12">Yazıyı aç ↗</text>
+    <path d="M1080 457h25m10 0h25m10 0h25m10 0h25" stroke="#83909f" stroke-width="2"/>
+    <text x="1080" y="502" class="tiny">Yazılım   /   Yol notları   /   Fikirler</text>
+    <text x="1080" y="539" font-size="16">Yazılım &amp; üretim</text>
+    <rect x="1080" y="555" width="256" height="156" rx="3" fill="url(#card)"/><path d="M1125 585h155v66h-155Z" class="line"/>
+    <rect x="1080" y="555" width="256" height="156" fill="url(#shade)"/>
+    <text x="1096" y="659" font-size="17">Sessiz arayüzler</text>
+    <text x="1096" y="682" class="tiny">Dokunmatikte kısa özet görünür.</text>
+    <rect x="1348" y="555" width="256" height="156" rx="3" fill="url(#card)"/>
+  </g>
+  <text x="28" y="762" class="caption">KART ETKİLEŞİMİ · KARTIN ALTINDA AYRI METİN YOK</text>
+  <rect x="28" y="785" width="1384" height="288" rx="6" fill="#dcdedb"/>
+  <g transform="translate(56 828)">
+    <rect width="236" height="150" rx="3" fill="url(#card)"/><circle cx="135" cy="63" r="43" class="line"/><rect width="236" height="150" fill="url(#shade)"/><text x="17" y="129" font-size="19">Kısa başlık</text>
+  </g>
+  <text x="311" y="878" style="font-size:12px;fill:#4b535c">hover / focus</text><path d="M310 899h105m-8-6 8 6-8 6" stroke="#4b535c" fill="none"/>
+  <text x="343" y="925" style="font-size:16px;fill:#4b535c">180°</text>
+  <g transform="translate(438 828)">
+    <rect width="236" height="150" rx="3" fill="#26303b"/><text x="18" y="28" class="tiny">KATEGORİ</text>
+    <text x="18" y="59" font-size="13"><tspan>Yazının ne hakkında olduğunu</tspan><tspan x="18" dy="21">anlatan kısa bir özet.</tspan></text><text x="18" y="131" class="tiny">Yazıyı aç                             ↗</text>
+  </g>
+  <text x="701" y="878" style="font-size:12px;fill:#4b535c">tıkla</text><path d="M701 899h111m-8-6 8 6-8 6" stroke="#4b535c" fill="none"/>
+  <text x="701" y="925" style="font-size:12px;fill:#4b535c">yeni sekme ↗</text>
+  <g transform="translate(840 810)">
+    <rect width="535" height="218" rx="4" fill="#f6f5f0"/>
+    <text x="24" y="31" style="font-size:11px;fill:#7b8289">MEBEGU / BLOG</text><text x="24" y="74" style="font-size:25px;fill:#25303b">Yazının başlığı</text>
+    <path d="M864 916h440m-440 20h410m-410 20h440m-440 20h330" transform="translate(-840 -810)" stroke="#bdc1c5" stroke-width="3"/>
+  </g>
+  <text x="56" y="1039" style="font-size:12px;fill:#4b535c">Otomatik geçiş: 6,5 sn · Küçük duraklatma/ok kontrolleri · Klavyeyle özet · Hareket azaltmada dönüş animasyonu yok</text>
+  <text x="28" y="1101" class="caption">ŞEMATİK YERLEŞİM · KAPAKLAR TEMSİLİ · GERÇEK WEEBLY YAZILARI TASLAK OLARAK KALIR</text>
+</svg>

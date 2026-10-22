@@ -13,6 +13,7 @@ interface Props {
   hasTranslation?: boolean;
   immersive?: boolean;
   bodyClass?: string;
+  noIndex?: boolean;
 }
 const {
   title,
@@ -21,6 +22,7 @@ const {
   hasTranslation = true,
   immersive = false,
   bodyClass,
+  noIndex = false,
 } = Astro.props;
 const t = copy[lang];
 const description = Astro.props.description || t.description;
@@ -46,7 +48,7 @@ const paths = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#141719" />
-    {notFound && <meta name="robots" content="noindex" />}
+    {(notFound || noIndex) && <meta name="robots" content="noindex" />}
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />

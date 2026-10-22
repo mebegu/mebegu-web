@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { CatalogPost } from '../../data/blog-catalog';
+import { localPath, type Lang } from '../../lib/i18n';
+interface Props {
+  post: CatalogPost;
+  lang: Lang;
+}
+const { post, lang } = Astro.props;
+const tr = lang === 'tr';
+---
+
+<BaseLayout
+  title={post.title[lang]}
+  description={post.description[lang]}
+  lang={lang}
+  noIndex
+>
+  <article class="article">
+    <a class="back-link" href={localPath('writing/', lang)}>
+      ← {tr ? 'Kütüphaneye dön' : 'Back to the library'}
+    </a>
+    <header>
+      <p class="eyebrow">
+        {tr
+          ? 'Örnek yazı · tasarım önizlemesi'
+          : 'Sample post · layout preview'}
+      </p>
+      <h1>{post.title[lang]}</h1>
+      <p class="lead">{post.description[lang]}</p>
+    </header>
+    <div class="reading-placeholder" aria-hidden="true">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <p class="sample-note">
+      {tr
+        ? 'Bu sayfa yazı düzenini denemek için hazırlanmış bir taslaktır. Tam metin, yazı yayımlandığında burada yer alacak.'
+        : 'This page is a draft for trying the reading layout. The full text will appear here when the post is published.'}
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .reading-placeholder {
+    display: grid;
+    gap: 42px;
+    margin-block: 48px;
+  }
+  .reading-placeholder div {
+    height: 110px;
+    opacity: 0.28;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0 17px,
+      #7d8997 18px 19px,
+      transparent 20px 27px
+    );
+    mask-image: linear-gradient(90deg, black 60%, transparent);
+  }
+  .sample-note {
+    max-width: 560px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+</style>
