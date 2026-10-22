@@ -71,12 +71,6 @@ const paths = {
       </>
     )}
     <link rel="icon" type="image/svg+xml" href={href('favicon.svg')} />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title={`${site.name} — ${t.nav[1]}`}
-      href={localPath('rss.xml', lang)}
-    />
     <title>{pageTitle}</title>
   </head>
   <body class:list={[bodyClass, { 'immersive-body': immersive }]}>
@@ -94,9 +88,6 @@ const paths = {
             mebegu<span>.</span>
           </a>
           <p>{t.corner}</p>
-        </div>
-        <div class="footer-links">
-          <a href={localPath('rss.xml', lang)}>RSS ↗</a>
         </div>
         <div class="footer-socials">
           <SocialLinks lang={lang} />

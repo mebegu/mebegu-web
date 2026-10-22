@@ -1,7 +1,6 @@
 ---
-import type { CatalogPost } from '../../data/blog-catalog';
 interface Props {
-  art: CatalogPost['art'];
+  art: 'interface' | 'landscape' | 'book' | 'orbit';
 }
 const { art } = Astro.props;
 ---

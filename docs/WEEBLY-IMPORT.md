@@ -1,6 +1,8 @@
 # Weebly blog aktarımı
 
-22 Ekim 2026’da [eski blogdan](https://mebegu.weebly.com/blog) ilk arşiv çıkarıldı. **9 yazının tamamı Markdown taslağıdır**; yayımlanmış makale veya yeni bir çeviri değildir. Katalog ve RSS entegrasyonu #11, son içerik seçimi #25 üzerinden sürer.
+22 Ekim 2026’da [eski blogdan](https://mebegu.weebly.com/blog) dokuz yazı arşivlendi. Kullanıcının sonraki seçimiyle **sekiz özgün yazı ve altı ayrı İngilizce çeviri yayımlandı**. Berkin Elvan yazısı istek üzerine katalog ve canlı route’lardan dışlandı; yalnız arşiv taslağı olarak korunur. RSS tamamen kaldırıldı.
+
+Güncel yayın kaydı [publication.json](../archives/weebly/publication.json) dosyasındadır: yollar, kaynak başlıkları/zamanları, görünür yayın günleri, kapaklar ve değişmemiş özgün gövdelerin SHA-256 değerleri. İlk aktarım manifesti ve URL önerileri ilk yakalamanın tarihsel kaydı olarak korunur. Kaynak gövdeleri yeniden yazılmadı; yalnız yayın/katalog metaverileri eklendi. Yeni özetler kartlarda gösterilir, özgün yazının içine eklenmez. Çeviriler `-en.md` dosyalarında ve özgün `translationKey` ile eşleşir.
 
 ## Elimizde ne var?
 
@@ -8,7 +10,7 @@
 - 15 kategori/ay arşivi sayfası tarandı; ek yazı veya eksik sayfalama bulunmadı. Blog dışındaki CV, projeler ve fotoğraf sayfaları kapsam dışı kaldı.
 - 61 görsel ve 1 PDF, toplam 5.893.484 bayt indirildi. Galerilerdeki özgün boyut bağlantıları da korundu; Weebly’nin dekoratif PDF ikonu alınmadı.
 - 4 YouTube gömmesi standart video bağlantısına çevrildi; video indirilmedi veya üçüncü taraf oynatıcı çalıştırılmadı.
-- Başlık, özgün dil, RSS yayın zamanı, sayfada görünen tarih, kaynak kategorileri ve kaynak URL korundu. Çeviri, güncel bilgiye uyarlama veya üslup değişikliği yapılmadı.
+- İlk aktarımda başlık, özgün dil, RSS yayın zamanı, sayfada görünen tarih, kaynak kategorileri ve kaynak URL korundu. O aşamada çeviri yapılmadı; sonraki altı İngilizce çeviri ayrı dosyalardadır. Özgün metinlere güncel bilgi uyarlaması veya üslup değişikliği yapılmadı.
 
 ## Yazı envanteri
 
@@ -24,7 +26,7 @@
 | 3/11/2013      | [OK Glass...](../src/content/writing/weebly-google-glass.md)                                                                                                  | tr  |
 | 25/2/2013      | [And Oscar Goes To....](../src/content/writing/weebly-and-oscar-goes-to.md)                                                                                   | tr  |
 
-Tablodaki dosyalar `draft: true` durumundadır. `future_path` değerleri gelecekteki önerilen adreslerdir; henüz canlı yazı sayfaları değildir.
+Tablo ilk arşiv envanteridir. Berkin Elvan yazısı `draft: true` olarak dışarıda kalır; diğer sekiz kayıtta `draft: false` olur. Güncel canlı yollar ve altı çeviri `publication.json` ile takip edilir.
 
 ## Dosyalar
 
@@ -64,4 +66,4 @@ Dosya isimleri permalink’ten türetilir ve `weebly-` öneki taşır. Aynı yaz
 - Özgün metinler tarihi içeriktir; eski bağlantıların güncelliği ve yazılardaki olgular yeniden doğrulanmadı. Kaynak referansları korunur, dış referansların hedef dosyaları bu arşive indirilmez.
 - Görsel kullanılan 53 yerin 52’sinde kaynak alt metni boş veya yalnız “Picture/Resim” idi. Açıklama uydurulmadı; yayımdan önce anlamlı alt metinler eklenmeli. Başlıklar, altyazılar, listeler ve uzun alıntılar ayrıca görsel okumadan geçirilmeli.
 - RSS zamanları UTC olarak saklanır. Seçim analizi yazısında RSS tarihi 11 Ağustos 2014, görünür kaynak tarihi 10 Ağustos 2014’tür; ikisi de kaydedildi, sessizce yeniden yorumlanmadı.
-- Hangi yazıların korunacağı/güncelleneceği/yayımlanacağı seçilmeli; ardından `draft` ve katalog/kapak seçimi #11 ile ele alınmalı. Bu aktarım siteye yeni canlı yazı eklemez.
+- Sonraki kullanıcı seçimiyle sekiz yazı yayımlandı; altı İngilizce sürüm ve katalog kapakları/özetleri eklendi. Berkin Elvan yazısı dışlandı. Metinlerin sonraki editoryal düzenlemesi ayrı iştir.

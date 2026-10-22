@@ -47,7 +47,6 @@ for (const prefix of ['', 'tr/']) {
     'professional/index.html',
     'alamori/index.html',
     'projects/index.html',
-    'rss.xml',
   ]) {
     assert.ok(
       await stat(path.join(output, prefix, route)),
@@ -71,6 +70,11 @@ for (const file of htmlFiles) {
     `Expected one h1: ${relative}`,
   );
   assert.match(html, /name="description"/, `Missing description: ${relative}`);
+  assert.doesNotMatch(
+    html,
+    /application\/rss\+xml|href="[^\"]*rss\.xml/,
+    `RSS remains in ${relative}`,
+  );
   assert.ok(!html.includes('\ufffd'), `Invalid encoding: ${relative}`);
   const canonical = html.match(/rel="canonical" href="([^"]+)"/);
   const expected = `${origin}${base}/${relative.replace(/index\.html$/, '')}`;
@@ -104,19 +108,10 @@ for (const file of htmlFiles) {
     );
   }
 }
-for (const lang of ['en', 'tr']) {
-  const prefix = lang === 'tr' ? 'tr/' : '';
-  const feed = await readFile(path.join(output, prefix, 'rss.xml'), 'utf8');
-  assert.match(feed, /<rss/);
-  assert.ok(feed.includes(`<language>${lang}</language>`));
-  for (const match of feed.matchAll(/<item>[\s\S]*?<link>(.*?)<\/link>/g)) {
-    assert.ok(
-      match[1].startsWith(`${origin}${base}/${prefix}writing/`),
-      `Incorrect feed link: ${match[1]}`,
-    );
-    await localTarget(new URL(match[1]));
-  }
-}
+assert.ok(
+  !allFiles.some((file) => file.endsWith('rss.xml')),
+  'RSS files must not be generated',
+);
 console.log(
-  `Verified ${htmlFiles.length} HTML pages, ${checked} local references, reciprocal translations, canonicals and both RSS feeds (base: ${base || '/'}).`,
+  `Verified ${htmlFiles.length} HTML pages, ${checked} local references, reciprocal translations and canonicals; no RSS (base: ${base || '/'}).`,
 );

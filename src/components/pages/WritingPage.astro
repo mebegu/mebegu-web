@@ -1,12 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import CatalogArtwork from '../blog/CatalogArtwork.astro';
+import CatalogCover from '../blog/CatalogCover.astro';
 import {
-  catalogPosts,
+  getBlogCatalog,
   catalogShelves,
   featuredPostIds,
 } from '../../data/blog-catalog';
-import { localPath, type Lang } from '../../lib/i18n';
+import type { Lang } from '../../lib/i18n';
+import { formatPostDate } from '../../lib/post-dates';
 import '../../styles/blog-catalog.css';
 
 interface Props {
@@ -14,10 +15,16 @@ interface Props {
 }
 const { lang } = Astro.props;
 const tr = lang === 'tr';
+const catalogPosts = await getBlogCatalog(lang);
+const years = catalogPosts.map((post) => post.date.slice(0, 4)).sort();
+const yearRange =
+  years[0] === years.at(-1) ? years[0] : `${years[0]}–${years.at(-1)}`;
+const shelves = catalogShelves.filter((shelf) =>
+  catalogPosts.some((post) => post.shelf === shelf.id),
+);
 const featured = featuredPostIds
-  .map((id) => catalogPosts.find((post) => post.id === id))
+  .map((id) => catalogPosts.find((post) => post.key === id))
   .filter((post): post is (typeof catalogPosts)[number] => Boolean(post));
-const postPath = (id: string) => localPath(`writing/sample/${id}/`, lang);
 const newTab = tr ? 'Yeni sekmede açılır' : 'Opens in a new tab';
 const open = tr ? 'Yazıyı aç' : 'Read post';
 ---
@@ -42,7 +49,10 @@ const open = tr ? 'Yazıyı aç' : 'Read post';
         <h1>
           Blog<span class="accent">.</span>
         </h1>
-        <p>{tr ? 'Yerleşim taslağı' : 'Layout preview'}</p>
+        <p>
+          {catalogPosts.length} {tr ? 'yazı' : 'posts'}
+          {yearRange && <> · {yearRange}</>}
+        </p>
       </header>
       <div class="featured-track" data-featured-track>
         {featured.map((post, index) => (
@@ -53,12 +63,13 @@ const open = tr ? 'Yazıyı aç' : 'Read post';
               { 'is-active': index === 0 },
             ]}
             data-slide
+            data-story={post.key}
             role="group"
             aria-roledescription={tr ? 'Slayt' : 'Slide'}
             aria-label={`${index + 1} / ${featured.length}`}
           >
             <div class="feature-art" aria-hidden="true">
-              <CatalogArtwork art={post.art} />
+              <CatalogCover cover={post.cover} priority={index === 0} />
             </div>
             <div class="feature-copy" data-feature-copy>
               <p class="feature-kicker">
@@ -69,14 +80,21 @@ const open = tr ? 'Yazıyı aç' : 'Read post';
                     ?.title[lang]
                 }
               </p>
-              <h2>{post.title[lang]}</h2>
-              <p class="feature-description">{post.description[lang]}</p>
+              <h2 lang={post.lang}>{post.title}</h2>
+              <p class="feature-publication">
+                <time datetime={post.date}>
+                  {formatPostDate(post.date, lang)}
+                </time>
+                <span aria-hidden="true">·</span>
+                <span>{post.lang === 'tr' ? 'Türkçe' : 'English'}</span>
+              </p>
+              <p class="feature-description">{post.description}</p>
               <a
                 class="feature-open"
-                href={postPath(post.id)}
+                href={post.path}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`${post.title[lang]} — ${newTab}`}
+                aria-label={`${post.title} — ${newTab}`}
               >
                 {open} <span aria-hidden="true">↗</span>
               </a>
@@ -94,7 +112,7 @@ const open = tr ? 'Yazıyı aç' : 'Read post';
             <button
               type="button"
               data-slide-to={index}
-              aria-label={`${index + 1}: ${post.title[lang]}`}
+              aria-label={`${index + 1}: ${post.title}`}
               aria-current={index === 0 ? 'true' : undefined}
             >
               <span></span>
@@ -153,11 +171,11 @@ const open = tr ? 'Yazıyı aç' : 'Read post';
         class="catalog-jumps"
         aria-label={tr ? 'Yazı kategorileri' : 'Post categories'}
       >
-        {catalogShelves.map((shelf) => (
+        {shelves.map((shelf) => (
           <a href={`#shelf-${shelf.id}`}>{shelf.title[lang]}</a>
         ))}
       </nav>
-      {catalogShelves.map((shelf) => (
+      {shelves.map((shelf) => (
         <section
           class="catalog-shelf"
           id={`shelf-${shelf.id}`}
@@ -189,32 +207,38 @@ const open = tr ? 'Yazıyı aç' : 'Read post';
             {catalogPosts
               .filter((post) => post.shelf === shelf.id)
               .map((post) => (
-                <article class={`catalog-card tone-${post.tone}`}>
+                <article
+                  class={`catalog-card tone-${post.tone}`}
+                  data-post-key={post.key}
+                >
                   <h3>
                     <a
                       class="catalog-card-link"
-                      href={postPath(post.id)}
+                      href={post.path}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-describedby={`summary-${post.id}`}
                     >
                       <span class="card-turn">
                         <span class="card-face card-front">
-                          <CatalogArtwork art={post.art} />
+                          <CatalogCover cover={post.cover} />
                           <span class="card-front-copy">
-                            <span class="card-title">{post.title[lang]}</span>
+                            <span class="card-title" lang={post.lang}>
+                              {post.title}
+                            </span>
                             <span class="card-touch-summary" aria-hidden="true">
-                              {post.description[lang]}
+                              {post.description}
                             </span>
                           </span>
                         </span>
                         <span class="card-face card-back" aria-hidden="true">
-                          <span class="card-back-category">
-                            {shelf.title[lang]}
+                          <span class="card-back-date">
+                            <time datetime={post.date}>
+                              {formatPostDate(post.date, lang)}
+                            </time>
+                            <span>{post.lang === 'tr' ? 'TR' : 'EN'}</span>
                           </span>
-                          <span class="card-summary">
-                            {post.description[lang]}
-                          </span>
+                          <span class="card-summary">{post.description}</span>
                           <span class="card-read">
                             {open}
                             <span>↗</span>
@@ -224,7 +248,7 @@ const open = tr ? 'Yazıyı aç' : 'Read post';
                     </a>
                   </h3>
                   <p id={`summary-${post.id}`} class="sr-only">
-                    {post.description[lang]} {newTab}.
+                    {post.description} {newTab}.
                   </p>
                 </article>
               ))}

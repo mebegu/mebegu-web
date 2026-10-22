@@ -3,10 +3,11 @@ title: "Computer Virus Hoaxes"
 description: "In advanced hacking scenarios, attackers generally try to exploit the target machine’s security flaws. On the other hand, influencing the user by carefully designed social engineering technics can…"
 published: "2017-04-05T13:47:33+00:00"
 category: "Software"
-draft: true
+draft: false
 lang: "en"
 translationKey: "weebly-computer-virus-hoaxes"
 source: {"url": "https://mebegu.weebly.com/blog/computer-virus-hoaxes", "published": "Wed, 05 Apr 2017 13:47:33 GMT", "visibleDate": "5/4/2017", "categories": ["Computer Virus", "Netwok Security", "Teknoloji"], "imported": "2026-10-22"}
+catalog: {"shelf": "technology", "tone": "blue", "summary": {"tr": "Amish virüsü, sahte virüs uyarıları ve insanları hedef alan sosyal mühendislik üzerine.", "en": "The Amish virus, fake virus warnings, and social engineering that targets people."}, "cover": {"src": "/media/weebly/pexels-photo-261706-5fe9832835.jpeg", "alt": {"tr": "Bilgisayar ve mobil cihazın yakın plan fotoğrafı", "en": "Close-up photograph of a computer and mobile device"}, "width": 1034, "height": 175, "position": "center"}}
 ---
 
 ![](/media/weebly/pexels-photo-261706-5fe9832835.jpeg)

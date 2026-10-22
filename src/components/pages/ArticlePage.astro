@@ -1,7 +1,8 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { categoryLabel, copy, localPath, locale } from '../../lib/i18n';
+import { categoryLabel, copy, localPath } from '../../lib/i18n';
+import { formatPostDate, postCalendarDate } from '../../lib/post-dates';
 interface Props {
   post: CollectionEntry<'writing'>;
 }
@@ -19,6 +20,7 @@ const other = (
 )[0];
 const alternate = other ? `writing/${other.id}/` : 'writing/';
 const { Content } = await render(post);
+const date = postCalendarDate(post.data);
 ---
 
 <BaseLayout
@@ -36,20 +38,44 @@ const { Content } = await render(post);
       <p class="eyebrow">
         {categoryLabel(post.data.category, lang)}{' '}
         <span aria-hidden="true">/</span>{' '}
-        <time datetime={post.data.published.toISOString()}>
-          {post.data.published.toLocaleDateString(locale(lang), {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric',
-            timeZone: 'UTC',
-          })}
-        </time>
+        <time datetime={date}>{formatPostDate(date, lang)}</time>
       </p>
       <h1>{post.data.title}</h1>
-      <p class="lead">{post.data.description}</p>
+      {!post.data.source && <p class="lead">{post.data.description}</p>}
+      {post.data.source && (
+        <p class="archive-note">
+          {post.data.translatedFrom
+            ? 'English translation'
+            : lang === 'tr'
+              ? 'Weebly arşivinden · Özgün metin'
+              : 'From the Weebly archive · Original text'}
+          {post.data.translatedFrom && other && (
+            <>
+              {' '}
+              ·{' '}
+              <a href={localPath(`writing/${other.id}/`, other.data.lang)}>
+                Türkçe özgün metin
+              </a>
+            </>
+          )}
+        </p>
+      )}
     </header>
     <div class="prose article-body">
       <Content />
     </div>
   </article>
 </BaseLayout>
+
+<style>
+  .archive-note {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .archive-note a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

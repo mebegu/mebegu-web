@@ -3,10 +3,11 @@ title: "DRM, Copyright, and Fair Use Regulations"
 description: "Copyright and DRM have been an important discussion for digital media providers since personal computers arise. Creators and vendors have been trying to find the best way to offer their digital…"
 published: "2017-05-15T18:36:36+00:00"
 category: "Software"
-draft: true
+draft: false
 lang: "en"
 translationKey: "weebly-drm-copyright-and-fair-use-regulations"
 source: {"url": "https://mebegu.weebly.com/blog/drm-copyright-and-fair-use-regulations", "published": "Mon, 15 May 2017 18:36:36 GMT", "visibleDate": "15/5/2017", "categories": ["Uncategorized"], "imported": "2026-10-22"}
+catalog: {"shelf": "technology", "tone": "green", "summary": {"tr": "DRM’in geçmişi, kopya koruması ve dijital sahiplik ile adil kullanım arasındaki gerilim.", "en": "DRM’s history, copy protection, and the tension between digital ownership and fair use."}, "cover": {"src": "/media/weebly/thumbnail-690x460-ff824b4061.jpeg", "alt": {"tr": "Telif hakkı ve dijital hak yönetimini konu alan kapak görseli", "en": "Cover image about copyright and digital rights management"}, "width": 624, "height": 144, "position": "center"}}
 ---
 
 ![](/media/weebly/thumbnail-690x460-ff824b4061.jpeg)

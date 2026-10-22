@@ -3,10 +3,11 @@ title: "And Oscar Goes To...."
 description: "Dün 85. Oscar ödülleri Amerikanın Los Angles eyaletinde sahiplerini buldu. Kimlerin hangi dalda ödül aldığını yazımın sonunda bulabilirsiniz. Bu seneki akademi ödülleri bura buram Amerikan…"
 published: "2013-02-25T12:41:37+00:00"
 category: "Personal"
-draft: true
+draft: false
 lang: "tr"
 translationKey: "weebly-and-oscar-goes-to"
 source: {"url": "https://mebegu.weebly.com/blog/and-oscar-goes-to", "published": "Mon, 25 Feb 2013 12:41:37 GMT", "visibleDate": "25/2/2013", "categories": ["Kültür-Sanat"], "imported": "2026-10-22"}
+catalog: {"shelf": "culture", "tone": "violet", "summary": {"tr": "85. Oscar Ödülleri’nin kazananları, öne çıkan filmler ve ödül gecesine dair kişisel yorumlar.", "en": "The winners of the 85th Academy Awards, standout films, and personal thoughts on the ceremony."}, "cover": {"src": "/media/weebly/9329285_orig-f4bdbd080a.jpg", "alt": {"tr": "Oscar heykelciğini tutan Christoph Waltz", "en": "Christoph Waltz holding an Oscar statuette"}, "width": 456, "height": 285, "position": "center"}}
 ---
 
 Dün 85. Oscar ödülleri Amerikanın Los Angles eyaletinde sahiplerini buldu. Kimlerin hangi dalda ödül aldığını yazımın sonunda bulabilirsiniz.   

@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostRow from '../PostRow.astro';
-import { copy, localPath, type Lang } from '../../lib/i18n';
+import { copy, type Lang } from '../../lib/i18n';
 interface Props {
   lang: Lang;
 }
@@ -51,9 +51,7 @@ const updates = (
     {updates.length ? (
       updates.map((post) => <PostRow post={post} lang={lang} />)
     ) : (
-      <p class="empty-note">
-        {t.noUpdates} <a href={localPath('rss.xml', lang)}>{t.feed}</a>.
-      </p>
+      <p class="empty-note">{t.noUpdates}</p>
     )}
   </section>
 </BaseLayout>

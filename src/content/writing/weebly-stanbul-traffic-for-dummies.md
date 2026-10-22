@@ -3,10 +3,11 @@ title: "İstanbul Traffic For Dummies..."
 description: "Dünyanın her yerinde aynı olan trafik kuralları İstanbul'da biraz farklı işliyor. İşte İstanbul'da trafiğe çıkmadan önce bilmeniz gereken bazı altın kurallar. Geçiş üstünlüğünde uzlaşamamışlar.…"
 published: "2013-11-09T13:09:50+00:00"
 category: "Personal"
-draft: true
+draft: false
 lang: "tr"
 translationKey: "weebly-stanbul-traffic-for-dummies"
 source: {"url": "https://mebegu.weebly.com/blog/stanbul-traffic-for-dummies", "published": "Sat, 09 Nov 2013 13:09:50 GMT", "visibleDate": "9/11/2013", "categories": ["rehberler"], "imported": "2026-10-22"}
+catalog: {"shelf": "society", "tone": "amber", "summary": {"tr": "İstanbul trafiğinin yazılı olmayan kurallarına, kornalara ve park alışkanlıklarına mizahi bir bakış.", "en": "A satirical look at Istanbul’s unwritten traffic rules, honking and parking habits."}, "cover": {"src": "/media/weebly/1383779493-f08b5b67ef.png", "alt": {"tr": "İstanbul’da yoğun araç trafiği", "en": "Heavy road traffic in Istanbul"}, "width": 711, "height": 215, "position": "center"}}
 ---
 
 ![](/media/weebly/1383779493-f08b5b67ef.png)

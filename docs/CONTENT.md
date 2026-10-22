@@ -2,7 +2,7 @@
 
 ## Yeni yazı
 
-Weebly’den alınan ilk 9 taslak ve kaynak arşivi hazırdır; envanter, dosyalar ve yeniden çalıştırma adımları [WEEBLY-IMPORT.md](WEEBLY-IMPORT.md) içindedir. Bu yazılar henüz katalogda veya RSS’de görünmez.
+Weebly’den sekiz özgün yazı ve altı İngilizce çeviri katalogda yayımlanır. Berkin Elvan yazısı dışarıda tutulur. Envanter ve özgün metin koruma kaydı [WEEBLY-IMPORT.md](WEEBLY-IMPORT.md) içindedir. RSS kullanıcı isteğiyle kaldırıldı.
 
 `src/content/writing/` içine küçük harf ve tirelerden oluşan bir dosya adıyla Markdown ekleyin. Dosya adı URL olur; yayımdan sonra değiştirirseniz eski adres için yönlendirme planlayın.
 
@@ -20,13 +20,34 @@ translationKey: yazinin-ortak-kimligi
 Yazının gövdesi burada.
 ```
 
-Kategoriler: `Notes`, `Software`, `Personal`, `Atlantis`. `draft: true` olanlar siteye ve RSS’ye çıkmaz. Yayımlamak için `false` yapın, yerelde kontrol edin ve push yapın. Gelecek tarih otomatik zamanlama değildir.
+Kategoriler: `Notes`, `Software`, `Personal`, `Atlantis`. `draft: true` olanlar siteye çıkmaz. Yayımlamak için `false` yapın, yerelde kontrol edin ve push yapın. Gelecek tarih otomatik zamanlama değildir.
 
-`lang: tr` Türkçe listede ve RSS’de, `lang: en` İngilizce listede ve RSS’de görünür. Aynı yazının çevirisine ayrı bir Markdown dosyası ekleyin ve aynı `translationKey` değerini verin. Dosya adı her dilde farklı olabilir. Aynı anahtar ve dilde yalnızca bir kayıt bulunmalı. Çeviriler otomatik üretilmez; her dilde kendi metnini düzenlersin. Tek dilde yazı yayımlamak mümkündür.
+`lang` yazının ve route’un dilidir. Çeviriye ayrı Markdown dosyası ekleyin ve aynı `translationKey` değerini verin; `translatedFrom` özgün dosyanın uzantısız adını gösterebilir. Aynı anahtar ve dilde yalnızca bir kayıt bulunmalı. Tek dilde yazı yayımlamak mümkündür; katalog, karşı dilde sürüm yoksa özgün yazıya gider.
+
+Katalogda görünmesi için yalnız özgün kayda `catalog` metaverisi ekleyin; çeviriye kopyalamayın. Örnek:
+
+```yaml
+catalog:
+  shelf: technology # technology, culture veya society
+  tone: blue # blue, green, amber veya violet
+  summary:
+    tr: Kartın arka yüzünde görünen kısa özet.
+    en: A short summary for the back of the card.
+  cover:
+    src: /media/my-cover.jpg
+    alt:
+      tr: Görselin kısa açıklaması.
+      en: A short description of the image.
+    width: 1200
+    height: 800
+    position: center
+```
+
+Arşiv yazılarındaki `source.visibleDate`, eski sitede görünen gün/ay/yıl tarihidir. `published` özgün zaman kaydını korur. Öne çıkan dört yazının anahtarları `src/data/blog-catalog.ts` içindedir. Özgün gövdeyi bilinçli değiştirirken `archives/weebly/publication.json` koruma hash’i de gözden geçirilmelidir.
 
 ## Atlantis güncellemesi
 
-Aynı klasöre `category: Atlantis` yazısı ekleyin. Yazı, kendi dilindeki Yazılar listesi ve RSS yanında Atlantis sayfasında da otomatik görünür. Tek metni iki yerde düzenlemek gerekmez. Kitap şablonu `src/components/pages/AtlantisPage.astro`, iki dildeki tanıtım metinleri `src/lib/i18n.ts` içindedir.
+Aynı klasöre `category: Atlantis` yazısı ekleyin. Yazı Atlantis sayfasında otomatik görünür; ayrıca kataloğa almak için yukarıdaki metaveriyi ekleyin. Tek metni iki yerde düzenlemek gerekmez. Kitap şablonu `src/components/pages/AtlantisPage.astro`, iki dildeki tanıtım metinleri `src/lib/i18n.ts` içindedir.
 
 ## Alamori şablonu
 

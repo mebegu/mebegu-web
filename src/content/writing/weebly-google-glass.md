@@ -3,10 +3,11 @@ title: "OK Glass..."
 description: "Geçtiğimiz cumartesi  İTÜ Süleyman Demirel Kültür Merkezi'inde DEVFEST isimli bir etkinlik gerçekleştirildi. Etkinlikte mobil uygulama üretimi ve mobil yazılım sektöründe kariyer konuları öne…"
 published: "2013-11-03T14:53:17+00:00"
 category: "Software"
-draft: true
+draft: false
 lang: "tr"
 translationKey: "weebly-google-glass"
 source: {"url": "https://mebegu.weebly.com/blog/google-glass", "published": "Sun, 03 Nov 2013 14:53:17 GMT", "visibleDate": "3/11/2013", "categories": ["Teknoloji"], "imported": "2026-10-22"}
+catalog: {"shelf": "technology", "tone": "blue", "summary": {"tr": "DEVFEST İstanbul’da Google Glass deneyimi: kullanım, teknik özellikler, pil ömrü ve ilk izlenimler.", "en": "Trying Google Glass at DEVFEST Istanbul: controls, specifications, battery life and first impressions."}, "cover": {"src": "/media/weebly/9846326_orig-050727915a.jpg", "alt": {"tr": "DEVFEST İstanbul sırasında İTÜ kampüsünde çekilmiş fotoğraf", "en": "A photograph taken on the ITU campus during DEVFEST Istanbul"}, "width": 1066, "height": 800, "position": "60% 70%"}}
 ---
 
 ![](/media/weebly/1383499531-b5764a20c5.png)

@@ -94,8 +94,7 @@ export const copy = {
     journal: 'The writing journal',
     along: 'Along the way.',
     noUpdates:
-      'The first journal entry is still ahead. Future updates will appear here, and in the',
-    feed: 'writing feed',
+      'The first journal entry is still ahead. Future updates will appear here.',
     notFoundEyebrow: '404 / A small detour',
     notFound: ['Off the', 'map.'],
     notFoundText: "This page couldn't be found.",
@@ -178,8 +177,8 @@ export const copy = {
       'Şimdilik hikâye şekilleniyor. Ben yazdıkça burada da yeni şeyler birikecek.',
     journal: 'Yazım günlüğü',
     along: 'Yol boyunca.',
-    noUpdates: 'İlk günlük yazısı henüz yolda. Yeni güncellemeler burada ve',
-    feed: 'yazı akışında yer alacak',
+    noUpdates:
+      'İlk günlük yazısı henüz yolda. Yeni güncellemeler burada yer alacak.',
     notFoundEyebrow: '404 / Küçük bir sapak',
     notFound: ['Haritanın', 'dışında.'],
     notFoundText: 'Bu sayfa bulunamadı.',

@@ -3,10 +3,11 @@ title: "Yorumum Gözüksün Diye 1 Yıldız"
 description: "Türkler olarak Google Play servisini geri dönüşü çok zor bir şekilde bozduk. Peki nasıl oldu bu? Aklı başında normal bir insan bir şeyi beğendiyse onu beğendim der, beğenmediyse beğenmedim. Ancak…"
 published: "2014-02-07T18:09:49+00:00"
 category: "Software"
-draft: true
+draft: false
 lang: "tr"
 translationKey: "weebly-yorumum-gzksn-diye-1-yldz"
 source: {"url": "https://mebegu.weebly.com/blog/yorumum-gzksn-diye-1-yldz", "published": "Fri, 07 Feb 2014 18:09:49 GMT", "visibleDate": "7/2/2014", "categories": ["Teknoloji"], "imported": "2026-10-22"}
+catalog: {"shelf": "technology", "tone": "green", "summary": {"tr": "Google Play’de görünür olmak için verilen bir yıldızların uygulamalara ve geliştiricilere etkisi.", "en": "How one-star reviews posted for visibility affect Google Play apps and their developers."}, "cover": {"src": "/media/weebly/1391794531-03de980465.png", "alt": {"tr": "Koyu arka plan önünde Android robotu", "en": "An Android robot against a dark background"}, "width": 671, "height": 215, "position": "center"}}
 ---
 
 ![](/media/weebly/1391794531-03de980465.png)

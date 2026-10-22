@@ -3,10 +3,11 @@ title: "The Walking Dead : The Game - Season 2"
 description: "2012 yılına damgasını vuran The Walking Dead : The Game çok yakında 2. sezonuyla bizlerle. Peki ikinci sezonda bizi neler bekliyor olacak? Çizgi roman, televizyon dünyasının sevilen serisi The…"
 published: "2013-11-04T14:51:33+00:00"
 category: "Personal"
-draft: true
+draft: false
 lang: "tr"
 translationKey: "weebly-the-walking-dead-the-game-season-2"
 source: {"url": "https://mebegu.weebly.com/blog/the-walking-dead-the-game-season-2", "published": "Mon, 04 Nov 2013 14:51:33 GMT", "visibleDate": "4/11/2013", "categories": ["Oyun Dünyası"], "imported": "2026-10-22"}
+catalog: {"shelf": "culture", "tone": "amber", "summary": {"tr": "Clementine’ın başrole geçtiği ikinci sezon öncesinde hikâye, oynanış ve ilk sezonun seçimleri.", "en": "Story, gameplay and earlier choices ahead of the second season, with Clementine taking the lead."}, "cover": {"src": "/media/weebly/1383512074-6f58968581.png", "alt": {"tr": "The Walking Dead oyununun ikinci sezon kapak görseli", "en": "Artwork for the second season of The Walking Dead game"}, "width": 697, "height": 257, "position": "center"}}
 ---
 
 ![](/media/weebly/1383512074-6f58968581.png)

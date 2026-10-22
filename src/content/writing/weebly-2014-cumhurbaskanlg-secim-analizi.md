@@ -3,10 +3,11 @@ title: "2014 Cumhurbaşkanlığı Seçim Analizi"
 description: "Cumhurbaşkanlığı seçimi sonrası hangi aday, 30 mart yerel seçimlerine göre ne kadar başarılı olmuş bir incelemek istedim. İşte rakamlarla seçim analizim. 30 Martı Tekrar Hatırlayalım Öncelikle 30…"
 published: "2014-08-11T06:10:36+00:00"
 category: "Personal"
-draft: true
+draft: false
 lang: "tr"
 translationKey: "weebly-2014-cumhurbaskanlg-secim-analizi"
 source: {"url": "https://mebegu.weebly.com/blog/2014-cumhurbaskanlg-secim-analizi", "published": "Mon, 11 Aug 2014 06:10:36 GMT", "visibleDate": "10/8/2014", "categories": ["Siyaset"], "imported": "2026-10-22"}
+catalog: {"shelf": "society", "tone": "amber", "summary": {"tr": "2014 cumhurbaşkanlığı seçimine adayların oyları, katılım ve 30 Mart sonuçları üzerinden bir bakış.", "en": "A look at the 2014 presidential election through votes, turnout and the 30 March results."}, "cover": {"src": "/media/weebly/7137999-75a815ee0c.jpg", "alt": {"tr": "2014 cumhurbaşkanlığı seçiminin üç adayı", "en": "The three candidates in Turkey’s 2014 presidential election"}, "width": 574, "height": 224, "position": "center"}}
 ---
 
 ![](/media/weebly/1407690500-d98b1cb07d.png)

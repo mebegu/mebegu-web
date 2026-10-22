@@ -1,0 +1,99 @@
+{
+  "originals": [
+    {
+      "id": "weebly-2014-cumhurbaskanlg-secim-analizi",
+      "title": "2014 Cumhurbaşkanlığı Seçim Analizi",
+      "lang": "tr",
+      "published": "2014-08-11T06:10:36+00:00",
+      "bodySha256": "06ebc17064f229ce5523fde77bba94752914efc5fc6e7f59d46c0776198566ca",
+      "date": "2014-08-10",
+      "cover": "/media/weebly/7137999-75a815ee0c.jpg",
+      "path": "/tr/writing/weebly-2014-cumhurbaskanlg-secim-analizi/",
+      "translationId": "weebly-2014-cumhurbaskanlg-secim-analizi-en"
+    },
+    {
+      "id": "weebly-and-oscar-goes-to",
+      "title": "And Oscar Goes To....",
+      "lang": "tr",
+      "published": "2013-02-25T12:41:37+00:00",
+      "bodySha256": "339bf4cc4b375da84f8556fdf5d742b9a576f1a405cc615b2961a86551ca7282",
+      "date": "2013-02-25",
+      "cover": "/media/weebly/9329285_orig-f4bdbd080a.jpg",
+      "path": "/tr/writing/weebly-and-oscar-goes-to/",
+      "translationId": "weebly-and-oscar-goes-to-en"
+    },
+    {
+      "id": "weebly-computer-virus-hoaxes",
+      "title": "Computer Virus Hoaxes",
+      "lang": "en",
+      "published": "2017-04-05T13:47:33+00:00",
+      "bodySha256": "0a671adf33eece25b2215433e6b57c868568ab68f9cdfc3a32279254eb6d5cdc",
+      "date": "2017-04-05",
+      "cover": "/media/weebly/pexels-photo-261706-5fe9832835.jpeg",
+      "path": "/writing/weebly-computer-virus-hoaxes/"
+    },
+    {
+      "id": "weebly-drm-copyright-and-fair-use-regulations",
+      "title": "DRM, Copyright, and Fair Use Regulations",
+      "lang": "en",
+      "published": "2017-05-15T18:36:36+00:00",
+      "bodySha256": "9be2608e6f12820f6706935b3f6d8f3c9cae637bcbe37cf1237d1c04dadbd027",
+      "date": "2017-05-15",
+      "cover": "/media/weebly/thumbnail-690x460-ff824b4061.jpeg",
+      "path": "/writing/weebly-drm-copyright-and-fair-use-regulations/"
+    },
+    {
+      "id": "weebly-google-glass",
+      "title": "OK Glass...",
+      "lang": "tr",
+      "published": "2013-11-03T14:53:17+00:00",
+      "bodySha256": "f2028d07e4c5d24c900c2ae1c168a0ecaf098202efb28d37318acaa8c6e69f2e",
+      "date": "2013-11-03",
+      "cover": "/media/weebly/9846326_orig-050727915a.jpg",
+      "path": "/tr/writing/weebly-google-glass/",
+      "translationId": "weebly-google-glass-en"
+    },
+    {
+      "id": "weebly-stanbul-traffic-for-dummies",
+      "title": "İstanbul Traffic For Dummies...",
+      "lang": "tr",
+      "published": "2013-11-09T13:09:50+00:00",
+      "bodySha256": "b9ae30d4a5a462fdf38497d8d6b45914200e3922a24cecf3354a5f288e980895",
+      "date": "2013-11-09",
+      "cover": "/media/weebly/1383779493-f08b5b67ef.png",
+      "path": "/tr/writing/weebly-stanbul-traffic-for-dummies/",
+      "translationId": "weebly-stanbul-traffic-for-dummies-en"
+    },
+    {
+      "id": "weebly-the-walking-dead-the-game-season-2",
+      "title": "The Walking Dead : The Game - Season 2",
+      "lang": "tr",
+      "published": "2013-11-04T14:51:33+00:00",
+      "bodySha256": "5b59acb1008011fb377fe3841d1bbceb0bc503efff4bcd6c15a184cc67e305e4",
+      "date": "2013-11-04",
+      "cover": "/media/weebly/1383512074-6f58968581.png",
+      "path": "/tr/writing/weebly-the-walking-dead-the-game-season-2/",
+      "translationId": "weebly-the-walking-dead-the-game-season-2-en"
+    },
+    {
+      "id": "weebly-yorumum-gzksn-diye-1-yldz",
+      "title": "Yorumum Gözüksün Diye 1 Yıldız",
+      "lang": "tr",
+      "published": "2014-02-07T18:09:49+00:00",
+      "bodySha256": "821d948f0782eb9c683f7afdf032b1519083dd90fb5833acca179546d503db48",
+      "date": "2014-02-07",
+      "cover": "/media/weebly/1391794531-03de980465.png",
+      "path": "/tr/writing/weebly-yorumum-gzksn-diye-1-yldz/",
+      "translationId": "weebly-yorumum-gzksn-diye-1-yldz-en"
+    }
+  ],
+  "excluded": [
+    {
+      "id": "weebly-sen-gazdan-kaamazsn-ben-hzl-koarm-anne-ekmei-ben-alrm",
+      "title": "Sen Gazdan Kaçamazsın. Ben Hızlı Koşarım Anne, Ekmeği Ben Alırım...",
+      "lang": "tr",
+      "published": "2014-03-11T21:31:47+00:00",
+      "bodySha256": "d293a1d573eb4f6a4ddb9f4f41d887783fa663ce46295af130a77baf7345115a"
+    }
+  ]
+}

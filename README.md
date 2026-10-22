@@ -37,19 +37,19 @@ Bu çalışma klasöründe üretilmiş `dist/` dosyalarını yalnızca görünt�
 Ana sayfa: aşağıda yalnız karakter ve zemin, yukarıda **Profesyonel / Blog / Alamori / Atölye** dilimleri. Yıldız parıltısı, hover genişlemesi, dokuz baş pozu ile yumuşak imleç takibi ve azaltılmış hareket desteği içerir. Kapak tam ekran gökyüzüdür; logo sol üstte, sade `EN / TR` seçimi sağ üstte doğrudan sahnenin üzerinde durur. İç sayfalarda logo, bölüm menüsü ve dil seçimi ortak üst bardadır. Tasarım/modül haritası: [NIGHT-HOME](docs/NIGHT-HOME.md). Sosyal hesaplar kullanıcı isteğiyle placeholder; gerçek adresler `src/data/socials.ts` üzerinden eklenir.
 
 - Profesyonel sayfa: paylaşılan güncel CV’den hazırlanmış İngilizce özgeçmiş, yalnız CV’yi yazdıran A4 baskı stili ve on bir profesyonel çalışma özeti (Selected work).
-- Blog: tam genişlikte otomatik değişen arka plan, üç rafta 12 görsel kart; hover/odakta 180° dönerek özet gösterir, yazı iskeletini yeni sekmede açar. İçerikler tasarım örneğidir.
+- Blog: tam genişlikte dört yazılık banner ve üç rafta sekiz gerçek yazı kartı; hover/odakta 180° dönerek özet/tarih gösterir, tam metni yeni sekmede açar. Altı Türkçe yazının İngilizce çevirileri de vardır.
 - Alamori: tanıtım, geçici kapak, henüz pasif PDF ve geri bildirim alanları.
 - Atölye / Workshop: hobi oyunları, kişisel yazılım ve deneyler için beş temsili kart. Profesyonel müşteri işleri burada yer almaz. Mevcut `/projects/` adresi korunur.
 - Önceki Hakkımda ve Atlantis sayfaları ile ortak 404 adresi korunur.
 - İngilizce `/`, Türkçe `/tr/`; sayfa karşılığına giden dil geçişi. CV ve portföy içeriği kullanıcı tercihiyle her iki rotada İngilizce kalır.
-- Markdown yazı koleksiyonu; taslakların detay ve RSS’den hariç tutulması. Blog kataloğu şu an ayrı örnek veriler kullanır.
+- Markdown yazı koleksiyonu ve gerçek katalog: Weebly’den sekiz özgün yazı, altı İngilizce çeviri, özgün görseller/tarihler ve kart özetleri. Taslaklar yayımlanmaz.
 - Atlantis etiketli yazıların eser sayfasında otomatik listelenmesi.
-- Her dil için RSS, canonical/hreflang adresleri, temel paylaşım metaverileri ve favicon.
+- Canonical/hreflang adresleri, temel paylaşım metaverileri ve favicon. RSS kullanıcı tercihiyle kaldırıldı.
 - Erişilebilir navigasyon, klavye odakları ve hareket azaltma tercihine uyum.
 - Kök domain ve `/repo-adı/` altında çalışan yerel bağlantılar.
 - GitHub Actions üzerinde kontrol, build ve Pages dağıtım akışı.
 
-CV ve portföyün ilk içerik iskeleti hazırdır; görseller, gerçek proje bağlantıları ve ayrıntılı vaka incelemeleri sonraki aşamalardır. Fotoğraf albümü, arama ve çalışan geri bildirim formu da ileride eklenebilir. Kitabın konusu, yayın tarihi, ilerleme yüzdesi veya kariyer bilgileri uydurulmadı. Örnek blog kartları, temsili proje görselleri ve geçici kitap kapağı açıkça etiketlidir.
+CV ve portföyün ilk içerik iskeleti hazırdır; görseller, gerçek proje bağlantıları ve ayrıntılı vaka incelemeleri sonraki aşamalardır. Fotoğraf albümü, arama ve çalışan geri bildirim formu da ileride eklenebilir. Kitabın konusu, yayın tarihi, ilerleme yüzdesi veya kariyer bilgileri uydurulmadı. Temsili proje görselleri ve geçici kitap kapağı açıkça etiketlidir.
 
 ## Klasör yapısı
 
@@ -69,8 +69,8 @@ CV ve portföyün ilk içerik iskeleti hazırdır; görseller, gerçek proje ba�
 │   ├── content/writing/         # Markdown yazılar
 │   ├── data/site.ts             # Kimlik ve navigasyon
 │   ├── layouts/                 # Ortak sayfa kabuğu
-│   ├── lib/                     # URL, çeviri sözlüğü ve RSS yardımcıları
-│   ├── pages/                   # Dosya tabanlı route’lar ve RSS
+│   ├── lib/                     # URL, çeviri sözlüğü, tarih ve etkileşim yardımcıları
+│   ├── pages/                   # Dosya tabanlı route’lar
 │   ├── styles/                  # Tasarım token’ları ve responsive CSS
 │   └── content.config.ts        # İçerik şeması
 ├── reports/                     # Önceki içerik araştırması; siteye çıkmaz
@@ -97,7 +97,7 @@ CV ve portföyün ilk içerik iskeleti hazırdır; görseller, gerçek proje ba�
 - Yapılan kontroller ve sınırlar: [doğrulama kaydı](docs/VALIDATION.md)
 - Dört renkli gökyüzü, yırtık kâğıt ve fırça katmanları: [NIGHT-HOME](docs/NIGHT-HOME.md)
 - Profesyonel sayfa, CV içeriği ve tarayıcıdan PDF/yazdırma: [CV rehberi](docs/CV.md); içerik `src/data/resume.ts` içinde.
-- Blog için çalışan katalog prototipi: [BLOG-CATALOG](docs/BLOG-CATALOG.md); [masaüstü/mobil wireframe](docs/wireframes/blog.svg), örnek veriler `src/data/blog-catalog.ts` içinde.
+- Blog: [BLOG-CATALOG](docs/BLOG-CATALOG.md), [masaüstü/mobil wireframe](docs/wireframes/blog.svg); gerçek içerik `src/content/writing/`, yayın/koruma kaydı `archives/weebly/publication.json` içinde.
 - Görsel kaynakları ve üretim prompt’ları: [ART](docs/ART.md)
 
 ## GitHub Pages’e yayınlama

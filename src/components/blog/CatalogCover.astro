@@ -1,0 +1,26 @@
+---
+import { href } from '../../lib/urls';
+interface Props {
+  cover: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    position: string;
+  };
+  priority?: boolean;
+}
+const { cover, priority = false } = Astro.props;
+---
+
+<img
+  class="catalog-cover"
+  src={href(cover.src)}
+  alt={cover.alt}
+  width={cover.width}
+  height={cover.height}
+  style={`object-position: ${cover.position}`}
+  loading={priority ? 'eager' : 'lazy'}
+  fetchpriority={priority ? 'high' : 'auto'}
+  decoding="async"
+/>

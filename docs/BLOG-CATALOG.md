@@ -1,43 +1,35 @@
-# Blog wireframe ve çalışan prototip
+# Blog kataloğu
 
-Güncel yön: **çerçevesiz, tam genişlikte öne çıkan yazı arka planı ve dönen görsel raf kartları**. [Masaüstü, mobil ve etkileşim wireframe’i](wireframes/blog.svg). Canlı prototip `/writing/` ve `/tr/writing/` adreslerindedir.
+Katalog artık gerçek Markdown yazılarını kullanır. [Wireframe](wireframes/blog.svg) ilk tasarım kararının kaydıdır; canlı sayfalar `/writing/` ve `/tr/writing/` adreslerindedir.
 
-## Yerleşim
+## İçerik ve dil
 
-- İç sayfalardaki ortak toolbar korunur. Blogun ana alanı `.shell` genişlik sınırını kullanmaz; öne çıkan arka plan ekranın kenarlarına kadar uzanır.
-- Banner’ın çerçevesi, köşe yuvarlatması veya ayrı kart zemini yoktur. Başlık, kısa açıklama ve yazıya gitme bağlantısı doğrudan arka plan üzerinde durur. Görsel, raflara doğru koyulaşarak sayfanın zeminine karışır.
-- Dört sabit öne çıkan içerik 6,5 saniye arayla, 850 ms süren yumuşak çapraz geçişle değişir. Şimdilik kapaklar temsili SVG çizimleridir; gerçek fotoğraf seçimi bu yerleşimden bağımsızdır.
-- Alt bölümde üç yatay raf ve toplam 12 görsel kart bulunur. Ön yüzde görsel ve kısa başlık vardır; kart altında ayrı kategori, başlık veya açıklama satırı yoktur.
+- Weebly’den sekiz özgün yazı yayımlanır: iki İngilizce, altı Türkçe. Altı Türkçe yazının ayrıca İngilizce sürümü vardır. Berkin Elvan yazısı yayına dahil edilmez.
+- İngilizce katalog sekiz yazının İngilizce sürümlerine gider. Türkçe katalog altı özgün Türkçe ve iki özgün İngilizce yazıya gider; yazının dili görünürdür. Kartlar ve banner yazıları yeni sekmede açar.
+- Özgün başlık ve gövdeler korunur. Kartların arkasındaki kısa özetler ayrı `catalog.summary` metaverisidir; yazı gövdesine eklenmez. Çeviriler ayrı dosyalardır, `translationKey` ve `translatedFrom` ile eşleşir.
+- Görseller kaynak arşivinden seçilir. Kapak alt metni, ölçüler ve kırpma konumu metaveride bulunur; yapay görsel üretilmedi. Yazıların mevcut galeri görselleri ve PDF bağlantıları da korunur.
+- Görünen tarihler Weebly’de gösterilen takvim günüdür. Seçim analizi için 10 Ağustos 2014 gösterilir; farklı olan özgün RSS zamanı kaynak metaverisinde korunur. Aktarım veya çeviri tarihi, yayın tarihi yerine geçmez.
+- RSS, kullanıcı isteğiyle kaldırıldı: route, HTML keşif bağlantısı, footer bağlantısı ve paket bağımlılığı yoktur.
 
-## Etkileşim
+## Yerleşim ve etkileşim
 
-- Hover veya klavye odağında kart Y ekseninde 180° döner; arka yüz kategori, kısa özet ve yazıyı açma ipucunu gösterir. Kart dışındaki odak çerçevesi dönmez.
-- Dönüş 780 ms sürer; daha uzak perspektif ve yumuşak hızlanma/yavaşlama kullanır. Hover başlangıcındaki 50 ms bekleme, fare kartın üzerinden geçerken gereksiz dönüşleri azaltır; klavye odağı beklemez.
-- Swipe yalnızca önceki/sonraki slaydı seçer; touchpad hızı veya dokunma mesafesi geçiş hızını belirlemez. Touchpad’in yatay kaydırması, dokunmatikte bırakılan yatay swipe, oklar ve otomatik geçiş aynı 850 ms CSS animasyonunu kullanır. Animasyon sürerken tanınan yeni bir touchpad swipe’ı kaybolmaz: yalnızca en son yön isteği tutulur ve geçiş bitince uygulanır; sınırsız kuyruk oluşmaz.
-- Touchpad’de yeni hareket, ataletin tamamen susmasını beklemek zorunda değildir. Yön değişimi veya azalmış ataletin ardından yeniden güçlenen hareket kilidi açar; tek hareketin ilk hızlanması ve devam eden atalet ek slayt başlatmaz.
-- JS etkinleşince banner grid katmanlarına dönüşür. Yatay wheel aksiyonu normal geçişi başlatmak için ele alınır; dikey wheel ve pinch zoom engellenmez. Dokunmatikte `touch-action: pan-y pinch-zoom` dikey kaydırma ve yakınlaştırmayı tarayıcıda bırakır. Banner’ın tamamı yatay kaydırmayı dinler; bağlantıdan başlayan swipe yeni sekme açmaz. Swipe/geçiş sürerken otomatik zamanlayıcı bekler.
-- Banner ve kart bağlantıları `target="_blank"` ile yazı sayfasını yeni sekmede açar; popup/dialog kullanılmaz. Yeni sekme bilgisi erişilebilir ad/açıklamada yer alır.
-- Dokunmatikte tek dokunuş yazıyı açar; kısa özet iki satır halinde görselin üzerinde görünür, hover veya ikinci dokunuş gerekmez. Raflar doğal yatay kaydırmayı kullanır.
-- Azaltılmış hareket tercihinde otomatik geçiş başlangıçta kapalıdır; banner anında değişir ve kartta 3D dönüş animasyonu uygulanmaz. Hover/odak özet yüzünü anında gösterir.
-- Banner’ın yazı alanı üzerinde fare varken, banner içinde klavye odağı varken veya sekme görünmüyorken otomatik geçiş durur. Arka planın boş alanında imleç durması geçişi durdurmaz. Küçük duraklat/başlat, önceki/sonraki ve doğrudan slayt seçimi kontrolleri vardır.
-- JS etkinleşince görünmeyen slaytlar `inert` ve `aria-hidden` taşır; bağlantıları klavye sırasına girmez. Slaytlar aynı grid alanını paylaşır; yüksekliği en uzun slayt belirler. İlk açılışta arka plandaki slaytlar animasyonsuz gizlenir.
-- JavaScript olmadan da banner ve raflar doğal yatay kaydırılabilir, bütün slaytlar erişilebilir kalır; kart dönüşü ve standart yeni sekme bağlantıları çalışır. Otomatik geçiş ve ok kontrolleri JavaScript ile etkinleşir.
+Banner ekran kenarlarına uzanır; ayrı kart çerçevesi yoktur. Dört seçilmiş yazı 6,5 saniye arayla 850 ms çapraz geçişle değişir. Yazılım/güvenlik, Glass deneyimi, İstanbul trafiği ve oyun yazısı birlikte görünür.
 
-## İçerik durumu
+Sekiz görsel kart üç raftadır: **Teknoloji & dijital yaşam (4)**, **Oyun & sinema (2)**, **Toplum & şehir (2)**. Kartın önünde kısa başlık, 180° dönen arkasında tarih, yazı dili ve kısa özet vardır. Dokunmatikte özet ön yüzde de gösterilir. Başlıklar dar kartta satır kırar.
 
-Bu bir yerleşim prototipidir. Kartlardaki 12 içerik tasarım örneğidir; gerçek blog yazısı olarak RSS’e eklenmez. Tıklama akışını deneyebilmek için `/writing/sample/<id>/` ve `/tr/writing/sample/<id>/` altında başlık/açıklama ve gövde yer tutucusu olan 24 örnek okuma sayfası üretilir. Bu sayfalar açıkça örnek olarak işaretlidir ve `noindex` taşır.
+Swipe, oklar ve otomatik geçiş aynı 850 ms animasyonu kullanır. Touchpad’de atalet yeni hareketten ayrılır; geçiş sürerken yalnızca son yeni yön isteği tutulur. Dikey kaydırma ve pinch engellenmez. Yazı alanında hover, banner içinde klavye odağı veya görünmeyen sekme otomatik geçişi bekletir.
 
-Weebly’den aktarılan dokuz yazı `draft: true` olarak korunur; wireframe çalışması bunları yayımlamaz. İçerik seçimi ve gerçek Markdown kataloğu #11/#25, son okuma tasarımı #10 üzerinden takip edilir. Katalog UI’si #21 kapsamındadır. Veritabanı, üyelik veya carousel kütüphanesi eklenmedi.
+Azaltılmış harekette autoplay başlangıçta kapalıdır; slayt/özet anında değişir, 3D dönüş yoktur. Görünmeyen slaytlar JS ile `inert` ve `aria-hidden` olur. JS kapalıyken banner ve raflar doğal yatay scroll ile çalışır.
 
-## Dosyalar ve doğrulama
+## Kaynaklar ve kontroller
 
-- `src/data/blog-catalog.ts`: sabit örnek başlıklar, açıklamalar, raflar ve öne çıkan seçimleri.
-- `src/components/pages/WritingPage.astro`: tam genişlikte banner ve iki yüzlü bağlantı kartları.
-- `src/styles/blog-catalog.css`: arka plan geçişi, raflar, 3D dönüş, mobil ve azaltılmış hareket davranışları.
-- `src/lib/blog-catalog.ts`: küçük carousel ve raf kaydırma kodu; kartlar JS gerektirmez.
-- `src/lib/blog-banner.ts`: ortak slayt seçimi, 850 ms animasyon kilidi ve yatay swipe yönü; süre CSS’e aynı değişkenden aktarılır.
-- `scripts/test-blog-banner.mjs`: ortak süre, hızlı hareket/atalet, ardışık touchpad hareketleri, sınırlı bekleyen istek, iki yönde swipe, wheel birimleri, dikey scroll/pinch/tıklama ve azaltılmış hareket için 13 simülasyon; `pnpm test:carousel` ile ve CI’da çalışır.
-- `src/components/pages/SampleArticlePage.astro`: örnek yazının ayrı sayfa iskeleti.
-- `docs/wireframes/blog.svg`: şematik masaüstü/mobil görünüm ve hover → tıklama akışı. Tarayıcı ekran görüntüsü değildir.
+- `src/content/writing/`: özgün metinler, çeviriler ve katalog metaverisi.
+- `src/data/blog-catalog.ts`: dil seçimi, raflar ve dört öne çıkan yazı anahtarı.
+- `src/lib/post-dates.ts`: görünür kaynak gününün saat diliminden bağımsız biçimlenmesi.
+- `src/components/blog/CatalogCover.astro`: kaynak görsellerin kapak sunumu.
+- `src/components/pages/WritingPage.astro`, `ArticlePage.astro`: katalog ve gerçek okuma sayfaları.
+- `src/lib/blog-banner.ts`: ortak geçiş ve touchpad hareketleri.
+- `archives/weebly/publication.json`: yayın kapsamı ve özgün gövdelerin kontrol hash’leri. İleride istenerek metin düzenlendiğinde bu kayıt da bilinçli güncellenmelidir.
+- `scripts/check-blog-publication.mjs`: metinlerin korunması, tarihler, kapaklar, ekler, dil bağlantıları ve dışlanan yazı kontrolleri. `pnpm check:output` ve CI’da çalışır.
 
-Tip/build, yeni sayfa bağlantıları ve iki dilde semantik çıktı kontrolleri çalıştırılır. Gerçek tarayıcı envanteri boş olduğundan hover’ın görsel akıcılığı, mobil kırpma ve carousel zamanlaması henüz gerçek ekranda doğrulanmadı; çalışan prototipte ayrıca değerlendirilmelidir.
+Gerçek tarayıcı yüzeyi bulunmadığından görsel kırpma ve fiziksel touchpad hissi cihaz üzerinde ayrıca değerlendirilmelidir. #10 makale okuma tasarımının ileri düzenlemelerini, #21 katalog görsel incelemesini izler.

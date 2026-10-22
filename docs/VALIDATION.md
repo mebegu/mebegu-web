@@ -1,5 +1,14 @@
 # Doğrulama
 
+## Weebly yazılarının kataloğa alınması — 22 Ekim 2026
+
+- Sekiz özgün yazı ve altı ayrı İngilizce çeviri yayımlanır. İki katalogda sekiz kart, dört gerçek yazılık banner, üç içerik rafı ve kaynak görseller kullanılır. Özgün başlıklar ve gövdeler değişmedi; gövde SHA-256 değerleri yayın kaydıyla doğrulandı. Kısa iki dilli özetler ayrı katalog metaverisidir.
+- Ekrandaki tarihler kaynakta görünen takvim gününü kullanır; seçim analizi 10 Ağustos 2014 gösterir, özgün 11 Ağustos RSS zamanı metaveride korunur. Çeviriler yayın gününü değiştirmez; dil düğmeleri ve karşılıklı hreflang kontrol edildi.
+- Kullanıcı isteğiyle Berkin Elvan yazısı dışarıda bırakıldı; ilgili özgün/çeviri route’ları üretilmez ve katalogda yer almaz. Arşiv taslağı değişmeden korunur.
+- RSS route’ları, HTML keşif/footer bağlantıları ve `@astrojs/rss` bağımlılığı kaldırıldı. Çıktı kontrolü artık feed bulunmadığını doğrular. Eski 24 örnek yazı sayfası da gerçek yazılarla yer değiştirdi.
+- Node 24/pnpm ile 13 banner testi, Astro kontrolü (60 kaynak dosyada sıfır hata/uyarı/ipucu), build (31 HTML), 835 yerel referans ve özel yayın kontrolleri geçti. Yayın kontrolü özgün gövdeleri, sekiz kapak dosyasını, altı çevirinin görsel/ek/kaynak bağlantılarını, tarihleri ve dışlanan yazıyı kapsar. Yerel kurulumdaki eski bağımlılık ağacını değiştirmeden kontrol çalıştırmak için bu oturumda pnpm’in `verify-deps-before-run=false` seçeneği kullanıldı; CI temiz lockfile kurulumu yapar.
+- Tarayıcı envanteri yine boş (`apps: [], browsers: []`); gerçek masaüstü/mobil kırpma, kart metinlerinin görsel yerleşimi ve fiziksel swipe hissi burada doğrulanamadı. Kaynak kapaklar görsel olarak incelendi. Aşağıdaki eski kayıtların RSS/prototip açıklamaları önceki sürümlere aittir.
+
 ## Touchpad’de ikinci swipe düzeltmesi — 22 Ekim 2026
 
 - Kullanıcı sorunun touchpad’de iki parmakla kaydırmada olduğunu doğruladı. Kaynakta animasyon sırasında tanınan hareketin kilitlenip atıldığı, devam eden ataletin de yeni hareketi engelleyebildiği görüldü. İkinci swipe, aynı yönde yeni kuvvetli hareket ve atalet bitmeden ters yöne dönüş için üç regresyon testi önce başarısız oldu.

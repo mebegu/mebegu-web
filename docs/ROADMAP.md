@@ -8,8 +8,8 @@ Takvim sözü yerine, her aşamanın somut bitiş koşulu var. Öncelikler yeni 
 - [x] Yerel Git deposu ve `main` branch’i.
 - [x] Temel tasarım ve mimari belgeleri.
 - [x] Ana sayfa, Hakkımda, Yazılar, Atlantis ve 404.
-- [x] Markdown içerik akışı ve RSS.
-- [x] Türkçe/İngilizce şablonlar, çeviri eşleştirme, dil bazlı RSS.
+- [x] Markdown içerik akışı. RSS kullanıcı tercihiyle kaldırıldı.
+- [x] Türkçe/İngilizce şablonlar ve çeviri eşleştirme.
 - [x] İlk responsive görsel yön ve yerleşim wireframe’i.
 - [x] GitHub Pages workflow’u ve çıktı kontrolleri.
 - [x] Hedef GitHub remote’una bağlama ve ilk canlı deploy.
@@ -48,7 +48,7 @@ Takvim sözü yerine, her aşamanın somut bitiş koşulu var. Öncelikler yeni 
 - [ ] İçerik arttığında kategori filtreleri ve statik arama.
 - [ ] Atlantis’ten paylaşılacak pasaj veya ek malzemeye karar.
 
-**Bitiş koşulu:** Yeni bir içerik kod düzenlemeden Markdown ile yayımlanır; liste, eser sayfası ve RSS doğru güncellenir.
+**Bitiş koşulu:** Yeni bir içerik kod düzenlemeden Markdown ile yayımlanır; katalog ve varsa eser sayfası doğru güncellenir.
 
 ## 4 — Kişisel arşiv
 

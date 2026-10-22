@@ -12,6 +12,21 @@ const writing = defineCollection({
     draft: z.boolean().default(false),
     lang: z.enum(['en', 'tr']),
     translationKey: z.string(),
+    translatedFrom: z.string().optional(),
+    catalog: z
+      .object({
+        shelf: z.enum(['technology', 'culture', 'society']),
+        summary: z.object({ tr: z.string(), en: z.string() }),
+        cover: z.object({
+          src: z.string(),
+          alt: z.object({ tr: z.string(), en: z.string() }),
+          width: z.number().int().positive(),
+          height: z.number().int().positive(),
+          position: z.string().default('center'),
+        }),
+        tone: z.enum(['blue', 'amber', 'violet', 'green']),
+      })
+      .optional(),
     source: z
       .object({
         url: z.url(),

@@ -24,35 +24,33 @@ Repo, bir backend’e ihtiyaç duymadan GitHub Pages’te yayımlanır. Astro bu
 /writing/          Yayımlanmış yazı listesi
 /writing/<id>/     Markdown’dan üretilmiş yazı
 /atlantis/         Eser sayfası ve Atlantis kategorili güncellemeler
-/rss.xml           Tüm yayımlanmış yazıların özeti
 /404.html          GitHub Pages hata sayfası
 /tr/               Türkçe ana sayfa
 /tr/about/         Türkçe profil
 /tr/writing/       Türkçe yazı listesi
 /tr/writing/<id>/  Türkçe yazı
 /tr/atlantis/      Türkçe eser sayfası
-/tr/rss.xml        Türkçe yazıların özeti
 ```
 
-`src/lib/urls.ts` yerel adreslere build’in base yolunu ekler. Sayfa ve asset bağlantılarında `/about/` gibi hardcoded kök yollar kullanmayın. Repo sitesi, kullanıcı sitesi ve özel domain bu yaklaşımla desteklenir. `SITE_URL` origin’i, `BASE_PATH` alt yolu belirtir. Canonical ve RSS aynı değerlerle üretilir. Yalnızca GitHub Pages yayın akışı bu değerleri otomatik keşfeder. Güncel repo `mebegu/mebegu.github.io`, yayın `https://mebegu.github.io/` ve base `/` yoludur; repo adı URL’ye alt yol olarak eklenmez.
+`src/lib/urls.ts` yerel adreslere build’in base yolunu ekler. Sayfa ve asset bağlantılarında `/about/` gibi hardcoded kök yollar kullanmayın. Repo sitesi, kullanıcı sitesi ve özel domain bu yaklaşımla desteklenir. `SITE_URL` origin’i, `BASE_PATH` alt yolu belirtir; canonical adresler de bu değerlerle üretilir. Yalnızca GitHub Pages yayın akışı bu değerleri otomatik keşfeder. Güncel repo `mebegu/mebegu.github.io`, yayın `https://mebegu.github.io/` ve base `/` yoludur; repo adı URL’ye alt yol olarak eklenmez.
 
 ## Veri akışı
 
-`Markdown → içerik şeması → Astro sayfaları ve RSS → dist → GitHub Pages`
+`Markdown → içerik şeması → Astro sayfaları → dist → GitHub Pages`
 
-`draft: true` içerik koleksiyonda bulunabilir fakat liste, detay route’u ve RSS’de yayımlanmaz. Her sayfa yalnızca kendi `lang` değerindeki içerikleri çeker. Atlantis sayfası ayrıca `category: Atlantis` filtresini kullanır. Şimdilik geleceğe tarihli yazılar otomatik planlanmaz: `draft: false` ise build sırasında yayımlanır.
+`draft: true` içerik koleksiyonda bulunabilir fakat katalogda veya detay route’unda yayımlanmaz. Katalog, `catalog` metaverisi taşıyan özgün yazıları `translationKey` üzerinden eşleştirir; arayüz dilinde sürüm varsa onu, yoksa özgün dildeki yazıyı gösterir. Makale route’ları kendi `lang` değerindeki içerikleri çeker. Atlantis sayfası ayrıca `category: Atlantis` filtresini kullanır. Şimdilik geleceğe tarihli yazılar otomatik planlanmaz: `draft: false` ise build sırasında yayımlanır. RSS route’ları, keşif bağlantıları ve bağımlılığı kaldırılmıştır.
 
 ## Dil stratejisi
 
 `src/lib/i18n.ts` arayüz sözlüğü ve dil bazlı URL yardımcısını içerir. `src/components/pages/` şablonları iki dilde ortak kullanılır. Route dosyaları yalnızca dili geçirir. İngilizce kökte, Türkçe `/tr/` altında yaşar; otomatik tarayıcı dili yönlendirmesi veya zorunlu dil seçimi ekranı yoktur.
 
-Her Markdown kaydının `lang` ve `translationKey` alanı vardır. Çeviri kayıtlarının dosya adları farklı olabilir; aynı `translationKey` onları eşleştirir. Çeviri varsa dil düğmesi aynı yazıya gider ve hreflang eklenir. Çeviri yoksa karşı dildeki yazı listesine gider; bu durumda o liste yazının çevirisi olarak metaveriye eklenmez. Her yazının iki dilde olması zorunlu değildir. Her dilde kendi RSS akışı bulunur. GitHub Pages bütün hatalarda kök `404.html` dosyasını sunar; bu ortak sayfa iki dilde ana sayfaya giriş sağlar.
+Her Markdown kaydının `lang` ve `translationKey` alanı vardır. Çeviri kayıtlarının dosya adları farklı olabilir; aynı `translationKey` onları eşleştirir. Çeviri varsa dil düğmesi aynı yazıya gider ve hreflang eklenir. Çeviri yoksa karşı dildeki yazı listesine gider; bu durumda o liste yazının çevirisi olarak metaveriye eklenmez. Her yazının iki dilde olması zorunlu değildir. GitHub Pages bütün hatalarda kök `404.html` dosyasını sunar; bu ortak sayfa iki dilde ana sayfaya giriş sağlar.
 
 ## Doğrulama
 
 - `pnpm check`: Astro ve TypeScript tanıları.
 - `pnpm build`: İçerik şeması ve statik route üretimi.
-- `pnpm check:output`: Gereken route’lar, yerel dosya ve anchor bağlantıları, alt yol, canonical adresler ve RSS linkleri.
+- `pnpm check:output`: Route’lar, yerel dosya/anchor bağlantıları, alt yol, canonical/hreflang adresleri; arşiv metin hash’leri, özgün tarihler, görseller, çeviriler, dışlanan yazı ve RSS’in bulunmaması.
 - Görsel QA: Desktop/mobile, klavye, azaltılmış hareket, dar ekranda taşma ve JS kapalı davranış.
 
 Testler canlı GitHub hesabını, uzaktaki sosyal bağlantıların çalışmasını veya tüm erişilebilirlik kriterlerini doğrulamaz. GitHub Pages yayın akışı hedef remote ve Pages ayarı olmadan yerelde uçtan uca çalıştırılamaz.
