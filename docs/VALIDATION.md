@@ -1,5 +1,11 @@
 # Doğrulama
 
+## Touchpad’de ikinci swipe düzeltmesi — 22 Ekim 2026
+
+- Kullanıcı sorunun touchpad’de iki parmakla kaydırmada olduğunu doğruladı. Kaynakta animasyon sırasında tanınan hareketin kilitlenip atıldığı, devam eden ataletin de yeni hareketi engelleyebildiği görüldü. İkinci swipe, aynı yönde yeni kuvvetli hareket ve atalet bitmeden ters yöne dönüş için üç regresyon testi önce başarısız oldu.
+- Yeni touchpad hareketi animasyon bitişinde uygulanır; yalnızca en son yön isteği tutulur. Atalet azalması sonrası yeni güçlenme veya yön değişimi yeni hareketi açar. Tek swipe’ın hızlanması ve sabit atalet kuyruğu yeni geçiş oluşturmaz. Normal 850 ms animasyon korunur; dokunmatik yolu değiştirilmedi.
+- 13 olay/zaman testi geçti. Astro kontrolünde 63 kaynak dosyada sıfır hata/uyarı/ipucu; statik çıktıda 41 HTML, 998 yerel referans ve iki RSS doğrulandı. Bunlar fiziksel touchpad veya görsel tarayıcı doğrulaması değildir; cihaz üzerinde tekrar deneme halen gerekir.
+
 ## Swipe için normal banner animasyonu — 22 Ekim 2026
 
 - Kullanıcı doğal scroll sürümünün fazla hızlı geçtiğini bildirdi. Swipe artık yalnızca önceki/sonraki slaydı seçer; oklar ve otomatik geçişle aynı 850 ms çapraz geçişi başlatır. Hızlı hareket animasyonu kısaltmaz; animasyon sürerken ek geçişler biriktirilmez ve atalet kuyruğu yutulur. JS olmadan doğal yatay scroll alternatifi korunur.

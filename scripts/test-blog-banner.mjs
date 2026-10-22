@@ -84,6 +84,89 @@ test('momentum cannot trigger another slide even after the animation completes',
   );
 });
 
+test('continued acceleration of one long swipe does not queue an extra transition', (t) => {
+  const g = setup(t);
+  g.wheel(10);
+  t.mock.timers.tick(200);
+  g.wheel(30);
+  t.mock.timers.tick(200);
+  g.wheel(80);
+  t.mock.timers.tick(200);
+  g.wheel(160);
+  t.mock.timers.tick(1100);
+  assert.deepEqual(
+    g.changes.map((change) => change.index),
+    [1],
+  );
+  assert.equal(g.busy(), false);
+});
+
+test('a second touchpad gesture during the transition is played after it finishes', (t) => {
+  const g = setup(t);
+  g.wheel(100);
+  t.mock.timers.tick(300);
+  g.wheel(100);
+  assert.deepEqual(
+    g.changes.map((change) => change.index),
+    [1],
+  );
+  t.mock.timers.tick(550);
+  assert.deepEqual(
+    g.changes.map((change) => change.index),
+    [1, 2],
+  );
+  t.mock.timers.tick(850);
+  assert.equal(g.busy(), false);
+  g.wheel(-100);
+  assert.deepEqual(g.changes.at(-1), { index: 1, manual: true });
+});
+
+test('a fresh same-direction impulse is recognized without waiting for the momentum tail to stop', (t) => {
+  const g = setup(t);
+  g.wheel(100);
+  for (let i = 0; i < 10; i++) {
+    t.mock.timers.tick(40);
+    g.wheel(5);
+  }
+  g.wheel(100);
+  t.mock.timers.tick(450);
+  assert.deepEqual(
+    g.changes.map((change) => change.index),
+    [1, 2],
+  );
+});
+
+test('reversing direction after a transition works while old momentum is still arriving', (t) => {
+  const g = setup(t);
+  g.wheel(100);
+  for (let i = 0; i < 23; i++) {
+    t.mock.timers.tick(40);
+    g.wheel(5);
+  }
+  g.wheel(-100);
+  assert.deepEqual(
+    g.changes.map((change) => change.index),
+    [1, 0],
+  );
+});
+
+test('only the latest deliberate swipe is retained while a transition is running', (t) => {
+  const g = setup(t);
+  g.wheel(100);
+  t.mock.timers.tick(300);
+  g.wheel(100);
+  t.mock.timers.tick(300);
+  g.wheel(-100);
+  t.mock.timers.tick(250);
+  assert.deepEqual(
+    g.changes.map((change) => change.index),
+    [1, 0],
+  );
+  t.mock.timers.tick(850);
+  assert.equal(g.changes.length, 2);
+  assert.equal(g.busy(), false);
+});
+
 test('small deltas, shift-wheel and non-pixel wheel units work in both directions', (t) => {
   const g = setup(t, true);
   g.wheel(4);

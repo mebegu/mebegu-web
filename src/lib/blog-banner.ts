@@ -13,6 +13,11 @@ export function initBlogBanner(
   let wheelBusy = false;
   let wheelLatched = false;
   let wheelDistance = 0;
+  let lastWheelDelta = 0;
+  let wheelPeak = 0;
+  let wheelDecayed = false;
+  let wheelStartedAt = 0;
+  let pendingWheelDirection = 0;
   let wheelTimer: ReturnType<typeof setTimeout> | undefined;
   let touch: { id: number; x: number; y: number } | undefined;
   let suppressClickUntil = 0;
@@ -35,7 +40,11 @@ export function initBlogBanner(
     if (animating)
       setTimeout(() => {
         animating = false;
-        updateBusy();
+        if (pendingWheelDirection) {
+          const direction = pendingWheelDirection;
+          pendingWheelDirection = 0;
+          show(index + direction, true);
+        } else updateBusy();
       }, TRANSITION_MS);
   }
 
@@ -55,14 +64,42 @@ export function initBlogBanner(
         wheelBusy = false;
         wheelLatched = false;
         wheelDistance = 0;
+        lastWheelDelta = 0;
+        wheelPeak = 0;
+        wheelDecayed = false;
         updateBusy();
       }, 240);
-      if (wheelLatched) return;
-      wheelDistance +=
+      const delta =
         x * (mode === 1 ? 16 : mode === 2 ? element.clientWidth : 1);
+      // Trackpads can start a new gesture before the previous momentum tail ends.
+      // Rearm on a fresh impulse or reversal, but ignore the initial acceleration.
+      if (
+        wheelLatched &&
+        Date.now() - wheelStartedAt >= 180 &&
+        Math.abs(delta) >= 8 &&
+        (delta * lastWheelDelta < 0 ||
+          (wheelDecayed &&
+            Math.abs(delta) >= Math.max(12, Math.abs(lastWheelDelta) * 2)))
+      ) {
+        wheelLatched = false;
+        wheelDistance = 0;
+      }
+      lastWheelDelta = delta;
+      if (wheelLatched) {
+        if (Math.abs(delta) <= wheelPeak * 0.5) wheelDecayed = true;
+        wheelPeak = Math.max(wheelPeak, Math.abs(delta));
+        return;
+      }
+      wheelDistance += delta;
       if (Math.abs(wheelDistance) >= 8) {
         wheelLatched = true;
-        show(index + Math.sign(wheelDistance), true);
+        wheelStartedAt = Date.now();
+        wheelPeak = Math.abs(delta);
+        wheelDecayed = false;
+        const direction = Math.sign(wheelDistance);
+        // Keep only the latest deliberate gesture instead of consuming it while locked.
+        if (animating) pendingWheelDirection = direction;
+        else show(index + direction, true);
       }
     },
     { passive: false },

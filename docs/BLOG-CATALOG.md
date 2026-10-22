@@ -13,7 +13,8 @@ Güncel yön: **çerçevesiz, tam genişlikte öne çıkan yazı arka planı ve 
 
 - Hover veya klavye odağında kart Y ekseninde 180° döner; arka yüz kategori, kısa özet ve yazıyı açma ipucunu gösterir. Kart dışındaki odak çerçevesi dönmez.
 - Dönüş 780 ms sürer; daha uzak perspektif ve yumuşak hızlanma/yavaşlama kullanır. Hover başlangıcındaki 50 ms bekleme, fare kartın üzerinden geçerken gereksiz dönüşleri azaltır; klavye odağı beklemez.
-- Swipe yalnızca önceki/sonraki slaydı seçer; touchpad hızı veya dokunma mesafesi geçiş hızını belirlemez. Touchpad’in yatay kaydırması, dokunmatikte bırakılan yatay swipe, oklar ve otomatik geçiş aynı 850 ms CSS animasyonunu kullanır. Geçiş sırasında ek talepler biriktirilmez; touchpad atalet kuyruğu başka slayt başlatmaz.
+- Swipe yalnızca önceki/sonraki slaydı seçer; touchpad hızı veya dokunma mesafesi geçiş hızını belirlemez. Touchpad’in yatay kaydırması, dokunmatikte bırakılan yatay swipe, oklar ve otomatik geçiş aynı 850 ms CSS animasyonunu kullanır. Animasyon sürerken tanınan yeni bir touchpad swipe’ı kaybolmaz: yalnızca en son yön isteği tutulur ve geçiş bitince uygulanır; sınırsız kuyruk oluşmaz.
+- Touchpad’de yeni hareket, ataletin tamamen susmasını beklemek zorunda değildir. Yön değişimi veya azalmış ataletin ardından yeniden güçlenen hareket kilidi açar; tek hareketin ilk hızlanması ve devam eden atalet ek slayt başlatmaz.
 - JS etkinleşince banner grid katmanlarına dönüşür. Yatay wheel aksiyonu normal geçişi başlatmak için ele alınır; dikey wheel ve pinch zoom engellenmez. Dokunmatikte `touch-action: pan-y pinch-zoom` dikey kaydırma ve yakınlaştırmayı tarayıcıda bırakır. Banner’ın tamamı yatay kaydırmayı dinler; bağlantıdan başlayan swipe yeni sekme açmaz. Swipe/geçiş sürerken otomatik zamanlayıcı bekler.
 - Banner ve kart bağlantıları `target="_blank"` ile yazı sayfasını yeni sekmede açar; popup/dialog kullanılmaz. Yeni sekme bilgisi erişilebilir ad/açıklamada yer alır.
 - Dokunmatikte tek dokunuş yazıyı açar; kısa özet iki satır halinde görselin üzerinde görünür, hover veya ikinci dokunuş gerekmez. Raflar doğal yatay kaydırmayı kullanır.
@@ -35,7 +36,7 @@ Weebly’den aktarılan dokuz yazı `draft: true` olarak korunur; wireframe çal
 - `src/styles/blog-catalog.css`: arka plan geçişi, raflar, 3D dönüş, mobil ve azaltılmış hareket davranışları.
 - `src/lib/blog-catalog.ts`: küçük carousel ve raf kaydırma kodu; kartlar JS gerektirmez.
 - `src/lib/blog-banner.ts`: ortak slayt seçimi, 850 ms animasyon kilidi ve yatay swipe yönü; süre CSS’e aynı değişkenden aktarılır.
-- `scripts/test-blog-banner.mjs`: ortak süre, hızlı hareket/atalet, iki yönde swipe, wheel birimleri, dikey scroll/pinch/tıklama ve azaltılmış hareket için sekiz simülasyon; `pnpm test:carousel` ile ve CI’da çalışır.
+- `scripts/test-blog-banner.mjs`: ortak süre, hızlı hareket/atalet, ardışık touchpad hareketleri, sınırlı bekleyen istek, iki yönde swipe, wheel birimleri, dikey scroll/pinch/tıklama ve azaltılmış hareket için 13 simülasyon; `pnpm test:carousel` ile ve CI’da çalışır.
 - `src/components/pages/SampleArticlePage.astro`: örnek yazının ayrı sayfa iskeleti.
 - `docs/wireframes/blog.svg`: şematik masaüstü/mobil görünüm ve hover → tıklama akışı. Tarayıcı ekran görüntüsü değildir.
 
