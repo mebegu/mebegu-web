@@ -1,0 +1,9 @@
+---
+import NightLanding from '../night/NightLanding.astro';
+import type { Lang } from '../../lib/i18n';
+interface Props {
+  lang: Lang;
+}
+---
+
+<NightLanding lang={Astro.props.lang} />

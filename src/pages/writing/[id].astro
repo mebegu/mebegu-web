@@ -1,0 +1,17 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import ArticlePage from '../../components/pages/ArticlePage.astro';
+export async function getStaticPaths() {
+  return (
+    await getCollection(
+      'writing',
+      ({ data }) => !data.draft && data.lang === 'en',
+    )
+  ).map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+interface Props {
+  post: CollectionEntry<'writing'>;
+}
+---
+
+<ArticlePage post={Astro.props.post} />

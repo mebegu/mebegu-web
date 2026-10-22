@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { href } from '../lib/urls';
+---
+
+<BaseLayout title="Page not found" alternatePath="" hasTranslation={false}>
+  <section class="page-heading">
+    <p class="eyebrow">404 / A small detour</p>
+    <h1>
+      Off the
+      <br />
+      map<span class="accent">.</span>
+    </h1>
+    <p class="lead">This page couldn't be found.</p>
+    <p class="lead" lang="tr">
+      Bu sayfa bulunamadı. <a href={href('tr/')}>Türkçe ana sayfa ↗</a>
+    </p>
+    <a class="text-link" href={href()}>
+      Back to familiar ground ↗
+    </a>
+  </section>
+</BaseLayout>

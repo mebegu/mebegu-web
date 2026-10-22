@@ -1,0 +1,219 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectVisual from '../projects/ProjectVisual.astro';
+import { type Lang } from '../../lib/i18n';
+import { href } from '../../lib/urls';
+import { projects, projectKinds } from '../../data/projects';
+import '../../styles/projects.css';
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const tr = lang === 'tr';
+---
+
+<BaseLayout
+  title="Projects"
+  lang={lang}
+  bodyClass="projects-body"
+  description={
+    tr
+      ? 'Unity oyunları, yazılım projeleri ve küçük deneyler için kişisel proje vitrini.'
+      : 'A personal showcase for Unity games, software projects, and small experiments.'
+  }
+>
+  <div class="projects-page" data-projects-page>
+    <header class="projects-heading">
+      <div>
+        <p class="eyebrow">
+          {tr ? 'Kişisel proje atölyesi' : 'The personal workbench'}
+        </p>
+        <h1>
+          Projects<span class="accent">.</span>
+        </h1>
+      </div>
+      <p class="projects-intro">
+        {tr
+          ? 'Oyunlar, işe yarayan küçük şeyler ve “acaba?” diye başlayan denemeler.'
+          : 'Games, useful little things, and experiments that start with “what if?”.'}
+      </p>
+    </header>
+
+    <div class="projects-topline">
+      <div
+        class="project-filters"
+        data-project-filters
+        role="group"
+        aria-label={tr ? 'Proje kategorisi' : 'Project category'}
+        hidden
+      >
+        <button
+          type="button"
+          data-project-filter="all"
+          aria-pressed="true"
+          aria-controls="project-list"
+        >
+          {tr ? 'Tümü' : 'All'}
+          <span aria-hidden="true">
+            {String(projects.length).padStart(2, '0')}
+          </span>
+        </button>
+        {projectKinds.map((kind) => (
+          <button
+            type="button"
+            data-project-filter={kind.id}
+            aria-pressed="false"
+            aria-controls="project-list"
+          >
+            {kind.label[lang]}
+            <span aria-hidden="true">
+              {String(
+                projects.filter((project) => project.kind === kind.id).length,
+              ).padStart(2, '0')}
+            </span>
+          </button>
+        ))}
+      </div>
+      <p class="projects-template-note">
+        {tr
+          ? 'Şimdilik temsili proje kartları'
+          : 'Sample project cards for now'}
+      </p>
+    </div>
+    <p
+      class="sr-only"
+      data-project-status
+      aria-live="polite"
+      aria-atomic="true"
+      data-count-label={tr ? 'gösterilen kart' : 'cards shown'}
+    ></p>
+
+    <section
+      id="project-list"
+      class="project-grid"
+      aria-label={tr ? 'Proje vitrini' : 'Project showcase'}
+    >
+      {projects.map((project, index) => (
+        <article
+          class:list={[
+            'project-card',
+            `project-kind-${project.kind}`,
+            { 'project-card-featured': index === 0 },
+          ]}
+          data-project-kind={project.kind}
+        >
+          <div class={`project-media media-${project.visual}`}>
+            <div class="project-media-grid" aria-hidden="true"></div>
+            <div class="project-media-top">
+              <span>
+                {String(index + 1).padStart(2, '0')} /{' '}
+                {
+                  projectKinds.find((kind) => kind.id === project.kind)?.label[
+                    lang
+                  ]
+                }
+              </span>
+              {project.placeholder && (
+                <span class="project-sample-badge">
+                  {tr ? 'Örnek proje' : 'Sample project'}
+                </span>
+              )}
+            </div>
+            {project.image ? (
+              <img
+                class="project-screenshot"
+                src={href(project.image)}
+                alt={project.title[lang]}
+                width="680"
+                height="440"
+                loading="lazy"
+                decoding="async"
+              />
+            ) : (
+              <ProjectVisual visual={project.visual} />
+            )}
+            {!project.image && (
+              <p class="project-visual-caption">
+                {tr ? 'Temsili görsel' : 'Illustrative visual'}
+              </p>
+            )}
+          </div>
+          <div class="project-card-copy">
+            <p class="project-kind-label">
+              {
+                projectKinds.find((kind) => kind.id === project.kind)?.label[
+                  lang
+                ]
+              }
+            </p>
+            <h2>{project.title[lang]}</h2>
+            <p class="project-description">{project.description[lang]}</p>
+            <ul
+              class="project-tags"
+              aria-label={tr ? 'Teknolojiler' : 'Technologies'}
+            >
+              {project.technologies.map((technology) => (
+                <li>{technology}</li>
+              ))}
+            </ul>
+            <div class="project-links">
+              {project.demoUrl ? (
+                <a href={project.demoUrl}>
+                  {tr ? 'Demoyu aç' : 'Open demo'}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              ) : (
+                <span class="project-link-pending" aria-disabled="true">
+                  Demo<span>{tr ? 'eklenmedi' : 'not added'}</span>
+                </span>
+              )}
+              {project.codeUrl ? (
+                <a href={project.codeUrl}>
+                  {tr ? 'Kaynak kod' : 'Source code'}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              ) : (
+                <span class="project-link-pending" aria-disabled="true">
+                  {tr ? 'Kod' : 'Code'}
+                  <span>{tr ? 'eklenmedi' : 'not added'}</span>
+                </span>
+              )}
+            </div>
+          </div>
+        </article>
+      ))}
+    </section>
+    <p class="projects-bottom-note">
+      {tr
+        ? 'Gerçek proje adları, ekran görüntüleri ve bağlantıları geldikçe bu vitrine yerleşecek.'
+        : 'Real project names, screenshots, and links will find their place in this showcase.'}
+    </p>
+  </div>
+</BaseLayout>
+
+<script>
+  const page = document.querySelector<HTMLElement>('[data-projects-page]');
+  if (page) {
+    const controls = page.querySelector<HTMLElement>('[data-project-filters]')!;
+    const buttons = [
+      ...controls.querySelectorAll<HTMLButtonElement>('[data-project-filter]'),
+    ];
+    const cards = [
+      ...page.querySelectorAll<HTMLElement>('[data-project-kind]'),
+    ];
+    const status = page.querySelector<HTMLElement>('[data-project-status]')!;
+    controls.hidden = false;
+    buttons.forEach((button) =>
+      button.addEventListener('click', () => {
+        const kind = button.dataset.projectFilter;
+        buttons.forEach((item) =>
+          item.setAttribute('aria-pressed', String(item === button)),
+        );
+        cards.forEach((card) => {
+          card.hidden = kind !== 'all' && card.dataset.projectKind !== kind;
+        });
+        status.textContent = `${cards.filter((card) => !card.hidden).length} ${status.dataset.countLabel}`;
+      }),
+    );
+  }
+</script>

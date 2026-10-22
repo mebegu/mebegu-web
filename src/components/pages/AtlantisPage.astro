@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostRow from '../PostRow.astro';
+import { copy, localPath, type Lang } from '../../lib/i18n';
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = copy[lang];
+const updates = (
+  await getCollection(
+    'writing',
+    ({ data }) =>
+      !data.draft && data.lang === lang && data.category === 'Atlantis',
+  )
+).sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
+---
+
+<BaseLayout
+  title="Atlantis"
+  description={`${t.byline}. ${t.story}`}
+  lang={lang}
+>
+  <section class="atlantis-hero">
+    <p class="eyebrow">{t.byline}</p>
+    <h1>
+      Atlantis<span class="accent">.</span>
+    </h1>
+    <div class="atlantis-line" aria-hidden="true"></div>
+    <p class="lead">{t.story}</p>
+    <span class="book-status">
+      <span class="status-dot"></span>
+      {t.writingStatus}
+    </span>
+  </section>
+  <section class="about-grid section">
+    <h2>
+      {t.behind[0]}
+      <br />
+      {t.behind[1]}
+    </h2>
+    <div class="prose">
+      <p>{t.atlantisIntro}</p>
+      <p>{t.atlantisMore}</p>
+    </div>
+  </section>
+  <section class="section" aria-labelledby="updates-title">
+    <p class="eyebrow">{t.journal}</p>
+    <h2 id="updates-title">{t.along}</h2>
+    {updates.length ? (
+      updates.map((post) => <PostRow post={post} lang={lang} />)
+    ) : (
+      <p class="empty-note">
+        {t.noUpdates} <a href={localPath('rss.xml', lang)}>{t.feed}</a>.
+      </p>
+    )}
+  </section>
+</BaseLayout>

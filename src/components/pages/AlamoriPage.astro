@@ -1,0 +1,479 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { type Lang } from '../../lib/i18n';
+import { href } from '../../lib/urls';
+import { site } from '../../data/site';
+import { alamori } from '../../data/alamori';
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const tr = lang === 'tr';
+const text = tr
+  ? {
+      eyebrow: 'Bir hikâyenin izinde',
+      intro: 'Yazdığım hikâyeye açılan bir kapı.',
+      template: 'Sayfa taslağı',
+      cover: 'Geçici kapak',
+      about: 'Hikâye hakkında',
+      aboutPlaceholder:
+        'Alamori’nin kısa tanıtımı burada yer alacak. Hikâyenin dünyasını ve çıkış noktasını, sürprizlerini bozmadan anlatan birkaç paragraf.',
+      aboutNote:
+        'Tanıtım metni ve kitaptan paylaşılacak parçalar henüz eklenmedi.',
+      read: 'Kitabı oku',
+      readIntro:
+        'Paylaşıma hazır metin eklendiğinde PDF dosyasını buradan indirebilirsin.',
+      download: 'PDF’yi indir',
+      pdfPending: 'PDF henüz eklenmedi.',
+      feedback: 'Geri bildirim',
+      feedbackIntro:
+        'Hikâye hakkında düşüncelerin, soruların ve dikkatini çeken detaylar için bir alan.',
+      feedbackPending:
+        'Bu form şimdilik bir önizleme. Mesaj gönderilmez veya kaydedilmez.',
+      feedbackLink: 'Geri bildirim bırak',
+      name: 'Adın (isteğe bağlı)',
+      message: 'Düşüncelerin',
+      messagePlaceholder: 'Hikâyede aklında kalan ne oldu?',
+      send: 'Geri bildirim gönder',
+      notes: 'Yazım notları',
+      notesText:
+        'Yeni bölümler ve yazma sürecinden kısa güncellemeler zamanla burada yer alacak.',
+    }
+  : {
+      eyebrow: 'Following a story',
+      intro: 'A doorway into the story I am writing.',
+      template: 'Page draft',
+      cover: 'Placeholder cover',
+      about: 'About the story',
+      aboutPlaceholder:
+        'A short introduction to Alamori will live here. A few paragraphs about its world and the idea behind it, without spoiling the story.',
+      aboutNote:
+        'The introduction and excerpts from the book have not been added yet.',
+      read: 'Read the book',
+      readIntro:
+        'Once a text is ready to share, you will be able to download its PDF here.',
+      download: 'Download PDF',
+      pdfPending: 'No PDF has been added yet.',
+      feedback: 'Feedback',
+      feedbackIntro:
+        'A place for your thoughts, questions, and the details that caught your attention.',
+      feedbackPending:
+        'This form is a preview for now. No message is sent or saved.',
+      feedbackLink: 'Leave feedback',
+      name: 'Your name (optional)',
+      message: 'Your thoughts',
+      messagePlaceholder: 'What stayed with you from the story?',
+      send: 'Send feedback',
+      notes: 'Writing notes',
+      notesText:
+        'New chapters and short updates from the writing process will find a home here over time.',
+    };
+---
+
+<BaseLayout
+  title="Alamori"
+  lang={lang}
+  description={
+    tr
+      ? 'Alamori — Mehmet Berk Gürçay’ın hikâyesi.'
+      : 'Alamori — a story by Mehmet Berk Gürçay.'
+  }
+>
+  <div class="alamori-page">
+    <header class="alamori-hero">
+      <div class="alamori-introduction">
+        <p class="eyebrow">{text.eyebrow}</p>
+        <h1>
+          Alamori<span class="accent">.</span>
+        </h1>
+        <p class="alamori-author">{site.name}</p>
+        <p class="lead">{text.intro}</p>
+        <nav
+          class="alamori-jumps"
+          aria-label={tr ? 'Bu sayfada' : 'On this page'}
+        >
+          <a href="#story">
+            {text.about} <span aria-hidden="true">↓</span>
+          </a>
+          <a href="#download">
+            PDF <span aria-hidden="true">↓</span>
+          </a>
+          <a href="#feedback">
+            {text.feedback} <span aria-hidden="true">↓</span>
+          </a>
+        </nav>
+      </div>
+      <figure class="alamori-cover-preview">
+        <div class="alamori-cover" aria-hidden="true">
+          <span class="cover-small">{site.name}</span>
+          <span class="cover-orbit"></span>
+          <span class="cover-title">Alamori</span>
+          <span class="cover-small">{text.template}</span>
+        </div>
+        <figcaption>{text.cover}</figcaption>
+      </figure>
+    </header>
+
+    <section id="story" class="alamori-section" aria-labelledby="story-heading">
+      <div>
+        <p class="eyebrow">01 / {tr ? 'Hikâye' : 'The story'}</p>
+        <h2 id="story-heading">
+          {text.about}
+          <span class="accent">.</span>
+        </h2>
+      </div>
+      <div class="alamori-copy">
+        <p>{alamori.synopsis?.[lang] ?? text.aboutPlaceholder}</p>
+        {!alamori.synopsis && <p class="alamori-note">{text.aboutNote}</p>}
+      </div>
+    </section>
+
+    <section
+      id="download"
+      class="alamori-section"
+      aria-labelledby="download-heading"
+    >
+      <div>
+        <p class="eyebrow">02 / PDF</p>
+        <h2 id="download-heading">
+          {text.read}
+          <span class="accent">.</span>
+        </h2>
+      </div>
+      <div class="alamori-copy">
+        <p>{text.readIntro}</p>
+        {alamori.pdfPath ? (
+          <a
+            class="alamori-button"
+            href={href(alamori.pdfPath)}
+            download="Alamori.pdf"
+          >
+            {text.download}
+            <span aria-hidden="true">↓</span>
+          </a>
+        ) : (
+          <>
+            <button
+              class="alamori-button"
+              type="button"
+              disabled
+              aria-describedby="pdf-status"
+            >
+              {text.download}
+              <span aria-hidden="true">↓</span>
+            </button>
+            <p id="pdf-status" class="alamori-note">
+              {text.pdfPending}
+            </p>
+          </>
+        )}
+      </div>
+    </section>
+
+    <section
+      id="feedback"
+      class="alamori-section"
+      aria-labelledby="feedback-heading"
+    >
+      <div>
+        <p class="eyebrow">03 / {tr ? 'Okur notları' : 'Reader notes'}</p>
+        <h2 id="feedback-heading">
+          {text.feedback}
+          <span class="accent">.</span>
+        </h2>
+        <p class="alamori-note">{text.feedbackIntro}</p>
+      </div>
+      <div class="alamori-copy">
+        {alamori.feedbackUrl ? (
+          <a class="alamori-button" href={alamori.feedbackUrl}>
+            {text.feedbackLink}
+            <span aria-hidden="true">↗</span>
+          </a>
+        ) : (
+          <>
+            <p class="alamori-feedback-status" id="feedback-status">
+              {text.feedbackPending}
+            </p>
+            <fieldset
+              class="alamori-feedback-preview"
+              disabled
+              aria-describedby="feedback-status"
+            >
+              <legend class="sr-only">{text.feedback}</legend>
+              <label for="reader-name">{text.name}</label>
+              <input id="reader-name" type="text" autocomplete="off" />
+              <label for="reader-message">{text.message}</label>
+              <textarea
+                id="reader-message"
+                rows="4"
+                placeholder={text.messagePlaceholder}
+              ></textarea>
+              <button class="alamori-button" type="button" disabled>
+                {text.send}
+                <span aria-hidden="true">↗</span>
+              </button>
+            </fieldset>
+          </>
+        )}
+      </div>
+    </section>
+    <section
+      class="alamori-writing-notes"
+      aria-labelledby="writing-notes-heading"
+    >
+      <p class="eyebrow">{text.notes}</p>
+      <h2 id="writing-notes-heading">
+        {tr ? 'Yol boyunca' : 'Along the way'}
+        <span class="accent">.</span>
+      </h2>
+      <p>{text.notesText}</p>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .alamori-page {
+    max-width: 1080px;
+    margin-inline: auto;
+  }
+  .alamori-hero {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    align-items: center;
+    gap: 60px;
+    padding: 76px 0 70px;
+  }
+  .alamori-introduction h1 {
+    font:
+      400 clamp(68px, 8vw, 112px)/1.05 Georgia,
+      serif;
+    letter-spacing: -0.05em;
+    margin-bottom: 16px;
+  }
+  .alamori-author {
+    color: #c9b18d;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    margin-bottom: 26px;
+  }
+  .alamori-introduction .lead {
+    font-size: 20px;
+    max-width: 390px;
+  }
+  .alamori-jumps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 25px;
+    margin-top: 28px;
+  }
+  .alamori-jumps a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    gap: 12px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .alamori-jumps a:hover,
+  .alamori-jumps a span {
+    color: var(--accent);
+  }
+  .alamori-cover-preview {
+    margin: 0;
+    justify-self: center;
+    width: min(100%, 240px);
+  }
+  .alamori-cover {
+    position: relative;
+    isolation: isolate;
+    aspect-ratio: 2/3;
+    padding: 30px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    background: #273331;
+    color: #e2d6bf;
+    border: 1px solid #7f8b7555;
+    box-shadow: 12px 18px 36px #0003;
+  }
+  .alamori-cover::before {
+    content: '';
+    position: absolute;
+    inset: 13px;
+    border: 1px solid #c5b68b40;
+    z-index: -1;
+  }
+  .cover-title {
+    font:
+      400 41px/1.2 Georgia,
+      serif;
+    letter-spacing: 0.025em;
+  }
+  .cover-small {
+    max-width: 100%;
+    text-align: center;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+  .cover-orbit {
+    position: absolute;
+    z-index: -1;
+    width: 160px;
+    height: 230px;
+    border: 1px solid #c5b68b40;
+    border-radius: 50%;
+    top: 65px;
+    transform: rotate(-24deg);
+  }
+  .alamori-cover-preview figcaption {
+    text-align: center;
+    color: var(--subtle);
+    font-size: 10px;
+    margin-top: 15px;
+  }
+  .alamori-section {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 60px;
+    padding: 58px 0;
+    border-top: 1px solid var(--line);
+  }
+  .alamori-section .eyebrow {
+    font-size: 10px;
+    margin-bottom: 18px;
+  }
+  .alamori-section h2,
+  .alamori-writing-notes h2 {
+    font-size: 34px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+  .alamori-copy {
+    color: #bdc5c0;
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .alamori-note {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 460px;
+  }
+  .alamori-copy .alamori-note {
+    margin: 15px 0 0;
+  }
+  .alamori-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 46px;
+    padding: 10px 17px;
+    gap: 35px;
+    border: 1px solid #c9b18d88;
+    background: #c9b18d0b;
+    color: #e0c59e;
+    border-radius: 3px;
+    font-size: 13px;
+  }
+  .alamori-button:disabled {
+    border-color: #69716d;
+    color: #a0a9a4;
+    background: #ffffff04;
+    cursor: default;
+  }
+  .alamori-button:hover:not(:disabled) {
+    background: #c9b18d18;
+  }
+  .alamori-feedback-status {
+    font-size: 12px;
+    color: #b4bba9;
+    padding: 10px 13px;
+    border-left: 2px solid #b4bba955;
+    background: #b4bba908;
+    margin-bottom: 24px;
+  }
+  .alamori-feedback-preview {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    min-width: 0;
+  }
+  .alamori-feedback-preview label {
+    display: block;
+    color: #acb6af;
+    font-size: 12px;
+    margin: 18px 0 8px;
+  }
+  .alamori-feedback-preview input,
+  .alamori-feedback-preview textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #191f1e;
+    border: 1px solid #515a5480;
+    border-radius: 3px;
+    color: #aeb8b1;
+    font: 13px/1.6 var(--font);
+    opacity: 1;
+  }
+  .alamori-feedback-preview textarea {
+    resize: none;
+    margin-bottom: 20px;
+  }
+  .alamori-feedback-preview textarea::placeholder {
+    color: #89978e;
+  }
+  .alamori-writing-notes {
+    padding: 45px 0 60px;
+    border-top: 1px solid var(--line);
+  }
+  .alamori-writing-notes .eyebrow {
+    font-size: 10px;
+    margin-bottom: 17px;
+  }
+  .alamori-writing-notes > p:last-child {
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 520px;
+  }
+  @media (max-width: 700px) {
+    .alamori-hero {
+      gap: 30px;
+      padding: 45px 0;
+      grid-template-columns: 1fr;
+    }
+    .alamori-introduction h1 {
+      font-size: clamp(68px, 16vw, 95px);
+    }
+    .alamori-cover-preview {
+      width: 180px;
+    }
+    .alamori-cover {
+      padding: 25px 18px;
+    }
+    .cover-title {
+      font-size: 32px;
+    }
+    .cover-small {
+      font-size: 8px;
+    }
+    .cover-orbit {
+      width: 120px;
+      height: 180px;
+      top: 44px;
+    }
+    .alamori-section {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding-block: 38px;
+    }
+    .alamori-section h2 {
+      font-size: 31px;
+    }
+    .alamori-copy {
+      font-size: 15px;
+    }
+  }
+</style>

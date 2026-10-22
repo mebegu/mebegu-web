@@ -1,0 +1,108 @@
+---
+import '../styles/global.css';
+import { site } from '../data/site';
+import { href } from '../lib/urls';
+import { copy, localPath, type Lang } from '../lib/i18n';
+import SocialLinks from '../components/SocialLinks.astro';
+import SiteToolbar from '../components/SiteToolbar.astro';
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: Lang;
+  alternatePath?: string;
+  hasTranslation?: boolean;
+  immersive?: boolean;
+  bodyClass?: string;
+}
+const {
+  title,
+  lang = 'en',
+  alternatePath,
+  hasTranslation = true,
+  immersive = false,
+  bodyClass,
+} = Astro.props;
+const t = copy[lang];
+const description = Astro.props.description || t.description;
+const pageTitle = title
+  ? `${title} — ${site.name}`
+  : `${site.name} — ${t.subtitle}`;
+const notFound = Astro.url.pathname === href('404/');
+const canonicalPath = notFound ? href('404.html') : Astro.url.pathname;
+const canonical = new URL(canonicalPath, Astro.site);
+const relative = canonicalPath.slice(href().length).replace(/^tr\//, '');
+const ownPath = relative;
+const otherPath = alternatePath ?? ownPath;
+const paths = {
+  en: localPath(lang === 'en' ? ownPath : otherPath, 'en'),
+  tr: localPath(lang === 'tr' ? ownPath : otherPath, 'tr'),
+};
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#141719" />
+    {notFound && <meta name="robots" content="noindex" />}
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'tr' ? 'tr_TR' : 'en_US'} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href={canonical} />
+    {hasTranslation && (
+      <>
+        <link
+          rel="alternate"
+          hreflang="en"
+          href={new URL(paths.en, Astro.site)}
+        />
+        <link
+          rel="alternate"
+          hreflang="tr"
+          href={new URL(paths.tr, Astro.site)}
+        />
+      </>
+    )}
+    <link rel="icon" type="image/svg+xml" href={href('favicon.svg')} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`${site.name} — ${t.nav[1]}`}
+      href={localPath('rss.xml', lang)}
+    />
+    <title>{pageTitle}</title>
+  </head>
+  <body class:list={[bodyClass, { 'immersive-body': immersive }]}>
+    <a class="skip-link" href="#main">
+      {t.skip}
+    </a>
+    <SiteToolbar lang={lang} paths={paths} />
+    <main id="main" class:list={['shell', { 'immersive-main': immersive }]}>
+      <slot />
+    </main>
+    {!immersive && (
+      <footer class="footer shell">
+        <div>
+          <a class="wordmark" href={localPath('', lang)}>
+            mebegu<span>.</span>
+          </a>
+          <p>{t.corner}</p>
+        </div>
+        <div class="footer-links">
+          <a href={localPath('rss.xml', lang)}>RSS ↗</a>
+        </div>
+        <div class="footer-socials">
+          <SocialLinks lang={lang} />
+        </div>
+        <span class="copyright">
+          © {new Date().getFullYear()} {site.name}
+        </span>
+      </footer>
+    )}
+  </body>
+</html>

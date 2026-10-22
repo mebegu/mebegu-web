@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SocialLinks from '../SocialLinks.astro';
+import StarField from './StarField.astro';
+import Observer from './Observer.astro';
+import PaperSky from './PaperSky.astro';
+import { localizedSections } from '../../data/sections';
+import { site } from '../../data/site';
+import { copy, localPath, type Lang } from '../../lib/i18n';
+import { href } from '../../lib/urls';
+import { fanSector } from '../../lib/sky-layout';
+import '../../styles/night.css';
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const categories = localizedSections(lang);
+const tr = lang === 'tr';
+---
+
+<BaseLayout lang={lang} immersive description={copy[lang].description}>
+  <section
+    class="night-home"
+    data-night-home
+    aria-label={
+      tr
+        ? 'Dört dünyaya açılan kişisel ana sayfa'
+        : 'A personal home opening onto four worlds'
+    }
+  >
+    <div class="night-backdrop" aria-hidden="true">
+      <img
+        src={href('art/night-sky-horizon.webp')}
+        alt=""
+        width="1586"
+        height="992"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
+    <div class="night-shade" aria-hidden="true"></div>
+    <PaperSky lang={lang} />
+    <StarField />
+    <h1 class="sr-only">{site.name}</h1>
+    <nav
+      class="night-sectors"
+      aria-label={tr ? 'Bölümler' : 'Sections'}
+      style={`--section-count:${categories.length}`}
+    >
+      {categories.map((category, index) => {
+        const layout = fanSector(index, categories.length);
+        return (
+          <a
+            class={`night-sector sector-${category.id}`}
+            data-sector-index={index}
+            aria-describedby={`description-${category.id}`}
+            href={localPath(category.path, lang)}
+            style={`--sector-clip:${layout.clip};--content-clip:${layout.contentClip};--label-x:${layout.center}%;--label-y:${layout.top}%;--mobile-label-y:${layout.mobileTop}%;--label-angle:${layout.angle}deg;--label-width:${layout.width}%;--sector-index:${index};--sector-paint:${category.paint};--brush-mask:url('${href('art/brush-swipe.svg')}');--brush-angle:${index % 2 ? 1.7 : -1.8}deg`}
+          >
+            <div class="sector-hit" aria-hidden="true">
+              <div class="sector-glow"></div>
+            </div>
+            <div class="sector-content">
+              <div class="sector-copy">
+                <div class="sector-label">
+                  <h2>{category.title}</h2>
+                </div>
+                <p class="sector-subtitle" id={`description-${category.id}`}>
+                  {category.description}
+                </p>
+              </div>
+            </div>
+          </a>
+        );
+      })}
+    </nav>
+    <Observer />
+    <footer class="night-footer">
+      <SocialLinks lang={lang} compact />
+      <span class="night-footer-name">
+        © {new Date().getFullYear()} {site.handle}
+      </span>
+    </footer>
+  </section>
+</BaseLayout>
+
+<script>
+  import { initNightInteractions } from '../../lib/night-interactions';
+  document
+    .querySelectorAll<HTMLElement>('[data-night-home]')
+    .forEach(initNightInteractions);
+</script>

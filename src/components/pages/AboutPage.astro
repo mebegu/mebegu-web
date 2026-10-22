@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import { copy, localPath, type Lang } from '../../lib/i18n';
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = copy[lang];
+---
+
+<BaseLayout title={t.nav[0]} lang={lang}>
+  <div class="page-heading">
+    <p class="eyebrow">{t.aboutEyebrow}</p>
+    <h1>
+      {t.hello}
+      <br />
+      Mehmet Berk<span class="accent">.</span>
+    </h1>
+    <p class="lead">{t.aboutLead}</p>
+  </div>
+  <div class="about-grid section">
+    <aside class="eyebrow">{t.shortIntro}</aside>
+    <div class="prose">
+      <p>{t.bio}</p>
+      <p>
+        {t.bioBookStart} <a href={localPath('atlantis/', lang)}>Atlantis</a>
+        {t.bioBookEnd}
+      </p>
+    </div>
+  </div>
+  <section class="about-grid section" id="work">
+    <h2>
+      {t.workTitle[0]}
+      <br />
+      {t.workTitle[1]}
+    </h2>
+    <div class="prose">
+      <p>{t.workText}</p>
+      <a class="text-link" href={site.github}>
+        {t.githubLink} ↗
+      </a>
+    </div>
+  </section>
+  <section class="about-grid section">
+    <h2>
+      {t.offTitle[0]}
+      <br />
+      {t.offTitle[1]}
+    </h2>
+    <div class="prose">
+      <p>{t.offText}</p>
+      <a class="text-link" href={localPath('writing/', lang)}>
+        {t.notebookLink} ↗
+      </a>
+    </div>
+  </section>
+</BaseLayout>

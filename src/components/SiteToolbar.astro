@@ -1,0 +1,191 @@
+---
+import { site } from '../data/site';
+import { localizedSections } from '../data/sections';
+import { copy, localPath, type Lang } from '../lib/i18n';
+
+interface Props {
+  lang: Lang;
+  paths: Record<Lang, string>;
+}
+const { lang, paths } = Astro.props;
+const t = copy[lang];
+---
+
+<header class="site-toolbar">
+  <div class="toolbar-inner">
+    <a
+      class="toolbar-brand"
+      href={localPath('', lang)}
+      aria-label={`${site.name}, ${t.home}`}
+    >
+      mebegu<span>.</span>
+    </a>
+    <nav class="toolbar-nav" aria-label={t.navigation}>
+      {localizedSections(lang).map((section) => (
+        <a
+          href={localPath(section.path, lang)}
+          aria-current={
+            Astro.url.pathname.startsWith(localPath(section.path, lang))
+              ? 'page'
+              : undefined
+          }
+        >
+          {section.title}
+        </a>
+      ))}
+    </nav>
+    <div
+      class="toolbar-language"
+      role="group"
+      aria-label={lang === 'tr' ? 'Dil' : 'Language'}
+    >
+      <a
+        href={paths.en}
+        lang="en"
+        hreflang="en"
+        aria-label="English"
+        aria-current={lang === 'en' ? 'true' : undefined}
+      >
+        EN
+      </a>
+      <a
+        href={paths.tr}
+        lang="tr"
+        hreflang="tr"
+        aria-label="Türkçe"
+        aria-current={lang === 'tr' ? 'true' : undefined}
+      >
+        TR
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: var(--site-toolbar-height);
+    background: #0d131c;
+    border-bottom: 1px solid #d9ae782e;
+    box-shadow: 0 4px 20px #00000018;
+  }
+  .toolbar-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 32px;
+    height: 100%;
+    max-width: 1600px;
+    margin-inline: auto;
+    padding-inline: clamp(20px, 4.2vw, 72px);
+  }
+  .toolbar-brand {
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font: 600 29px/1 var(--display);
+    letter-spacing: -1.7px;
+    color: #f3eee4;
+  }
+  .toolbar-brand span {
+    color: #d9bd8e;
+  }
+  .toolbar-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(18px, 2.4vw, 36px);
+  }
+  .toolbar-nav a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 44px;
+    color: #adb5c0;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color 160ms ease;
+  }
+  .toolbar-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #d9bd8e;
+    transform: scaleX(0);
+    transition: transform 160ms ease;
+  }
+  .toolbar-nav a:hover,
+  .toolbar-nav a[aria-current='page'] {
+    color: #f3eee4;
+  }
+  .toolbar-nav a[aria-current='page']::after {
+    transform: scaleX(1);
+  }
+  .toolbar-language {
+    justify-self: end;
+    display: flex;
+    gap: 2px;
+    padding: 2px;
+    border: 1px solid #b1bdcc26;
+    border-radius: 7px;
+  }
+  .toolbar-language a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    min-height: 44px;
+    border-radius: 4px;
+    color: #9faab9;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    transition:
+      color 160ms ease,
+      background 160ms ease;
+  }
+  .toolbar-language a:hover {
+    color: #f3eee4;
+  }
+  .toolbar-language a[aria-current='true'] {
+    color: #f3eee4;
+    background: #b1bdcc17;
+  }
+  @media (max-width: 760px) {
+    .toolbar-inner {
+      grid-template-columns: 1fr auto;
+      grid-template-rows: 63px 48px;
+      column-gap: 16px;
+      row-gap: 0;
+    }
+    .toolbar-brand {
+      font-size: 25px;
+    }
+    .toolbar-language {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .toolbar-nav {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      align-self: stretch;
+      border-top: 1px solid #b1bdcc14;
+    }
+    .toolbar-nav a {
+      font-size: clamp(11px, 2.8vw, 13px);
+    }
+    .toolbar-nav a::after {
+      bottom: 0;
+    }
+  }
+</style>

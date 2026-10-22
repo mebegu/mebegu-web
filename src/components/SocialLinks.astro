@@ -1,0 +1,115 @@
+---
+import { socials } from '../data/socials';
+import type { Lang } from '../lib/i18n';
+import { href } from '../lib/urls';
+interface Props {
+  lang: Lang;
+  compact?: boolean;
+}
+const { lang, compact = false } = Astro.props;
+const pending =
+  lang === 'tr' ? 'Bağlantı henüz eklenmedi' : 'Link not added yet';
+---
+
+<ul
+  class:list={['social-list', { compact }]}
+  aria-label={lang === 'tr' ? 'Sosyal medya' : 'Social media'}
+>
+  {socials.map((social) => (
+    <li>
+      {social.url ? (
+        <a
+          class="social-item"
+          href={social.url}
+          aria-label={social.label}
+          title={social.label}
+        >
+          <img
+            class="social-logo"
+            src={href(`art/social/${social.icon}.svg`)}
+            width="20"
+            height="20"
+            alt=""
+            aria-hidden="true"
+          />
+        </a>
+      ) : (
+        <span
+          class="social-item social-placeholder"
+          role="link"
+          aria-disabled="true"
+          aria-label={`${social.label} — ${pending}`}
+          title={`${social.label} — ${pending}`}
+        >
+          <img
+            class="social-logo"
+            src={href(`art/social/${social.icon}.svg`)}
+            width="20"
+            height="20"
+            alt=""
+            aria-hidden="true"
+          />
+        </span>
+      )}
+    </li>
+  ))}
+</ul>
+<style>
+  .social-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px 13px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .social-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    color: inherit;
+    font-size: 12px;
+    letter-spacing: 0.015em;
+  }
+  .social-logo {
+    display: block;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: var(--social-logo-opacity, 0.9);
+    transition:
+      opacity 160ms ease,
+      transform 160ms ease;
+  }
+  .social-placeholder {
+    opacity: var(--social-placeholder-opacity, 0.65);
+    cursor: default;
+  }
+  a.social-item:hover {
+    color: #e3c795;
+  }
+  a.social-item:hover .social-logo {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+  @media (max-width: 600px) {
+    .social-list {
+      gap: 4px 6px;
+    }
+  }
+  @media (max-width: 360px) {
+    .social-list.compact {
+      gap: 2px;
+    }
+  }
+  @media (pointer: coarse) {
+    .social-list .social-item {
+      min-width: 44px;
+    }
+  }
+</style>

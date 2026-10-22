@@ -1,0 +1,55 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { categoryLabel, copy, localPath, locale } from '../../lib/i18n';
+interface Props {
+  post: CollectionEntry<'writing'>;
+}
+const { post } = Astro.props;
+const lang = post.data.lang;
+const t = copy[lang];
+const other = (
+  await getCollection(
+    'writing',
+    ({ data }) =>
+      !data.draft &&
+      data.translationKey === post.data.translationKey &&
+      data.lang !== lang,
+  )
+)[0];
+const alternate = other ? `writing/${other.id}/` : 'writing/';
+const { Content } = await render(post);
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  lang={lang}
+  alternatePath={alternate}
+  hasTranslation={!!other}
+>
+  <article class="article">
+    <a class="back-link" href={localPath('writing/', lang)}>
+      ← {t.allWriting}
+    </a>
+    <header>
+      <p class="eyebrow">
+        {categoryLabel(post.data.category, lang)}{' '}
+        <span aria-hidden="true">/</span>{' '}
+        <time datetime={post.data.published.toISOString()}>
+          {post.data.published.toLocaleDateString(locale(lang), {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+            timeZone: 'UTC',
+          })}
+        </time>
+      </p>
+      <h1>{post.data.title}</h1>
+      <p class="lead">{post.data.description}</p>
+    </header>
+    <div class="prose article-body">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

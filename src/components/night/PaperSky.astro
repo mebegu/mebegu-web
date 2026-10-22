@@ -1,0 +1,57 @@
+---
+import { localizedSections } from '../../data/sections';
+import { fanSector, fanTears } from '../../lib/sky-layout';
+import type { Lang } from '../../lib/i18n';
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const sections = localizedSections(lang);
+const tears = fanTears(sections.length);
+---
+
+<svg
+  class="night-paper"
+  viewBox="0 0 100 100"
+  preserveAspectRatio="none"
+  aria-hidden="true"
+>
+  <defs>
+    {sections.map((section) => (
+      <linearGradient id={`sky-${section.id}`} x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color={section.sky} stop-opacity=".7" />
+        <stop offset=".55" stop-color={section.sky} stop-opacity=".58" />
+        <stop offset="1" stop-color={section.sky} stop-opacity=".08" />
+      </linearGradient>
+    ))}
+    <linearGradient id="paper-fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8dcc0" stop-opacity=".82" />
+      <stop offset=".68" stop-color="#d8c9a5" stop-opacity=".68" />
+      <stop offset="1" stop-color="#c1b089" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  {sections.map((section, index) => (
+    <polygon
+      class="sky-paper-panel"
+      data-sky-panel
+      points={fanSector(index, sections.length).points}
+      fill={`url(#sky-${section.id})`}
+    />
+  ))}
+  {tears.map((tear) => (
+    <g class="sky-paper-tear" data-sky-tear>
+      <polygon data-tear-paper points={tear.paper} fill="url(#paper-fade)" />
+      {tear.fibers.map((fiber) => (
+        <path
+          d={fiber}
+          data-tear-fiber
+          fill="none"
+          stroke="#eadfc8"
+          stroke-opacity=".62"
+          stroke-width=".65"
+          vector-effect="non-scaling-stroke"
+        />
+      ))}
+    </g>
+  ))}
+</svg>

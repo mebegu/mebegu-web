@@ -1,0 +1,137 @@
+---
+import type { Project } from '../../data/projects';
+interface Props {
+  visual: Project['visual'];
+}
+const { visual } = Astro.props;
+---
+
+<svg
+  class={`project-visual visual-${visual}`}
+  viewBox="0 0 680 440"
+  fill="none"
+  aria-hidden="true"
+>
+  {visual === 'world' && (
+    <>
+      <path d="m40 301 300-170 300 170-300 170L40 301Z" class="pv-grid" />
+      <path
+        d="m91 330 300-170M142 359l300-170M193 388l300-170M244 417l300-170M91 272l300 170M142 243l300 170M193 214l300 170M244 185l300 170"
+        class="pv-grid"
+      />
+      <path d="m194 254 144-83 145 83-145 84-144-84Z" class="pv-platform-top" />
+      <path d="M194 254v36l144 84v-36l-144-84Z" class="pv-platform-side" />
+      <path d="M338 338v36l145-84v-36l-145 84Z" class="pv-platform-front" />
+      <path d="m274 194 64-37 64 37-64 37-64-37Z" class="pv-block-top" />
+      <path d="M274 194v64l64 37v-64l-64-37Z" class="pv-block-side" />
+      <path d="M338 231v64l64-37v-64l-64 37Z" class="pv-block-front" />
+      <path d="M328 153V89a27 27 0 0 1 54 0v64" class="pv-accent-line" />
+      <path d="M339 147V91a16 16 0 0 1 32 0v56" class="pv-faint-line" />
+      <circle cx="300" cy="269" r="7" class="pv-person" />
+      <path d="M294 277h12l4 20h-20l4-20Z" class="pv-person" />
+      <path d="M300 297v11m-7-11-2 9m14-9 3 9" class="pv-accent-line" />
+      <path
+        d="m455 174 21-12 21 12-21 12-21-12Zm-257 17 16-9 16 9-16 9-16-9Z"
+        class="pv-gem"
+      />
+      <path
+        d="M112 128h34m-17-17v34M531 90h20m-10-10v20"
+        class="pv-faint-line"
+      />
+    </>
+  )}
+  {visual === 'app' && (
+    <>
+      <rect x="102" y="87" width="476" height="287" rx="8" class="pv-window" />
+      <path d="M102 122h476M208 122v252" class="pv-faint-line" />
+      <circle cx="121" cy="105" r="3" class="pv-person" />
+      <circle cx="134" cy="105" r="3" class="pv-person" />
+      <circle cx="147" cy="105" r="3" class="pv-person" />
+      <path
+        d="M125 152h59M125 178h43M125 204h52M125 230h35M233 152h143M233 170h87"
+        class="pv-faint-line"
+      />
+      <rect x="233" y="197" width="99" height="62" rx="4" class="pv-panel" />
+      <rect x="344" y="197" width="99" height="62" rx="4" class="pv-panel" />
+      <rect x="455" y="197" width="99" height="62" rx="4" class="pv-panel" />
+      <path
+        d="M246 234h38M246 222h59M358 234h22M358 222h59M468 234h49M468 222h59M241 335l50-26 43 8 45-30 47 13 57-28 61 6"
+        class="pv-accent-line"
+      />
+      <path d="M241 350h303M241 292h303M241 321h303" class="pv-grid" />
+    </>
+  )}
+  {visual === 'gameplay' && (
+    <>
+      <circle cx="471" cy="127" r="48" class="pv-disc" />
+      <path
+        d="M74 337h133v-32h99v-49h123v-51h111v132h66"
+        class="pv-accent-line"
+      />
+      <path
+        d="M74 338h133v48H74zM207 306h99v80h-99zM306 257h123v129H306zM429 206h111v180H429z"
+        class="pv-platform-side"
+      />
+      <path
+        d="M74 369h532M113 386v-48M160 386v-48M255 386v-80M359 386V257M409 386V257M481 386V206"
+        class="pv-grid"
+      />
+      <circle cx="280" cy="252" r="9" class="pv-person" />
+      <path d="m273 265-4 21h22l-4-21h-14Z" class="pv-person" />
+      <path
+        d="m274 287-5 15m18-15 7 15M291 231c13-69 63-95 111-72"
+        class="pv-faint-line"
+        stroke-dasharray="5 8"
+      />
+      <path d="m394 147 9 12-15 4" class="pv-accent-line" />
+      <path
+        d="m344 205 10-15 10 15-10 15-10-15Zm58-36 10-15 10 15-10 15-10-15Z"
+        class="pv-gem"
+      />
+    </>
+  )}
+  {visual === 'tool' && (
+    <>
+      <rect x="108" y="115" width="152" height="210" rx="8" class="pv-window" />
+      <rect x="420" y="115" width="152" height="210" rx="8" class="pv-window" />
+      <path
+        d="M131 148h71M131 170h105M131 190h105M131 210h67M131 230h91M131 278h57M443 148h59M443 192h103M443 218h103M443 244h103M443 278h48"
+        class="pv-faint-line"
+      />
+      <circle cx="340" cy="219" r="43" class="pv-panel" />
+      <path
+        d="M260 219h37m86 0h37m-99-15 15 15-15 15m24-30 15 15-15 15"
+        class="pv-accent-line"
+      />
+      <path d="M184 97V75h312v22M184 343v22h312v-22" class="pv-grid" />
+    </>
+  )}
+  {visual === 'shader' && (
+    <>
+      <circle cx="340" cy="220" r="132" class="pv-disc" />
+      {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+        <ellipse
+          cx="340"
+          cy="220"
+          rx={132 - i * 14}
+          ry="132"
+          transform={`rotate(${i * 12} 340 220)`}
+          class="pv-faint-line"
+        />
+      ))}
+      <ellipse
+        cx="340"
+        cy="220"
+        rx="189"
+        ry="51"
+        transform="rotate(-26 340 220)"
+        class="pv-accent-line"
+      />
+      <path
+        d="M137 220h33m340 0h33M340 40v25m0 310v25M134 82h35m-18-17v35"
+        class="pv-grid"
+      />
+      <circle cx="498" cy="149" r="7" class="pv-person" />
+    </>
+  )}
+</svg>

@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>mebegu — Ana sayfa wireframe v0.1</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 40px;
+        background: #eeefec;
+        color: #202423;
+        font:
+          14px/1.6 system-ui,
+          sans-serif;
+      }
+      h1 {
+        font-size: 30px;
+        margin: 0;
+      }
+      header p {
+        max-width: 750px;
+        color: #626865;
+      }
+      .boards {
+        display: flex;
+        gap: 40px;
+        align-items: start;
+        flex-wrap: wrap;
+        margin-top: 35px;
+      }
+      .board {
+        background: white;
+        padding: 25px;
+        border: 1px solid #c2c7c3;
+      }
+      .desktop {
+        width: 760px;
+      }
+      .mobile {
+        width: 320px;
+      }
+      .label {
+        font: 11px monospace;
+        letter-spacing: 1px;
+        color: #6a716d;
+        margin-bottom: 18px;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #b7bdb9;
+        padding-bottom: 18px;
+      }
+      .nav span {
+        font-size: 11px;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 25px;
+        padding: 40px 0;
+      }
+      .hero h2 {
+        font-size: 38px;
+        line-height: 1.05;
+        margin: 12px 0;
+      }
+      .eyebrow {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .lines {
+        background: repeating-linear-gradient(
+          #d9deda 0 5px,
+          transparent 5px 13px
+        );
+        height: 31px;
+        width: 85%;
+        margin: 20px 0;
+      }
+      .cta {
+        display: inline-block;
+        border: 1px solid #929b95;
+        padding: 6px 12px;
+        font-size: 11px;
+      }
+      .art {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px dashed #a4ada6;
+        background: #f6f7f5;
+        min-height: 220px;
+        color: #79837c;
+        text-align: center;
+      }
+      .circle {
+        border: 1px solid #a4ada6;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+      }
+      .section {
+        padding: 25px 0;
+        border-top: 1px solid #b7bdb9;
+      }
+      .section h3 {
+        font-size: 21px;
+        margin: 0 0 20px;
+      }
+      .threads {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+      .thread {
+        border: 1px solid #b7bdb9;
+        padding: 15px;
+        min-height: 100px;
+      }
+      .thread b {
+        display: block;
+        margin-bottom: 12px;
+      }
+      .feature {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+      }
+      .cover {
+        height: 200px;
+        background: #e2e6e2;
+        border: 1px solid #b7bdb9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 3px;
+      }
+      .row {
+        padding: 15px 0;
+        border-top: 1px solid #d2d7d3;
+        display: flex;
+        justify-content: space-between;
+      }
+      .footer {
+        border-top: 1px solid #b7bdb9;
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 11px;
+      }
+      .note {
+        background: #f4f1de;
+        border-left: 3px solid #b6a45d;
+        padding: 10px 14px;
+        font-size: 11px;
+        margin-top: 20px;
+      }
+      .mobile .hero,
+      .mobile .feature {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .mobile .hero h2 {
+        font-size: 35px;
+      }
+      .mobile .hero {
+        padding-top: 30px;
+      }
+      .mobile .art {
+        min-height: 180px;
+      }
+      .mobile .threads {
+        grid-template-columns: 1fr;
+      }
+      .mobile .thread {
+        min-height: auto;
+        padding: 12px;
+      }
+      .mobile .thread b {
+        margin: 0;
+      }
+      .mobile .thread .lines {
+        height: 15px;
+        margin: 10px 0 0;
+      }
+      .mobile .section h3 {
+        font-size: 20px;
+      }
+      .mobile .row {
+        font-size: 11px;
+      }
+      .mobile .footer {
+        gap: 20px;
+      }
+      .mobile .cover {
+        height: 180px;
+      }
+      .mobile .nav span {
+        font-size: 9px;
+      }
+      @media (max-width: 820px) {
+        body {
+          padding: 20px;
+        }
+        .desktop {
+          width: 100%;
+        }
+        .desktop .hero h2 {
+          font-size: 28px;
+        }
+        .desktop .threads {
+          grid-template-columns: 1fr;
+        }
+        .desktop .feature {
+          grid-template-columns: 1fr;
+        }
+        .desktop .hero {
+          grid-template-columns: 1fr;
+        }
+        .mobile {
+          width: min(100%, 340px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p class="eyebrow">mebegu / bilgi mimarisi / v0.1</p>
+      <h1>Ana sayfa: ilk yerleşim</h1>
+      <p>
+        Önce içerik sırası ve hiyerarşi. Renk, font, nihai metin ve animasyon bu
+        çizimin kapsamı dışında. Çalışan site, bu yapının ilk görsel yorumudur.
+      </p>
+    </header>
+    <main class="boards">
+      <section class="board desktop" aria-label="Desktop wireframe">
+        <p class="label">DESKTOP / geniş ekran</p>
+        <div class="nav">
+          <b>mebegu.</b><span>About · Writing · Atlantis · GitHub ↗</span>
+        </div>
+        <div class="hero">
+          <div>
+            <span class="eyebrow">Mehmet Berk Gürçay</span>
+            <h2>Software.<br />Stories.<br />And the space<br />in between.</h2>
+            <div class="lines"></div>
+            <span class="cta">Hakkımda ↗</span>
+          </div>
+          <div class="art">
+            <div class="circle">Görsel kimlik /<br />soyut hareket</div>
+          </div>
+        </div>
+        <div class="section">
+          <h3>Üç farklı giriş</h3>
+          <div class="threads">
+            <div class="thread">
+              <b>01 / Software</b>
+              <div class="lines"></div>
+            </div>
+            <div class="thread">
+              <b>02 / Writing</b>
+              <div class="lines"></div>
+            </div>
+            <div class="thread">
+              <b>03 / Atlantis</b>
+              <div class="lines"></div>
+            </div>
+          </div>
+        </div>
+        <div class="section feature">
+          <div class="cover">ATLANTIS</div>
+          <div>
+            <span class="eyebrow">Kitap odağı</span>
+            <h3>Hikâyenin arkasındaki süreç</h3>
+            <div class="lines"></div>
+            <span class="cta">Atlantis’e git ↗</span>
+          </div>
+        </div>
+        <div class="section">
+          <h3>Son yazılar</h3>
+          <div class="row">
+            <span>Kategori / Yazı başlığı ve açıklama</span><span>Tarih ↗</span>
+          </div>
+        </div>
+        <div class="footer">
+          <b>mebegu.</b><span>RSS · GitHub · Hakkımda</span>
+        </div>
+        <div class="note">
+          Karar: mesleki çalışmalar mı, kitap mı, son yazılar mı daha önce
+          gelmeli?
+        </div>
+      </section>
+      <section class="board mobile" aria-label="Mobil wireframe">
+        <p class="label">MOBILE / dar ekran</p>
+        <div class="nav">
+          <b>mebegu.</b><span>About · Writing · Atlantis</span>
+        </div>
+        <div class="hero">
+          <div>
+            <span class="eyebrow">Mehmet Berk Gürçay</span>
+            <h2>Software.<br />Stories.<br />And the space<br />in between.</h2>
+            <div class="lines"></div>
+            <span class="cta">Hakkımda ↗</span>
+          </div>
+          <div class="art"><div class="circle">Görsel</div></div>
+        </div>
+        <div class="section">
+          <h3>Keşfet</h3>
+          <div class="threads">
+            <div class="thread">
+              <b>01 / Software ↗</b>
+              <div class="lines"></div>
+            </div>
+            <div class="thread">
+              <b>02 / Writing ↗</b>
+              <div class="lines"></div>
+            </div>
+            <div class="thread">
+              <b>03 / Atlantis ↗</b>
+              <div class="lines"></div>
+            </div>
+          </div>
+        </div>
+        <div class="section feature">
+          <div class="cover">ATLANTIS</div>
+          <div>
+            <h3>Kitap ve süreç</h3>
+            <div class="lines"></div>
+            <span class="cta">Keşfet ↗</span>
+          </div>
+        </div>
+        <div class="section">
+          <h3>Son yazılar</h3>
+          <div class="row">
+            <span>Kategori / Yazı başlığı</span><span>↗</span>
+          </div>
+        </div>
+        <div class="footer"><b>mebegu.</b><span>RSS · GitHub</span></div>
+        <div class="note">
+          İçerik önce; görsel metnin ardından gelir. Menü sürekli görünür.
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

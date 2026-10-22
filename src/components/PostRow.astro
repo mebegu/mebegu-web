@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { categoryLabel, localPath, locale, type Lang } from '../lib/i18n';
+interface Props {
+  post: CollectionEntry<'writing'>;
+  lang: Lang;
+  heading?: 'h2' | 'h3';
+}
+const { post, lang, heading: Heading = 'h3' } = Astro.props;
+---
+
+<a class="post-row" href={localPath(`writing/${post.id}/`, lang)}>
+  <span class="post-category">{categoryLabel(post.data.category, lang)}</span>
+  <div>
+    <Heading>{post.data.title}</Heading>
+    <p>{post.data.description}</p>
+  </div>
+  <time class="post-date" datetime={post.data.published.toISOString()}>
+    {post.data.published.toLocaleDateString(locale(lang), {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+      timeZone: 'UTC',
+    })}
+  </time>
+  <span aria-hidden="true">↗</span>
+</a>

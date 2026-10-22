@@ -1,0 +1,45 @@
+---
+import { href } from '../../lib/urls';
+---
+
+<div class="night-observer" aria-hidden="true">
+  <svg class="observer-ground" viewBox="0 0 100 30" preserveAspectRatio="none">
+    <path
+      d="M0 30 8 21 20 14 29 7 38 3 50 4 63 3 73 8 86 16 96 25 100 30Z"
+      fill="#050708"
+    />
+    <path d="m20 17 20-8 23 1 18 10-29-7Z" fill="#101217" opacity=".7" />
+  </svg>
+  <img
+    class="observer-lower"
+    src={href('art/observer.webp')}
+    alt=""
+    width="1024"
+    height="1536"
+    decoding="async"
+  />
+  <div class="observer-upper-region">
+    <div class="observer-breath">
+      <div class="observer-body">
+        <img
+          class="observer-upper"
+          src={href('art/observer.webp')}
+          alt=""
+          width="1024"
+          height="1536"
+          decoding="async"
+        />
+        <div class="observer-head">
+          <img
+            class="observer-head-poses"
+            src={href('art/observer-heads-v2.webp')}
+            alt=""
+            width="960"
+            height="576"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

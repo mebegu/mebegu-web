@@ -1,0 +1,330 @@
+<div id="mebegu-quiet-home" aria-label="Seyrek güncellenen kişisel site için tek sayfa yerleşimi">
+  <style>
+    #mebegu-quiet-home {
+      color-scheme: light dark;
+      --wf-paper: light-dark(#fcfcfb, #1b1d1f);
+      --wf-ink: light-dark(#252b2f, #eceeed);
+      --wf-muted: light-dark(#657078, #aeb7bd);
+      --wf-rule: light-dark(#ccd1d3, #454c50);
+      --wf-block: light-dark(#eef0ef, #282d30);
+      color: var(--wf-ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 400;
+      width: 100%;
+    }
+    #mebegu-quiet-home * { box-sizing: border-box; }
+    #mebegu-quiet-home [hidden] { display: none !important; }
+    #mebegu-quiet-home .wf-device-label {
+      font: 400 11px/1.5 ui-monospace, monospace;
+      letter-spacing: .06em;
+      color: var(--wf-muted);
+      margin: 0 0 12px;
+    }
+    #mebegu-quiet-home .wf-page {
+      background: var(--wf-paper);
+      color: var(--wf-ink);
+      border: 1px solid var(--wf-rule);
+      padding: 26px clamp(22px, 6%, 52px) 22px;
+      width: 100%;
+    }
+    #mebegu-quiet-home .wf-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 1px solid var(--wf-rule);
+      padding-bottom: 18px;
+    }
+    #mebegu-quiet-home .wf-logo { font: 500 17px/1.3 ui-monospace, monospace; }
+    #mebegu-quiet-home .wf-nav { display: flex; gap: 16px; margin-left: auto; }
+    #mebegu-quiet-home .wf-nav button,
+    #mebegu-quiet-home .wf-back {
+      border: 0; background: transparent; color: var(--wf-ink);
+      font: 400 12px/1.5 Arial, sans-serif; padding: 8px 0;
+    }
+    #mebegu-quiet-home .wf-nav button[aria-pressed="true"] { text-decoration: underline; text-underline-offset: 5px; }
+    #mebegu-quiet-home .wf-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 24px; }
+    #mebegu-quiet-home .wf-action {
+      background: var(--wf-ink); color: var(--wf-paper); border: 1px solid var(--wf-ink);
+      font: 400 13px/1.5 Arial, sans-serif; padding: 11px 17px;
+    }
+    #mebegu-quiet-home .wf-action.wf-secondary { background: transparent; color: var(--wf-ink); }
+    #mebegu-quiet-home .wf-detail { padding: 28px 0; }
+    #mebegu-quiet-home .wf-detail h1 { font-size: 32px; margin-top: 14px; }
+    #mebegu-quiet-home .wf-placeholder {
+      background: var(--wf-block); border: 1px dashed var(--wf-rule);
+      padding: 20px; margin: 18px 0 0;
+    }
+    #mebegu-quiet-home .wf-placeholder p { font-size: 13px; line-height: 1.8; color: var(--wf-muted); margin: 8px 0 0; }
+    #mebegu-quiet-home .wf-placeholder h2 { font-size: 17px; }
+    #mebegu-quiet-home .wf-language { display: flex; gap: 5px; }
+    #mebegu-quiet-home .wf-language button {
+      font: 400 12px/1.4 Arial, sans-serif;
+      color: var(--wf-muted);
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid transparent;
+      padding: 8px;
+    }
+    #mebegu-quiet-home .wf-language button[aria-pressed="true"] {
+      color: var(--wf-ink);
+      border-bottom-color: var(--wf-ink);
+    }
+    #mebegu-quiet-home .wf-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 100px;
+      align-items: center;
+      gap: 28px;
+      padding: 44px 0 30px;
+    }
+    #mebegu-quiet-home .wf-role {
+      font-size: 12px;
+      color: var(--wf-muted);
+      margin: 0 0 16px;
+    }
+    #mebegu-quiet-home h1 {
+      font: 500 clamp(30px, 5vw, 44px)/1.12 Arial, sans-serif;
+      letter-spacing: -.045em;
+      margin: 0 0 22px;
+    }
+    #mebegu-quiet-home .wf-bio {
+      font-size: 15px;
+      line-height: 1.75;
+      max-width: 430px;
+      margin: 0;
+    }
+    #mebegu-quiet-home .wf-signature {
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 14px;
+      border: 1px dashed var(--wf-rule);
+      background: var(--wf-block);
+      font: 400 11px/1.7 ui-monospace, monospace;
+      color: var(--wf-muted);
+    }
+    #mebegu-quiet-home .wf-intro.no-signature { grid-template-columns: minmax(0, 1fr); }
+    #mebegu-quiet-home .wf-connections {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 15px 24px;
+      padding: 0 0 34px;
+      font-size: 13px;
+    }
+    #mebegu-quiet-home .wf-link-slot {
+      border-bottom: 1px solid var(--wf-rule);
+      padding-bottom: 4px;
+      white-space: nowrap;
+    }
+    #mebegu-quiet-home .wf-more {
+      display: grid;
+      grid-template-columns: 100px minmax(0, 1fr);
+      gap: 26px;
+      padding: 26px 0;
+      border-top: 1px solid var(--wf-rule);
+    }
+    #mebegu-quiet-home .wf-section-label {
+      color: var(--wf-muted);
+      font: 400 11px/1.6 ui-monospace, monospace;
+      margin: 2px 0 0;
+    }
+    #mebegu-quiet-home h2 {
+      font: 500 20px/1.3 Arial, sans-serif;
+      letter-spacing: -.025em;
+      margin: 0 0 8px;
+    }
+    #mebegu-quiet-home .wf-description {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--wf-muted);
+      margin: 0;
+      max-width: 390px;
+    }
+    #mebegu-quiet-home .wf-selected-items { display: grid; gap: 12px; }
+    #mebegu-quiet-home .wf-selected-item {
+      border-bottom: 1px dashed var(--wf-rule);
+      padding-bottom: 10px;
+      font-size: 13px;
+    }
+    #mebegu-quiet-home .wf-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-top: 1px solid var(--wf-rule);
+      padding-top: 18px;
+      color: var(--wf-muted);
+      font-size: 11px;
+    }
+    #mebegu-quiet-home .wf-mobile-stage { padding: 28px 0; margin-top: 28px; }
+    #mebegu-quiet-home .wf-mobile-wrap { width: min(100%, 360px); margin: 0 auto; }
+    #mebegu-quiet-home .wf-mobile .wf-page { padding: 22px; }
+    #mebegu-quiet-home .wf-mobile .wf-intro { grid-template-columns: minmax(0, 1fr); gap: 22px; padding-top: 32px; }
+    #mebegu-quiet-home .wf-mobile h1 { font-size: 34px; }
+    #mebegu-quiet-home .wf-mobile .wf-signature { width: 78px; min-height: 78px; order: -1; }
+    #mebegu-quiet-home .wf-mobile .wf-more { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+    #mebegu-quiet-home .wf-mobile .wf-connections { gap: 15px 20px; }
+    #mebegu-quiet-home .wf-mobile .wf-header { flex-wrap: wrap; gap: 14px; }
+    #mebegu-quiet-home .wf-mobile .wf-nav { order: 3; width: 100%; margin: 0; }
+    #mebegu-quiet-home .wf-mobile .wf-language { margin-left: auto; }
+    @media (max-width: 480px) {
+      #mebegu-quiet-home .wf-header { flex-wrap: wrap; gap: 14px; }
+      #mebegu-quiet-home .wf-nav { order: 3; width: 100%; margin: 0; }
+      #mebegu-quiet-home .wf-language { margin-left: auto; }
+      #mebegu-quiet-home .wf-desktop .wf-intro { grid-template-columns: minmax(0, 1fr); }
+      #mebegu-quiet-home .wf-desktop .wf-signature { width: 78px; min-height: 78px; order: -1; }
+      #mebegu-quiet-home .wf-desktop .wf-more { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+    }
+    @media (pointer: coarse) {
+      #mebegu-quiet-home .wf-language button { min-width: 44px; min-height: 44px; }
+      #mebegu-quiet-home .wf-nav button, #mebegu-quiet-home .wf-back { min-height: 44px; }
+    }
+  </style>
+
+  <section class="wf-desktop" aria-label="Masaüstü yerleşimi">
+    <p class="wf-device-label">MASAÜSTÜ · TEK SAYFA</p>
+    <div class="wf-page" lang="tr">
+      <header class="wf-header">
+        <span class="wf-logo">mebegu.</span>
+        <nav class="wf-nav" aria-label="Sayfalar"><button type="button" class="cursor-interaction" data-view="portfolio" data-copy="portfolio">Portföy</button><button type="button" class="cursor-interaction" data-view="cv">CV</button></nav>
+        <div class="wf-language" role="group" aria-label="Dil">
+          <button type="button" class="cursor-interaction" data-language="tr" aria-pressed="true" lang="tr">TR</button>
+          <button type="button" class="cursor-interaction" data-language="en" aria-pressed="false" lang="en">EN</button>
+        </div>
+      </header>
+      <div data-screen="overview">
+      <div class="wf-intro">
+        <div>
+          <p class="wf-role" data-copy="role">Yazılım geliştirici</p>
+          <h1>Mehmet Berk<br>Gürçay</h1>
+          <p class="wf-bio" data-copy="bio">Yazılım geliştiriyorum. Bir yandan da yazıyorum ve merakımı uyandıran şeylerin peşinden gidiyorum.</p>
+        </div>
+        <div class="wf-signature" aria-hidden="true" data-copy="signature">Kişisel görsel<br>isteğe bağlı</div>
+      </div>
+      <div class="wf-actions"><button type="button" class="wf-action cursor-interaction" data-view="portfolio" data-copy="viewWork">Portföyü incele ↗</button><button type="button" class="wf-action wf-secondary cursor-interaction" data-view="cv" data-copy="viewCv">CV’yi aç ↗</button></div>
+      <div class="wf-connections" aria-label="Bağlantı yerleşimi; adresler daha sonra eklenecek">
+        <span class="wf-link-slot">GitHub ↗</span>
+        <span class="wf-link-slot">LinkedIn ↗</span>
+        <span class="wf-link-slot" data-copy="email">E-posta ↗</span>
+      </div>
+      <section class="wf-more">
+        <p class="wf-section-label" data-copy="aside">Kodun dışında</p>
+        <div><h2>Atlantis</h2><p class="wf-description" data-copy="book">Üzerinde çalıştığım kitap. Yazmak, bu kişisel alanın da bir parçası.</p></div>
+      </section>
+      <section class="wf-more wf-selection" hidden>
+        <p class="wf-section-label" data-copy="selected">Seçtiklerim</p>
+        <div class="wf-selected-items"><span class="wf-selected-item" data-copy="article">Seçilmiş bir yazı ↗</span><span class="wf-selected-item" data-copy="album">Bir fotoğraf seçkisi ↗</span></div>
+      </section>
+      </div>
+      <section class="wf-detail" data-screen="portfolio" hidden>
+        <button type="button" class="wf-back cursor-interaction" data-view="overview" data-copy="back">← Ana sayfa</button>
+        <h1 data-copy="portfolio">Portföy</h1><p class="wf-description" data-copy="workLead">Seçilmiş çalışmalar ve üstlendiğim roller.</p>
+        <div class="wf-placeholder"><h2 data-copy="workName">Çalışma / proje adı</h2><p data-copy="workContext">Şirket veya bağlam · rol · dönem</p><p data-copy="workCase">Problem → Benim katkım → Yaklaşım → Sonuç</p></div>
+        <div class="wf-placeholder"><h2 data-copy="workName">Çalışma / proje adı</h2><p data-copy="workContext">Şirket veya bağlam · rol · dönem</p><p data-copy="workCase">Problem → Benim katkım → Yaklaşım → Sonuç</p></div>
+      </section>
+      <section class="wf-detail" data-screen="cv" hidden>
+        <button type="button" class="wf-back cursor-interaction" data-view="overview" data-copy="back">← Ana sayfa</button>
+        <h1>CV</h1><p class="wf-description">Mehmet Berk Gürçay · <span data-copy="role">Yazılım geliştirici</span></p>
+        <div class="wf-placeholder"><h2 data-copy="experience">Deneyim</h2><p data-copy="experienceFields">Şirket · unvan · tarihler · sorumluluklar</p></div>
+        <div class="wf-placeholder"><h2 data-copy="education">Eğitim ve yetkinlikler</h2><p data-copy="educationFields">Eğitim · uzmanlık alanları · diller</p></div>
+        <p class="wf-description" style="margin-top:20px" data-copy="cvDownload">İndirilebilir CV bağlantısı</p>
+      </section>
+      <footer class="wf-footer"><span>Mehmet Berk Gürçay</span><span data-copy="personal">Kişisel alanım.</span></footer>
+    </div>
+  </section>
+
+  <div class="wf-mobile-stage viz-dotted-background">
+    <section class="wf-mobile-wrap wf-mobile" aria-label="Mobil yerleşimi">
+      <p class="wf-device-label">MOBİL · AYNI İÇERİK</p>
+      <div class="wf-page" lang="tr">
+        <header class="wf-header"><span class="wf-logo">mebegu.</span><nav class="wf-nav" aria-label="Sayfalar"><button type="button" class="cursor-interaction" data-view="portfolio" data-copy="portfolio">Portföy</button><button type="button" class="cursor-interaction" data-view="cv">CV</button></nav><div class="wf-language" role="group" aria-label="Dil"><button type="button" class="cursor-interaction" data-language="tr" aria-pressed="true" lang="tr">TR</button><button type="button" class="cursor-interaction" data-language="en" aria-pressed="false" lang="en">EN</button></div></header>
+        <div data-screen="overview">
+        <div class="wf-intro"><div><p class="wf-role" data-copy="role">Yazılım geliştirici</p><h1>Mehmet Berk<br>Gürçay</h1><p class="wf-bio" data-copy="bio">Yazılım geliştiriyorum. Bir yandan da yazıyorum ve merakımı uyandıran şeylerin peşinden gidiyorum.</p></div><div class="wf-signature" aria-hidden="true" data-copy="signature">Kişisel görsel<br>isteğe bağlı</div></div>
+        <div class="wf-actions"><button type="button" class="wf-action cursor-interaction" data-view="portfolio" data-copy="viewWork">Portföyü incele ↗</button><button type="button" class="wf-action wf-secondary cursor-interaction" data-view="cv" data-copy="viewCv">CV’yi aç ↗</button></div>
+        <div class="wf-connections" aria-label="Bağlantı yerleşimi; adresler daha sonra eklenecek"><span class="wf-link-slot">GitHub ↗</span><span class="wf-link-slot">LinkedIn ↗</span><span class="wf-link-slot" data-copy="email">E-posta ↗</span></div>
+        <section class="wf-more"><p class="wf-section-label" data-copy="aside">Kodun dışında</p><div><h2>Atlantis</h2><p class="wf-description" data-copy="book">Üzerinde çalıştığım kitap. Yazmak, bu kişisel alanın da bir parçası.</p></div></section>
+        <section class="wf-more wf-selection" hidden><p class="wf-section-label" data-copy="selected">Seçtiklerim</p><div class="wf-selected-items"><span class="wf-selected-item" data-copy="article">Seçilmiş bir yazı ↗</span><span class="wf-selected-item" data-copy="album">Bir fotoğraf seçkisi ↗</span></div></section>
+        </div>
+        <section class="wf-detail" data-screen="portfolio" hidden><button type="button" class="wf-back cursor-interaction" data-view="overview" data-copy="back">← Ana sayfa</button><h1 data-copy="portfolio">Portföy</h1><p class="wf-description" data-copy="workLead">Seçilmiş çalışmalar ve üstlendiğim roller.</p><div class="wf-placeholder"><h2 data-copy="workName">Çalışma / proje adı</h2><p data-copy="workContext">Şirket veya bağlam · rol · dönem</p><p data-copy="workCase">Problem → Benim katkım → Yaklaşım → Sonuç</p></div><div class="wf-placeholder"><h2 data-copy="workName">Çalışma / proje adı</h2><p data-copy="workContext">Şirket veya bağlam · rol · dönem</p><p data-copy="workCase">Problem → Benim katkım → Yaklaşım → Sonuç</p></div></section>
+        <section class="wf-detail" data-screen="cv" hidden><button type="button" class="wf-back cursor-interaction" data-view="overview" data-copy="back">← Ana sayfa</button><h1>CV</h1><p class="wf-description">Mehmet Berk Gürçay · <span data-copy="role">Yazılım geliştirici</span></p><div class="wf-placeholder"><h2 data-copy="experience">Deneyim</h2><p data-copy="experienceFields">Şirket · unvan · tarihler · sorumluluklar</p></div><div class="wf-placeholder"><h2 data-copy="education">Eğitim ve yetkinlikler</h2><p data-copy="educationFields">Eğitim · uzmanlık alanları · diller</p></div><p class="wf-description" style="margin-top:20px" data-copy="cvDownload">İndirilebilir CV bağlantısı</p></section>
+        <footer class="wf-footer"><span>Mehmet Berk Gürçay</span><span data-copy="personal">Kişisel alanım.</span></footer>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    (() => {
+      const root = document.getElementById('mebegu-quiet-home');
+      const state = { lang: 'tr', view: 'overview', signature: true, selection: false };
+      const text = {
+        tr: {
+          portfolio: 'Portföy', viewWork: 'Portföyü incele ↗', viewCv: 'CV’yi aç ↗', back: '← Ana sayfa',
+          workLead: 'Seçilmiş çalışmalar ve üstlendiğim roller.', workName: 'Çalışma / proje adı', workContext: 'Şirket veya bağlam · rol · dönem', workCase: 'Problem → Benim katkım → Yaklaşım → Sonuç',
+          experience: 'Deneyim', experienceFields: 'Şirket · unvan · tarihler · sorumluluklar', education: 'Eğitim ve yetkinlikler', educationFields: 'Eğitim · uzmanlık alanları · diller', cvDownload: 'İndirilebilir CV bağlantısı',
+          role: 'Yazılım geliştirici',
+          bio: 'Yazılım geliştiriyorum. Bir yandan da yazıyorum ve merakımı uyandıran şeylerin peşinden gidiyorum.',
+          signature: 'Kişisel görsel\nisteğe bağlı',
+          email: 'E-posta ↗', aside: 'Kodun dışında',
+          book: 'Üzerinde çalıştığım kitap. Yazmak, bu kişisel alanın da bir parçası.',
+          selected: 'Seçtiklerim', article: 'Seçilmiş bir yazı ↗', album: 'Bir fotoğraf seçkisi ↗', personal: 'Kişisel alanım.',
+        },
+        en: {
+          portfolio: 'Work', viewWork: 'Explore my work ↗', viewCv: 'View my CV ↗', back: '← Overview',
+          workLead: 'Selected work and the roles I took on.', workName: 'Work / project name', workContext: 'Company or context · role · period', workCase: 'Problem → My contribution → Approach → Outcome',
+          experience: 'Experience', experienceFields: 'Company · title · dates · responsibilities', education: 'Education & skills', educationFields: 'Education · expertise · languages', cvDownload: 'Downloadable CV link',
+          role: 'Software developer',
+          bio: 'I develop software. I also write, and make room for the things that spark my curiosity.',
+          signature: 'Personal visual\noptional',
+          email: 'Email ↗', aside: 'Beyond code',
+          book: "The book I'm working on. Writing is part of this personal space, too.",
+          selected: 'Selected', article: 'A selected piece of writing ↗', album: 'A photo collection ↗', personal: 'A personal space.',
+        },
+      };
+      function render() {
+        root.querySelectorAll('[data-screen]').forEach(panel => panel.hidden = panel.dataset.screen !== state.view);
+        root.querySelectorAll('.wf-nav [data-view]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.view === state.view)));
+        root.querySelectorAll('[data-copy]').forEach(element => {
+          element.textContent = text[state.lang][element.dataset.copy];
+        });
+        root.querySelectorAll('[data-language]').forEach(button => {
+          button.setAttribute('aria-pressed', String(button.dataset.language === state.lang));
+        });
+        root.querySelectorAll('.wf-page').forEach(page => page.lang = state.lang);
+        root.querySelectorAll('.wf-language').forEach(group => group.setAttribute('aria-label', state.lang === 'tr' ? 'Dil' : 'Language'));
+        root.querySelectorAll('.wf-nav').forEach(nav => nav.setAttribute('aria-label', state.lang === 'tr' ? 'Sayfalar' : 'Pages'));
+        root.querySelectorAll('.wf-signature').forEach(element => { element.hidden = !state.signature; element.style.whiteSpace = 'pre-line'; });
+        root.querySelectorAll('.wf-intro').forEach(element => element.classList.toggle('no-signature', !state.signature));
+        root.querySelectorAll('.wf-selection').forEach(element => element.hidden = !state.selection);
+      }
+      function restore(saved) {
+        if (!saved || typeof saved !== 'object') return;
+        if (saved.lang === 'tr' || saved.lang === 'en') state.lang = saved.lang;
+        if (['overview', 'portfolio', 'cv'].includes(saved.view)) state.view = saved.view;
+        if (typeof saved.signature === 'boolean') state.signature = saved.signature;
+        if (typeof saved.selection === 'boolean') state.selection = saved.selection;
+      }
+      function save() {
+        window.openai?.setWidgetState?.({ modelContent: { wireframe: 'quiet-home', ...state } })?.catch(() => {});
+      }
+      restore(window.openai?.widgetState?.modelContent);
+      root.querySelectorAll('[data-language]').forEach(button => button.addEventListener('click', () => {
+        state.lang = button.dataset.language;
+        render(); save();
+      }));
+      root.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => {
+        state.view = button.dataset.view;
+        render(); save();
+      }));
+      window.addEventListener('openai:set_globals', event => { restore(event.detail?.globals?.widgetState?.modelContent); render(); });
+      render();
+      if (globalThis.Tweak) {
+        const controls = new Tweak({ container: root, onChange: () => { render(); save(); } });
+        controls.addToggle(state, 'signature', { label: 'Küçük kişisel görsel' });
+        controls.addToggle(state, 'selection', { label: 'İleride yazı ve albüm seçkisi' });
+      }
+    })();
+  </script>
+</div>
