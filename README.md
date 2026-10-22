@@ -1,12 +1,13 @@
-# mebegu-web
+# mebegu.github.io
 
 Mehmet Berk Gürçay’ın Türkçe ve İngilizce kişisel sitesi. Yazılım, yazılar, Alamori ve zamanla büyüyecek kişisel bir arşiv için GitHub Pages üzerinde çalışan statik temel.
 
 **Durum:** Çalışan prototip. Mesleki geçmiş, gerçek projeler, blog yazıları ve kitap içeriği henüz tamamlanmadı. Repo belgeleri Türkçe.
 
-- Repo: [mebegu/mebegu-web](https://github.com/mebegu/mebegu-web)
-- Pages adresi: [mebegu.github.io/mebegu-web](https://mebegu.github.io/mebegu-web/)
-- SSH remote: `git@github.com:mebegu/mebegu-web.git`
+- Repo: [mebegu/mebegu.github.io](https://github.com/mebegu/mebegu.github.io)
+- Pages adresi: [mebegu.github.io](https://mebegu.github.io/)
+- Türkçe giriş: [mebegu.github.io/tr/](https://mebegu.github.io/tr/)
+- SSH remote: `git@github.com:mebegu/mebegu.github.io.git`
 
 ## Hızlı başlangıç
 
@@ -102,9 +103,9 @@ CV ve portföyün ilk içerik iskeleti hazırdır; görseller, gerçek proje ba�
 
 1. GitHub → repo **Settings → Pages → Source → GitHub Actions** seçili olmalı.
 2. `main` branch’ine push yapın veya **Actions → Validate and deploy to GitHub Pages → Run workflow** kullanın.
-3. Başarılı `deploy` adımındaki URL’yi açın. Türkçe giriş `/mebegu-web/tr/` adresidir.
+3. Başarılı `deploy` adımındaki URL’yi açın. Ana giriş `https://mebegu.github.io/`, Türkçe giriş `/tr/` adresidir.
 
-Workflow, domain ve repo alt yolunu GitHub Pages ayarlarından otomatik alır. Pull request’lerde tip kontrolü, build ve çıktı kontrolü yapılır; yalnız `main` dalı yayımlanır. Build salt okuma yetkisiyle çalışır; deploy için Pages ve OIDC yetkileri ayrı işte verilir. Action’lar doğrulanmış commit SHA’larına sabitlenmiştir. Dependabot ayda bir Actions ve npm güncellemeleri için PR açar; otomatik merge yoktur.
+Repo `mebegu.github.io` adını taşıdığı için bu bir kullanıcı sitesidir; yayın kök `/` yolundadır. Workflow, domain ve base yolunu GitHub Pages ayarlarından otomatik alır. Pull request’lerde tip kontrolü, build ve çıktı kontrolü yapılır; yalnız `main` dalı yayımlanır. Build salt okuma yetkisiyle çalışır; deploy için Pages ve OIDC yetkileri ayrı işte verilir. Action’lar doğrulanmış commit SHA’larına sabitlenmiştir. Dependabot ayda bir Actions ve npm güncellemeleri için PR açar; otomatik merge yoktur.
 
 Kendi domainini daha sonra Pages ayarlarından bağlayabilirsin. Yerel üretim build’inde `SITE_URL` ve `BASE_PATH` ortam değişkenlerini kullan; `.env.example` yalnızca örnektir, kopyalamak gerekmez. Değişkenler verilmezse build kök dizin için `https://mebegu.github.io` adresini varsayar. Bu varsayılan bir canlı yayın doğrulaması değildir.
 

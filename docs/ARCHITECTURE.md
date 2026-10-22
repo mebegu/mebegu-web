@@ -34,7 +34,7 @@ Repo, bir backend’e ihtiyaç duymadan GitHub Pages’te yayımlanır. Astro bu
 /tr/rss.xml        Türkçe yazıların özeti
 ```
 
-`src/lib/urls.ts` yerel adreslere build’in base yolunu ekler. Sayfa ve asset bağlantılarında `/about/` gibi hardcoded kök yollar kullanmayın. Repo sitesi, kullanıcı sitesi ve özel domain bu yaklaşımla desteklenir. `SITE_URL` origin’i, `BASE_PATH` alt yolu belirtir. Canonical ve RSS aynı değerlerle üretilir. Yalnızca GitHub Pages yayın akışı bu değerleri otomatik keşfeder.
+`src/lib/urls.ts` yerel adreslere build’in base yolunu ekler. Sayfa ve asset bağlantılarında `/about/` gibi hardcoded kök yollar kullanmayın. Repo sitesi, kullanıcı sitesi ve özel domain bu yaklaşımla desteklenir. `SITE_URL` origin’i, `BASE_PATH` alt yolu belirtir. Canonical ve RSS aynı değerlerle üretilir. Yalnızca GitHub Pages yayın akışı bu değerleri otomatik keşfeder. Güncel repo `mebegu/mebegu.github.io`, yayın `https://mebegu.github.io/` ve base `/` yoludur; repo adı URL’ye alt yol olarak eklenmez.
 
 ## Veri akışı
 

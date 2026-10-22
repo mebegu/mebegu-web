@@ -12,7 +12,8 @@ Takvim sözü yerine, her aşamanın somut bitiş koşulu var. Öncelikler yeni 
 - [x] Türkçe/İngilizce şablonlar, çeviri eşleştirme, dil bazlı RSS.
 - [x] İlk responsive görsel yön ve yerleşim wireframe’i.
 - [x] GitHub Pages workflow’u ve çıktı kontrolleri.
-- [ ] Hedef GitHub remote’una bağlama ve ilk canlı deploy.
+- [x] Hedef GitHub remote’una bağlama ve ilk canlı deploy.
+- [x] Repo adını `mebegu.github.io` yaparak `https://mebegu.github.io/` kök adresine geçiş.
 
 **Bitiş koşulu:** Yerel site çalışır, build ve bağlantı kontrolleri geçer; repo hedefi belli olunca Pages üzerinde doğrulanır. Bu sürüm final tasarım veya tamamlanmış CV değildir.
 

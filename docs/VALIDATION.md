@@ -1,5 +1,12 @@
 # Doğrulama
 
+## Kullanıcı sitesi kök adresine geçiş — 22 Ekim 2026
+
+- Mevcut repo `mebegu/mebegu.github.io` olarak yeniden adlandırıldı; repo kimliği, Git geçmişi ve 24 issue korundu. Yerel origin `git@github.com:mebegu/mebegu.github.io.git` olarak güncellendi.
+- GitHub Pages API artık `https://mebegu.github.io/` adresini döndürür; yayın yöntemi GitHub Actions, HTTPS etkin. `.env.example` base değeri `/`; CI base/origin değerlerini mevcut Pages ayarından otomatik alır.
+- Ana giriş `/`, Türkçe giriş `/tr/`. Eski `/mebegu-web/` yolları önceki sürüm kayıtlarında tarihsel bağlamdır; güncel yayın yolu değildir.
+- Kaynak kontrolü, statik build ve çıktı kontrolleri kök adresle çalıştırılır; linkler, görseller, canonical/hreflang ve iki RSS bu yol üzerinden doğrulanır.
+
 ## Profesyonel çalışmalar ve hobi atölyesi ayrımı — 22 Ekim 2026
 
 - On bir CV/iş kaydının tamamı yalnız profesyonel sayfanın İngilizce Selected work bölümündedir; CV baskısına dahil edilmez.
