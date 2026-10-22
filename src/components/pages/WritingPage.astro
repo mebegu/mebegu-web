@@ -44,46 +44,46 @@ const open = tr ? 'Yazıyı aç' : 'Read post';
         </h1>
         <p>{tr ? 'Yerleşim taslağı' : 'Layout preview'}</p>
       </header>
-      {featured.map((post, index) => (
-        <div
-          class:list={[
-            'catalog-slide',
-            `tone-${post.tone}`,
-            { 'is-active': index === 0 },
-          ]}
-          data-slide
-          role="group"
-          aria-roledescription={tr ? 'Slayt' : 'Slide'}
-          aria-label={`${index + 1} / ${featured.length}`}
-          aria-hidden={index !== 0 ? 'true' : 'false'}
-          inert={index !== 0}
-        >
-          <div class="feature-art" aria-hidden="true">
-            <CatalogArtwork art={post.art} />
+      <div class="featured-track" data-featured-track>
+        {featured.map((post, index) => (
+          <div
+            class:list={[
+              'catalog-slide',
+              `tone-${post.tone}`,
+              { 'is-active': index === 0 },
+            ]}
+            data-slide
+            role="group"
+            aria-roledescription={tr ? 'Slayt' : 'Slide'}
+            aria-label={`${index + 1} / ${featured.length}`}
+          >
+            <div class="feature-art" aria-hidden="true">
+              <CatalogArtwork art={post.art} />
+            </div>
+            <div class="feature-copy" data-feature-copy>
+              <p class="feature-kicker">
+                {tr ? 'Öne çıkan' : 'Featured'}{' '}
+                <span aria-hidden="true">/</span>{' '}
+                {
+                  catalogShelves.find((shelf) => shelf.id === post.shelf)
+                    ?.title[lang]
+                }
+              </p>
+              <h2>{post.title[lang]}</h2>
+              <p class="feature-description">{post.description[lang]}</p>
+              <a
+                class="feature-open"
+                href={postPath(post.id)}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${post.title[lang]} — ${newTab}`}
+              >
+                {open} <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
-          <div class="feature-copy" data-feature-copy>
-            <p class="feature-kicker">
-              {tr ? 'Öne çıkan' : 'Featured'} <span aria-hidden="true">/</span>{' '}
-              {
-                catalogShelves.find((shelf) => shelf.id === post.shelf)?.title[
-                  lang
-                ]
-              }
-            </p>
-            <h2>{post.title[lang]}</h2>
-            <p class="feature-description">{post.description[lang]}</p>
-            <a
-              class="feature-open"
-              href={postPath(post.id)}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${post.title[lang]} — ${newTab}`}
-            >
-              {open} <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
       <div class="feature-controls" data-feature-controls hidden>
         <div
           class="feature-dots"

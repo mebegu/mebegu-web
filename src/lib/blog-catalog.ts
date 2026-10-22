@@ -1,4 +1,4 @@
-import { initCarouselGestures } from './carousel-gestures';
+import { initCarouselScroll } from './carousel-scroll';
 
 /** Lightweight carousel and native shelf scrolling; cards themselves are CSS + links. */
 export function initBlogCatalog(catalog: HTMLElement) {
@@ -14,6 +14,16 @@ export function initBlogCatalog(catalog: HTMLElement) {
   let paused = motion.matches;
   let gestureBusy = false;
   let timer: ReturnType<typeof setTimeout> | undefined;
+  const scroller = initCarouselScroll(
+    featured.querySelector<HTMLElement>('[data-featured-track]')!,
+    slides.length,
+    updateActive,
+    (busy) => {
+      gestureBusy = busy;
+      schedule();
+    },
+    () => motion.matches,
+  );
 
   function schedule() {
     clearTimeout(timer);
@@ -29,6 +39,9 @@ export function initBlogCatalog(catalog: HTMLElement) {
     timer = setTimeout(() => show(current + 1), 6500);
   }
   function show(index: number, manual = false) {
+    scroller.show(index, manual);
+  }
+  function updateActive(index: number, manual = false) {
     current = (index + slides.length) % slides.length;
     slides.forEach((slide, i) => {
       slide.classList.toggle('is-active', i === current);
@@ -73,14 +86,8 @@ export function initBlogCatalog(catalog: HTMLElement) {
   });
   featured.addEventListener('focusin', schedule);
   featured.addEventListener('focusout', () => queueMicrotask(schedule));
-  initCarouselGestures(
-    featured,
-    (direction) => show(current + direction, true),
-    (busy) => {
-      gestureBusy = busy;
-      schedule();
-    },
-  );
+  window.addEventListener('resize', () => scroller.show(current, false, true));
+  updateActive(0);
   document.addEventListener('visibilitychange', schedule);
   motion.addEventListener('change', () => {
     if (motion.matches) {

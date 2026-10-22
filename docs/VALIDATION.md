@@ -1,5 +1,11 @@
 # Doğrulama
 
+## Banner’da gerçek yatay scroll düzeltmesi — 22 Ekim 2026
+
+- Kullanıcı önceki swipe uygulamasının çalışmadığını bildirdi. Özel wheel/pointer eşikleri kaldırıldı; banner yan yana duran dört slaytla gerçek `overflow-x: auto` / CSS scroll snap alanına çevrildi. `touch-action: pan-y` kısıtı kaldırıldı. Kontroller/otomatik geçiş `scrollTo` kullanır, aktif nokta doğal scroll konumunu takip eder.
+- Sekiz Node simülasyonu geçti: iki yönde scroll durumu, autoplay bekleme/scrollend alternatifi, kontrol hedefleri/sarma, programatik geçişi kesme, wheel/dikey scroll/pinch/tıklamayı engellememe, azaltılmış hareket ve yeniden boyutlandırma, taşma/gizli alan durumu. Bu testler tarayıcının fiziksel swipe/scroll uygulamasını doğrulamaz.
+- `pnpm validate`: 63 kaynak dosyada sıfır hata/uyarı/ipucu, 41 HTML ve 998 yerel referans, iki RSS. Tarayıcı envanteri halen boş (`apps: [], browsers: []`); fiziksel touchpad ve dokunmatik doğrulaması yapılamadı. Önceki yedi gesture testinin geçmesi gerçek kullanıcı davranışının çalıştığını kanıtlamadı; aşağıdaki eski kayıt bu kapsamda değerlendirilmelidir.
+
 ## Blog banner swipe ve kart dönüşü — 22 Ekim 2026
 
 - Kartın 180° dönüşü 780 ms, daha uzak perspektif ve yumuşak hızlanma/yavaşlama kullanır. Azaltılmış hareket tercihi dönüşü kapatmayı sürdürür.
