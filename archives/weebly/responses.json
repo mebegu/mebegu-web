@@ -1,0 +1,902 @@
+{
+  "https://mebegu.weebly.com/robots.txt": {
+    "url": "https://mebegu.weebly.com/robots.txt",
+    "final_url": "https://mebegu.weebly.com/robots.txt",
+    "status": 200,
+    "content_type": "text/plain; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:18.801404+00:00",
+    "path": "archives/weebly/raw/robots.txt",
+    "bytes": 129,
+    "sha256": "8254ea1773caed7f49ad52ba111a30520a1c77ea9c09b75b7263e4143c44600d"
+  },
+  "https://mebegu.weebly.com/sitemap.xml": {
+    "url": "https://mebegu.weebly.com/sitemap.xml",
+    "final_url": "https://mebegu.weebly.com/sitemap.xml",
+    "status": 200,
+    "content_type": "text/xml; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:19.533682+00:00",
+    "path": "archives/weebly/raw/sitemap.xml",
+    "bytes": 3093,
+    "sha256": "79cdf603941bd2455526d33e4412a51642253d0b02e5d4637ede88495dcb60a5"
+  },
+  "https://mebegu.weebly.com/blog": {
+    "url": "https://mebegu.weebly.com/blog",
+    "final_url": "https://mebegu.weebly.com/blog",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:20.225039+00:00",
+    "path": "archives/weebly/raw/blog.html",
+    "bytes": 57188,
+    "sha256": "a73b963f06216f9704a0bce116b3c75ea8c9ea1ae41f13f2f9a6bf3764519b15"
+  },
+  "https://mebegu.weebly.com/1/feed": {
+    "url": "https://mebegu.weebly.com/1/feed",
+    "final_url": "https://mebegu.weebly.com/1/feed",
+    "status": 200,
+    "content_type": "text/xml; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:20.611967+00:00",
+    "path": "archives/weebly/raw/rss.xml",
+    "bytes": 123194,
+    "sha256": "402fb6a4fbc92f0d16747cdf555f392b8323c0ffc2f1dc678574e4619cb56558"
+  },
+  "https://mebegu.weebly.com/blog/archives/02-2013": {
+    "url": "https://mebegu.weebly.com/blog/archives/02-2013",
+    "final_url": "https://mebegu.weebly.com/blog/archives/02-2013",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:21.370832+00:00",
+    "path": "archives/weebly/raw/navigation/a5158f44c7172405.html",
+    "bytes": 35205,
+    "sha256": "a030bb7a0e7d9140a26f66b8f468fada80f0bbed80710602f2931cf8a0ce1b19"
+  },
+  "https://mebegu.weebly.com/blog/archives/02-2014": {
+    "url": "https://mebegu.weebly.com/blog/archives/02-2014",
+    "final_url": "https://mebegu.weebly.com/blog/archives/02-2014",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:22.044102+00:00",
+    "path": "archives/weebly/raw/navigation/a632a88d94458d27.html",
+    "bytes": 33625,
+    "sha256": "4e8865efb47979df35d8a514b59351f0f681caa065dbb0a6eec92185e38909b4"
+  },
+  "https://mebegu.weebly.com/blog/archives/03-2014": {
+    "url": "https://mebegu.weebly.com/blog/archives/03-2014",
+    "final_url": "https://mebegu.weebly.com/blog/archives/03-2014",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:22.743783+00:00",
+    "path": "archives/weebly/raw/navigation/b79d77804a573e65.html",
+    "bytes": 34501,
+    "sha256": "c087290625e45da3c0cc1c3aed77584814fe9810450f29a38bfcdac459532212"
+  },
+  "https://mebegu.weebly.com/blog/archives/04-2017": {
+    "url": "https://mebegu.weebly.com/blog/archives/04-2017",
+    "final_url": "https://mebegu.weebly.com/blog/archives/04-2017",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:23.518783+00:00",
+    "path": "archives/weebly/raw/navigation/c212d5086d420366.html",
+    "bytes": 33994,
+    "sha256": "b108d227c365f2ebc1d7a8518606ac22b28e1718c4a1575f7b623da7f33ec94e"
+  },
+  "https://mebegu.weebly.com/blog/archives/05-2017": {
+    "url": "https://mebegu.weebly.com/blog/archives/05-2017",
+    "final_url": "https://mebegu.weebly.com/blog/archives/05-2017",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:24.259964+00:00",
+    "path": "archives/weebly/raw/navigation/928a9be724cf7bf9.html",
+    "bytes": 34196,
+    "sha256": "34f3b76a5893b8e1b76ca77f21f21f34a4aeb45a46b864ed12d385d863aae1cf"
+  },
+  "https://mebegu.weebly.com/blog/archives/08-2014": {
+    "url": "https://mebegu.weebly.com/blog/archives/08-2014",
+    "final_url": "https://mebegu.weebly.com/blog/archives/08-2014",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:24.948777+00:00",
+    "path": "archives/weebly/raw/navigation/fc007aaeccb13aea.html",
+    "bytes": 33865,
+    "sha256": "96f802b7bb5c32c61df184b02187bf5dc5e1935f5aa27f9ca13695541d91f384"
+  },
+  "https://mebegu.weebly.com/blog/archives/11-2013": {
+    "url": "https://mebegu.weebly.com/blog/archives/11-2013",
+    "final_url": "https://mebegu.weebly.com/blog/archives/11-2013",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:25.693746+00:00",
+    "path": "archives/weebly/raw/navigation/a33e44701590269a.html",
+    "bytes": 39350,
+    "sha256": "b0b0714454e46b915c944291226487883d57159dd3b5b91ef16039a9428ec3cb"
+  },
+  "https://mebegu.weebly.com/blog/category/Teknoloji": {
+    "url": "https://mebegu.weebly.com/blog/category/Teknoloji",
+    "final_url": "https://mebegu.weebly.com/blog/category/Teknoloji",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:26.389836+00:00",
+    "path": "archives/weebly/raw/navigation/8851af7aab5297e4.html",
+    "bytes": 39339,
+    "sha256": "49a8ee06c0e1a95ca8980c68062562d4e07123e8499e7b94cd8bd3045f04d28a"
+  },
+  "https://mebegu.weebly.com/blog/category/all": {
+    "url": "https://mebegu.weebly.com/blog/category/all",
+    "final_url": "https://mebegu.weebly.com/blog/category/all",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:26.786795+00:00",
+    "path": "archives/weebly/raw/navigation/9dcace2504e23be1.html",
+    "bytes": 57220,
+    "sha256": "a5bbd14e20124ff0c279ac5fee11c31416f0bbb504d07e4206f5403a9252cccd"
+  },
+  "https://mebegu.weebly.com/blog/category/computer-virus": {
+    "url": "https://mebegu.weebly.com/blog/category/computer-virus",
+    "final_url": "https://mebegu.weebly.com/blog/category/computer-virus",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:27.607553+00:00",
+    "path": "archives/weebly/raw/navigation/6201d6a256f89326.html",
+    "bytes": 34023,
+    "sha256": "eeca6df10bdfc3519ae4497a37a3e10f987a279fe3e976d2bf7c5b0c7523824c"
+  },
+  "https://mebegu.weebly.com/blog/category/kultursanat2bbe7e620a": {
+    "url": "https://mebegu.weebly.com/blog/category/kultursanat2bbe7e620a",
+    "final_url": "https://mebegu.weebly.com/blog/category/kultursanat2bbe7e620a",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:28.303437+00:00",
+    "path": "archives/weebly/raw/navigation/155a5038f5501b38.html",
+    "bytes": 35257,
+    "sha256": "15d28d9e50744aa9f038274e37938ab7ff1d8ef3e42288700bbbedf62d54d30e"
+  },
+  "https://mebegu.weebly.com/blog/category/netwok-security": {
+    "url": "https://mebegu.weebly.com/blog/category/netwok-security",
+    "final_url": "https://mebegu.weebly.com/blog/category/netwok-security",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:28.865457+00:00",
+    "path": "archives/weebly/raw/navigation/af429a53e8fbb7cd.html",
+    "bytes": 34026,
+    "sha256": "c297230e3aa9089ae9a32329d881532fe5206b06b20143e0c73caf76145ddbf8"
+  },
+  "https://mebegu.weebly.com/blog/category/oyun%20dunyas65e0ad607c": {
+    "url": "https://mebegu.weebly.com/blog/category/oyun%20dunyas65e0ad607c",
+    "final_url": "https://mebegu.weebly.com/blog/category/oyun%20dunyas65e0ad607c",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:30.303784+00:00",
+    "path": "archives/weebly/raw/navigation/6660dbdb9a99ee99.html",
+    "bytes": 33819,
+    "sha256": "a2b20c2747a6c4925fac766b02ad519a3ad4f516e13210e610753c02a2c791ba"
+  },
+  "https://mebegu.weebly.com/blog/category/rehberler": {
+    "url": "https://mebegu.weebly.com/blog/category/rehberler",
+    "final_url": "https://mebegu.weebly.com/blog/category/rehberler",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:36.688436+00:00",
+    "path": "archives/weebly/raw/navigation/28336aa2d65e9827.html",
+    "bytes": 33857,
+    "sha256": "5214d7aa858c65a491e6fff368f1cba7d23153e2fbec41aba5fdc03b2ad8b7b2"
+  },
+  "https://mebegu.weebly.com/blog/category/siyaset": {
+    "url": "https://mebegu.weebly.com/blog/category/siyaset",
+    "final_url": "https://mebegu.weebly.com/blog/category/siyaset",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:37.389559+00:00",
+    "path": "archives/weebly/raw/navigation/7ee08bb2939e694c.html",
+    "bytes": 37280,
+    "sha256": "27282b2a1e908d67e9f70588f84103fea7fe4ef891797059122fdcc2c3b0a44e"
+  },
+  "https://mebegu.weebly.com/blog/drm-copyright-and-fair-use-regulations": {
+    "url": "https://mebegu.weebly.com/blog/drm-copyright-and-fair-use-regulations",
+    "final_url": "https://mebegu.weebly.com/blog/drm-copyright-and-fair-use-regulations",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:38.277778+00:00",
+    "path": "archives/weebly/raw/posts/drm-copyright-and-fair-use-regulations.html",
+    "bytes": 54487,
+    "sha256": "0b86f7be4de0da9d784e19396a701f4ad5b434f1fec18036da6fc162ab0b43e2"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/thumbnail-690x460.jpeg?1494873628": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/thumbnail-690x460.jpeg?1494873628",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/thumbnail-690x460.jpeg?1494873628",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:35:38.727293+00:00",
+    "path": "public/media/weebly/thumbnail-690x460-ff824b4061.jpeg",
+    "bytes": 22822,
+    "sha256": "12a702c1fb4c5338fefa7019287dd56061ba28a9335b3ad159423eb870b0e53f"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/resim1.png?1494874567": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/resim1.png?1494874567",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/resim1.png?1494874567",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:39.289949+00:00",
+    "path": "public/media/weebly/resim1-f918b335d6.png",
+    "bytes": 47406,
+    "sha256": "fec4eb8f6076267b6a220e1679f706ea8965a1b5421a936e049f3bdd6fe3e96d"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/drmhelixdiagram.jpg?1494874867": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/drmhelixdiagram.jpg?1494874867",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/drmhelixdiagram.jpg?1494874867",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:35:39.653832+00:00",
+    "path": "public/media/weebly/drmhelixdiagram-462ed94b6e.jpg",
+    "bytes": 19858,
+    "sha256": "affb4afb3bf80eeb4f6b905e00a78e7e3d3c6b53d375935bad039e70a929952f"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/battery.png?1494874913": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/battery.png?1494874913",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/battery.png?1494874913",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:40.279844+00:00",
+    "path": "public/media/weebly/battery-3ce4327782.png",
+    "bytes": 111657,
+    "sha256": "426046fea5d8094297029b062c1abd5ae3d6efbef3c1c8e8e219ff4df8b9c643"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/chip.png?1494874910": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/chip.png?1494874910",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/chip.png?1494874910",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:40.698596+00:00",
+    "path": "public/media/weebly/chip-94cf15b60a.png",
+    "bytes": 42529,
+    "sha256": "dfd8492439c988bf789674cabe7116eb117f900ad5ead7a208e6084b53a12c1f"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/fair-use-0.png?1494875032": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/fair-use-0.png?1494875032",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/fair-use-0.png?1494875032",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:41.066140+00:00",
+    "path": "public/media/weebly/fair-use-0-719ce63e1c.png",
+    "bytes": 14813,
+    "sha256": "7e98e3359d1a8e258148f5cb02a26a2f909f249b29cc717df0b80fc65e737ff6"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/drm_copyright_and_fair_use_regulations.pdf": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/drm_copyright_and_fair_use_regulations.pdf",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/drm_copyright_and_fair_use_regulations.pdf",
+    "status": 200,
+    "content_type": "application/pdf",
+    "captured_at": "2026-10-22T07:35:41.679587+00:00",
+    "path": "public/media/weebly/drm_copyright_and_fair_use_regulations-5065d01e93.pdf",
+    "bytes": 153398,
+    "sha256": "35b0c25e3c96c039ca7ae5b7396d6c846a1da4750bf629c0088eb42f90404f4a"
+  },
+  "https://mebegu.weebly.com/blog/computer-virus-hoaxes": {
+    "url": "https://mebegu.weebly.com/blog/computer-virus-hoaxes",
+    "final_url": "https://mebegu.weebly.com/blog/computer-virus-hoaxes",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:42.501740+00:00",
+    "path": "archives/weebly/raw/posts/computer-virus-hoaxes.html",
+    "bytes": 63381,
+    "sha256": "79bb4cd537e23fcf32a47ff3d0dd2c64112757d1925b19ea721d3f46312a3c5c"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/pexels-photo-261706.jpeg?1491402770": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/pexels-photo-261706.jpeg?1491402770",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/pexels-photo-261706.jpeg?1491402770",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:35:42.910095+00:00",
+    "path": "public/media/weebly/pexels-photo-261706-5fe9832835.jpeg",
+    "bytes": 14293,
+    "sha256": "58a773dd52f7bfb26df8eaeeb55b1dea56666f1a8822113d5fddcc30055fce95"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/capture.png?1491400619": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/capture.png?1491400619",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/capture.png?1491400619",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:43.299690+00:00",
+    "path": "public/media/weebly/capture-00ed3ca4c1.png",
+    "bytes": 53187,
+    "sha256": "c37a9bc31df0c7911206853c2f659bd8bc130f461eb8befc892a6454a789249c"
+  },
+  "https://mebegu.weebly.com/blog/2014-cumhurbaskanlg-secim-analizi": {
+    "url": "https://mebegu.weebly.com/blog/2014-cumhurbaskanlg-secim-analizi",
+    "final_url": "https://mebegu.weebly.com/blog/2014-cumhurbaskanlg-secim-analizi",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:43.739406+00:00",
+    "path": "archives/weebly/raw/posts/2014-cumhurbaskanlg-secim-analizi.html",
+    "bytes": 49875,
+    "sha256": "315e0328ae4284bb7d8e543ba44ac6ba71bda5a7a8a22f89558560c248622d16"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407690500.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407690500.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407690500.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:45.360604+00:00",
+    "path": "public/media/weebly/1407690500-d98b1cb07d.png",
+    "bytes": 179886,
+    "sha256": "42fedf0f2308209df373462ccb08a404c83d2ad04c0b21ecbacf57b5f158734d"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700704.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700704.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700704.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:45.755971+00:00",
+    "path": "public/media/weebly/1407700704-e64f41e694.png",
+    "bytes": 28869,
+    "sha256": "14d726c3f6021b3e5b67604a3755ae4587de9ebba30754e8ce1680620244dd0a"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7137999.jpg?574": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7137999.jpg?574",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7137999.jpg?574",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:35:46.150245+00:00",
+    "path": "public/media/weebly/7137999-75a815ee0c.jpg",
+    "bytes": 22341,
+    "sha256": "813546c5ca24be2e2c25f3a5506b272c7a81c20aecc0a692eaa860a590ddcc30"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700685.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700685.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700685.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:46.794807+00:00",
+    "path": "public/media/weebly/1407700685-e2fd133147.png",
+    "bytes": 199289,
+    "sha256": "83061256baa53e60bdb19862f96c229098b7349cceeb645899c3f17bc036f6bd"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700733.png?250": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700733.png?250",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700733.png?250",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:47.241553+00:00",
+    "path": "public/media/weebly/1407700733-8d3bede1f3.png",
+    "bytes": 108635,
+    "sha256": "fdf596f5a2fa4930565b624ec60b11fa4d6892f7e202c6b6b05c8a2798f2a1f7"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700862.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700862.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700862.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:47.754415+00:00",
+    "path": "public/media/weebly/1407700862-cf82c08460.png",
+    "bytes": 108618,
+    "sha256": "08a7cb2a6e80f1ca59d0bcb63e49c2f74b912b906718d044b299c213a7cd8ddd"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407708261.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407708261.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407708261.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:35:48.272172+00:00",
+    "path": "public/media/weebly/1407708261-5dc1a2a8dd.jpg",
+    "bytes": 74617,
+    "sha256": "eb3fedd261cedef5acefea2c8e587d3a43d3086cd5faac915b7bf18e43ca82ad"
+  },
+  "https://mebegu.weebly.com/blog/sen-gazdan-kaamazsn-ben-hzl-koarm-anne-ekmei-ben-alrm": {
+    "url": "https://mebegu.weebly.com/blog/sen-gazdan-kaamazsn-ben-hzl-koarm-anne-ekmei-ben-alrm",
+    "final_url": "https://mebegu.weebly.com/blog/sen-gazdan-kaamazsn-ben-hzl-koarm-anne-ekmei-ben-alrm",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:48.653487+00:00",
+    "path": "archives/weebly/raw/posts/sen-gazdan-kaamazsn-ben-hzl-koarm-anne-ekmei-ben-alrm.html",
+    "bytes": 37216,
+    "sha256": "3e205157a48331d6aa931f5322d7f00056ccaf69f6b7f909e5b3ed5d76c0f6fc"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1394657315.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1394657315.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1394657315.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:49.118894+00:00",
+    "path": "public/media/weebly/1394657315-68a0876a41.png",
+    "bytes": 100252,
+    "sha256": "88241b90e9f5e3c8e5af3ddc987824b6b07e8a942411339a09cd824991c8e7e7"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1394658722.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1394658722.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1394658722.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:49.550339+00:00",
+    "path": "public/media/weebly/1394658722-3a6dee1a65.png",
+    "bytes": 49283,
+    "sha256": "e9e29775d9ebf12d814279bd2d381dad72a13aec07e4a8ca5f2a1344d077ca82"
+  },
+  "https://mebegu.weebly.com/blog/yorumum-gzksn-diye-1-yldz": {
+    "url": "https://mebegu.weebly.com/blog/yorumum-gzksn-diye-1-yldz",
+    "final_url": "https://mebegu.weebly.com/blog/yorumum-gzksn-diye-1-yldz",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:49.923094+00:00",
+    "path": "archives/weebly/raw/posts/yorumum-gzksn-diye-1-yldz.html",
+    "bytes": 45049,
+    "sha256": "cc864877d3296419e4322cd80756d54fabfc927f08c8d66cc55f14590015ba32"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391794531.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391794531.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391794531.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:50.381828+00:00",
+    "path": "public/media/weebly/1391794531-03de980465.png",
+    "bytes": 134589,
+    "sha256": "5960dbf5fe55ba5e3d985c0a3569fd21d0824cebe5f78092e45388f1a8f1b21f"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391785264.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391785264.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391785264.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:50.819425+00:00",
+    "path": "public/media/weebly/1391785264-e1bbdc9d66.png",
+    "bytes": 67472,
+    "sha256": "3bf5381029fd30848bcd4e5a8523ba69928a22ee17707ce5a7c2824de1f39eab"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391788276.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391788276.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391788276.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:35:51.225097+00:00",
+    "path": "public/media/weebly/1391788276-bab726ba92.jpg",
+    "bytes": 42571,
+    "sha256": "c3dde685af303fffc9d7683a20d20cbf0777f460cabce2cb73827d2db613f107"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1421649.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1421649.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1421649.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:35:51.632437+00:00",
+    "path": "public/media/weebly/1421649-4184da3d1e.jpg",
+    "bytes": 33302,
+    "sha256": "8b0d983597f1f221e68c02f4352ed371111eb7e0940bc684aaac007598928dab"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7343669.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7343669.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7343669.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:35:52.017440+00:00",
+    "path": "public/media/weebly/7343669-6caa7f3d09.jpg",
+    "bytes": 8242,
+    "sha256": "46cd12ffec982341537ebdce3930295185b3da5540ce2ade83a93ffe262c59e5"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/4255123.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/4255123.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/4255123.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:35:52.473258+00:00",
+    "path": "public/media/weebly/4255123-9d2647c105.jpg",
+    "bytes": 30220,
+    "sha256": "3602382b57cf27aadcf04487f42ecf51d813ce016b020b2be772bf95e3e0dcfc"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7011637.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7011637.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7011637.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:52.949680+00:00",
+    "path": "public/media/weebly/7011637-5ee3df1252.png",
+    "bytes": 77707,
+    "sha256": "95667edb224af5ff8b924ac5c764b6a3150ea8ff2b657ce927f7e289450c9799"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391784851.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391784851.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391784851.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:35:53.361924+00:00",
+    "path": "public/media/weebly/1391784851-b431bc4f82.jpg",
+    "bytes": 27903,
+    "sha256": "7be885ebfda01b9281eac2e1d21034433303d55af65037cef611991a6dd5d3a4"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1421649_orig.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1421649_orig.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1421649_orig.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:35:53.842178+00:00",
+    "path": "public/media/weebly/1421649_orig-1a8b2ef9d8.jpg",
+    "bytes": 66138,
+    "sha256": "2f85b5f1bdafd672dd621357d8a093ed4f84432dc5214a9b045dab89b30bdf28"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7343669_orig.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7343669_orig.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7343669_orig.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:35:54.548325+00:00",
+    "path": "public/media/weebly/7343669_orig-042c5946b4.jpg",
+    "bytes": 8242,
+    "sha256": "46cd12ffec982341537ebdce3930295185b3da5540ce2ade83a93ffe262c59e5"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/4255123_orig.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/4255123_orig.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/4255123_orig.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:35:55.042534+00:00",
+    "path": "public/media/weebly/4255123_orig-1bba388d33.jpg",
+    "bytes": 93508,
+    "sha256": "a79471fb5f825c70747918fd20337befc26e2f3120965fd12c4beec14e07440b"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7011637_orig.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7011637_orig.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7011637_orig.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:55.453048+00:00",
+    "path": "public/media/weebly/7011637_orig-af4116ff36.png",
+    "bytes": 49454,
+    "sha256": "9a87813e12ee213de1d8b226a3df64977bb061cbf9293c6d8e9313bd73831826"
+  },
+  "https://mebegu.weebly.com/blog/stanbul-traffic-for-dummies": {
+    "url": "https://mebegu.weebly.com/blog/stanbul-traffic-for-dummies",
+    "final_url": "https://mebegu.weebly.com/blog/stanbul-traffic-for-dummies",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:35:56.165767+00:00",
+    "path": "archives/weebly/raw/posts/stanbul-traffic-for-dummies.html",
+    "bytes": 47831,
+    "sha256": "c7a451b96e9b5f5dab9d4bd484c4490eba9363998b055a757a93a06161bd9186"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383779493.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383779493.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383779493.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:58.117681+00:00",
+    "path": "public/media/weebly/1383779493-f08b5b67ef.png",
+    "bytes": 445595,
+    "sha256": "c37608bc9040787c8ac90f091deaf26461d0bb1752a621791ea45fb38f4be50f"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001421.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001421.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001421.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:58.613018+00:00",
+    "path": "public/media/weebly/1384001421-e19f76f612.png",
+    "bytes": 177516,
+    "sha256": "5d78b52f9ce23f80d18115e0d2ca403c10009d19fbe4d48117a7978d06da54b1"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001451.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001451.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001451.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:59.250190+00:00",
+    "path": "public/media/weebly/1384001451-2d235225a4.png",
+    "bytes": 171570,
+    "sha256": "cb94596c309bd3a3d08a79b3e69d9d1613080f051922779a153af66b844dc625"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001553.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001553.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001553.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:35:59.744391+00:00",
+    "path": "public/media/weebly/1384001553-d6c32d6229.png",
+    "bytes": 143627,
+    "sha256": "8638c2677349bdb31c85837e228510b510dce7f8a673bab07240435d22177d97"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001562.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001562.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001562.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:36:00.292626+00:00",
+    "path": "public/media/weebly/1384001562-8817ae0d4e.png",
+    "bytes": 90809,
+    "sha256": "306169b65c69457c0c202dbf417efa933c518ab30b7280ab6b1e04414f615917"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001580.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001580.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001580.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:36:00.817952+00:00",
+    "path": "public/media/weebly/1384001580-dfd268ecbf.png",
+    "bytes": 177258,
+    "sha256": "71405c8f9004522e01eb6dd572acf939e59508db1de9d039c4ce844fc4334ef0"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001598.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001598.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001598.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:36:01.329469+00:00",
+    "path": "public/media/weebly/1384001598-b025fd291a.png",
+    "bytes": 201488,
+    "sha256": "bdb69c6c68aab150ba25ac3ad39d3f1473aea4f0c966289f9456d975a34fc4bb"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001636.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001636.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001636.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:36:01.881523+00:00",
+    "path": "public/media/weebly/1384001636-182ff91111.png",
+    "bytes": 243737,
+    "sha256": "51b2216bf09d43cf90550529128d8b1a928364661f7dd69eb26ee1a55e5482cb"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001714.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001714.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001714.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:36:02.333360+00:00",
+    "path": "public/media/weebly/1384001714-71ccc850e1.jpg",
+    "bytes": 78759,
+    "sha256": "6e0097962641233587b1c90907e9f2954f184919a0210882236e9511d7ee0365"
+  },
+  "https://mebegu.weebly.com/blog/the-walking-dead-the-game-season-2": {
+    "url": "https://mebegu.weebly.com/blog/the-walking-dead-the-game-season-2",
+    "final_url": "https://mebegu.weebly.com/blog/the-walking-dead-the-game-season-2",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:36:02.708513+00:00",
+    "path": "archives/weebly/raw/posts/the-walking-dead-the-game-season-2.html",
+    "bytes": 42962,
+    "sha256": "1069bb34c517dd383b9476a3151b04d362c62f5348d49e709db3e51b5d379188"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383512074.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383512074.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383512074.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:36:03.221980+00:00",
+    "path": "public/media/weebly/1383512074-6f58968581.png",
+    "bytes": 381070,
+    "sha256": "416959b5ef79c34ef6ec218b2800aa10b9af0ca300f6318a31f01b7a61b8dcd8"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383513421.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383513421.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383513421.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:36:03.648548+00:00",
+    "path": "public/media/weebly/1383513421-7615b0f4fa.png",
+    "bytes": 104456,
+    "sha256": "f447c2ba4c9be18bf5880da8b18bfc3b1b8714bd717581a6b2138c6fa1db09fe"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383515594.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383515594.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383515594.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:36:04.176169+00:00",
+    "path": "public/media/weebly/1383515594-234681365a.png",
+    "bytes": 119541,
+    "sha256": "88a7c851c511de5d2d1516febe4f907efb10b40d3cc7eeab1b3ff76059539f90"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383515567.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383515567.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383515567.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:36:04.637817+00:00",
+    "path": "public/media/weebly/1383515567-941ba48ab4.png",
+    "bytes": 144656,
+    "sha256": "165547166f6b7bc4a5aec178afb6c392fce38ee0d74b7efcc548043aad23eda1"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383516841.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383516841.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383516841.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:36:05.069941+00:00",
+    "path": "public/media/weebly/1383516841-0519d4b715.png",
+    "bytes": 105728,
+    "sha256": "40da7a5f921f7848b6cf736b24ab55d6cf1e645c291c3eef913df5a7d4b1380b"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383516985.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383516985.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383516985.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:36:05.457262+00:00",
+    "path": "public/media/weebly/1383516985-382c0587f6.jpg",
+    "bytes": 29977,
+    "sha256": "74dc46775719d06cce82f7b8568686d1812c454e0c38c54dbba4b37b4395c27a"
+  },
+  "https://mebegu.weebly.com/blog/google-glass": {
+    "url": "https://mebegu.weebly.com/blog/google-glass",
+    "final_url": "https://mebegu.weebly.com/blog/google-glass",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:36:05.824935+00:00",
+    "path": "archives/weebly/raw/posts/google-glass.html",
+    "bytes": 50639,
+    "sha256": "86d65365a28e97eb48500182506781c7f9e41f24b34721c1280ace46599d2f76"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383499531.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383499531.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383499531.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:36:06.303504+00:00",
+    "path": "public/media/weebly/1383499531-b5764a20c5.png",
+    "bytes": 131108,
+    "sha256": "d49c367daaeee20e262400a8afcb9e3beab401a59fdeeab6c449539cefdc49b3"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383491786.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383491786.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383491786.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:36:06.765133+00:00",
+    "path": "public/media/weebly/1383491786-c3c805807a.png",
+    "bytes": 136752,
+    "sha256": "d510fe11ba36a59d6cb52c6470e33e18ca0a41a548eb23ec9b19209439aca765"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383497196.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383497196.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383497196.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:36:07.254585+00:00",
+    "path": "public/media/weebly/1383497196-9388c1c120.jpg",
+    "bytes": 63859,
+    "sha256": "286e6e12d32319574c0023a47e23ef3ca85dc90d8b47d8168bfccb1f03988f41"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383492184.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383492184.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383492184.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:36:07.673326+00:00",
+    "path": "public/media/weebly/1383492184-58959878b8.jpg",
+    "bytes": 25530,
+    "sha256": "91a91a837f93ab6e4d4b3bf97807e8963d03181b29cfdadda1d14e88a73d87e4"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383498788.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383498788.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383498788.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:36:08.128081+00:00",
+    "path": "public/media/weebly/1383498788-9be86a004a.jpg",
+    "bytes": 47108,
+    "sha256": "e91eaa34aef99eec4edf50519661a946cdfbce2f8827c5072ece2d9ffc6effd0"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383494939.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383494939.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383494939.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:36:08.608524+00:00",
+    "path": "public/media/weebly/1383494939-f12bb5add1.jpg",
+    "bytes": 19744,
+    "sha256": "ba55d07043ded1af49c599783cc07aca62a436a31bb62e2937a9f5b4a752a695"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383498893.png": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383498893.png",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383498893.png",
+    "status": 200,
+    "content_type": "image/png",
+    "captured_at": "2026-10-22T07:36:09.156364+00:00",
+    "path": "public/media/weebly/1383498893-3bb6e5caec.png",
+    "bytes": 89197,
+    "sha256": "66d99526bc04bb6d6d08ce3557cda9c01e1150905ba5e7aa1ee6357523b2865b"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9252026.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9252026.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9252026.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:36:09.535857+00:00",
+    "path": "public/media/weebly/9252026-cea8387d4b.jpg",
+    "bytes": 47831,
+    "sha256": "7db79abdcc072a9fb4cd0b041600f058c2f6c95afe3ceea9d69ee7d0943c6872"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7875204.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7875204.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7875204.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:36:09.921865+00:00",
+    "path": "public/media/weebly/7875204-d042ed9957.jpg",
+    "bytes": 25718,
+    "sha256": "1a63e20759631868f8baf0f7b583f06417a81826834dbb548c3a896c3581f3c7"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/3737120.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/3737120.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/3737120.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:36:10.302194+00:00",
+    "path": "public/media/weebly/3737120-59098329ca.jpg",
+    "bytes": 24695,
+    "sha256": "8cecd059cabe13baca143ec64c94eccab5fae73a5cbbc2b0352523a03314ca06"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9846326.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9846326.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9846326.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:36:10.722796+00:00",
+    "path": "public/media/weebly/9846326-41be52f394.jpg",
+    "bytes": 44347,
+    "sha256": "9eeedcad8efe657e88dfe59c705ab6a59f40ca0edb24e4688333a945e5d921f5"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9252026_orig.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9252026_orig.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9252026_orig.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:36:11.165486+00:00",
+    "path": "public/media/weebly/9252026_orig-b7170ab9a4.jpg",
+    "bytes": 78250,
+    "sha256": "443aa33fea7788b3cfe7bf0101ce7906634c1f63e1040747e9adaa5e04463066"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7875204_orig.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7875204_orig.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7875204_orig.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:36:11.563420+00:00",
+    "path": "public/media/weebly/7875204_orig-f95ddcae3e.jpg",
+    "bytes": 35580,
+    "sha256": "6f9c3085b099d0d8c84c1ca767902ae2f3c2ed0dd6cf0b1e676480e4dce4c6c4"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/3737120_orig.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/3737120_orig.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/3737120_orig.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:36:12.014274+00:00",
+    "path": "public/media/weebly/3737120_orig-6c689ccc1b.jpg",
+    "bytes": 36231,
+    "sha256": "b13fe50a640c2a2106dc392fcad748ea6f3a517cbac2685ac3915247e5df667b"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9846326_orig.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9846326_orig.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9846326_orig.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:36:12.551955+00:00",
+    "path": "public/media/weebly/9846326_orig-050727915a.jpg",
+    "bytes": 373521,
+    "sha256": "6fb6e70918bbe1c71003152fa4d857094236512e0b96ede9f83e18c867e0e98e"
+  },
+  "https://mebegu.weebly.com/blog/and-oscar-goes-to": {
+    "url": "https://mebegu.weebly.com/blog/and-oscar-goes-to",
+    "final_url": "https://mebegu.weebly.com/blog/and-oscar-goes-to",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "captured_at": "2026-10-22T07:36:13.271311+00:00",
+    "path": "archives/weebly/raw/posts/and-oscar-goes-to.html",
+    "bytes": 40638,
+    "sha256": "7d279fff7dbb621bade04087f46a48438124d59c616416794f270cca73324e16"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9329285_orig.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9329285_orig.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9329285_orig.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:36:14.673784+00:00",
+    "path": "public/media/weebly/9329285_orig-f4bdbd080a.jpg",
+    "bytes": 30875,
+    "sha256": "e6b8f032c04be686cc92a6adfb1853d972fdde6717bec46fcf1d9b3c0be9c304"
+  },
+  "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/8795244_orig.jpg": {
+    "url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/8795244_orig.jpg",
+    "final_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/8795244_orig.jpg",
+    "status": 200,
+    "content_type": "image/jpeg",
+    "captured_at": "2026-10-22T07:36:15.136197+00:00",
+    "path": "public/media/weebly/8795244_orig-3a8e9146bc.jpg",
+    "bytes": 76250,
+    "sha256": "9de8bbdb7cffa6782720aa9f039fd36f0a4159182cd685164fb2dda249b22936"
+  }
+}

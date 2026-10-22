@@ -1,0 +1,1015 @@
+{
+  "source": "https://mebegu.weebly.com",
+  "draft_only": true,
+  "rss_posts": 9,
+  "sitemap_posts": 9,
+  "discovered_posts": 9,
+  "navigation_pages": [
+    "https://mebegu.weebly.com/blog/archives/02-2013",
+    "https://mebegu.weebly.com/blog/archives/02-2014",
+    "https://mebegu.weebly.com/blog/archives/03-2014",
+    "https://mebegu.weebly.com/blog/archives/04-2017",
+    "https://mebegu.weebly.com/blog/archives/05-2017",
+    "https://mebegu.weebly.com/blog/archives/08-2014",
+    "https://mebegu.weebly.com/blog/archives/11-2013",
+    "https://mebegu.weebly.com/blog/category/Teknoloji",
+    "https://mebegu.weebly.com/blog/category/all",
+    "https://mebegu.weebly.com/blog/category/computer-virus",
+    "https://mebegu.weebly.com/blog/category/kultursanat2bbe7e620a",
+    "https://mebegu.weebly.com/blog/category/netwok-security",
+    "https://mebegu.weebly.com/blog/category/oyun%20dunyas65e0ad607c",
+    "https://mebegu.weebly.com/blog/category/rehberler",
+    "https://mebegu.weebly.com/blog/category/siyaset"
+  ],
+  "missing_from_feed": [],
+  "posts": [
+    {
+      "title": "DRM, Copyright, and Fair Use Regulations",
+      "source_url": "https://mebegu.weebly.com/blog/drm-copyright-and-fair-use-regulations",
+      "published": "2017-05-15T18:36:36+00:00",
+      "lang": "en",
+      "source_categories": [
+        "Uncategorized"
+      ],
+      "source_visible_date": "15/5/2017",
+      "markdown": "src/content/writing/weebly-drm-copyright-and-fair-use-regulations.md",
+      "future_path": "/writing/weebly-drm-copyright-and-fair-use-regulations/",
+      "capture_method": "RSS full body + full permalink HTML",
+      "status": "unchanged",
+      "body_sha256": "9e820dba13f8e8b6d20c93ff57f93b8ae10d15a2f7f0386eb576e8dc35b9e83c",
+      "markdown_sha256": "e98657c27ea099e763a3d6b35de342e3dbf4e949b88e690bb38b15e111d791da",
+      "images": [
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/thumbnail-690x460.jpeg?1494873628",
+          "original_alt": "Picture",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/resim1.png?1494874567",
+          "original_alt": "Picture",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/drmhelixdiagram.jpg?1494874867",
+          "original_alt": "Picture",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/battery.png?1494874913",
+          "original_alt": "Picture",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/chip.png?1494874910",
+          "original_alt": "Picture",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/fair-use-0.png?1494875032",
+          "original_alt": "Picture",
+          "needs_alt_review": true
+        }
+      ],
+      "embeds": [],
+      "external_links": [],
+      "review": "pending"
+    },
+    {
+      "title": "Computer Virus Hoaxes",
+      "source_url": "https://mebegu.weebly.com/blog/computer-virus-hoaxes",
+      "published": "2017-04-05T13:47:33+00:00",
+      "lang": "en",
+      "source_categories": [
+        "Computer Virus",
+        "Netwok Security",
+        "Teknoloji"
+      ],
+      "source_visible_date": "5/4/2017",
+      "markdown": "src/content/writing/weebly-computer-virus-hoaxes.md",
+      "future_path": "/writing/weebly-computer-virus-hoaxes/",
+      "capture_method": "RSS full body + full permalink HTML",
+      "status": "unchanged",
+      "body_sha256": "5edacaa55622e20f43cfe31a301befa635d2cb5b0ddff0f0178060af6ae5f28d",
+      "markdown_sha256": "f32d430ea2730110e9c0b4527d22512b5ccb705e1b931d46b5392f658beae51c",
+      "images": [
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/pexels-photo-261706.jpeg?1491402770",
+          "original_alt": "Picture",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/capture.png?1491400619",
+          "original_alt": "Picture",
+          "needs_alt_review": true
+        }
+      ],
+      "embeds": [],
+      "external_links": [],
+      "review": "pending"
+    },
+    {
+      "title": "2014 Cumhurbaşkanlığı Seçim Analizi",
+      "source_url": "https://mebegu.weebly.com/blog/2014-cumhurbaskanlg-secim-analizi",
+      "published": "2014-08-11T06:10:36+00:00",
+      "lang": "tr",
+      "source_categories": [
+        "Siyaset"
+      ],
+      "source_visible_date": "10/8/2014",
+      "markdown": "src/content/writing/weebly-2014-cumhurbaskanlg-secim-analizi.md",
+      "future_path": "/tr/writing/weebly-2014-cumhurbaskanlg-secim-analizi/",
+      "capture_method": "RSS full body + cached blog index; full permalink HTML excluded",
+      "status": "unchanged",
+      "body_sha256": "12c6b0893ffba5d72f6ac9eea89ed84e6fac51f606f3fb0209d15346bb3bf285",
+      "markdown_sha256": "d5e9f73b57f7729a5fcfd5581fb0b59a4bb8df505cc00c0513764786f5bf1770",
+      "images": [
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407690500.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700704.png",
+          "original_alt": "Picture",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7137999.jpg?574",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700685.png",
+          "original_alt": "Erdoğan yine sıcak denizlere inemedi",
+          "needs_alt_review": false
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700733.png?250",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700862.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407708261.jpg",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        }
+      ],
+      "embeds": [],
+      "external_links": [
+        "http://www.aa.com.tr/tr/turkiye/370110--cumhurbaskani-seciminde-gunun-ozeti",
+        "http://www.aasecim.com/",
+        "http://www.cihan.com.tr/news/Cumhurbaskani-secimi-sonuclari_7784-CHMTUxNzc4NC8x",
+        "http://www.cihan.com.tr/news/YSK-Baskani-Oylarin-salt-cogunlugunu-Erdogan-aldi_7807-CHMTUxNzgwNy8x",
+        "http://www.ysk.gov.tr/ysk/docs/2014MahalliIdareler/yskpwcn1_4444004537.pdf",
+        "http://www.ysk.gov.tr/ysk/docs/2014MahalliIdareler/yskpwcn1_4444004538.pdf"
+      ],
+      "review": "pending"
+    },
+    {
+      "title": "Sen Gazdan Kaçamazsın. Ben Hızlı Koşarım Anne, Ekmeği Ben Alırım...",
+      "source_url": "https://mebegu.weebly.com/blog/sen-gazdan-kaamazsn-ben-hzl-koarm-anne-ekmei-ben-alrm",
+      "published": "2014-03-11T21:31:47+00:00",
+      "lang": "tr",
+      "source_categories": [
+        "Siyaset"
+      ],
+      "source_visible_date": "11/3/2014",
+      "markdown": "src/content/writing/weebly-sen-gazdan-kaamazsn-ben-hzl-koarm-anne-ekmei-ben-alrm.md",
+      "future_path": "/tr/writing/weebly-sen-gazdan-kaamazsn-ben-hzl-koarm-anne-ekmei-ben-alrm/",
+      "capture_method": "RSS full body + full permalink HTML",
+      "status": "unchanged",
+      "body_sha256": "9a80ab5cb4763e8f9e2740ff9e5dff6ba76e8c230df1aab47d2b4f4639e4a365",
+      "markdown_sha256": "673bb8dae6cb3b6c5dbf9a487164de6d363bc7bebf132f8712aa0355b2262d82",
+      "images": [
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1394657315.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1394658722.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        }
+      ],
+      "embeds": [],
+      "external_links": [],
+      "review": "pending"
+    },
+    {
+      "title": "Yorumum Gözüksün Diye 1 Yıldız",
+      "source_url": "https://mebegu.weebly.com/blog/yorumum-gzksn-diye-1-yldz",
+      "published": "2014-02-07T18:09:49+00:00",
+      "lang": "tr",
+      "source_categories": [
+        "Teknoloji"
+      ],
+      "source_visible_date": "7/2/2014",
+      "markdown": "src/content/writing/weebly-yorumum-gzksn-diye-1-yldz.md",
+      "future_path": "/tr/writing/weebly-yorumum-gzksn-diye-1-yldz/",
+      "capture_method": "RSS full body + full permalink HTML",
+      "status": "unchanged",
+      "body_sha256": "5013512c06f90e1d51ad445ca7173b22a2fccae1fb0d5c88fc4f3ed6e134019d",
+      "markdown_sha256": "68b44583c5a1b8ab53dcd508141596309bdb7c4c7e626fd1e96f9c27386e2fdc",
+      "images": [
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391794531.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391785264.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391788276.jpg",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1421649.jpg",
+          "original_alt": "",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7343669.jpg",
+          "original_alt": "",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/4255123.jpg",
+          "original_alt": "",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7011637.png",
+          "original_alt": "",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391784851.jpg",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        }
+      ],
+      "embeds": [],
+      "external_links": [
+        "http://blog.appwared.com/awful-app-review-trend-among-turkish-users-this-is-why-your-app-gets-so-many-one-star-reviews/",
+        "http://www.androidpolice.com/2014/01/12/narcissistic-jerks-are-giving-play-store-apps-1-star-reviews-for-higher-visibility/",
+        "http://www.oneclickroot.com/android-apps/is-your-good-android-app-getting-lots-of-one-star-reviews-blame-turkish-people/"
+      ],
+      "review": "pending"
+    },
+    {
+      "title": "İstanbul Traffic For Dummies...",
+      "source_url": "https://mebegu.weebly.com/blog/stanbul-traffic-for-dummies",
+      "published": "2013-11-09T13:09:50+00:00",
+      "lang": "tr",
+      "source_categories": [
+        "rehberler"
+      ],
+      "source_visible_date": "9/11/2013",
+      "markdown": "src/content/writing/weebly-stanbul-traffic-for-dummies.md",
+      "future_path": "/tr/writing/weebly-stanbul-traffic-for-dummies/",
+      "capture_method": "RSS full body + full permalink HTML",
+      "status": "unchanged",
+      "body_sha256": "4f63d24097896920b402f1da5aa9e4ee6a95476b54ffd1bdcce15303e58788c4",
+      "markdown_sha256": "a585e80bd4af74232f10fd1caf482fed2aed459039e1c00004ebb60f354037e5",
+      "images": [
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383779493.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001421.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001451.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001553.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001562.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001580.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001598.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001636.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001714.jpg",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        }
+      ],
+      "embeds": [
+        "https://www.youtube.com/watch?v=Vtl7f-fStzY"
+      ],
+      "external_links": [
+        "https://www.youtube.com/watch?v=Vtl7f-fStzY"
+      ],
+      "review": "pending"
+    },
+    {
+      "title": "The Walking Dead : The Game - Season 2",
+      "source_url": "https://mebegu.weebly.com/blog/the-walking-dead-the-game-season-2",
+      "published": "2013-11-04T14:51:33+00:00",
+      "lang": "tr",
+      "source_categories": [
+        "Oyun Dünyası"
+      ],
+      "source_visible_date": "4/11/2013",
+      "markdown": "src/content/writing/weebly-the-walking-dead-the-game-season-2.md",
+      "future_path": "/tr/writing/weebly-the-walking-dead-the-game-season-2/",
+      "capture_method": "RSS full body + full permalink HTML",
+      "status": "unchanged",
+      "body_sha256": "dca26b83df846463ebb98ad9b48d789079ec3b76f5b4f8b36ba9f4b3b82f6b6f",
+      "markdown_sha256": "265eee009b35c33391e7271406b372df4869eee5fa6cd9baee85e677623adb77",
+      "images": [
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383512074.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383513421.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383515594.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383515567.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383516841.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383516985.jpg",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        }
+      ],
+      "embeds": [
+        "https://www.youtube.com/watch?v=IASztJRc9nw"
+      ],
+      "external_links": [
+        "https://www.youtube.com/watch?v=IASztJRc9nw"
+      ],
+      "review": "pending"
+    },
+    {
+      "title": "OK Glass...",
+      "source_url": "https://mebegu.weebly.com/blog/google-glass",
+      "published": "2013-11-03T14:53:17+00:00",
+      "lang": "tr",
+      "source_categories": [
+        "Teknoloji"
+      ],
+      "source_visible_date": "3/11/2013",
+      "markdown": "src/content/writing/weebly-google-glass.md",
+      "future_path": "/tr/writing/weebly-google-glass/",
+      "capture_method": "RSS full body + full permalink HTML",
+      "status": "unchanged",
+      "body_sha256": "9293a86a39fc3b08b4a3789b5e6af65d12ca55d4dd92d69ed6df0a3b2796879a",
+      "markdown_sha256": "36edd4fa16c94511deb18935a3c56670ca1b4d14a76867232d8c3dd6a69d2e28",
+      "images": [
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383499531.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383491786.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383497196.jpg",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383492184.jpg",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383498788.jpg",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383494939.jpg",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383498893.png",
+          "original_alt": "Resim",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9252026.jpg",
+          "original_alt": "",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7875204.jpg",
+          "original_alt": "",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/3737120.jpg",
+          "original_alt": "",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9846326.jpg",
+          "original_alt": "",
+          "needs_alt_review": true
+        }
+      ],
+      "embeds": [
+        "https://www.youtube.com/watch?v=v1uyQZNg2vE",
+        "https://www.youtube.com/watch?v=TnTrmI9OKfA"
+      ],
+      "external_links": [
+        "https://www.youtube.com/watch?v=TnTrmI9OKfA",
+        "https://www.youtube.com/watch?v=v1uyQZNg2vE"
+      ],
+      "review": "pending"
+    },
+    {
+      "title": "And Oscar Goes To....",
+      "source_url": "https://mebegu.weebly.com/blog/and-oscar-goes-to",
+      "published": "2013-02-25T12:41:37+00:00",
+      "lang": "tr",
+      "source_categories": [
+        "Kültür-Sanat"
+      ],
+      "source_visible_date": "25/2/2013",
+      "markdown": "src/content/writing/weebly-and-oscar-goes-to.md",
+      "future_path": "/tr/writing/weebly-and-oscar-goes-to/",
+      "capture_method": "RSS full body + full permalink HTML",
+      "status": "unchanged",
+      "body_sha256": "c8de78beea299e2eb7d2c0d25523578e11eaf24f7b4329df3f71b0bf8beb96d5",
+      "markdown_sha256": "b77b16dbedfcae4a7dc0bbae2ca0bbb6e4b174bb091f24172277203b2cc28516",
+      "images": [
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9329285_orig.jpg",
+          "original_alt": "Picture",
+          "needs_alt_review": true
+        },
+        {
+          "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/8795244_orig.jpg",
+          "original_alt": "Picture",
+          "needs_alt_review": true
+        }
+      ],
+      "embeds": [],
+      "external_links": [],
+      "review": "pending"
+    }
+  ],
+  "assets": [
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/thumbnail-690x460.jpeg?1494873628",
+      "status": "downloaded",
+      "local_url": "/media/weebly/thumbnail-690x460-ff824b4061.jpeg",
+      "bytes": 22822,
+      "sha256": "12a702c1fb4c5338fefa7019287dd56061ba28a9335b3ad159423eb870b0e53f",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/resim1.png?1494874567",
+      "status": "downloaded",
+      "local_url": "/media/weebly/resim1-f918b335d6.png",
+      "bytes": 47406,
+      "sha256": "fec4eb8f6076267b6a220e1679f706ea8965a1b5421a936e049f3bdd6fe3e96d",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/drmhelixdiagram.jpg?1494874867",
+      "status": "downloaded",
+      "local_url": "/media/weebly/drmhelixdiagram-462ed94b6e.jpg",
+      "bytes": 19858,
+      "sha256": "affb4afb3bf80eeb4f6b905e00a78e7e3d3c6b53d375935bad039e70a929952f",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/battery.png?1494874913",
+      "status": "downloaded",
+      "local_url": "/media/weebly/battery-3ce4327782.png",
+      "bytes": 111657,
+      "sha256": "426046fea5d8094297029b062c1abd5ae3d6efbef3c1c8e8e219ff4df8b9c643",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/chip.png?1494874910",
+      "status": "downloaded",
+      "local_url": "/media/weebly/chip-94cf15b60a.png",
+      "bytes": 42529,
+      "sha256": "dfd8492439c988bf789674cabe7116eb117f900ad5ead7a208e6084b53a12c1f",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/fair-use-0.png?1494875032",
+      "status": "downloaded",
+      "local_url": "/media/weebly/fair-use-0-719ce63e1c.png",
+      "bytes": 14813,
+      "sha256": "7e98e3359d1a8e258148f5cb02a26a2f909f249b29cc717df0b80fc65e737ff6",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/drm_copyright_and_fair_use_regulations.pdf",
+      "status": "downloaded",
+      "local_url": "/media/weebly/drm_copyright_and_fair_use_regulations-5065d01e93.pdf",
+      "bytes": 153398,
+      "sha256": "35b0c25e3c96c039ca7ae5b7396d6c846a1da4750bf629c0088eb42f90404f4a",
+      "content_type": "application/pdf"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/pexels-photo-261706.jpeg?1491402770",
+      "status": "downloaded",
+      "local_url": "/media/weebly/pexels-photo-261706-5fe9832835.jpeg",
+      "bytes": 14293,
+      "sha256": "58a773dd52f7bfb26df8eaeeb55b1dea56666f1a8822113d5fddcc30055fce95",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/published/capture.png?1491400619",
+      "status": "downloaded",
+      "local_url": "/media/weebly/capture-00ed3ca4c1.png",
+      "bytes": 53187,
+      "sha256": "c37a9bc31df0c7911206853c2f659bd8bc130f461eb8befc892a6454a789249c",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407690500.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1407690500-d98b1cb07d.png",
+      "bytes": 179886,
+      "sha256": "42fedf0f2308209df373462ccb08a404c83d2ad04c0b21ecbacf57b5f158734d",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700704.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1407700704-e64f41e694.png",
+      "bytes": 28869,
+      "sha256": "14d726c3f6021b3e5b67604a3755ae4587de9ebba30754e8ce1680620244dd0a",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7137999.jpg?574",
+      "status": "downloaded",
+      "local_url": "/media/weebly/7137999-75a815ee0c.jpg",
+      "bytes": 22341,
+      "sha256": "813546c5ca24be2e2c25f3a5506b272c7a81c20aecc0a692eaa860a590ddcc30",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700685.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1407700685-e2fd133147.png",
+      "bytes": 199289,
+      "sha256": "83061256baa53e60bdb19862f96c229098b7349cceeb645899c3f17bc036f6bd",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700733.png?250",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1407700733-8d3bede1f3.png",
+      "bytes": 108635,
+      "sha256": "fdf596f5a2fa4930565b624ec60b11fa4d6892f7e202c6b6b05c8a2798f2a1f7",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407700862.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1407700862-cf82c08460.png",
+      "bytes": 108618,
+      "sha256": "08a7cb2a6e80f1ca59d0bcb63e49c2f74b912b906718d044b299c213a7cd8ddd",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1407708261.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1407708261-5dc1a2a8dd.jpg",
+      "bytes": 74617,
+      "sha256": "eb3fedd261cedef5acefea2c8e587d3a43d3086cd5faac915b7bf18e43ca82ad",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1394657315.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1394657315-68a0876a41.png",
+      "bytes": 100252,
+      "sha256": "88241b90e9f5e3c8e5af3ddc987824b6b07e8a942411339a09cd824991c8e7e7",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1394658722.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1394658722-3a6dee1a65.png",
+      "bytes": 49283,
+      "sha256": "e9e29775d9ebf12d814279bd2d381dad72a13aec07e4a8ca5f2a1344d077ca82",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391794531.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1391794531-03de980465.png",
+      "bytes": 134589,
+      "sha256": "5960dbf5fe55ba5e3d985c0a3569fd21d0824cebe5f78092e45388f1a8f1b21f",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391785264.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1391785264-e1bbdc9d66.png",
+      "bytes": 67472,
+      "sha256": "3bf5381029fd30848bcd4e5a8523ba69928a22ee17707ce5a7c2824de1f39eab",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391788276.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1391788276-bab726ba92.jpg",
+      "bytes": 42571,
+      "sha256": "c3dde685af303fffc9d7683a20d20cbf0777f460cabce2cb73827d2db613f107",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1421649.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1421649-4184da3d1e.jpg",
+      "bytes": 33302,
+      "sha256": "8b0d983597f1f221e68c02f4352ed371111eb7e0940bc684aaac007598928dab",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7343669.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/7343669-6caa7f3d09.jpg",
+      "bytes": 8242,
+      "sha256": "46cd12ffec982341537ebdce3930295185b3da5540ce2ade83a93ffe262c59e5",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/4255123.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/4255123-9d2647c105.jpg",
+      "bytes": 30220,
+      "sha256": "3602382b57cf27aadcf04487f42ecf51d813ce016b020b2be772bf95e3e0dcfc",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7011637.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/7011637-5ee3df1252.png",
+      "bytes": 77707,
+      "sha256": "95667edb224af5ff8b924ac5c764b6a3150ea8ff2b657ce927f7e289450c9799",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1391784851.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1391784851-b431bc4f82.jpg",
+      "bytes": 27903,
+      "sha256": "7be885ebfda01b9281eac2e1d21034433303d55af65037cef611991a6dd5d3a4",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1421649_orig.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1421649_orig-1a8b2ef9d8.jpg",
+      "bytes": 66138,
+      "sha256": "2f85b5f1bdafd672dd621357d8a093ed4f84432dc5214a9b045dab89b30bdf28",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7343669_orig.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/7343669_orig-042c5946b4.jpg",
+      "bytes": 8242,
+      "sha256": "46cd12ffec982341537ebdce3930295185b3da5540ce2ade83a93ffe262c59e5",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/4255123_orig.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/4255123_orig-1bba388d33.jpg",
+      "bytes": 93508,
+      "sha256": "a79471fb5f825c70747918fd20337befc26e2f3120965fd12c4beec14e07440b",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7011637_orig.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/7011637_orig-af4116ff36.png",
+      "bytes": 49454,
+      "sha256": "9a87813e12ee213de1d8b226a3df64977bb061cbf9293c6d8e9313bd73831826",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383779493.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1383779493-f08b5b67ef.png",
+      "bytes": 445595,
+      "sha256": "c37608bc9040787c8ac90f091deaf26461d0bb1752a621791ea45fb38f4be50f",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001421.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1384001421-e19f76f612.png",
+      "bytes": 177516,
+      "sha256": "5d78b52f9ce23f80d18115e0d2ca403c10009d19fbe4d48117a7978d06da54b1",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001451.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1384001451-2d235225a4.png",
+      "bytes": 171570,
+      "sha256": "cb94596c309bd3a3d08a79b3e69d9d1613080f051922779a153af66b844dc625",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001553.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1384001553-d6c32d6229.png",
+      "bytes": 143627,
+      "sha256": "8638c2677349bdb31c85837e228510b510dce7f8a673bab07240435d22177d97",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001562.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1384001562-8817ae0d4e.png",
+      "bytes": 90809,
+      "sha256": "306169b65c69457c0c202dbf417efa933c518ab30b7280ab6b1e04414f615917",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001580.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1384001580-dfd268ecbf.png",
+      "bytes": 177258,
+      "sha256": "71405c8f9004522e01eb6dd572acf939e59508db1de9d039c4ce844fc4334ef0",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001598.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1384001598-b025fd291a.png",
+      "bytes": 201488,
+      "sha256": "bdb69c6c68aab150ba25ac3ad39d3f1473aea4f0c966289f9456d975a34fc4bb",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001636.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1384001636-182ff91111.png",
+      "bytes": 243737,
+      "sha256": "51b2216bf09d43cf90550529128d8b1a928364661f7dd69eb26ee1a55e5482cb",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1384001714.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1384001714-71ccc850e1.jpg",
+      "bytes": 78759,
+      "sha256": "6e0097962641233587b1c90907e9f2954f184919a0210882236e9511d7ee0365",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383512074.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1383512074-6f58968581.png",
+      "bytes": 381070,
+      "sha256": "416959b5ef79c34ef6ec218b2800aa10b9af0ca300f6318a31f01b7a61b8dcd8",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383513421.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1383513421-7615b0f4fa.png",
+      "bytes": 104456,
+      "sha256": "f447c2ba4c9be18bf5880da8b18bfc3b1b8714bd717581a6b2138c6fa1db09fe",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383515594.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1383515594-234681365a.png",
+      "bytes": 119541,
+      "sha256": "88a7c851c511de5d2d1516febe4f907efb10b40d3cc7eeab1b3ff76059539f90",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383515567.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1383515567-941ba48ab4.png",
+      "bytes": 144656,
+      "sha256": "165547166f6b7bc4a5aec178afb6c392fce38ee0d74b7efcc548043aad23eda1",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383516841.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1383516841-0519d4b715.png",
+      "bytes": 105728,
+      "sha256": "40da7a5f921f7848b6cf736b24ab55d6cf1e645c291c3eef913df5a7d4b1380b",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383516985.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1383516985-382c0587f6.jpg",
+      "bytes": 29977,
+      "sha256": "74dc46775719d06cce82f7b8568686d1812c454e0c38c54dbba4b37b4395c27a",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383499531.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1383499531-b5764a20c5.png",
+      "bytes": 131108,
+      "sha256": "d49c367daaeee20e262400a8afcb9e3beab401a59fdeeab6c449539cefdc49b3",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383491786.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1383491786-c3c805807a.png",
+      "bytes": 136752,
+      "sha256": "d510fe11ba36a59d6cb52c6470e33e18ca0a41a548eb23ec9b19209439aca765",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383497196.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1383497196-9388c1c120.jpg",
+      "bytes": 63859,
+      "sha256": "286e6e12d32319574c0023a47e23ef3ca85dc90d8b47d8168bfccb1f03988f41",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383492184.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1383492184-58959878b8.jpg",
+      "bytes": 25530,
+      "sha256": "91a91a837f93ab6e4d4b3bf97807e8963d03181b29cfdadda1d14e88a73d87e4",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383498788.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1383498788-9be86a004a.jpg",
+      "bytes": 47108,
+      "sha256": "e91eaa34aef99eec4edf50519661a946cdfbce2f8827c5072ece2d9ffc6effd0",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383494939.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1383494939-f12bb5add1.jpg",
+      "bytes": 19744,
+      "sha256": "ba55d07043ded1af49c599783cc07aca62a436a31bb62e2937a9f5b4a752a695",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/1383498893.png",
+      "status": "downloaded",
+      "local_url": "/media/weebly/1383498893-3bb6e5caec.png",
+      "bytes": 89197,
+      "sha256": "66d99526bc04bb6d6d08ce3557cda9c01e1150905ba5e7aa1ee6357523b2865b",
+      "content_type": "image/png"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9252026.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/9252026-cea8387d4b.jpg",
+      "bytes": 47831,
+      "sha256": "7db79abdcc072a9fb4cd0b041600f058c2f6c95afe3ceea9d69ee7d0943c6872",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7875204.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/7875204-d042ed9957.jpg",
+      "bytes": 25718,
+      "sha256": "1a63e20759631868f8baf0f7b583f06417a81826834dbb548c3a896c3581f3c7",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/3737120.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/3737120-59098329ca.jpg",
+      "bytes": 24695,
+      "sha256": "8cecd059cabe13baca143ec64c94eccab5fae73a5cbbc2b0352523a03314ca06",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9846326.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/9846326-41be52f394.jpg",
+      "bytes": 44347,
+      "sha256": "9eeedcad8efe657e88dfe59c705ab6a59f40ca0edb24e4688333a945e5d921f5",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9252026_orig.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/9252026_orig-b7170ab9a4.jpg",
+      "bytes": 78250,
+      "sha256": "443aa33fea7788b3cfe7bf0101ce7906634c1f63e1040747e9adaa5e04463066",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/7875204_orig.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/7875204_orig-f95ddcae3e.jpg",
+      "bytes": 35580,
+      "sha256": "6f9c3085b099d0d8c84c1ca767902ae2f3c2ed0dd6cf0b1e676480e4dce4c6c4",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/3737120_orig.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/3737120_orig-6c689ccc1b.jpg",
+      "bytes": 36231,
+      "sha256": "b13fe50a640c2a2106dc392fcad748ea6f3a517cbac2685ac3915247e5df667b",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9846326_orig.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/9846326_orig-050727915a.jpg",
+      "bytes": 373521,
+      "sha256": "6fb6e70918bbe1c71003152fa4d857094236512e0b96ede9f83e18c867e0e98e",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/9329285_orig.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/9329285_orig-f4bdbd080a.jpg",
+      "bytes": 30875,
+      "sha256": "e6b8f032c04be686cc92a6adfb1853d972fdde6717bec46fcf1d9b3c0be9c304",
+      "content_type": "image/jpeg"
+    },
+    {
+      "source_url": "https://mebegu.weebly.com/uploads/1/7/7/4/17746785/8795244_orig.jpg",
+      "status": "downloaded",
+      "local_url": "/media/weebly/8795244_orig-3a8e9146bc.jpg",
+      "bytes": 76250,
+      "sha256": "9de8bbdb7cffa6782720aa9f039fd36f0a4159182cd685164fb2dda249b22936",
+      "content_type": "image/jpeg"
+    }
+  ],
+  "failures": [],
+  "raw_capture_exclusions": {
+    "https://mebegu.weebly.com/blog/2014-cumhurbaskanlg-secim-analizi": {
+      "reason": "Windows Defender quarantined the downloaded full permalink HTML on 2026-10-22.",
+      "detection": "Trojan:Script/Wacatac.H!ml",
+      "action": "Do not restore or re-download this full page. No protection settings were changed.",
+      "fallback": "Use the already captured blog index for the article cross-check and the RSS full body for Markdown conversion."
+    }
+  }
+}

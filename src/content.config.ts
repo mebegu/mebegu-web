@@ -12,6 +12,15 @@ const writing = defineCollection({
     draft: z.boolean().default(false),
     lang: z.enum(['en', 'tr']),
     translationKey: z.string(),
+    source: z
+      .object({
+        url: z.url(),
+        published: z.string(),
+        visibleDate: z.string(),
+        categories: z.array(z.string()),
+        imported: z.coerce.date(),
+      })
+      .optional(),
   }),
 });
 

@@ -1,5 +1,13 @@
 # Doğrulama
 
+## Weebly blog arşivinin ilk aktarımı — 22 Ekim 2026
+
+- RSS, sitemap ve 15 kategori/ay arşivi sayfasından bulunan 9 yazının tamamı Markdown taslağına dönüştürüldü: 2 İngilizce, 7 Türkçe.
+- 61 görsel ve 1 PDF’nin SHA-256/format kontrolleri geçti. 4 video gömmesi bağlantıya çevrildi. Tek ham permalink HTML istisnası Windows Defender karantinasıdır; ilgili yazı RSS gövdesi ve blog-listesi verisiyle korundu, dosya geri yüklenmedi.
+- Altı dönüşüm testi ve ağsız tekrar çalıştırma geçti; mevcut taslaklar ve ekler bayt düzeyinde değişmedi. Kaynak URL/yayın zamanı/kategoriler ve eski → önerilen yeni adres eşleştirmesi saklandı.
+- `pnpm validate`: 57 kaynak dosyada sıfır hata/uyarı/ipucu, 17 HTML ve 414 yerel referans. Dokuz taslağın yazı route’u/RSS’e çıkmadığı ve ham arşivin `dist/` içine kopyalanmadığı ayrıca doğrulandı.
+- Envanter, kaynak dosyaları, ham HTML istisnası ve editoryal inceleme adımları: [WEEBLY-IMPORT.md](WEEBLY-IMPORT.md). Katalog entegrasyonu ve yayımlanacak yazı seçimi henüz yapılmadı.
+
 ## Kapakta toolbar yerine sahne üstü kimlik — 22 Ekim 2026
 
 - Yalnız iki ana sayfada toolbar kaldırıldı; `CoverHeader.astro` logo ve dil seçimini doğrudan gökyüzünün üzerine yerleştirir. İç sayfaların ortak toolbar’ı korunur.

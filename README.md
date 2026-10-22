@@ -89,6 +89,7 @@ CV ve portföyün ilk içerik iskeleti hazırdır; görseller, gerçek proje ba�
 - Ortak üst bar: `src/components/SiteToolbar.astro`.
 - CV: `src/data/resume.ts`; İngilizce profesyonel çalışmalar: `src/data/portfolio.ts`; kitap: `src/data/alamori.ts`; bağımsız hobi/atölye kartları: `src/data/projects.ts`.
 - Yeni yazı: `src/content/writing/` içine `.md` ekleyin; [içerik rehberi](docs/CONTENT.md).
+- Eski Weebly blog arşivi: [9 yazılık aktarım envanteri](docs/WEEBLY-IMPORT.md); Markdown’lar inceleme için taslaktır.
 - Tasarım kararları: [DESIGN](docs/DESIGN.md)
 - Teknik kararlar: [ARCHITECTURE](docs/ARCHITECTURE.md)
 - Sonraki adımlar: [ROADMAP](docs/ROADMAP.md)

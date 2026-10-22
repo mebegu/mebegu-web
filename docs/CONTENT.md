@@ -2,6 +2,8 @@
 
 ## Yeni yazı
 
+Weebly’den alınan ilk 9 taslak ve kaynak arşivi hazırdır; envanter, dosyalar ve yeniden çalıştırma adımları [WEEBLY-IMPORT.md](WEEBLY-IMPORT.md) içindedir. Bu yazılar henüz katalogda veya RSS’de görünmez.
+
 `src/content/writing/` içine küçük harf ve tirelerden oluşan bir dosya adıyla Markdown ekleyin. Dosya adı URL olur; yayımdan sonra değiştirirseniz eski adres için yönlendirme planlayın.
 
 ```md

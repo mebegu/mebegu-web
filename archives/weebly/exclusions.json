@@ -1,0 +1,8 @@
+{
+  "https://mebegu.weebly.com/blog/2014-cumhurbaskanlg-secim-analizi": {
+    "reason": "Windows Defender quarantined the downloaded full permalink HTML on 2026-10-22.",
+    "detection": "Trojan:Script/Wacatac.H!ml",
+    "action": "Do not restore or re-download this full page. No protection settings were changed.",
+    "fallback": "Use the already captured blog index for the article cross-check and the RSS full body for Markdown conversion."
+  }
+}
