@@ -1,5 +1,12 @@
 # Doğrulama
 
+## Profesyonel çalışmalar ve hobi atölyesi ayrımı — 22 Ekim 2026
+
+- On bir CV/iş kaydının tamamı yalnız profesyonel sayfanın İngilizce Selected work bölümündedir; CV baskısına dahil edilmez.
+- Atölye / Workshop ayrı `projects.ts` verisini kullanır; hobi oyunları, kişisel araçlar ve deneyler için beş temsili kartı vardır. Ana sayfa/üst menü etiketi ortak kayıttan değişir; `/projects/` adresleri korunur.
+- Önceki aktarım notundaki profesyonel işlerin Projects’e taşınması bu düzeltmeyle kaldırıldı. Atölye iki dilli kalır; CV ve Selected work yalnız İngilizcedir.
+- `pnpm validate`: 56 kaynak dosyada sıfır hata/uyarı, 17 HTML ve 422 yerel referans. Üretilen her iki rotada on bir profesyonel özetin Selected work içinde olduğu, beş hobi placeholder’ına müşteri içeriğinin girmediği ve ana sayfa/üst menü etiketleri doğrulandı. Gerçek tarayıcı görsel kontrolü ve PDF sayfa akışı halen bekliyor.
+
 ## CV ve portföy içerik aktarımı — 22 Ekim 2026
 
 - Güncel CV’den üç iş deneyimi, beş yetkinlik grubu, iki eğitim ve üç dil seviyesi; iki belgeden on bir ortak portföy özeti eklendi. Bunların altısı profesyonel sayfada seçilmiş çalışma olarak gösterilir.

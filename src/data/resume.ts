@@ -130,14 +130,5 @@ export const resume = {
   ],
   languages: ['Turkish — Native', 'English — C2', 'German — B1'],
   // Professional work stays outside the printable CV.
-  work: portfolio.filter((entry) =>
-    [
-      'aws-landing-zone',
-      'sovereign-soc',
-      'iot-device-management',
-      'crm-knowledge-graph',
-      'predictive-sales',
-      'project-management',
-    ].includes(entry.id),
-  ),
+  work: portfolio,
 };

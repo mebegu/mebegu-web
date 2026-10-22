@@ -33,12 +33,12 @@ Bu çalışma klasöründe üretilmiş `dist/` dosyalarını yalnızca görünt�
 
 ## Şu anda neler var?
 
-Ana sayfa: aşağıda yalnız karakter ve zemin, yukarıda **Profesyonel / Blog / Alamori / Projects** dilimleri. Yıldız parıltısı, hover genişlemesi, dokuz baş pozu ile yumuşak imleç takibi ve azaltılmış hareket desteği içerir. Logo, bölüm menüsü ve dil seçimi bütün sayfalarda ortak üst bardadır. Tasarım/modül haritası: [NIGHT-HOME](docs/NIGHT-HOME.md). Sosyal hesaplar kullanıcı isteğiyle placeholder; gerçek adresler `src/data/socials.ts` üzerinden eklenir.
+Ana sayfa: aşağıda yalnız karakter ve zemin, yukarıda **Profesyonel / Blog / Alamori / Atölye** dilimleri. Yıldız parıltısı, hover genişlemesi, dokuz baş pozu ile yumuşak imleç takibi ve azaltılmış hareket desteği içerir. Logo, bölüm menüsü ve dil seçimi bütün sayfalarda ortak üst bardadır. Tasarım/modül haritası: [NIGHT-HOME](docs/NIGHT-HOME.md). Sosyal hesaplar kullanıcı isteğiyle placeholder; gerçek adresler `src/data/socials.ts` üzerinden eklenir.
 
-- Profesyonel sayfa: paylaşılan güncel CV’den hazırlanmış İngilizce özgeçmiş, yalnız CV’yi yazdıran A4 baskı stili ve altı seçilmiş çalışma.
+- Profesyonel sayfa: paylaşılan güncel CV’den hazırlanmış İngilizce özgeçmiş, yalnız CV’yi yazdıran A4 baskı stili ve on bir profesyonel çalışma özeti (Selected work).
 - Blog: dört banner ve üç kategori rafında 12 örnek içerikle sabit katalog prototipi.
 - Alamori: tanıtım, geçici kapak, henüz pasif PDF ve geri bildirim alanları.
-- Projects: güncel ve eski CV’lerden hazırlanmış on bir İngilizce proje özeti; oyun/etkileşim ve yazılım filtreleri. Görseller henüz temsili.
+- Atölye / Workshop: hobi oyunları, kişisel yazılım ve deneyler için beş temsili kart. Profesyonel müşteri işleri burada yer almaz. Mevcut `/projects/` adresi korunur.
 - Önceki Hakkımda ve Atlantis sayfaları ile ortak 404 adresi korunur.
 - İngilizce `/`, Türkçe `/tr/`; sayfa karşılığına giden dil geçişi. CV ve portföy içeriği kullanıcı tercihiyle her iki rotada İngilizce kalır.
 - Markdown yazı koleksiyonu; taslakların detay ve RSS’den hariç tutulması. Blog kataloğu şu an ayrı örnek veriler kullanır.
@@ -86,7 +86,7 @@ CV ve portföyün ilk içerik iskeleti hazırdır; görseller, gerçek proje ba�
 - Renkler, tipografi, responsive düzen: `src/styles/global.css`
 - Ana sayfa: `src/components/night/NightLanding.astro`; route dosyaları `src/pages/` içinde.
 - Ortak üst bar: `src/components/SiteToolbar.astro`.
-- CV: `src/data/resume.ts`; ortak İngilizce portföy: `src/data/portfolio.ts`; kitap: `src/data/alamori.ts`; proje vitrin ayarları: `src/data/projects.ts`.
+- CV: `src/data/resume.ts`; İngilizce profesyonel çalışmalar: `src/data/portfolio.ts`; kitap: `src/data/alamori.ts`; bağımsız hobi/atölye kartları: `src/data/projects.ts`.
 - Yeni yazı: `src/content/writing/` içine `.md` ekleyin; [içerik rehberi](docs/CONTENT.md).
 - Tasarım kararları: [DESIGN](docs/DESIGN.md)
 - Teknik kararlar: [ARCHITECTURE](docs/ARCHITECTURE.md)

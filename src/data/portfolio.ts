@@ -1,13 +1,12 @@
 /**
- * English outlines condensed from the supplied CVs.
+ * Professional selected-work outlines condensed from the supplied CVs.
+ * These entries belong only to the Professional page, not the hobby workshop.
  * Current projects: mehmetgurcay_cv_.pdf.
  * Older details: mehmetgurcaycv (14).pdf, pp. 3–6.
  * No invented metrics, project dates, screenshots or public links.
  */
 export interface PortfolioEntry {
   id: string;
-  kind: 'games' | 'software';
-  visual: 'world' | 'gameplay' | 'app' | 'tool' | 'shader';
   title: string;
   context: string;
   contribution: string;
@@ -19,24 +18,7 @@ export interface PortfolioEntry {
 
 export const portfolio: PortfolioEntry[] = [
   {
-    id: 'car-chassis-telemetry',
-    kind: 'games',
-    visual: 'gameplay',
-    title: 'Real-Time Car Chassis Telemetry',
-    organization: 'Motius · Audi',
-    period: '6 months',
-    context:
-      'An in-car infotainment demo that made live chassis telemetry interactive through gamification.',
-    contribution:
-      'Developed Unity3D/C# screens, four standalone games and an independent menu hub in a three-person Scrum team.',
-    outcome:
-      'A working demo installed in the vehicle, connecting the interactive experience to real-time chassis data.',
-    technologies: ['Unity3D', 'C#', 'Real-time telemetry'],
-  },
-  {
     id: 'aws-landing-zone',
-    kind: 'software',
-    visual: 'world',
     title: 'AWS Landing Zone & Governance',
     organization: 'Concept Reply · Tebis',
     context:
@@ -55,8 +37,6 @@ export const portfolio: PortfolioEntry[] = [
   },
   {
     id: 'sovereign-soc',
-    kind: 'software',
-    visual: 'tool',
     title: 'Adaptive Kubernetes Sovereign SOC',
     organization: 'Concept Reply · Open-source project',
     context:
@@ -69,8 +49,6 @@ export const portfolio: PortfolioEntry[] = [
   },
   {
     id: 'iot-device-management',
-    kind: 'software',
-    visual: 'app',
     title: 'IoT Device Management & Data Router',
     organization: 'Concept Reply · Danfoss',
     context:
@@ -83,8 +61,6 @@ export const portfolio: PortfolioEntry[] = [
   },
   {
     id: 'genai-support',
-    kind: 'software',
-    visual: 'shader',
     title: 'GenAI Customer Support Agent',
     organization: 'Concept Reply · Internal innovation',
     context:
@@ -97,8 +73,6 @@ export const portfolio: PortfolioEntry[] = [
   },
   {
     id: 'crm-knowledge-graph',
-    kind: 'software',
-    visual: 'world',
     title: 'CRM Knowledge Graph',
     organization: 'Motius · Siemens',
     period: '3+ years',
@@ -121,8 +95,6 @@ export const portfolio: PortfolioEntry[] = [
   },
   {
     id: 'predictive-sales',
-    kind: 'software',
-    visual: 'app',
     title: 'Predictive Sales Analytics',
     organization: 'Motius · Siemens',
     period: '1 year',
@@ -136,8 +108,6 @@ export const portfolio: PortfolioEntry[] = [
   },
   {
     id: 'project-management',
-    kind: 'software',
-    visual: 'tool',
     title: 'Project Management & Communication',
     organization: 'Client project',
     period: '18 months',
@@ -159,8 +129,6 @@ export const portfolio: PortfolioEntry[] = [
   },
   {
     id: 'customer-feedback',
-    kind: 'software',
-    visual: 'app',
     title: 'Customer Feedback Service',
     organization: 'Client project',
     period: '8 months',
@@ -181,9 +149,20 @@ export const portfolio: PortfolioEntry[] = [
     ],
   },
   {
+    id: 'car-chassis-telemetry',
+    title: 'Real-Time Car Chassis Telemetry',
+    organization: 'Motius · Audi',
+    period: '6 months',
+    context:
+      'An in-car infotainment demo that made live chassis telemetry interactive through gamification.',
+    contribution:
+      'Developed Unity3D/C# screens, four standalone games and an independent menu hub in a three-person Scrum team.',
+    outcome:
+      'A working demo installed in the vehicle, connecting the interactive experience to real-time chassis data.',
+    technologies: ['Unity3D', 'C#', 'Real-time telemetry'],
+  },
+  {
     id: 'iot-route-planner',
-    kind: 'software',
-    visual: 'world',
     title: 'IoT Route Planner',
     organization: 'Motius · BMW',
     period: '6 months',
@@ -203,8 +182,6 @@ export const portfolio: PortfolioEntry[] = [
   },
   {
     id: 'loopcake',
-    kind: 'software',
-    visual: 'tool',
     title: 'Loopcake',
     organization: 'Co-founded startup',
     period: '2016–2017',

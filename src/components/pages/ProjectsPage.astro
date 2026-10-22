@@ -9,33 +9,43 @@ interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
+const tr = lang === 'tr';
 ---
 
 <BaseLayout
-  title="Projects"
+  title={tr ? 'Atölye' : 'Workshop'}
   lang={lang}
   bodyClass="projects-body"
-  description="Selected software, cloud, data and interactive projects by Mehmet Berk Gürçay."
+  description={
+    tr
+      ? 'Hobi oyunları, kişisel araçlar ve küçük deneyler için atölyem.'
+      : 'My workshop for hobby games, personal tools, and small experiments.'
+  }
 >
-  <div class="projects-page" data-projects-page lang="en">
+  <div class="projects-page" data-projects-page>
     <header class="projects-heading">
       <div>
-        <p class="eyebrow">Selected projects</p>
+        <p class="eyebrow">
+          {tr ? 'Kişisel proje atölyesi' : 'The personal workbench'}
+        </p>
         <h1>
-          Projects<span class="accent">.</span>
+          {tr ? 'Atölye' : 'Workshop'}
+          <span class="accent">.</span>
         </h1>
       </div>
       <p class="projects-intro">
-        Cloud platforms, data-driven applications and interactive experiences.
-        An outline of the work I’ve contributed to.
+        {tr
+          ? 'Oyunlar, işe yarayan küçük şeyler ve “acaba?” diye başlayan denemeler.'
+          : 'Games, useful little things, and experiments that start with “what if?”.'}
       </p>
     </header>
+
     <div class="projects-topline">
       <div
         class="project-filters"
         data-project-filters
         role="group"
-        aria-label="Project category"
+        aria-label={tr ? 'Proje kategorisi' : 'Project category'}
         hidden
       >
         <button
@@ -44,7 +54,7 @@ const { lang } = Astro.props;
           aria-pressed="true"
           aria-controls="project-list"
         >
-          All{' '}
+          {tr ? 'Tümü' : 'All'}
           <span aria-hidden="true">
             {String(projects.length).padStart(2, '0')}
           </span>
@@ -56,7 +66,7 @@ const { lang } = Astro.props;
             aria-pressed="false"
             aria-controls="project-list"
           >
-            {kind.label}
+            {kind.label[lang]}
             <span aria-hidden="true">
               {String(
                 projects.filter((project) => project.kind === kind.id).length,
@@ -66,7 +76,9 @@ const { lang } = Astro.props;
         ))}
       </div>
       <p class="projects-template-note">
-        Project outlines · More detail to come
+        {tr
+          ? 'Şimdilik temsili hobi projesi kartları'
+          : 'Sample side-project cards for now'}
       </p>
     </div>
     <p
@@ -74,16 +86,16 @@ const { lang } = Astro.props;
       data-project-status
       aria-live="polite"
       aria-atomic="true"
-      data-count-label="projects shown"
+      data-count-label={tr ? 'gösterilen kart' : 'cards shown'}
     ></p>
+
     <section
       id="project-list"
       class="project-grid"
-      aria-label="Project showcase"
+      aria-label={tr ? 'Proje vitrini' : 'Project showcase'}
     >
       {projects.map((project, index) => (
         <article
-          id={project.id}
           class:list={[
             'project-card',
             `project-kind-${project.kind}`,
@@ -96,14 +108,23 @@ const { lang } = Astro.props;
             <div class="project-media-top">
               <span>
                 {String(index + 1).padStart(2, '0')} /{' '}
-                {projectKinds.find((kind) => kind.id === project.kind)?.label}
+                {
+                  projectKinds.find((kind) => kind.id === project.kind)?.label[
+                    lang
+                  ]
+                }
               </span>
+              {project.placeholder && (
+                <span class="project-sample-badge">
+                  {tr ? 'Örnek proje' : 'Sample project'}
+                </span>
+              )}
             </div>
             {project.image ? (
               <img
                 class="project-screenshot"
                 src={href(project.image)}
-                alt={project.title}
+                alt={project.title[lang]}
                 width="680"
                 height="440"
                 loading="lazy"
@@ -114,50 +135,59 @@ const { lang } = Astro.props;
             )}
             {!project.image && (
               <p class="project-visual-caption">
-                Illustrative visual · Project screenshot to come
+                {tr ? 'Temsili görsel' : 'Illustrative visual'}
               </p>
             )}
           </div>
           <div class="project-card-copy">
             <p class="project-kind-label">
-              {project.organization}
-              {project.period && ` · ${project.period}`}
+              {
+                projectKinds.find((kind) => kind.id === project.kind)?.label[
+                  lang
+                ]
+              }
             </p>
-            <h2>{project.title}</h2>
-            <p class="project-description">{project.description}</p>
-            <details class="project-outline">
-              <summary>Contribution & delivery</summary>
-              <p>{project.contribution}</p>
-              <p>
-                <strong>Delivered:</strong> {project.outcome}
-              </p>
-            </details>
-            <ul class="project-tags" aria-label="Technologies">
+            <h2>{project.title[lang]}</h2>
+            <p class="project-description">{project.description[lang]}</p>
+            <ul
+              class="project-tags"
+              aria-label={tr ? 'Teknolojiler' : 'Technologies'}
+            >
               {project.technologies.map((technology) => (
                 <li>{technology}</li>
               ))}
             </ul>
-            {(project.demoUrl || project.codeUrl) && (
-              <div class="project-links">
-                {project.demoUrl && (
-                  <a href={project.demoUrl}>
-                    Open demo <span aria-hidden="true">↗</span>
-                  </a>
-                )}
-                {project.codeUrl && (
-                  <a href={project.codeUrl}>
-                    Source code <span aria-hidden="true">↗</span>
-                  </a>
-                )}
-              </div>
-            )}
+            <div class="project-links">
+              {project.demoUrl ? (
+                <a href={project.demoUrl}>
+                  {tr ? 'Demoyu aç' : 'Open demo'}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              ) : (
+                <span class="project-link-pending" aria-disabled="true">
+                  Demo<span>{tr ? 'eklenmedi' : 'not added'}</span>
+                </span>
+              )}
+              {project.codeUrl ? (
+                <a href={project.codeUrl}>
+                  {tr ? 'Kaynak kod' : 'Source code'}
+                  <span aria-hidden="true">↗</span>
+                </a>
+              ) : (
+                <span class="project-link-pending" aria-disabled="true">
+                  {tr ? 'Kod' : 'Code'}
+                  <span>{tr ? 'eklenmedi' : 'not added'}</span>
+                </span>
+              )}
+            </div>
           </div>
         </article>
       ))}
     </section>
     <p class="projects-bottom-note">
-      These are brief project outlines. Screenshots, public links and fuller
-      case studies will be added as the portfolio develops.
+      {tr
+        ? 'Gerçek proje adları, ekran görüntüleri ve bağlantıları geldikçe bu vitrine yerleşecek.'
+        : 'Real project names, screenshots, and links will find their place in this showcase.'}
     </p>
   </div>
 </BaseLayout>

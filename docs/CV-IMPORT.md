@@ -14,7 +14,7 @@ Imported on 22 October 2026 from two user-supplied PDFs. The PDFs are source mat
 
 `src/data/resume.ts` contains three roles, five skill groups, two education entries and three language levels. The print layout still excludes the web portfolio.
 
-`src/data/portfolio.ts` is the shared source for these eleven outlines:
+`src/data/portfolio.ts` contains these eleven professional outlines, all displayed under **Selected work** on the Professional page. They do not feed the separate hobby workshop (`src/data/projects.ts`). CV and Selected work stay English; Atölye / Workshop remains bilingual.
 
 | Outline                                           | Source                                                    |
 | ------------------------------------------------- | --------------------------------------------------------- |
@@ -35,7 +35,7 @@ Durations come from the older portfolio and describe historical project lengths,
 ## Next editorial pass
 
 - Review the profile, employment dates (especially “Present”), technology emphasis and which projects should lead the portfolio.
-- Add real screenshots and selected links where available. Existing decorative illustrations are explicitly labelled and are not screenshots of client work.
+- Add real professional screenshots and selected links where available. Selected work is currently text-based; the workshop's decorative hobby placeholders are a separate collection.
 - Expand a few outlines into case studies with approved visuals and concrete contributions; add impact figures only when supplied.
 - Consider adding older background items as a separate section: Siemens R&D internship (Java/Jira plugin), İş Bank network engineering internship (dates absent), TUM teaching assistant in 2019, and KU-GameDev founder in 2014–2017. These were intentionally kept out of the newer CV's concise work history.
 - The older profile mentions Neo4j certification; no date/current status is supplied, so it is not presented as a current credential.

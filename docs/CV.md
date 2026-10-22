@@ -18,10 +18,10 @@ Bu kararların dayanakları: [Harvard MCS](https://careerservices.fas.harvard.ed
 22 Ekim 2026’da kullanıcı tarafından verilen güncel CV (`mehmetgurcay_cv_.pdf`) üzerinden profil, üç iş deneyimi, teknik yetkinlikler, iki eğitim ve diller eklendi. Eski belge (`mehmetgurcaycv (14).pdf`) portföy ayrıntılarını tamamlar. Kullanıcının tercihiyle **CV ve portföy yalnız İngilizcedir; çevrilmez**. Türkçe rotalarda ortak gezinme Türkçe kalır, içerik kapsayıcısında `lang="en"` bulunur.
 
 1. `resume.ts` İngilizce metinler kullanır: `summary`, `role`, `experience`, `skills`, `education`, `languages`. Boş CV şablonu kaldırıldı.
-2. `portfolio.ts` on bir projenin ortak kaynağıdır. `resume.work` bunlardan altısını profesyonel sayfada gösterir; `projects.ts` tamamını Projects vitrinine taşır. Aynı projeyi iki yerde ayrı ayrı düzenlemeyin.
+2. `portfolio.ts` on bir profesyonel çalışmanın kaynağıdır. `resume.work` tamamını profesyonel sayfanın **Selected work** bölümünde gösterir. Atölye / Workshop için kullanılan `projects.ts` bağımsızdır; CV’deki müşteri işleri hobi vitrininin içeriği değildir.
 3. Her portföy kaydı `context`, `contribution`, `outcome`, `technologies` ve `organization` içerir. `period` varsa kaynak belgedeki süredir; takvim tarihi tahmin edilmez.
 4. E-posta, şehir ve önceden bilinen GitHub adresi kullanılır. Tam sokak adresi, telefon ve kaynak PDF dosyaları public dizine/repo içeriğine eklenmedi. Sosyal şeridin placeholder kayıtları korunur.
-5. Gerçek proje görselleri ve demo/kod adresleri henüz yoktur. Görseller açıkça temsili olarak etiketlenir; var olmayan bağlantılar gösterilmez. İlk portföy sürümü bir içerik iskeletidir.
+5. Gerçek profesyonel çalışma görselleri ve bağlantıları henüz eklenmedi. Selected work metin odaklı bir içerik iskeletidir. Hobi atölyesinin temsili kartları bu portföyden ayrı geliştirilir.
 6. Kaynak öncelikleri, dışarıda bırakılan eski aktiviteler ve sonraki düzenlemeler için [CV-IMPORT.md](CV-IMPORT.md) dosyasına bakın. Güncel tarihler ve kişisel tanıtım metni son kullanıcı incelemesinden geçirilebilir.
 
 ## Yazdırma

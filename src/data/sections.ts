@@ -32,10 +32,10 @@ export const sections = [
   {
     id: 'projects',
     path: 'projects/',
-    title: { tr: 'Projects', en: 'Projects' },
+    title: { tr: 'Atölye', en: 'Workshop' },
     description: {
-      tr: 'Denemeler ve üretimler',
-      en: 'Experiments & creations',
+      tr: 'Hobi projeleri ve deneyler',
+      en: 'Side projects & experiments',
     },
     sky: '#785333',
     paint: '#eddbb9',

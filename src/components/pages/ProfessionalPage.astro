@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { type Lang, localPath } from '../../lib/i18n';
+import { type Lang } from '../../lib/i18n';
 import { resume } from '../../data/resume';
 import '../../styles/professional.css';
 
@@ -22,7 +22,7 @@ const { lang } = Astro.props;
         <p class="eyebrow">Résumé & portfolio</p>
         <nav aria-label="On this page">
           <a href="#cv">CV</a>
-          <a href="#portfolio">Portfolio</a>
+          <a href="#portfolio">Selected work</a>
         </nav>
       </div>
       <button type="button" class="cv-print-button" data-print-cv hidden>
@@ -148,10 +148,8 @@ const { lang } = Astro.props;
         </article>
       ))}
       <p class="portfolio-note">
-        The portfolio is excluded from the CV printout.{' '}
-        <a class="text-link" href={localPath('projects/', lang)}>
-          Explore all projects →
-        </a>
+        Selected work is excluded from the CV printout. Screenshots and fuller
+        case studies will be added over time.
       </p>
     </section>
   </div>
