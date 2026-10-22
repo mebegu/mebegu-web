@@ -81,7 +81,7 @@ const paths = {
     <a class="skip-link" href="#main">
       {t.skip}
     </a>
-    <SiteToolbar lang={lang} paths={paths} />
+    {!immersive && <SiteToolbar lang={lang} paths={paths} />}
     <main id="main" class:list={['shell', { 'immersive-main': immersive }]}>
       <slot />
     </main>

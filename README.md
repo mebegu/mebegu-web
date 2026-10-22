@@ -34,7 +34,7 @@ Bu çalışma klasöründe üretilmiş `dist/` dosyalarını yalnızca görünt�
 
 ## Şu anda neler var?
 
-Ana sayfa: aşağıda yalnız karakter ve zemin, yukarıda **Profesyonel / Blog / Alamori / Atölye** dilimleri. Yıldız parıltısı, hover genişlemesi, dokuz baş pozu ile yumuşak imleç takibi ve azaltılmış hareket desteği içerir. Logo, bölüm menüsü ve dil seçimi bütün sayfalarda ortak üst bardadır. Tasarım/modül haritası: [NIGHT-HOME](docs/NIGHT-HOME.md). Sosyal hesaplar kullanıcı isteğiyle placeholder; gerçek adresler `src/data/socials.ts` üzerinden eklenir.
+Ana sayfa: aşağıda yalnız karakter ve zemin, yukarıda **Profesyonel / Blog / Alamori / Atölye** dilimleri. Yıldız parıltısı, hover genişlemesi, dokuz baş pozu ile yumuşak imleç takibi ve azaltılmış hareket desteği içerir. Kapak tam ekran gökyüzüdür; logo sol üstte, sade `EN / TR` seçimi sağ üstte doğrudan sahnenin üzerinde durur. İç sayfalarda logo, bölüm menüsü ve dil seçimi ortak üst bardadır. Tasarım/modül haritası: [NIGHT-HOME](docs/NIGHT-HOME.md). Sosyal hesaplar kullanıcı isteğiyle placeholder; gerçek adresler `src/data/socials.ts` üzerinden eklenir.
 
 - Profesyonel sayfa: paylaşılan güncel CV’den hazırlanmış İngilizce özgeçmiş, yalnız CV’yi yazdıran A4 baskı stili ve on bir profesyonel çalışma özeti (Selected work).
 - Blog: dört banner ve üç kategori rafında 12 örnek içerikle sabit katalog prototipi.

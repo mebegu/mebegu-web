@@ -14,7 +14,7 @@
   container-type: size;
   width: 100%;
   min-height: 580px;
-  height: calc(100svh - var(--site-toolbar-height));
+  height: 100svh;
   overflow: hidden;
   background: #0b111c;
   color: var(--night-ink);

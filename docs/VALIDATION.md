@@ -1,5 +1,12 @@
 # Doğrulama
 
+## Kapakta toolbar yerine sahne üstü kimlik — 22 Ekim 2026
+
+- Yalnız iki ana sayfada toolbar kaldırıldı; `CoverHeader.astro` logo ve dil seçimini doğrudan gökyüzünün üzerine yerleştirir. İç sayfaların ortak toolbar’ı korunur.
+- Sahne `100svh`; üstte ayrılmış toolbar yüksekliği yoktur. Mobil boşluklar, 44px bağlantı alanları ve klavye odağı korunur.
+- `pnpm validate`: 57 kaynak dosyada sıfır hata/uyarı, 17 HTML sayfası ve 414 yerel referans. İki dilde kapak/toolbar ayrımı ve dil bağlantıları çıktı üzerinden kontrol edilir.
+- Tarayıcı envanteri boş olduğu için gerçek ekran görüntüsü ve mobil görsel kontrol yapılamadı; canlı görünüm ayrıca değerlendirilmelidir.
+
 ## Kullanıcı sitesi kök adresine geçiş — 22 Ekim 2026
 
 - Mevcut repo `mebegu/mebegu.github.io` olarak yeniden adlandırıldı; repo kimliği, Git geçmişi ve 24 issue korundu. Yerel origin `git@github.com:mebegu/mebegu.github.io.git` olarak güncellendi.

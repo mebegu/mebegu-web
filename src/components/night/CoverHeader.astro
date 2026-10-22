@@ -1,0 +1,97 @@
+---
+import { site } from '../../data/site';
+import { copy, localPath, type Lang } from '../../lib/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+---
+
+<header class="cover-header">
+  <a
+    class="cover-brand"
+    href={localPath('', lang)}
+    aria-label={`${site.name}, ${copy[lang].home}`}
+  >
+    mebegu<span>.</span>
+  </a>
+  <nav class="cover-language" aria-label={lang === 'tr' ? 'Dil' : 'Language'}>
+    <a
+      href={localPath('', 'en')}
+      lang="en"
+      hreflang="en"
+      aria-label="English"
+      aria-current={lang === 'en' ? 'true' : undefined}
+    >
+      EN
+    </a>
+    <span aria-hidden="true">/</span>
+    <a
+      href={localPath('', 'tr')}
+      lang="tr"
+      hreflang="tr"
+      aria-label="Türkçe"
+      aria-current={lang === 'tr' ? 'true' : undefined}
+    >
+      TR
+    </a>
+  </nav>
+</header>
+
+<style>
+  .cover-header {
+    position: absolute;
+    z-index: 5;
+    inset: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: max(clamp(16px, 3vh, 32px), env(safe-area-inset-top))
+      max(clamp(20px, 4.2vw, 72px), env(safe-area-inset-right)) 0
+      max(clamp(20px, 4.2vw, 72px), env(safe-area-inset-left));
+    pointer-events: none;
+  }
+  .cover-brand,
+  .cover-language a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    pointer-events: auto;
+    text-shadow: 0 1px 8px #0009;
+  }
+  .cover-brand {
+    color: #f3eee4;
+    font: 600 clamp(26px, 2.6vw, 32px)/1 var(--display);
+    letter-spacing: -1.7px;
+  }
+  .cover-brand span {
+    color: #d9bd8e;
+  }
+  .cover-language {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: #b7bdc8;
+  }
+  .cover-language > span {
+    opacity: 0.5;
+  }
+  .cover-language a {
+    justify-content: center;
+    min-width: 44px;
+  }
+  .cover-language a:hover,
+  .cover-language a[aria-current='true'] {
+    color: #f3eee4;
+  }
+  .cover-language a[aria-current='true'] {
+    text-decoration: underline;
+    text-decoration-color: #d9bd8e;
+    text-underline-offset: 7px;
+    text-decoration-thickness: 1px;
+  }
+</style>

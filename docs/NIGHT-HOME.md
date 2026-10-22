@@ -1,6 +1,6 @@
 # Dört dünyaya açılan gökyüzü
 
-Bu sürüm kullanıcının iki görsel referansını birleştirir: yıldızlı gökyüzü önünde yalnız duran kişi ve alt merkezden yukarı doğru açılan bölünmüş kompozisyon. Soldan sağa **Profesyonel, Blog, Alamori, Projects**. Dilimlerin tonları sırasıyla mavi, bordo, yeşil ve kehribar. Teleskop, spot ışığı veya zorunlu giriş adımı bulunmaz.
+Bu sürüm kullanıcının iki görsel referansını birleştirir: yıldızlı gökyüzü önünde yalnız duran kişi ve alt merkezden yukarı doğru açılan bölünmüş kompozisyon. Soldan sağa **Profesyonel, Blog, Alamori, Atölye**. Dilimlerin tonları sırasıyla mavi, bordo, yeşil ve kehribar. Teleskop, spot ışığı veya zorunlu giriş adımı bulunmaz.
 
 ## Parçalar
 
@@ -20,7 +20,8 @@ Kaynak görsellerin %34–60 yükseklik bandı beş desktop/portrait kadrajına 
 | ---------------- | ----------------------------------------- | ----------------------------------------------------------- |
 | Bölüm kayıtları  | `src/data/sections.ts`                    | Kimlik, iki dilde başlık/açıklama, route                    |
 | Dilim geometrisi | `src/lib/sky-layout.ts`                   | Kategori sayısına göre dilimler, etiket konumları, çizgiler |
-| Ortak üst bar    | `src/components/SiteToolbar.astro`        | Tüm sayfalarda logo, bölüm menüsü ve dil seçimi             |
+| Ortak üst bar    | `src/components/SiteToolbar.astro`        | İç sayfalarda logo, bölüm menüsü ve dil seçimi             |
+| Kapak kimliği   | `src/components/night/CoverHeader.astro`  | Gökyüzü üzerinde sol üstte logo, sağ üstte dil seçimi      |
 | Ana sahne        | `src/components/night/NightLanding.astro` | Dört gerçek bağlantı ve dekoratif sahne                     |
 | Kâğıt gökyüzü    | `src/components/night/PaperSky.astro`     | Renkli paneller, yırtık kenarlar ve lifler                  |
 | Yıldızlar        | `src/components/night/StarField.astro`    | Deterministik konumlar, yavaş parıltı                       |
@@ -37,7 +38,7 @@ Ayırıcılar arka plan bitmap’inde bulunmaz: SVG ve bağlantı bölgeleri kay
 - `/professional/` ve `/tr/professional/`: CV ve portföy için ortak giriş, `#cv` ve `#portfolio` bölümleri.
 - `/alamori/` ve `/tr/alamori/`: yeni hikâye sayfası.
 - `/projects/` ve `/tr/projects/`: kişisel projeler ve denemeler; henüz gerçek proje eklenmedi.
-- Güncel CV ve gerçek iş örnekleri henüz verilmediği için profesyonel sayfada bu durum açıkça belirtilir. Şirket, unvan, tarih veya proje sonucu uydurulmaz.
+- Güncel CV ve eski portföy belgesinden alınan profesyonel işler yalnız Professional → Selected work bölümündedir ve İngilizce kalır. Atölye bağımsız hobi içeriğine ayrılır.
 - Önceki `/atlantis/` ve `/about/` adresleri korunur. Alamori’nin Atlantis ile aynı eser olduğu varsayılmadı.
 - İlk aşamada altı sosyal adresin tamamı, kullanıcı isteğiyle `null`. Placeholder’lar navigasyon yapmaz, `href="#"` kullanmaz, klavye sırasına girmez. Gerçek URL eklenince standart bağlantıya dönüşür.
 
@@ -49,7 +50,11 @@ Sosyal şeritte yalnız gerçek SVG marka logoları vardır; görünür ad, kıs
 
 Karakterin başı tek bir şeffaf atlasta dokuz yönlü pozdan oluşur. Önceki çapraz opaklık geçişi çift kontur ürettiği için kaldırıldı; aynı anda yalnız bir kare görünür. Kareler boyun noktasına hizalıdır ve seçim sınırlarındaki küçük eşik titreşimi önler. Gövde eğimi en çok 1,8°, perspektif dönüşü 8°’dir. `observer-tracking.ts` baş ve gövde için ayrı kritik sönümlü yaylar kullanır; baş normalize koordinatta saniyede en çok 2, gövde 1,1 birim ilerler. Gövdenin hedefi doğrudan fare değil, başın yumuşatılmış konumudur. Beldeki üst/alt katman çakışması kaldırıldı; ayaklar ve kaya sabittir. İmleç sahneden çıkınca ortaya döner. Dokunmatik cihazda ve azaltılmış hareket tercihinde takip kapalıdır. RAF hedefte durur. Ayrıntılar ve alternatifler [CHARACTER-ANIMATION.md](CHARACTER-ANIMATION.md) belgesindedir.
 
-Dört kategori adı daima görünür; kısa açıklamalar hover veya klavye odağında, dokunmatik cihazlarda ise doğrudan görünür. Her dilim tek bir gerçek `<a>` öğesidir; yıldız bulma veya imleç hareketi gerekmez. `BaseLayout` bütün sayfalarda aynı `SiteToolbar` bileşenini gösterir: logo ana sayfaya döner, dört bölüm bağlantısı ortak kayıtlardan gelir, dil seçimi mevcut sayfanın çevirisini açar. Üst bar opak koyu bir zemin ve ince sıcak ayırıcıyla gökyüzünden ayrılır; kaydırırken üstte kalır. Mobilde menü ikinci satıra geçer. Sahne yüksekliği ortak `--site-toolbar-height` değerini çıkararak hesaplanır; karakterin zemine bağlı konumu sahne boyutlarına göre hesaplanmaya devam eder. Tüm yollar repo alt yolunu ve dil seçimini kullanır.
+Dört kategori adı daima görünür; kısa açıklamalar hover veya klavye odağında, dokunmatik cihazlarda ise doğrudan görünür. Her dilim tek bir gerçek `<a>` öğesidir; yıldız bulma veya imleç hareketi gerekmez.
+
+Kapakta `BaseLayout` ortak toolbar’ı göstermez. `CoverHeader.astro` logo sol üstte, sade `EN / TR` seçimi sağ üstte olacak şekilde doğrudan gökyüzünün üzerine yerleşir; kutu, arka plan şeridi veya ayırıcı çizgi yoktur. Aktif dil ince alt çizgiyle belirgindir; bağlantıların en az 44px dokunma alanı, erişilebilir adı ve klavye odağı korunur. Header’ın boş alanları dilimlerin tıklanmasını engellemez. Safe-area boşlukları gözetilir.
+
+Sahne yüksekliği `100svh` olur; karakterin zemine bağlı konumu sahne boyutlarına göre hesaplanmaya devam eder. İç sayfalar aynı `SiteToolbar` bileşenini kullanır: logo ana sayfaya döner, dört bölüm bağlantısı ortak kayıtlardan gelir, dil seçimi mevcut sayfanın çevirisini açar. İç sayfalarda üst bar opak koyu zeminle kaydırırken üstte kalır, mobilde menü ikinci satıra geçer. Tüm yollar build base değerini ve dil seçimini kullanır.
 
 Parıltılar 6,4–10,8 saniyelik yavaş opaklık/ölçek döngüleridir. İşletim sisteminde azaltılmış hareket seçiliyse dekoratif animasyonlar devre dışıdır. JavaScript çalışmazsa dilimler geometrik olarak genişlemez; CSS hover/odak geri bildirimi, açıklamalar ve standart sayfa bağlantıları çalışır.
 
