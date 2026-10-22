@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CatalogCover from '../blog/CatalogCover.astro';
+import BlogBannerImage from '../blog/BlogBannerImage.astro';
 import {
   getBlogCatalog,
   catalogShelves,
@@ -69,7 +70,11 @@ const open = tr ? 'Yazıyı aç' : 'Read post';
             aria-label={`${index + 1} / ${featured.length}`}
           >
             <div class="feature-art" aria-hidden="true">
-              <CatalogCover cover={post.cover} priority={index === 0} />
+              {post.banner ? (
+                <BlogBannerImage image={post.banner} priority={index === 0} />
+              ) : (
+                <CatalogCover cover={post.cover} priority={index === 0} />
+              )}
             </div>
             <div class="feature-copy" data-feature-copy>
               <p class="feature-kicker">

@@ -43,6 +43,8 @@ catalog:
     position: center
 ```
 
+Öne çıkan yazılarda isteğe bağlı `catalog.banner`, kart kapağından bağımsız görsel tanımlar. `src`, `alt`, gerçek `width`/`height`, `position`, farklı enlerde `sources: [{ src, width }]` ve aynı alanları içeren `mobile` kompozisyonu kullanır. Mevcut dört kaydı örnek alın; dosya ölçüleri ve prompt kaydı [BLOG-BANNERS.md](BLOG-BANNERS.md) içindedir. Küçük bir kart görselini banner'a büyütmeyin.
+
 Arşiv yazılarındaki `source.visibleDate`, eski sitede görünen gün/ay/yıl tarihidir. `published` özgün zaman kaydını korur. Öne çıkan dört yazının anahtarları `src/data/blog-catalog.ts` içindedir. Özgün gövdeyi bilinçli değiştirirken `archives/weebly/publication.json` koruma hash’i de gözden geçirilmelidir.
 
 ## Atlantis güncellemesi

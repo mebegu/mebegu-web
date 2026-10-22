@@ -94,6 +94,16 @@ for (const file of htmlFiles) {
     }
     checked += 1;
   }
+  for (const match of html.matchAll(/\bsrcset="([^"]+)"/g)) {
+    for (const candidate of match[1].split(',')) {
+      const raw = candidate.trim().split(/\s+/)[0].replaceAll('&amp;', '&');
+      const url = new URL(raw, expected);
+      if (!['http:', 'https:'].includes(url.protocol) || url.origin !== origin)
+        continue;
+      await localTarget(url);
+      checked += 1;
+    }
+  }
   for (const tag of html.matchAll(/<link[^>]+hreflang="(en|tr)"[^>]*>/g)) {
     const destination = tag[0].match(/href="([^"]+)"/)[1];
     const target = await localTarget(new URL(destination));

@@ -1,0 +1,290 @@
+[
+  {
+    "storyId": "weebly-google-glass",
+    "name": "google-glass",
+    "tool": "built-in image_gen",
+    "role": "Decorative AI-generated illustration; not an archival photograph",
+    "desktop": {
+      "native": {
+        "width": 1774,
+        "height": 887
+      },
+      "main": {
+        "src": "/media/blog-banners/google-glass-1774.webp",
+        "width": 1774,
+        "height": 887,
+        "bytes": 90110
+      },
+      "sources": [
+        {
+          "src": "/media/blog-banners/google-glass-960.webp",
+          "width": 960,
+          "height": 480,
+          "bytes": 33506
+        },
+        {
+          "src": "/media/blog-banners/google-glass-1440.webp",
+          "width": 1440,
+          "height": 720,
+          "bytes": 65458
+        },
+        {
+          "src": "/media/blog-banners/google-glass-1774.webp",
+          "width": 1774,
+          "height": 887,
+          "bytes": 90110
+        }
+      ],
+      "prompt": "Asset type: a standalone, full-bleed hero background for an understated personal blog, not a screenshot or a UI mockup. Wide landscape composition, target 2560x1280 pixels (2:1). Important subject in the right-hand third around x=73%, y=48%; the LEFT 48% is naturally dark, quiet negative space for HTML headings. Keep the main subject inside the central-right safe area so it survives a tall mobile crop. Restrained cinematic realism, subtle real-world texture, muted midnight navy / charcoal, soft warm amber accents. Crisp clean image without coarse noise, pixelation, oversharpening or artificial bokeh dots. Edges and bottom fall naturally into shadow, with no hard vignette border. No text, letters, captions, logos, watermarks, UI controls, borders or typography. This is an illustrative editorial scene, not an archival documentary photograph.\nUse case: product-mockup. Subject: an early-generation wearable optical computer inspired by the 2013 Google Glass form factor: one delicate titanium brow band with clear nose pads, a small white electronics housing along the right temple and a tiny transparent prism near the eye. A single coherent physical object, elegantly resting in three-quarter profile on a dark charcoal desk on the right. Show the complete silhouette with breathing room, tasteful blue light passing through the optical prism, realistic brushed metal and clear glass. Calm, curious, finely photographed like a high-end editorial still life. No person, face, fake event scene, neon holograms, sci-fi headset, duplicated frames, floating device fragments or readable brand markings."
+    },
+    "mobile": {
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "main": {
+        "src": "/media/blog-banners/google-glass-mobile-1024.webp",
+        "width": 1024,
+        "height": 1536,
+        "bytes": 119372
+      },
+      "sources": [
+        {
+          "src": "/media/blog-banners/google-glass-mobile-480.webp",
+          "width": 480,
+          "height": 720,
+          "bytes": 33756
+        },
+        {
+          "src": "/media/blog-banners/google-glass-mobile-768.webp",
+          "width": 768,
+          "height": 1152,
+          "bytes": 75308
+        },
+        {
+          "src": "/media/blog-banners/google-glass-mobile-1024.webp",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 119372
+        }
+      ],
+      "prompt": "Use case: precise-object-edit / composition adaptation. Edit target: the attached finished wide blog banner. Create its matching PORTRAIT mobile art direction, 2:3 portrait composition, intended 1024x1536 pixels. Preserve the exact subject, visual identity, material detail, lighting, mood and restrained midnight-navy/amber grade of the reference; this is the same illustration in a mobile composition. Reframe and naturally extend the scene rather than stretching or simply taking a narrow crop. Keep the principal subject complete and comfortably inside the central 75% of the frame, in the upper 40%; reserve calm dark lower-middle space for HTML title and summary. For the glasses keep the entire coherent frame and optical housing; for the laptop retain the laptop and envelope; for the traffic retain the yellow taxis, traffic and distant bridge; for the game landscape retain the child, road and farmhouse. Do not add a new subject or new objects. No text, readable lettering, logos, UI controls, borders or watermarks. Do not bake any webpage layout into the image."
+    }
+  },
+  {
+    "storyId": "weebly-computer-virus-hoaxes",
+    "name": "computer-virus-hoaxes",
+    "tool": "built-in image_gen",
+    "role": "Decorative AI-generated illustration; not an archival photograph",
+    "desktop": {
+      "native": {
+        "width": 1774,
+        "height": 887
+      },
+      "main": {
+        "src": "/media/blog-banners/computer-virus-hoaxes-1774.webp",
+        "width": 1774,
+        "height": 887,
+        "bytes": 84186
+      },
+      "sources": [
+        {
+          "src": "/media/blog-banners/computer-virus-hoaxes-960.webp",
+          "width": 960,
+          "height": 480,
+          "bytes": 34878
+        },
+        {
+          "src": "/media/blog-banners/computer-virus-hoaxes-1440.webp",
+          "width": 1440,
+          "height": 720,
+          "bytes": 62744
+        },
+        {
+          "src": "/media/blog-banners/computer-virus-hoaxes-1774.webp",
+          "width": 1774,
+          "height": 887,
+          "bytes": 84186
+        }
+      ],
+      "prompt": "Asset type: a standalone, full-bleed hero background for an understated personal blog, not a screenshot or a UI mockup. Wide landscape composition, target 2560x1280 pixels (2:1). Important subject in the right-hand third around x=73%, y=48%; the LEFT 48% is naturally dark, quiet negative space for HTML headings. Keep the main subject inside the central-right safe area so it survives a tall mobile crop. Restrained cinematic realism, subtle real-world texture, muted midnight navy / charcoal, soft warm amber accents. Crisp clean image without coarse noise, pixelation, oversharpening or artificial bokeh dots. Edges and bottom fall naturally into shadow, with no hard vignette border. No text, letters, captions, logos, watermarks, UI controls, borders or typography. This is an illustrative editorial scene, not an archival documentary photograph.\nUse case: photorealistic-natural. Scene: a quiet desk at dusk, a real laptop occupying the right third, partly open at a natural angle. A pale folded paper envelope rests near the keyboard, suggesting deceptive email and social engineering. The screen has a very soft, abstract email-panel arrangement with indistinct horizontal shapes and a small amber alert symbol, absolutely no legible characters. Restrained cyan screen glow and one warm desk-lamp reflection on textured wood. The left side is dim uncluttered desk and deep background. Professional, thoughtful mood, believable materials, not sensational cybercrime. Avoid hooded hackers, skulls, matrix code, giant warning banners and dense neon graphics."
+    },
+    "mobile": {
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "main": {
+        "src": "/media/blog-banners/computer-virus-hoaxes-mobile-1024.webp",
+        "width": 1024,
+        "height": 1536,
+        "bytes": 91464
+      },
+      "sources": [
+        {
+          "src": "/media/blog-banners/computer-virus-hoaxes-mobile-480.webp",
+          "width": 480,
+          "height": 720,
+          "bytes": 31076
+        },
+        {
+          "src": "/media/blog-banners/computer-virus-hoaxes-mobile-768.webp",
+          "width": 768,
+          "height": 1152,
+          "bytes": 60832
+        },
+        {
+          "src": "/media/blog-banners/computer-virus-hoaxes-mobile-1024.webp",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 91464
+        }
+      ],
+      "prompt": "Use case: precise-object-edit / composition adaptation. Edit target: the attached finished wide blog banner. Create its matching PORTRAIT mobile art direction, 2:3 portrait composition, intended 1024x1536 pixels. Preserve the exact subject, visual identity, material detail, lighting, mood and restrained midnight-navy/amber grade of the reference; this is the same illustration in a mobile composition. Reframe and naturally extend the scene rather than stretching or simply taking a narrow crop. Keep the principal subject complete and comfortably inside the central 75% of the frame, in the upper 40%; reserve calm dark lower-middle space for HTML title and summary. For the glasses keep the entire coherent frame and optical housing; for the laptop retain the laptop and envelope; for the traffic retain the yellow taxis, traffic and distant bridge; for the game landscape retain the child, road and farmhouse. Do not add a new subject or new objects. No text, readable lettering, logos, UI controls, borders or watermarks. Do not bake any webpage layout into the image."
+    }
+  },
+  {
+    "storyId": "weebly-stanbul-traffic-for-dummies",
+    "name": "istanbul-traffic",
+    "tool": "built-in image_gen",
+    "role": "Decorative AI-generated illustration; not an archival photograph",
+    "desktop": {
+      "native": {
+        "width": 1774,
+        "height": 887
+      },
+      "main": {
+        "src": "/media/blog-banners/istanbul-traffic-1774.webp",
+        "width": 1774,
+        "height": 887,
+        "bytes": 253794
+      },
+      "sources": [
+        {
+          "src": "/media/blog-banners/istanbul-traffic-960.webp",
+          "width": 960,
+          "height": 480,
+          "bytes": 91354
+        },
+        {
+          "src": "/media/blog-banners/istanbul-traffic-1440.webp",
+          "width": 1440,
+          "height": 720,
+          "bytes": 184674
+        },
+        {
+          "src": "/media/blog-banners/istanbul-traffic-1774.webp",
+          "width": 1774,
+          "height": 887,
+          "bytes": 253794
+        }
+      ],
+      "prompt": "Asset type: a standalone, full-bleed hero background for an understated personal blog, not a screenshot or a UI mockup. Wide landscape composition, target 2560x1280 pixels (2:1). Important subject in the right-hand third around x=73%, y=48%; the LEFT 48% is naturally dark, quiet negative space for HTML headings. Keep the main subject inside the central-right safe area so it survives a tall mobile crop. Restrained cinematic realism, subtle real-world texture, muted midnight navy / charcoal, soft warm amber accents. Crisp clean image without coarse noise, pixelation, oversharpening or artificial bokeh dots. Edges and bottom fall naturally into shadow, with no hard vignette border. No text, letters, captions, logos, watermarks, UI controls, borders or typography. This is an illustrative editorial scene, not an archival documentary photograph.\nUse case: photorealistic-natural. Editorial illustration of Istanbul traffic at blue hour after a light rain. An elevated diagonal view looks along a busy urban road on the RIGHT of the frame, with several characteristic yellow taxis, a city bus and a dense but believable stream of cars. Warm red tail lights and soft amber reflections, distant Istanbul rooflines and a subtle Bosphorus suspension bridge receding into blue atmospheric haze. The road and city form a composed focal area on the right, while the LEFT half remains a calm dark shadowed foreground / soft blue-grey city atmosphere for the title. Realistic road geometry and vehicle scale, no crashes or fantasy architecture, no readable signs or licence plates, no conspicuous people. Not documentation of a specific event."
+    },
+    "mobile": {
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "main": {
+        "src": "/media/blog-banners/istanbul-traffic-mobile-1024.webp",
+        "width": 1024,
+        "height": 1536,
+        "bytes": 319072
+      },
+      "sources": [
+        {
+          "src": "/media/blog-banners/istanbul-traffic-mobile-480.webp",
+          "width": 480,
+          "height": 720,
+          "bytes": 77308
+        },
+        {
+          "src": "/media/blog-banners/istanbul-traffic-mobile-768.webp",
+          "width": 768,
+          "height": 1152,
+          "bytes": 190790
+        },
+        {
+          "src": "/media/blog-banners/istanbul-traffic-mobile-1024.webp",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 319072
+        }
+      ],
+      "prompt": "Use case: precise-object-edit / composition adaptation. Edit target: the attached finished wide blog banner. Create its matching PORTRAIT mobile art direction, 2:3 portrait composition, intended 1024x1536 pixels. Preserve the exact subject, visual identity, material detail, lighting, mood and restrained midnight-navy/amber grade of the reference; this is the same illustration in a mobile composition. Reframe and naturally extend the scene rather than stretching or simply taking a narrow crop. Keep the principal subject complete and comfortably inside the central 75% of the frame, in the upper 40%; reserve calm dark lower-middle space for HTML title and summary. For the glasses keep the entire coherent frame and optical housing; for the laptop retain the laptop and envelope; for the traffic retain the yellow taxis, traffic and distant bridge; for the game landscape retain the child, road and farmhouse. Do not add a new subject or new objects. No text, readable lettering, logos, UI controls, borders or watermarks. Do not bake any webpage layout into the image."
+    }
+  },
+  {
+    "storyId": "weebly-the-walking-dead-the-game-season-2",
+    "name": "walking-dead",
+    "tool": "built-in image_gen",
+    "role": "Decorative AI-generated illustration; not an archival photograph",
+    "desktop": {
+      "native": {
+        "width": 1774,
+        "height": 887
+      },
+      "main": {
+        "src": "/media/blog-banners/walking-dead-1774.webp",
+        "width": 1774,
+        "height": 887,
+        "bytes": 243794
+      },
+      "sources": [
+        {
+          "src": "/media/blog-banners/walking-dead-960.webp",
+          "width": 960,
+          "height": 480,
+          "bytes": 95372
+        },
+        {
+          "src": "/media/blog-banners/walking-dead-1440.webp",
+          "width": 1440,
+          "height": 720,
+          "bytes": 182594
+        },
+        {
+          "src": "/media/blog-banners/walking-dead-1774.webp",
+          "width": 1774,
+          "height": 887,
+          "bytes": 243794
+        }
+      ],
+      "prompt": "Asset type: a standalone, full-bleed hero background for an understated personal blog, not a screenshot or a UI mockup. Wide landscape composition, target 2560x1280 pixels (2:1). Important subject in the right-hand third around x=73%, y=48%; the LEFT 48% is naturally dark, quiet negative space for HTML headings. Keep the main subject inside the central-right safe area so it survives a tall mobile crop. Restrained cinematic realism, subtle real-world texture, muted midnight navy / charcoal, soft warm amber accents. Crisp clean image without coarse noise, pixelation, oversharpening or artificial bokeh dots. Edges and bottom fall naturally into shadow, with no hard vignette border. No text, letters, captions, logos, watermarks, UI controls, borders or typography. This is an illustrative editorial scene, not an archival documentary photograph.\nUse case: illustration-story. A moody painterly narrative-game landscape about survival, memory and a journey. On the right a small solitary child seen from behind, wearing a worn baseball cap and a modest backpack, walks calmly along an empty country road toward a distant abandoned farmhouse. Tall pine trees, low mist and faded late-afternoon amber light, muted olive and charcoal textures. Fine hand-painted editorial concept art with clear shapes and subtle brushwork, emotionally quiet and curious. Keep the child small in the landscape, safely inside the right-central crop, not near the edge. The LEFT half is a spacious dark forest and soft haze for text. Avoid direct reproduction of an existing game poster, title art, logos, zombies, gore, weapons, threatening figures or photorealistic violence."
+    },
+    "mobile": {
+      "native": {
+        "width": 1024,
+        "height": 1536
+      },
+      "main": {
+        "src": "/media/blog-banners/walking-dead-mobile-1024.webp",
+        "width": 1024,
+        "height": 1536,
+        "bytes": 329988
+      },
+      "sources": [
+        {
+          "src": "/media/blog-banners/walking-dead-mobile-480.webp",
+          "width": 480,
+          "height": 720,
+          "bytes": 101240
+        },
+        {
+          "src": "/media/blog-banners/walking-dead-mobile-768.webp",
+          "width": 768,
+          "height": 1152,
+          "bytes": 217746
+        },
+        {
+          "src": "/media/blog-banners/walking-dead-mobile-1024.webp",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 329988
+        }
+      ],
+      "prompt": "Use case: precise-object-edit / composition adaptation. Edit target: the attached finished wide blog banner. Create its matching PORTRAIT mobile art direction, 2:3 portrait composition, intended 1024x1536 pixels. Preserve the exact subject, visual identity, material detail, lighting, mood and restrained midnight-navy/amber grade of the reference; this is the same illustration in a mobile composition. Reframe and naturally extend the scene rather than stretching or simply taking a narrow crop. Keep the principal subject complete and comfortably inside the central 75% of the frame, in the upper 40%; reserve calm dark lower-middle space for HTML title and summary. For the glasses keep the entire coherent frame and optical housing; for the laptop retain the laptop and envelope; for the traffic retain the yellow taxis, traffic and distant bridge; for the game landscape retain the child, road and farmhouse. Do not add a new subject or new objects. No text, readable lettering, logos, UI controls, borders or watermarks. Do not bake any webpage layout into the image."
+    }
+  }
+]

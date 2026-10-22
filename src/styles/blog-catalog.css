@@ -143,6 +143,24 @@
 .feature-art .catalog-cover {
   opacity: 0.68;
 }
+.banner-picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.banner-image {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  max-width: var(--banner-native-width);
+  max-height: var(--banner-native-height);
+  object-fit: cover;
+  object-position: var(--banner-position);
+  mask-image: linear-gradient(90deg, transparent, black 14%);
+}
 .card-front > .catalog-cover {
   position: absolute;
   inset: 0;
@@ -486,6 +504,12 @@
   }
 }
 @media (max-width: 650px) {
+  .banner-image {
+    max-width: var(--banner-mobile-width);
+    max-height: var(--banner-mobile-height);
+    object-position: var(--banner-mobile-position);
+    mask-image: none;
+  }
   .catalog-slide {
     min-height: 640px;
     padding-top: 112px;

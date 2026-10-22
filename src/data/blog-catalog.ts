@@ -40,6 +40,9 @@ export async function getBlogCatalog(lang: Lang) {
         title: post.data.title,
         description: metadata.summary[lang],
         cover: { ...metadata.cover, alt: metadata.cover.alt[lang] },
+        banner: metadata.banner
+          ? { ...metadata.banner, alt: metadata.banner.alt[lang] }
+          : undefined,
         tone: metadata.tone,
         lang: post.data.lang,
         date: postCalendarDate(original.data),

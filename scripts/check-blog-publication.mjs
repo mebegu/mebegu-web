@@ -7,6 +7,10 @@ import { postCalendarDate } from '../src/lib/post-dates.ts';
 const ledger = JSON.parse(
   await readFile('archives/weebly/publication.json', 'utf8'),
 );
+const banners = JSON.parse(
+  await readFile('docs/assets/blog-banners.json', 'utf8'),
+);
+assert.equal(banners.length, 4);
 const base =
   `/${(process.env.BASE_PATH || '').replace(/^\/+|\/+$/g, '')}`.replace(
     /\/$/,
@@ -129,6 +133,10 @@ for (const lang of ['en', 'tr']) {
     [...html.matchAll(/data-post-key="/g)].length >= ledger.originals.length,
   );
   assert.equal([...html.matchAll(/data-story="/g)].length, 4);
+  assert.equal(
+    [...html.matchAll(/data-banner-picture/g)].length,
+    banners.length,
+  );
   assert.doesNotMatch(
     html,
     /writing\/sample\/|Layout preview|Yerleşim taslağı/,
@@ -151,6 +159,34 @@ for (const lang of ['en', 'tr']) {
     assert.ok(html.includes(`datetime="${record.date}"`));
   }
   for (const record of ledger.excluded) assert.ok(!html.includes(record.id));
+  const featuredHtml = html.split('class="catalog-library"')[0];
+  for (const record of banners) {
+    const original = await source(record.storyId);
+    const image = original.fields.catalog.banner;
+    assert.ok(image.width >= 1600 && image.width / image.height >= 1.9);
+    assert.ok(
+      image.mobile.width >= 1000 && image.mobile.height > image.mobile.width,
+    );
+    assert.notEqual(image.src, original.fields.catalog.cover.src);
+    assert.ok(featuredHtml.includes(`src="${base}${image.src}"`));
+    assert.ok(
+      featuredHtml.includes(
+        `${base}${image.mobile.src} ${image.mobile.width}w`,
+      ),
+    );
+    assert.ok(
+      !featuredHtml.includes(
+        `src="${base}${original.fields.catalog.cover.src}"`,
+      ),
+      'A small card image leaked back into the banner',
+    );
+    for (const variant of [...image.sources, ...image.mobile.sources]) {
+      await access('public' + variant.src);
+      assert.ok(
+        featuredHtml.includes(`${base}${variant.src} ${variant.width}w`),
+      );
+    }
+  }
 }
 assert.equal(translations, 6);
 assert.equal(
@@ -161,5 +197,5 @@ assert.equal(
   '2014-08-10',
 );
 console.log(
-  `Verified ${ledger.originals.length} published originals, ${translations} translations, source text hashes, images, dates and excluded article.`,
+  `Verified ${ledger.originals.length} published originals, ${translations} translations, source text hashes, images, dates, excluded article and ${banners.length} responsive banner sets.`,
 );

@@ -1,0 +1,48 @@
+---
+import { href } from '../../lib/urls';
+type Source = { src: string; width: number };
+interface Props {
+  image: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    position: string;
+    sources: Source[];
+    mobile: {
+      src: string;
+      width: number;
+      height: number;
+      position: string;
+      sources: Source[];
+    };
+  };
+  priority?: boolean;
+}
+const { image, priority = false } = Astro.props;
+const srcset = (sources: Source[]) =>
+  sources.map((source) => `${href(source.src)} ${source.width}w`).join(', ');
+---
+
+<picture class="banner-picture" data-banner-picture>
+  <source
+    media="(max-width: 650px)"
+    srcset={srcset(image.mobile.sources)}
+    sizes="100vw"
+    width={image.mobile.width}
+    height={image.mobile.height}
+  />
+  <img
+    class="banner-image"
+    src={href(image.src)}
+    srcset={srcset(image.sources)}
+    sizes={`(min-width: ${image.width}px) ${image.width}px, 100vw`}
+    width={image.width}
+    height={image.height}
+    alt={image.alt}
+    style={`--banner-native-width: ${image.width}px; --banner-native-height: ${image.height}px; --banner-mobile-width: ${image.mobile.width}px; --banner-mobile-height: ${image.mobile.height}px; --banner-position: ${image.position}; --banner-mobile-position: ${image.mobile.position}`}
+    loading={priority ? 'eager' : 'lazy'}
+    fetchpriority={priority ? 'high' : 'auto'}
+    decoding="async"
+  />
+</picture>

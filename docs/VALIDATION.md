@@ -1,5 +1,11 @@
 # Doğrulama
 
+## Banner'a özel görseller — 22 Ekim 2026
+
+- Dört öne çıkan yazı için ayrı geniş (1774 × 887) ve mobil (1024 × 1536) kompozisyonlar eklendi. Üçer boyda toplam 24 WebP dosyasının gerçek ölçüleri çözümlenerek doğrulandı; dosyalar büyütülmedi. Dört sahne, dört farklı alan ölçüsünde kadraj tanı görseliyle incelendi. Üretim ve dosya kaydı [BLOG-BANNERS.md](BLOG-BANNERS.md) içindedir.
+- `pnpm validate` geçti: 13 carousel testi; 61 kaynak dosyada sıfır hata/uyarı/ipucu; 31 HTML ve 883 yerel referans. Yeni `srcset` kontrolleri her varyantın dosyasını doğrular. Yayın kontrolü iki katalogda dört bağımsız banner setini, eski kart kapaklarını ve sekiz özgün gövdenin değişmediğini de denetler.
+- Gerçek tarayıcı envanteri boş olduğundan bu kadraj incelemesi tarayıcı ekran görüntüsü veya fiziksel cihaz doğrulaması değildir. Swipe kodu ve süreleri değiştirilmedi.
+
 ## Weebly yazılarının kataloğa alınması — 22 Ekim 2026
 
 - Sekiz özgün yazı ve altı ayrı İngilizce çeviri yayımlanır. İki katalogda sekiz kart, dört gerçek yazılık banner, üç içerik rafı ve kaynak görseller kullanılır. Özgün başlıklar ve gövdeler değişmedi; gövde SHA-256 değerleri yayın kaydıyla doğrulandı. Kısa iki dilli özetler ayrı katalog metaverisidir.

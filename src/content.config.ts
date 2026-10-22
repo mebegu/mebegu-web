@@ -2,6 +2,18 @@ import { defineCollection } from 'astro:content';
 import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 
+const catalogImage = z.object({
+  src: z.string(),
+  alt: z.object({ tr: z.string(), en: z.string() }),
+  width: z.number().int().positive(),
+  height: z.number().int().positive(),
+  position: z.string().default('center'),
+});
+const imageSource = z.object({
+  src: z.string(),
+  width: z.number().int().positive(),
+});
+
 const writing = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/writing' }),
   schema: z.object({
@@ -17,13 +29,19 @@ const writing = defineCollection({
       .object({
         shelf: z.enum(['technology', 'culture', 'society']),
         summary: z.object({ tr: z.string(), en: z.string() }),
-        cover: z.object({
-          src: z.string(),
-          alt: z.object({ tr: z.string(), en: z.string() }),
-          width: z.number().int().positive(),
-          height: z.number().int().positive(),
-          position: z.string().default('center'),
-        }),
+        cover: catalogImage,
+        banner: catalogImage
+          .extend({
+            sources: z.array(imageSource).min(1),
+            mobile: z.object({
+              src: z.string(),
+              width: z.number().int().positive(),
+              height: z.number().int().positive(),
+              position: z.string().default('center'),
+              sources: z.array(imageSource).min(1),
+            }),
+          })
+          .optional(),
         tone: z.enum(['blue', 'amber', 'violet', 'green']),
       })
       .optional(),

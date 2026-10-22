@@ -7,7 +7,7 @@ Katalog artık gerçek Markdown yazılarını kullanır. [Wireframe](wireframes/
 - Weebly’den sekiz özgün yazı yayımlanır: iki İngilizce, altı Türkçe. Altı Türkçe yazının ayrıca İngilizce sürümü vardır. Berkin Elvan yazısı yayına dahil edilmez.
 - İngilizce katalog sekiz yazının İngilizce sürümlerine gider. Türkçe katalog altı özgün Türkçe ve iki özgün İngilizce yazıya gider; yazının dili görünürdür. Kartlar ve banner yazıları yeni sekmede açar.
 - Özgün başlık ve gövdeler korunur. Kartların arkasındaki kısa özetler ayrı `catalog.summary` metaverisidir; yazı gövdesine eklenmez. Çeviriler ayrı dosyalardır, `translationKey` ve `translatedFrom` ile eşleşir.
-- Görseller kaynak arşivinden seçilir. Kapak alt metni, ölçüler ve kırpma konumu metaveride bulunur; yapay görsel üretilmedi. Yazıların mevcut galeri görselleri ve PDF bağlantıları da korunur.
+- Kart kapakları kaynak arşivinden seçilir; yazıların mevcut galeri görselleri ve PDF bağlantıları da korunur. Dört öne çıkan yazının banner'ı için bağımsız geniş ve mobil AI illüstrasyonları kullanılır. Bunlar arşiv fotoğrafı değildir. Dosyalar ve üretim prompt'ları [BLOG-BANNERS.md](BLOG-BANNERS.md) içindedir.
 - Görünen tarihler Weebly’de gösterilen takvim günüdür. Seçim analizi için 10 Ağustos 2014 gösterilir; farklı olan özgün RSS zamanı kaynak metaverisinde korunur. Aktarım veya çeviri tarihi, yayın tarihi yerine geçmez.
 - RSS, kullanıcı isteğiyle kaldırıldı: route, HTML keşif bağlantısı, footer bağlantısı ve paket bağımlılığı yoktur.
 
@@ -27,9 +27,10 @@ Azaltılmış harekette autoplay başlangıçta kapalıdır; slayt/özet anında
 - `src/data/blog-catalog.ts`: dil seçimi, raflar ve dört öne çıkan yazı anahtarı.
 - `src/lib/post-dates.ts`: görünür kaynak gününün saat diliminden bağımsız biçimlenmesi.
 - `src/components/blog/CatalogCover.astro`: kaynak görsellerin kapak sunumu.
+- `src/components/blog/BlogBannerImage.astro`: bağımsız banner görselleri, mobil kompozisyon ve responsive dosya seçimi.
 - `src/components/pages/WritingPage.astro`, `ArticlePage.astro`: katalog ve gerçek okuma sayfaları.
 - `src/lib/blog-banner.ts`: ortak geçiş ve touchpad hareketleri.
 - `archives/weebly/publication.json`: yayın kapsamı ve özgün gövdelerin kontrol hash’leri. İleride istenerek metin düzenlendiğinde bu kayıt da bilinçli güncellenmelidir.
 - `scripts/check-blog-publication.mjs`: metinlerin korunması, tarihler, kapaklar, ekler, dil bağlantıları ve dışlanan yazı kontrolleri. `pnpm check:output` ve CI’da çalışır.
 
-Gerçek tarayıcı yüzeyi bulunmadığından görsel kırpma ve fiziksel touchpad hissi cihaz üzerinde ayrıca değerlendirilmelidir. #10 makale okuma tasarımının ileri düzenlemelerini, #21 katalog görsel incelemesini izler.
+Banner kadrajları dört farklı alan ölçüsünde görsel olarak incelendi. Gerçek tarayıcı yüzeyi bulunmadığından metinle birlikte görünüm ve fiziksel touchpad hissi cihaz üzerinde ayrıca değerlendirilmelidir. #10 makale okuma tasarımının ileri düzenlemelerini, #21 katalog görsel incelemesini izler.
