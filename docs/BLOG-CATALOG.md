@@ -6,20 +6,20 @@ Güncel yön: **çerçevesiz, tam genişlikte öne çıkan yazı arka planı ve 
 
 - İç sayfalardaki ortak toolbar korunur. Blogun ana alanı `.shell` genişlik sınırını kullanmaz; öne çıkan arka plan ekranın kenarlarına kadar uzanır.
 - Banner’ın çerçevesi, köşe yuvarlatması veya ayrı kart zemini yoktur. Başlık, kısa açıklama ve yazıya gitme bağlantısı doğrudan arka plan üzerinde durur. Görsel, raflara doğru koyulaşarak sayfanın zeminine karışır.
-- Dört sabit öne çıkan içerik 6,5 saniye arayla yatay kayarak değişir. Şimdilik kapaklar temsili SVG çizimleridir; gerçek fotoğraf seçimi bu yerleşimden bağımsızdır.
+- Dört sabit öne çıkan içerik 6,5 saniye arayla, 850 ms süren yumuşak çapraz geçişle değişir. Şimdilik kapaklar temsili SVG çizimleridir; gerçek fotoğraf seçimi bu yerleşimden bağımsızdır.
 - Alt bölümde üç yatay raf ve toplam 12 görsel kart bulunur. Ön yüzde görsel ve kısa başlık vardır; kart altında ayrı kategori, başlık veya açıklama satırı yoktur.
 
 ## Etkileşim
 
 - Hover veya klavye odağında kart Y ekseninde 180° döner; arka yüz kategori, kısa özet ve yazıyı açma ipucunu gösterir. Kart dışındaki odak çerçevesi dönmez.
 - Dönüş 780 ms sürer; daha uzak perspektif ve yumuşak hızlanma/yavaşlama kullanır. Hover başlangıcındaki 50 ms bekleme, fare kartın üzerinden geçerken gereksiz dönüşleri azaltır; klavye odağı beklemez.
-- Banner gerçek bir yatay scroll alanıdır: `overflow-x: auto`, `scroll-snap-type: x mandatory` ve tam genişlikte dört slayt kullanır. Touchpad’in yatay scroll aksiyonu ve dokunmatik swipe doğrudan alanı kaydırır; bırakınca slayda oturur. `scroll-snap-stop: always` hızlı hareketlerde ara slaytların atlanmasını sınırlar. [MDN scroll snap](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll_snap).
-- Kaydırma JS ile engellenmez; özel delta eşiği, swipe yön hesabı veya `touch-action: pan-y` kısıtı yoktur. Dikey kaydırma, pinch zoom ve dokunma/tıklama tarayıcıya bırakılır. Oklar ve otomatik geçiş aynı scroll alanını `scrollTo` ile hareket ettirir; noktalar gerçek scroll konumunu izler. Scroll sürerken otomatik geçiş bekler.
+- Swipe yalnızca önceki/sonraki slaydı seçer; touchpad hızı veya dokunma mesafesi geçiş hızını belirlemez. Touchpad’in yatay kaydırması, dokunmatikte bırakılan yatay swipe, oklar ve otomatik geçiş aynı 850 ms CSS animasyonunu kullanır. Geçiş sırasında ek talepler biriktirilmez; touchpad atalet kuyruğu başka slayt başlatmaz.
+- JS etkinleşince banner grid katmanlarına dönüşür. Yatay wheel aksiyonu normal geçişi başlatmak için ele alınır; dikey wheel ve pinch zoom engellenmez. Dokunmatikte `touch-action: pan-y pinch-zoom` dikey kaydırma ve yakınlaştırmayı tarayıcıda bırakır. Banner’ın tamamı yatay kaydırmayı dinler; bağlantıdan başlayan swipe yeni sekme açmaz. Swipe/geçiş sürerken otomatik zamanlayıcı bekler.
 - Banner ve kart bağlantıları `target="_blank"` ile yazı sayfasını yeni sekmede açar; popup/dialog kullanılmaz. Yeni sekme bilgisi erişilebilir ad/açıklamada yer alır.
 - Dokunmatikte tek dokunuş yazıyı açar; kısa özet iki satır halinde görselin üzerinde görünür, hover veya ikinci dokunuş gerekmez. Raflar doğal yatay kaydırmayı kullanır.
-- Azaltılmış hareket tercihinde otomatik geçiş başlangıçta kapalıdır; kontroller anında konum değiştirir ve 3D dönüş animasyonu uygulanmaz. Hover/odak özet yüzünü anında gösterir. Kullanıcının doğal scroll hareketi korunur.
+- Azaltılmış hareket tercihinde otomatik geçiş başlangıçta kapalıdır; banner anında değişir ve kartta 3D dönüş animasyonu uygulanmaz. Hover/odak özet yüzünü anında gösterir.
 - Banner’ın yazı alanı üzerinde fare varken, banner içinde klavye odağı varken veya sekme görünmüyorken otomatik geçiş durur. Arka planın boş alanında imleç durması geçişi durdurmaz. Küçük duraklat/başlat, önceki/sonraki ve doğrudan slayt seçimi kontrolleri vardır.
-- JS etkinleşince görünmeyen slaytlar `inert` ve `aria-hidden` taşır; bağlantıları klavye sırasına girmez. Slaytlar yatay flex satırındadır; eşit yüksekliği en uzun slayt belirler.
+- JS etkinleşince görünmeyen slaytlar `inert` ve `aria-hidden` taşır; bağlantıları klavye sırasına girmez. Slaytlar aynı grid alanını paylaşır; yüksekliği en uzun slayt belirler. İlk açılışta arka plandaki slaytlar animasyonsuz gizlenir.
 - JavaScript olmadan da banner ve raflar doğal yatay kaydırılabilir, bütün slaytlar erişilebilir kalır; kart dönüşü ve standart yeni sekme bağlantıları çalışır. Otomatik geçiş ve ok kontrolleri JavaScript ile etkinleşir.
 
 ## İçerik durumu
@@ -34,8 +34,8 @@ Weebly’den aktarılan dokuz yazı `draft: true` olarak korunur; wireframe çal
 - `src/components/pages/WritingPage.astro`: tam genişlikte banner ve iki yüzlü bağlantı kartları.
 - `src/styles/blog-catalog.css`: arka plan geçişi, raflar, 3D dönüş, mobil ve azaltılmış hareket davranışları.
 - `src/lib/blog-catalog.ts`: küçük carousel ve raf kaydırma kodu; kartlar JS gerektirmez.
-- `src/lib/carousel-scroll.ts`: doğal scroll konumuyla aktif slayt/otomatik geçiş senkronizasyonu; `scrollend` için eski tarayıcılarda zaman aşımı alternatifi.
-- `scripts/test-carousel-scroll.mjs`: iki yönde scroll, kontroller, autoplay, kesilen geçiş, olayları engellememe, azaltılmış hareket ve boyut değişimi için sekiz simülasyon; `pnpm test:carousel` ile ve CI’da çalışır.
+- `src/lib/blog-banner.ts`: ortak slayt seçimi, 850 ms animasyon kilidi ve yatay swipe yönü; süre CSS’e aynı değişkenden aktarılır.
+- `scripts/test-blog-banner.mjs`: ortak süre, hızlı hareket/atalet, iki yönde swipe, wheel birimleri, dikey scroll/pinch/tıklama ve azaltılmış hareket için sekiz simülasyon; `pnpm test:carousel` ile ve CI’da çalışır.
 - `src/components/pages/SampleArticlePage.astro`: örnek yazının ayrı sayfa iskeleti.
 - `docs/wireframes/blog.svg`: şematik masaüstü/mobil görünüm ve hover → tıklama akışı. Tarayıcı ekran görüntüsü değildir.
 

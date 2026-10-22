@@ -1,4 +1,4 @@
-import { initCarouselScroll } from './carousel-scroll';
+import { initBlogBanner } from './blog-banner';
 
 /** Lightweight carousel and native shelf scrolling; cards themselves are CSS + links. */
 export function initBlogCatalog(catalog: HTMLElement) {
@@ -14,8 +14,8 @@ export function initBlogCatalog(catalog: HTMLElement) {
   let paused = motion.matches;
   let gestureBusy = false;
   let timer: ReturnType<typeof setTimeout> | undefined;
-  const scroller = initCarouselScroll(
-    featured.querySelector<HTMLElement>('[data-featured-track]')!,
+  const banner = initBlogBanner(
+    featured,
     slides.length,
     updateActive,
     (busy) => {
@@ -39,7 +39,7 @@ export function initBlogCatalog(catalog: HTMLElement) {
     timer = setTimeout(() => show(current + 1), 6500);
   }
   function show(index: number, manual = false) {
-    scroller.show(index, manual);
+    banner.show(index, manual);
   }
   function updateActive(index: number, manual = false) {
     current = (index + slides.length) % slides.length;
@@ -86,7 +86,6 @@ export function initBlogCatalog(catalog: HTMLElement) {
   });
   featured.addEventListener('focusin', schedule);
   featured.addEventListener('focusout', () => queueMicrotask(schedule));
-  window.addEventListener('resize', () => scroller.show(current, false, true));
   updateActive(0);
   document.addEventListener('visibilitychange', schedule);
   motion.addEventListener('change', () => {

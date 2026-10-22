@@ -47,6 +47,31 @@
 .featured-track::-webkit-scrollbar {
   display: none;
 }
+.catalog-featured[data-banner-ready] {
+  touch-action: pan-y pinch-zoom;
+}
+.catalog-featured[data-banner-ready] .featured-track {
+  display: grid;
+  overflow: hidden;
+  scroll-snap-type: none;
+}
+.catalog-featured[data-banner-ready] .catalog-slide {
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.catalog-featured[data-banner-animated] .catalog-slide {
+  transition:
+    opacity var(--banner-transition-duration) ease,
+    visibility 0s var(--banner-transition-duration);
+}
+.catalog-featured[data-banner-ready] .catalog-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
 .catalog-heading {
   position: absolute;
   z-index: 3;
@@ -486,7 +511,7 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .catalog-slide,
+  .catalog-featured[data-banner-ready] .catalog-slide,
   .card-turn {
     transition: none;
   }

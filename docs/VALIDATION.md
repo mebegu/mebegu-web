@@ -1,5 +1,11 @@
 # Doğrulama
 
+## Swipe için normal banner animasyonu — 22 Ekim 2026
+
+- Kullanıcı doğal scroll sürümünün fazla hızlı geçtiğini bildirdi. Swipe artık yalnızca önceki/sonraki slaydı seçer; oklar ve otomatik geçişle aynı 850 ms çapraz geçişi başlatır. Hızlı hareket animasyonu kısaltmaz; animasyon sürerken ek geçişler biriktirilmez ve atalet kuyruğu yutulur. JS olmadan doğal yatay scroll alternatifi korunur.
+- Sekiz olay/zaman simülasyonu geçti: 850 ms kilit, uzun momentum kuyruğu, küçük/shift/line/page wheel hareketleri, iki yönde dokunmatik swipe, dikey scroll/pinch/tıklama, iptal/çoklu parmak, autoplay/kontroller ve azaltılmış hareket. Fiziksel cihaz veya görsel tarayıcı testi değildir.
+- `pnpm validate`: 63 kaynak dosyada sıfır hata/uyarı/ipucu, 41 HTML ve 998 yerel referans, iki RSS. Gerçek tarayıcı yüzeyi bulunmadığından görsel tempo ve fiziksel swipe ayrıca değerlendirilmelidir.
+
 ## Banner’da gerçek yatay scroll düzeltmesi — 22 Ekim 2026
 
 - Kullanıcı önceki swipe uygulamasının çalışmadığını bildirdi. Özel wheel/pointer eşikleri kaldırıldı; banner yan yana duran dört slaytla gerçek `overflow-x: auto` / CSS scroll snap alanına çevrildi. `touch-action: pan-y` kısıtı kaldırıldı. Kontroller/otomatik geçiş `scrollTo` kullanır, aktif nokta doğal scroll konumunu takip eder.
