@@ -1,6 +1,6 @@
 <script is:inline>
-  // Start only while the page is fresh; slow or missing JS leaves it readable.
-  // The controller fades the mirror in over the page, without an opaque boot veil.
+  // Set before body parsing so content cannot flash ahead of the mirror.
+  // Missing enhancement code releases the page after this bounded wait.
   try {
     const navigation = performance.getEntriesByType('navigation')[0];
     if (
@@ -18,3 +18,22 @@
     /* Plain content remains available. */
   }
 </script>
+<style is:inline>
+  html[data-alamori-entry] {
+    background: #141a1b;
+  }
+  html[data-alamori-entry='pending'] body > :not([data-mirror-arrival]),
+  html[data-alamori-entry='running'] body > :not([data-mirror-arrival]) {
+    visibility: hidden;
+    opacity: 0;
+  }
+  html[data-alamori-entry='revealing'] body > :not([data-mirror-arrival]) {
+    opacity: var(--alamori-content-opacity, 0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html[data-alamori-entry] body > :not([data-mirror-arrival]) {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+</style>

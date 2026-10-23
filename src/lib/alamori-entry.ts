@@ -75,6 +75,7 @@ export function initMirrorArrival(overlay: HTMLElement) {
     cancelAnimationFrame(frame);
     clearTimeout(guard);
     delete document.documentElement.dataset.alamoriEntry;
+    document.documentElement.style.removeProperty('--alamori-content-opacity');
     if (!active) return;
     active = false;
     overlay.hidden = true;
@@ -203,6 +204,7 @@ export function initMirrorArrival(overlay: HTMLElement) {
         ? document.activeElement
         : null;
     resize();
+    document.documentElement.style.removeProperty('--alamori-content-opacity');
     overlay.style.opacity = '0';
     overlay.hidden = false;
     overlay.dataset.phase = 'glass';
@@ -244,8 +246,16 @@ export function initMirrorArrival(overlay: HTMLElement) {
           '--entry-ink-opacity',
           String(1 - smooth(0.51, 0.59, p)),
         );
+        const reveal = smooth(0.84, 1, p);
+        if (p >= 0.84) {
+          document.documentElement.style.setProperty(
+            '--alamori-content-opacity',
+            String(reveal),
+          );
+          document.documentElement.dataset.alamoriEntry = 'revealing';
+        }
         overlay.style.opacity = String(
-          smooth(0, FADE_IN / DURATION, p) * (1 - smooth(0.84, 1, p)),
+          smooth(0, FADE_IN / DURATION, p) * (1 - reveal),
         );
         overlay.dataset.phase =
           p < 0.18

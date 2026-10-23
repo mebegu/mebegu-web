@@ -1,5 +1,11 @@
 # Doğrulama
 
+## Alamori içeriğini ayna sonuna kadar gizleme — 23 Ekim 2026
+
+- Head içindeki kritik inline CSS, gövde çizilmeden önce içerik/üst bar/footer görünürlüğünü kapatır. Ayna sakin zeminde 240 ms fade-in ile başlar; sayfa işaretler ve sıkışma boyunca gizli kalır, yalnız geçişin son yüzde 16’sında belirir. Yeniden oynatma da aynı akışı kullanır.
+- İzole Chrome’da kare bazında pending/running durumlarının tamamında ana içeriğin görünmez ve opaklığının sıfır olduğu; son aşamada kademeli açıldığı doğrulandı. İlk açılış ve sıkışma ekran görüntüleri incelendi. Mobil tekrar/atlama, modül yüklenmediğinde 1,8 saniyelik açılma, azaltılmış hareket, hash ve JavaScript kapalı erişim geçti. Çalışma zamanı hatası yok.
+- Astro check 82 dosyada sıfır hata/uyarı/ipucu; üretim çıktısı 35 HTML / 1027 yerel referans kontrolünü geçti.
+
 ## Alamori aynası hızlı fade-in — 23 Ekim 2026
 
 - Bir anda beliren başlangıç örtüsü kaldırıldı. Ayna ilk açılışta ve yeniden oynatmada sıfır opaklıktan 240 ms içinde belirir; toplam 4,4 saniyelik geçiş değişmez.
