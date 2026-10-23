@@ -1,5 +1,12 @@
 # Doğrulama
 
+## Alamori buzlu ayna düzeltmesi — 23 Ekim 2026
+
+- Oda ve orman sahneleri, iki görsel preload'u ve yaklaşık 406 kB giriş medyası kaldırıldı. Gerçek sayfanın üzerinde CSS buzlu cam, üç sıraya hizalanan soyut altın işaretler, merkezde spiral ve ince çizgiye çekilip doğrudan sayfayı açan geçiş var. Kamera API'si veya izin isteği yok; özel bölüm metinleri public dosyalara eklenmedi.
+- İzole Chrome EN 1280, TR 320/390: cam/hizalanma/spiral/sıkışma kareleri incelendi. Otomatik bitiş, yeniden oynatma, gerçek Tab/Escape, atlama, odak/inert/scroll geri yükleme, yatay taşma olmaması ve giriş sahnesi indirilmemesi doğrulandı. Kamera çağrısını hata veren bir stub ile devre dışı bırakan koşuda da geçiş tamamlandı. Çalışma zamanı hatası yok.
+- Azaltılmış hareket, oynatma sırasında tercih değişikliği, PDF hash bağlantısı, geri navigasyon, JavaScript kapalı ve script engelli durumlar geçti. Modül yüklenmezse başlangıç örtüsü 1,8 saniyede kalkıyor.
+- 28/28 test, Astro check 82 dosyada sıfır hata/uyarı/ipucu; build 39 HTML / 1137 yerel referans. PDF/Blog ve yayın bütünlüğü kontrolleri geçti. Aşağıdaki oda/orman kaydı önceki sürümü anlatır.
+
 ## Alamori aynadan geçiş açılışı — 23 Ekim 2026
 
 - Kitap sayfasının normal açılışına 4,4 saniyelik sessiz bir geçiş eklendi: kehribar ışıklı çalışma odası, aynada üç sıraya hizalanan soyut işaretler, odanın ince bir çizgiye sıkışması, kısa karanlık ve durgun sisli orman. İki yeni imagegen sahnesi toplam yaklaşık 406 kB WebP olarak servis edilir; ham görseller ve tam promptlar ayrıca kayıtlıdır. Özel bölüm metinleri kopyalanmadı.

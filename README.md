@@ -41,7 +41,7 @@ Ana sayfa: aşağıda yalnız karakter ve zemin, yukarıda **Profesyonel / Blog 
 - Atölye / Workshop: uygulama, araç, kütüphane, oyun ve deneyler için seçilebilir workbench. Durum, küçük görsel önizlemeli galeri, yayın bağlantıları, geliştirme günlüğü, yol haritası, blog yazıları ve katkı kanalları desteklenir. Yalnız JSON kayıtları yüklenir; tek kayıt çalışan **Cep Arşivi** okuma aracıdır. Profesyonel müşteri işleri burada yer almaz. [İçerik rehberi](docs/WORKSHOP.md), [private repo CI bağlantısı](docs/WORKSHOP-INTEGRATION.md), [diğer projeye verilecek prompt](docs/prompts/connect-workshop.md).
 - Alamori: kapak, hikâye, iki dilde 20 sayfalık PDF önizlemesi, yazım durumu, güncellemeler, yol haritası ve Blog yazıları. İçerik kitap reposunun isteğe bağlı yayın paketinden gelir; web yalnız statik frontend'dir. [Yayın ve gizlilik sınırı](docs/ALAMORI-PUBLICATION.md).
 
-Alamori açılışında aynadaki işaretlerle başlayan, Dünya'daki odanın çizgiye çekilip Atlantis ormanına dönüştüğü kısa bir geçiş vardır. Atla/Escape, yeniden oynatma, azaltılmış hareket ve doğrudan PDF bağlantıları desteklenir. [Açılış animasyonu](docs/ALAMORI-ENTRY.md).
+Alamori açılışında sayfanın üzerini kaplayan temsili buzlu aynada altın işaretler üç sıraya hizalanır, merkezde bir spiral oluşur ve yüzey ince çizgiye çekilerek kitap sayfasını açar. Kamera veya sahne görseli kullanılmaz. Atla/Escape, yeniden oynatma, azaltılmış hareket ve doğrudan PDF bağlantıları desteklenir. [Açılış animasyonu](docs/ALAMORI-ENTRY.md).
 
 - Önceki Hakkımda ve Atlantis sayfaları ile ortak 404 adresi korunur.
 - İngilizce `/`, Türkçe `/tr/`; sayfa karşılığına giden dil geçişi. CV ve portföy içeriği kullanıcı tercihiyle her iki rotada İngilizce kalır.

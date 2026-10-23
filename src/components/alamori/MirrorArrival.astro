@@ -1,6 +1,5 @@
 ---
 import type { Lang } from '../../lib/i18n';
-import { href } from '../../lib/urls';
 import '../../styles/alamori-entry.css';
 interface Props {
   lang: Lang;
@@ -12,10 +11,6 @@ const tr = lang === 'tr';
 <div
   class="alamori-entry"
   data-mirror-arrival
-  data-earth={href('media/alamori-entry/earth-study.webp')}
-  data-atlantis={href('media/alamori-entry/atlantis-forest.webp')}
-  data-earth-label={tr ? 'Dünya' : 'Earth'}
-  data-atlantis-label="Atlantis"
   role="dialog"
   aria-modal="true"
   aria-label={
@@ -23,8 +18,8 @@ const tr = lang === 'tr';
   }
   hidden
 >
+  <div class="alamori-entry-glass" aria-hidden="true"></div>
   <canvas data-arrival-canvas aria-hidden="true"></canvas>
-  <div class="alamori-entry-shade" aria-hidden="true"></div>
   <div class="alamori-entry-topline">
     <span aria-hidden="true">mebegu.</span>
     <button type="button" data-arrival-skip>
@@ -33,9 +28,6 @@ const tr = lang === 'tr';
     </button>
   </div>
   <div class="alamori-entry-title" aria-hidden="true">
-    <span class="alamori-entry-place" data-arrival-place>
-      {tr ? 'Dünya' : 'Earth'}
-    </span>
     <span class="alamori-entry-wordmark">
       Alamori<span>.</span>
     </span>
