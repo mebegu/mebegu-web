@@ -1,5 +1,12 @@
 # Doğrulama
 
+## Alamori metin ve Blog temizliği — 23 Ekim 2026
+
+- Kaynak yayın revizyonu 3, `articles: []` ile iki üretilmiş yazıyı ve iki çevirisini importer üzerinden kaldırdı. Kaynağa gerçek ve yazar onaylı yazı olmadan örnek Blog metni üretilmemesi kuralı eklendi. Webdeki başlıklar, PDF yönlendirmeleri, tanıtım ve iletişim metni sadeleştirildi; slogan ve hayali yazım günlüğü kaldırıldı.
+- Blog testleri kendi açık fixture kayıtlarını kullanır. Yeni revizyonda makale listesi boşaltıldığında dört sahiplik işaretli dosyanın silindiği doğrulandı; sayfa tipi boş makale listesini destekler. 28 test geçti. Astro: 82 dosyada sıfır hata/uyarı/ipucu. Build: 35 HTML / 1027 yerel referans; PDF, içerik ve eski Blog bütünlük kontrolleri geçti.
+- İzole Chrome TR 320 / EN 1280: kitap ve Blog listelerinde üretilmiş yazılar ve bağlantıları yok; boş Blog bölümü gösterilmiyor, iki PDF bağlantısı korunuyor, yatay taşma ve çalışma zamanı hatası yok.
+- `work/wireframes/alamori-borderless.html` iki öneri içerir: Künye ve Metin akışı. Gerçek kapak ve mevcut public PDF bağlantıları kullanılır. Mobil/masaüstü düzenleri incelendi. Bu öneriler canlı yerleşime uygulanmadı; mevcut ayna açılışı korundu.
+
 ## Alamori buzlu ayna düzeltmesi — 23 Ekim 2026
 
 - Oda ve orman sahneleri, iki görsel preload'u ve yaklaşık 406 kB giriş medyası kaldırıldı. Gerçek sayfanın üzerinde CSS buzlu cam, üç sıraya hizalanan soyut altın işaretler, merkezde spiral ve ince çizgiye çekilip doğrudan sayfayı açan geçiş var. Kamera API'si veya izin isteği yok; özel bölüm metinleri public dosyalara eklenmedi.

@@ -27,6 +27,8 @@ It stages only `src/data/alamori.json`, `public/media/alamori/` and `src/content
 
 ## Blog content and frontend
 
+Keep `book.articles` empty until a real, author-approved post exists. Do not create stand-in posts, invented writing updates or first-person journals to populate the layout. Revision 3 removes the earlier generated example posts; the importer also deletes their owned Markdown files. With no references, the page omits the Blog section and its navigation link.
+
 An `articles` item can reference an existing public URL or contain a `post` with a stable `alamori-*` ID, public date and bilingual plain paragraphs. Embedded posts are generated into the normal Blog collection, with the relevant language cover, alternate language link and `Atlantis` category. HTML/MDX is not accepted through paragraph content. Generated files carry an ownership marker; manually authored files are not overwritten. Do not format or hand-edit these generated Markdown files; update their public source instead.
 
 The page renders the snapshot through `AlamoriPage.astro`. Page URLs remain `/alamori/` and `/tr/alamori/`. Download links go to the selected public preview files, not private release assets. Reader feedback opens the configured external contact; the site does not store messages, collect money, accept pledges or imply a release date.
