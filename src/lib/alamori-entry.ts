@@ -173,6 +173,9 @@ export function initMirrorArrival(overlay: HTMLElement) {
     if (p > 0.715 && p < 0.84) {
       const opacity = smooth(0.715, 0.755, p) * (1 - smooth(0.78, 0.84, p));
       ctx.globalAlpha = opacity * 0.65;
+      ctx.strokeStyle = '#e5c48b';
+      ctx.lineWidth = 1;
+      ctx.shadowColor = '#e7b963';
       ctx.shadowBlur = 12;
       ctx.beginPath();
       const gap = smooth(0.775, 0.83, p) * width * 0.18;
