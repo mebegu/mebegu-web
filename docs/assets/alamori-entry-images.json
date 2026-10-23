@@ -1,0 +1,22 @@
+{
+  "tool": "built-in image_gen",
+  "generatedAt": "2026-10-23",
+  "assets": [
+    {
+      "source": "work/visuals/alamori-entry/earth-study.png",
+      "web": "public/media/alamori-entry/earth-study.webp",
+      "width": 1536,
+      "height": 1024,
+      "prompt": "Use case: stylized-concept. Asset type: full-screen cinematic background for an animated book website entrance. Create a restrained, richly textured cinematic matte painting of a quiet old study on Earth at night, seen at standing eye level, with an antique tall rectangular mirror centered precisely in the composition. The mirror occupies the central 24 percent of the width and central 62 percent of the height; it is ordinary dark reflective glass in a narrow worn brass frame, showing a dim reflection of the room, NOT a portal or an opening. Dark wooden walls and shelving are peripheral; a used closed leather book on a near foreground desk, with a small uncut stone resting on its cover and a compact aged brass lantern casting a narrow, muted amber light toward the book and glass. Still air with the faintest suspended dust. Sober warm brown-black shadows, aged brass, antique glass, very subdued amber highlights, no saturated neon. The center must stay clean enough for small animated abstract gold marks to be composited onto the mirror later; do not draw any runes or writing. Wide landscape 3:2 image composed to also crop vertically with the centered mirror intact. A physical interior with convincing material detail and atmospheric depth, beautiful literary atmosphere, very dark at outer edges. No people, hands, faces, silhouettes, human reflections, writing, letters, logo, caption, watermark, fantasy arch, tunnel, glowing doorway, fire or swirling energy.",
+      "editPrompt": "Use case: precise-object-edit. Image 1 is the edit target. Change only the conspicuous oil/flame lantern on the left foreground desk into a compact aged metal handheld electric torch, with a muted amber glass lens and a small mechanical slide switch, resting on its side and casting a narrow amber beam across the closed book toward the central mirror. Remove every visible fire flame, including the tiny reflected flame in the mirror; replace that reflection with the small amber lens glint. This is an old technological light source, not a kerosene lantern. Preserve the exact same camera, mirror, mirror reflection, room architecture, book, stone, color palette, mood and framing. Keep the room quiet and dark; no glyphs, no letters, no people, no doorway, no portal, no extra props."
+    },
+    {
+      "source": "work/visuals/alamori-entry/atlantis-forest.png",
+      "web": "public/media/alamori-entry/atlantis-forest.webp",
+      "width": 1536,
+      "height": 1024,
+      "prompt": "Use case: stylized-concept. Asset type: full-screen cinematic destination background for a literary science-fiction book website transition. A motionless unfamiliar forest at night viewed at standing eye level, a few slender tree trunks, damp dark ground covered in leaves, ferns and low branches. Pale moonlight rests on a thin stationary mist among the trunks; the trees do not move, the scene feels uncannily silent, warm air without wind. A dark woodland clearing remains softly readable at the center, surrounded by richly textured near-black foliage. Restrained moonlit blue-green, muted silver mist, earthy shadow, no bright magical lights. Beautiful serious cinematic matte painting with convincing natural textures, atmospheric depth, soft halation, fine film grain; visually pair with a dark antique study illuminated by subdued amber light. Wide landscape 3:2 image composed to crop vertically with central trees and mist readable. Keep it an intimate forest, not an epic landscape. No human figures, animals, insects, buildings, ruins, city, mirror, circular portal, stone arch, neon, letters, text, logo or watermark."
+    }
+  ],
+  "integration": "Original generated pixels retained as PNG source artwork; WebP copies encoded at quality 85 for the frontend. Motion, abstract marks, the room compression and scene blending are rendered at runtime with Canvas 2D. No private manuscript text, plot notes or source repository links are included."
+}

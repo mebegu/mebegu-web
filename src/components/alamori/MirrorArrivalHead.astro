@@ -1,0 +1,52 @@
+---
+import { href } from '../../lib/urls';
+---
+
+<link
+  rel="preload"
+  as="image"
+  href={href('media/alamori-entry/earth-study.webp')}
+  media="(prefers-reduced-motion: no-preference)"
+  fetchpriority="high"
+/>
+<link
+  rel="preload"
+  as="image"
+  href={href('media/alamori-entry/atlantis-forest.webp')}
+  media="(prefers-reduced-motion: no-preference)"
+/>
+<script is:inline>
+  // A bounded, motion-aware paint veil prevents a flash of the book page.
+  // If the enhancement fails to load, the regular page is revealed automatically.
+  try {
+    const navigation = performance.getEntriesByType('navigation')[0];
+    if (
+      !location.hash &&
+      !matchMedia('(prefers-reduced-motion: reduce)').matches &&
+      navigation?.type !== 'back_forward'
+    ) {
+      document.documentElement.dataset.alamoriEntry = 'pending';
+      setTimeout(() => {
+        if (document.documentElement.dataset.alamoriEntry === 'pending')
+          delete document.documentElement.dataset.alamoriEntry;
+      }, 1800);
+    }
+  } catch {
+    /* Plain content remains available. */
+  }
+</script>
+<style is:global>
+  html[data-alamori-entry='pending']::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: #080c0d;
+    pointer-events: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html[data-alamori-entry='pending']::before {
+      display: none;
+    }
+  }
+</style>

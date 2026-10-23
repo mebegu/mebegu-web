@@ -5,6 +5,8 @@ import { href } from '../../lib/urls';
 import { projectUrl, projectExternal } from '../../lib/project-content';
 import { formatPostDate } from '../../lib/post-dates';
 import { alamori } from '../../data/alamori';
+import MirrorArrivalHead from '../alamori/MirrorArrivalHead.astro';
+import MirrorArrival from '../alamori/MirrorArrival.astro';
 import '../../styles/alamori.css';
 interface Props {
   lang: Lang;
@@ -54,6 +56,8 @@ const navigation = [
   bodyClass="alamori-body"
   description={alamori.tagline[lang]}
 >
+  <MirrorArrivalHead slot="head" />
+  <MirrorArrival slot="overlay" lang={lang} />
   <div class="alamori-page">
     <header class="alamori-heading">
       <div>
@@ -68,6 +72,15 @@ const navigation = [
       <p class="alamori-byline">
         {alamori.author}
         <span>{alamori.genres.map((genre) => genre[lang]).join(' · ')}</span>
+        <button
+          class="alamori-entry-replay"
+          type="button"
+          data-alamori-entry-replay
+          hidden
+        >
+          <span aria-hidden="true">↻</span>{' '}
+          {tr ? 'Geçişi yeniden izle' : 'Replay the crossing'}
+        </button>
       </p>
     </header>
     <div class="alamori-hero">

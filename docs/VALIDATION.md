@@ -1,5 +1,12 @@
 # Doğrulama
 
+## Alamori aynadan geçiş açılışı — 23 Ekim 2026
+
+- Kitap sayfasının normal açılışına 4,4 saniyelik sessiz bir geçiş eklendi: kehribar ışıklı çalışma odası, aynada üç sıraya hizalanan soyut işaretler, odanın ince bir çizgiye sıkışması, kısa karanlık ve durgun sisli orman. İki yeni imagegen sahnesi toplam yaklaşık 406 kB WebP olarak servis edilir; ham görseller ve tam promptlar ayrıca kayıtlıdır. Özel bölüm metinleri kopyalanmadı.
+- İzole Chrome’da EN 1280 ve TR 320/390 piksel: sahne kareleri görsel olarak incelendi; otomatik bitiş, yeniden oynatma, gerçek Tab/Escape, atlama düğmesi, odak/scroll/inert geri yükleme ve yatay taşma olmaması doğrulandı. Canvas tamponu bitişte bırakılıyor; arka planda süren animasyon yok.
+- Azaltılmış hareket, doğrudan `#preview`, geri navigasyon ve JavaScript kapalı durumunda kitap doğrudan kullanılabiliyor. Görsel engelleme ve modül engelleme sayfayı kapalı bırakmıyor; modül hatasında başlangıç örtüsü 1,8 saniyede kalkıyor. Oynatma sırasında hareket tercihi değişimi de anında çıkıyor. Çalışma zamanı hatası yok.
+- Testler 28/28, Astro check 82 dosyada sıfır hata/uyarı/ipucu. Üretim çıktısı 39 HTML / 1141 yerel referans; Alamori revizyon 2 PDF/Blog bütünlüğü ve eski blog kontrolleri geçti. [Uygulama ayrıntıları](ALAMORI-ENTRY.md).
+
 ## Alamori kitap vitrini ve kaynak kontrollü yayın — 23 Ekim 2026
 
 - Eski pasif şablon; gerçek kapak, spoiler içermeyen tanıtım, yazım durumu, iki dilde ilk 20 sayfalık PDF, güncellemeler, yol haritası, iki Blog yazısı ve gerçek okur iletişim bağlantısıyla değiştirildi. Para toplama veya backend formu yok.
