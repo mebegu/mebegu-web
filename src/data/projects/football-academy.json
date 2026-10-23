@@ -1,0 +1,102 @@
+{
+  "$schema": "../../../schemas/workshop-publication.schema.json",
+  "project": {
+    "currentFocus": {
+      "en": "Building the first playable day: time that flows in the world, quick decisions on buildings and people, a day summary and facility work.",
+      "tr": "İlk oynanabilir günü kurmak: dünyada akan zaman, binalara ve kişilere bağlı hızlı kararlar, gün özeti ve tesis işleri."
+    },
+    "description": {
+      "en": "A first-person, rags-to-riches football academy management game. You start with a worn pitch, a small office and a changing room. You hire coaches, welcome families, run trial sessions, and manage membership dues and facility upkeep. The academy lives in a world that runs in real time: coaches and players arrive on schedule, training happens on the pitch, and each day closes with a short summary. Decisions are made in the world wherever possible rather than in tablet menus: click a building or a person and handle it from a small card.",
+      "tr": "Birinci şahıs, sıfırdan zirveye bir futbol akademisi yönetim oyunu. Elinde eski bir saha, küçük bir ofis ve soyunma odası var. Antrenör işe alıyor, aileleri karşılıyor, deneme antrenmanları düzenliyor, aidatları ve tesisin bakımını yönetiyorsun. Akademi gerçek zamanlı akan bir dünyada yaşıyor: koçlar ve oyuncular saatinde geliyor, antrenmanlar sahada oluyor, gün kapanışta özetleniyor. Kararlar tablet menülerinde değil, mümkün olduğunca dünyanın içinde veriliyor: binaya ya da kişiye tıklayıp küçük bir karttan hızlıca hallediyorsun."
+    },
+    "hook": {
+      "en": "Build your own football academy from an empty pitch, face to face with the people in it, one day at a time.",
+      "tr": "Boş bir sahadan kendi futbol akademini kur; insanlarla yüz yüze, gün gün."
+    },
+    "id": "football-academy",
+    "kind": "games",
+    "limitations": [
+      {
+        "en": "There is no match simulation yet; it is deliberately last in the development order.",
+        "tr": "Maç simülasyonu henüz yok; geliştirme sırasında en sona bırakıldı."
+      },
+      {
+        "en": "Visuals are at prototype level; the campus is built from simple shapes.",
+        "tr": "Görseller prototip seviyesinde; kampüs basit şekillerden oluşuyor."
+      }
+    ],
+    "links": [],
+    "media": [],
+    "notice": {
+      "en": "There is no playable build yet. This page shares the development as it happens.",
+      "tr": "Henüz oynanabilir bir sürüm yok. Bu sayfa geliştirme sürecini paylaşmak için var."
+    },
+    "placeholder": false,
+    "platforms": [
+      "Windows"
+    ],
+    "roadmap": [
+      {
+        "body": {
+          "en": "A real-time clock, skip to the next event, closing and the Day Summary, an overview camera and context cards.",
+          "tr": "Gerçek zamanlı saat, sıradaki olaya atlama, kapanış ve Gün Özeti, üst görünüm ve bağlam kartları."
+        },
+        "state": "done",
+        "title": {
+          "en": "Flowing time and the day loop",
+          "tr": "Akan zaman ve gün döngüsü"
+        }
+      },
+      {
+        "body": {
+          "en": "Daily schedules for people, conversations in the world and a short attention list that points into the world.",
+          "tr": "Kişilerin günlük programları, dünyada konuşmalar ve ihtiyaç duyulan şeyleri dünyada gösteren kısa bir dikkat listesi."
+        },
+        "state": "current",
+        "title": {
+          "en": "The first playable day",
+          "tr": "İlk oynanabilir gün"
+        }
+      },
+      {
+        "body": {
+          "en": "Rent and wage periods, cash pressure, choosing who does repairs and upgrades, and visible construction.",
+          "tr": "Kira ve maaş dönemleri, nakit sıkışması, onarım ve yükseltmeyi kimin yapacağını seçmek ve inşaatın görünür olması."
+        },
+        "state": "next",
+        "title": {
+          "en": "Economic pressure and facility work",
+          "tr": "Ekonomi baskısı ve tesis işleri"
+        }
+      }
+    ],
+    "status": "in-progress",
+    "technologies": [
+      "Unity",
+      "C#",
+      ".NET"
+    ],
+    "title": {
+      "en": "Football Academy",
+      "tr": "Futbol Akademisi"
+    },
+    "updatedAt": "2026-10-24",
+    "updates": [
+      {
+        "body": {
+          "en": "Time now flows on its own in the world instead of waiting for a button, and quiet moments can be skipped to the next event. When the academy closes, a short Day Summary appears and you end the day yourself. You can view the academy from above, click buildings and people to handle frequent tasks from small cards, and drop down anywhere to walk around. Weekly membership dues with late-paying families, and facility work that progresses hour by hour, now run in the simulation.",
+          "tr": "Zaman artık bir düğmeyle değil, dünyada kendiliğinden akıyor; sessiz anları bir sonraki olaya atlayarak geçebiliyorsun. Akademi kapanınca kısa bir Gün Özeti geliyor ve günü sen bitiriyorsun. Akademiyi yukarıdan görüp binalara ve kişilere tıklayarak sık yapılan işleri küçük kartlardan hallediyorsun; istediğin noktaya inip yürüyebiliyorsun. Haftalık aidat ve geç ödeyen aileler ile tesis işlerinin saat saat ilerlemesi de simülasyonda çalışıyor."
+        },
+        "date": "2026-10-24",
+        "title": {
+          "en": "A world-first foundation",
+          "tr": "Dünya öncelikli temel"
+        }
+      }
+    ],
+    "visual": "world"
+  },
+  "publish": true,
+  "revision": 1,
+  "schemaVersion": 1
+}
