@@ -14,8 +14,8 @@
               "tr": "Hikâyeye açılan bu sayfada bütün cevapları vermek istemiyorum. Önizleme; anlatıcının sesiyle, Harvey ve Mike'ın ilişkisiyle ve kitabın uyandırdığı merakla tanışmak için bir başlangıç."
             },
             {
-              "en": "The novel is still being written. The first 20 pages are the opening preview; writing notes and further updates will follow as work continues.",
-              "tr": "Romanın yazımı sürüyor. Şimdilik ilk 20 sayfa paylaşılacak; ilerledikçe buraya yazım notları ve yeni güncellemeler eklenecek."
+              "en": "The novel is still being written. You can read the first 20 pages as an opening preview; writing notes and further updates will follow as work continues.",
+              "tr": "Romanın yazımı sürüyor. Şimdilik ilk 20 sayfaya önizleme olarak ulaşabilirsin; ilerledikçe buraya yazım notları ve yeni güncellemeler eklenecek."
             }
           ],
           "published": "2026-10-23"
@@ -74,7 +74,7 @@
           "tr": "Alamori: Passage to Atlantis İngilizce kitap kapağı"
         },
         "height": 1536,
-        "src": "media/alamori/921e48c5ca57ff94ca81f47703ead036e25c1ae91cda60454c000aa5ce3e06cb.jpg",
+        "src": "media/alamori/e026e5ef7e186ea6eb78019ceaf2ac9d7b31a6fe35e56a53313b1cb83e5ae81a.jpg",
         "width": 1024
       },
       "tr": {
@@ -83,7 +83,7 @@
           "tr": "Alamori: Atlantis'e Açılan Kapı kitap kapağı"
         },
         "height": 1536,
-        "src": "media/alamori/339a239ea3e1302c68d2823f5c12dba0b4b5c014ea5a3fc9c0e14e2aa533cc77.jpg",
+        "src": "media/alamori/7f3a0bc21308872d1411aae2cb7fca5b04c3ad019df5f52c7345dd591c720ca5.jpg",
         "width": 1024
       }
     },
@@ -152,13 +152,13 @@
       {
         "language": "tr",
         "pages": 20,
-        "src": "media/alamori/2c850c2d725306c07e5307377ee461146418e1f9d5820fcaabb745f2aff92b4f.pdf",
+        "src": "media/alamori/ee017d4f52a25ef1b53ac5b07e0509a32ee44ff4442b6426c6a5025fb24280fb.pdf",
         "updatedAt": "2026-10-23"
       },
       {
         "language": "en",
         "pages": 20,
-        "src": "media/alamori/7a5a6a1696130dad77fb634d5e5b0d55ab63c2df427fda8cb386072ae2a143f4.pdf",
+        "src": "media/alamori/dc88155089638295b8c70614ff5c0f18c59b6811fb3282ad8b653ce695ef5174.pdf",
         "updatedAt": "2026-10-23"
       }
     ],
@@ -225,8 +225,8 @@
     "updates": [
       {
         "body": {
-          "en": "The first 20 pages are being prepared as Turkish and English reading previews. This page brings together the story introduction, selected writing notes and the next steps.",
-          "tr": "İlk 20 sayfa Türkçe ve İngilizce okuma önizlemesi olarak hazırlanıyor. Bu sayfada, hikâyenin tanıtımıyla birlikte yazım sürecinden seçtiğim notları ve sıradaki adımları paylaşacağım."
+          "en": "The first 20 pages are available as Turkish and English reading previews. This page brings together the story introduction, selected writing notes and the next steps.",
+          "tr": "İlk 20 sayfa Türkçe ve İngilizce okuma önizlemesi olarak okunabiliyor. Bu sayfada hikâyenin tanıtımıyla birlikte yazım sürecinden seçtiğim notları ve sıradaki adımları paylaşıyorum."
         },
         "date": "2026-10-23",
         "title": {
@@ -237,6 +237,6 @@
     ]
   },
   "publish": true,
-  "revision": 1,
+  "revision": 2,
   "schemaVersion": 1
 }

@@ -7,7 +7,7 @@ draft: false
 lang: "en"
 translationKey: "alamori-writing"
 translatedFrom: "alamori-writing-tr"
-catalog: {"cover":{"alt":{"en":"Cover of Alamori: Passage to Atlantis, English edition","tr":"Alamori: Passage to Atlantis İngilizce kitap kapağı"},"height":1536,"src":"/media/alamori/921e48c5ca57ff94ca81f47703ead036e25c1ae91cda60454c000aa5ce3e06cb.jpg","width":1024},"shelf":"culture","summary":{"en":"Scene rhythm, working in two languages and preparing for another reading.","tr":"Sahne ritmi, iki dilde çalışma ve bir sonraki okumaya hazırlık."},"tone":"green"}
+catalog: {"cover":{"alt":{"en":"Cover of Alamori: Passage to Atlantis, English edition","tr":"Alamori: Passage to Atlantis İngilizce kitap kapağı"},"height":1536,"src":"/media/alamori/e026e5ef7e186ea6eb78019ceaf2ac9d7b31a6fe35e56a53313b1cb83e5ae81a.jpg","width":1024},"shelf":"culture","summary":{"en":"Scene rhythm, working in two languages and preparing for another reading.","tr":"Sahne ritmi, iki dilde çalışma ve bir sonraki okumaya hazırlık."},"tone":"green"}
 ---
 
 <!-- Generated from the public Alamori publication. -->

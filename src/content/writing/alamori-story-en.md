@@ -7,7 +7,7 @@ draft: false
 lang: "en"
 translationKey: "alamori-story"
 translatedFrom: "alamori-story-tr"
-catalog: {"cover":{"alt":{"en":"Cover of Alamori: Passage to Atlantis, English edition","tr":"Alamori: Passage to Atlantis İngilizce kitap kapağı"},"height":1536,"src":"/media/alamori/921e48c5ca57ff94ca81f47703ead036e25c1ae91cda60454c000aa5ce3e06cb.jpg","width":1024},"shelf":"culture","summary":{"en":"A short opening note about a library, an old book and following a question.","tr":"Bir kütüphane, eski bir kitap ve merakın peşinden gitmek üzerine kısa bir başlangıç notu."},"tone":"green"}
+catalog: {"cover":{"alt":{"en":"Cover of Alamori: Passage to Atlantis, English edition","tr":"Alamori: Passage to Atlantis İngilizce kitap kapağı"},"height":1536,"src":"/media/alamori/e026e5ef7e186ea6eb78019ceaf2ac9d7b31a6fe35e56a53313b1cb83e5ae81a.jpg","width":1024},"shelf":"culture","summary":{"en":"A short opening note about a library, an old book and following a question.","tr":"Bir kütüphane, eski bir kitap ve merakın peşinden gitmek üzerine kısa bir başlangıç notu."},"tone":"green"}
 ---
 
 <!-- Generated from the public Alamori publication. -->
@@ -16,4 +16,4 @@ Alamori does not begin with a grand mission\. Harvey is looking for old sources 
 
 This introduction is not meant to give every answer away\. The preview is a way to meet the narrator's voice, Harvey and Mike's friendship, and the curiosity the book awakens\.
 
-The novel is still being written\. The first 20 pages are the opening preview; writing notes and further updates will follow as work continues\.
+The novel is still being written\. You can read the first 20 pages as an opening preview; writing notes and further updates will follow as work continues\.
