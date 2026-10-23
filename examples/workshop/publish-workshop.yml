@@ -1,0 +1,31 @@
+# Copy into the SOURCE project's .github/workflows/publish-workshop.yml.
+# For publishing after an existing successful build/deploy, copy the job into
+# that workflow and add needs: [your-real-deploy-job].
+name: Publish project to Atölye
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+  push:
+    branches: [main]
+    paths: ['.workshop/public/**']
+
+permissions:
+  contents: read
+
+jobs:
+  workshop:
+    uses: mebegu/mebegu.github.io/.github/workflows/publish-workshop.yml@main
+    with:
+      project-id: replace-with-public-id
+    secrets:
+      WORKSHOP_PUBLISH_TOKEN: ${{ secrets.WORKSHOP_PUBLISH_TOKEN }}
+
+# App alternative: replace the job's with/secrets blocks with:
+# with:
+#   project-id: replace-with-public-id
+#   app-client-id: ${{ vars.WORKSHOP_APP_CLIENT_ID }}
+# secrets:
+#   WORKSHOP_APP_PRIVATE_KEY: ${{ secrets.WORKSHOP_APP_PRIVATE_KEY }}
+# Once the site integration is on GitHub, @main can be pinned to its full SHA.

@@ -1,0 +1,167 @@
+<div id="atolye-formats">
+  <style>
+    #atolye-formats { color-scheme: light dark; }
+    #atolye-formats .aw {
+      --aw-bg: light-dark(#f4f3ef, #151a20);
+      --aw-panel: light-dark(#e8e8e1, #202830);
+      --aw-ink: light-dark(#252b30, #ecebe7);
+      --aw-muted: light-dark(#58636a, #b5bfc7);
+      --aw-line: light-dark(#c8cdc8, #3c4851);
+      --aw-accent: light-dark(#775021, #e0ba86);
+      --aw-selected: light-dark(#e5d8c3, #3b342b);
+      background: var(--aw-bg); color: var(--aw-ink);
+      font: 400 14px/1.55 'DM Sans', Arial, sans-serif;
+      padding: 26px; min-height: 530px; box-sizing: border-box;
+    }
+    #atolye-formats .aw * { box-sizing: border-box; }
+    #atolye-formats .aw [hidden] { display: none !important; }
+    #atolye-formats .aw h2 { font: 500 34px/1.1 'Space Grotesk', Arial, sans-serif; letter-spacing: -.04em; margin: 0; }
+    #atolye-formats .aw h3 { font-size: 21px; font-weight: 500; line-height: 1.25; margin: 0 0 10px; }
+    #atolye-formats .aw p { margin: 0; }
+    #atolye-formats .aw header { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding-bottom: 22px; border-bottom: 1px solid var(--aw-line); }
+    #atolye-formats .aw small, #atolye-formats .aw .meta { color: var(--aw-muted); font-size: 12px; }
+    #atolye-formats .aw .dot { color: var(--aw-accent); }
+    #atolye-formats .aw button { font: inherit; color: inherit; }
+    #atolye-formats .aw .split { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.45fr); gap: 24px; padding-top: 24px; }
+    #atolye-formats .aw .project-list { display: flex; flex-direction: column; gap: 5px; }
+    #atolye-formats .aw .project-choice { text-align: left; border: 1px solid transparent; border-radius: 3px; background: transparent; padding: 13px 12px; min-height: 66px; }
+    #atolye-formats .aw .project-choice strong { display: block; font-weight: 500; }
+    #atolye-formats .aw .project-choice span { display: block; color: var(--aw-muted); font-size: 12px; margin-top: 3px; }
+    #atolye-formats .aw .project-choice[aria-pressed=true] { background: var(--aw-selected); border-color: var(--aw-accent); }
+    #atolye-formats .aw .preview { min-width: 0; }
+    #atolye-formats .aw .scene { height: 160px; background: var(--aw-panel); overflow: hidden; position: relative; margin-bottom: 20px; }
+    #atolye-formats .aw .scene::after { content: ''; position: absolute; left: 0; right: 0; bottom: 25%; height: 1px; background: var(--aw-line); }
+    #atolye-formats .aw .scene .object { position: absolute; left: 43%; top: 36%; width: 33px; height: 33px; background: var(--aw-accent); border-radius: 3px; }
+    #atolye-formats .aw .scene[data-scene=tool] .object { width: 92px; height: 65px; top: 27%; left: 33%; background: transparent; border: 2px solid var(--aw-accent); box-shadow: 11px 11px 0 var(--aw-selected); }
+    #atolye-formats .aw .scene[data-scene=visual] .object { width: 82px; height: 82px; top: 20%; left: 35%; border-radius: 50%; background: repeating-radial-gradient(circle, var(--aw-accent) 0 2px, transparent 3px 10px); }
+    #atolye-formats .aw .kind { color: var(--aw-accent); font-size: 12px; margin-bottom: 8px; }
+    #atolye-formats .aw .pitch { color: var(--aw-muted); min-height: 44px; }
+    #atolye-formats .aw .action { display: inline-flex; align-items: center; justify-content: center; padding: 9px 15px; min-height: 44px; margin-top: 18px; border: 1px solid var(--aw-accent); border-radius: 3px; background: transparent; color: var(--aw-accent); }
+    #atolye-formats .aw .action[aria-pressed=true] { background: var(--aw-selected); }
+    #atolye-formats .aw .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; padding-top: 28px; }
+    #atolye-formats .aw .gallery article { min-width: 0; }
+    #atolye-formats .aw .gallery .scene { height: 155px; }
+    #atolye-formats .aw .gallery h3 { font-size: 19px; }
+    #atolye-formats .aw .gallery .pitch { min-height: 66px; }
+    #atolye-formats .aw .routes { display: flex; flex-wrap: wrap; gap: 10px; padding: 26px 0; }
+    #atolye-formats .aw .route { flex: 1 1 135px; text-align: left; padding: 15px; min-height: 70px; background: var(--aw-panel); border: 1px solid var(--aw-line); border-radius: 3px; }
+    #atolye-formats .aw .route[aria-pressed=true] { background: var(--aw-selected); border-color: var(--aw-accent); }
+    #atolye-formats .aw .route span { display: block; font-size: 12px; color: var(--aw-muted); margin-top: 4px; }
+    #atolye-formats .aw .collection { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+    #atolye-formats .aw .collection .scene { height: 205px; margin: 0; }
+    #atolye-formats .aw .running .object { animation: aw-bounce 1s ease-in-out infinite alternate; }
+    #atolye-formats .aw .running[data-scene=visual] .object { animation: aw-spin 5s linear infinite; }
+    #atolye-formats .aw.compact .project-choice span { display: none; }
+    #atolye-formats .aw.compact .project-choice { min-height: 48px; }
+    @keyframes aw-bounce { to { transform: translateY(-27px) rotate(8deg); } }
+    @keyframes aw-spin { to { transform: rotate(360deg) scale(1.15); } }
+    @media (max-width: 590px) {
+      #atolye-formats .aw { padding: 20px; min-height: 810px; }
+      #atolye-formats .aw .split { grid-template-columns: 1fr; gap: 20px; }
+      #atolye-formats .aw .project-choice { min-height: 52px; padding: 8px 12px; }
+      #atolye-formats .aw .gallery { grid-template-columns: 1fr; gap: 24px; }
+      #atolye-formats .aw .gallery article { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 14px; }
+      #atolye-formats .aw .gallery .scene { height: 110px; }
+      #atolye-formats .aw .gallery .pitch { min-height: 0; }
+      #atolye-formats .aw .collection { grid-template-columns: 1fr; }
+      #atolye-formats .aw .collection .scene { height: 155px; }
+      #atolye-formats .aw header { align-items: start; flex-direction: column; gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) { #atolye-formats .aw .running .object { animation: none; transform: translateY(-15px); } }
+  </style>
+  <div class="viz-carousel" aria-label="Atölye browsing formats">
+    <section class="aw" data-variant="Workbench" aria-label="Workbench project browser">
+      <header><h2>Atölye<span class="dot">.</span></h2><small>Örnek projeler · Seç ve incele</small></header>
+      <div class="split">
+        <nav class="project-list" aria-label="Projeler">
+          <button class="project-choice cursor-interaction" type="button" data-project="game" aria-pressed="true"><strong>Küçük bir platform oyunu</strong><span>Tek tuşla ne kadar ileri gidebilirsin?</span></button>
+          <button class="project-choice cursor-interaction" type="button" data-project="tool" aria-pressed="false"><strong>Bir görsel aracı</strong><span>Görselleri tek seferde yeniden boyutlandır.</span></button>
+          <button class="project-choice cursor-interaction" type="button" data-project="visual" aria-pressed="false"><strong>Işık deneyi</strong><span>Bir çizgi nasıl hareketli bir desene dönüşür?</span></button>
+        </nav>
+        <div class="preview" aria-live="polite">
+          <div class="scene" data-scene="game" role="img" aria-label="Soyut proje önizlemesi"><span class="object"></span></div>
+          <p class="kind">Oyun · Tarayıcıda</p><h3>Küçük bir platform oyunu</h3>
+          <p class="pitch">Tek bir tuşla zıpla; ritmi yakala, bir sonraki platforma ulaş.</p>
+          <button class="action cursor-interaction" type="button" data-preview aria-pressed="false">Önizlemeyi oynat</button>
+        </div>
+      </div>
+    </section>
+    <section class="aw" data-variant="Playground" aria-label="Playground gallery" hidden>
+      <header><h2>Atölye<span class="dot">.</span></h2><small>Örnek projeler · Doğrudan kurcala</small></header>
+      <div class="gallery">
+        <article><div class="scene" data-scene="game" role="img" aria-label="Soyut oyun önizlemesi"><span class="object"></span></div><div><p class="kind">Oyna</p><h3>Bir tuş. Bir zıplayış.</h3><p class="pitch">Ritmi yakala, bir sonraki platforma ulaş.</p><button class="action cursor-interaction" type="button" data-preview aria-pressed="false">Önizlemeyi oynat</button></div></article>
+        <article><div class="scene" data-scene="tool" role="img" aria-label="Soyut araç önizlemesi"><span class="object"></span></div><div><p class="kind">Kullan</p><h3>Bir klasör dolusu görsel.</h3><p class="pitch">Hepsini tek seferde yeniden boyutlandır.</p><button class="action cursor-interaction" type="button" data-preview aria-pressed="false">Önizlemeyi oynat</button></div></article>
+        <article><div class="scene" data-scene="visual" role="img" aria-label="Soyut grafik önizlemesi"><span class="object"></span></div><div><p class="kind">Keşfet</p><h3>Işığın izini sür.</h3><p class="pitch">Bir çizginin hareketli bir desene dönüşmesi.</p><button class="action cursor-interaction" type="button" data-preview aria-pressed="false">Önizlemeyi oynat</button></div></article>
+      </div>
+    </section>
+    <section class="aw" data-variant="Guided collections" aria-label="Guided project collections" hidden>
+      <header><h2>Atölye<span class="dot">.</span></h2><small>Örnek projeler · Bir başlangıç seç</small></header>
+      <nav class="routes" aria-label="Ne yapmak istersin?">
+        <button class="route cursor-interaction" type="button" data-route="game" aria-pressed="true">Biraz oynayayım<span>Küçük oyunlar ve prototipler</span></button>
+        <button class="route cursor-interaction" type="button" data-route="tool" aria-pressed="false">Bir işimi kolaylaştırayım<span>Günlük hayata küçük araçlar</span></button>
+        <button class="route cursor-interaction" type="button" data-route="visual" aria-pressed="false">İlginç bir şey göreyim<span>Görsel ve etkileşimli deneyler</span></button>
+      </nav>
+      <div class="collection" aria-live="polite">
+        <div class="scene" data-scene="game" role="img" aria-label="Soyut proje önizlemesi"><span class="object"></span></div>
+        <div class="preview"><p class="kind">Buradan başla · Oyun</p><h3>Küçük bir platform oyunu</h3><p class="pitch">Tek bir tuşla zıpla; ritmi yakala, bir sonraki platforma ulaş.</p><button class="action cursor-interaction" type="button" data-preview aria-pressed="false">Önizlemeyi oynat</button></div>
+      </div>
+    </section>
+  </div>
+  <script>
+    (() => {
+      const root = document.getElementById('atolye-formats');
+      const projects = {
+        game: { title: 'Küçük bir platform oyunu', kind: 'Oyun · Tarayıcıda', pitch: 'Tek bir tuşla zıpla; ritmi yakala, bir sonraki platforma ulaş.' },
+        tool: { title: 'Bir görsel aracı', kind: 'Araç · Görseller', pitch: 'Bir klasör dolusu görseli tek seferde yeniden boyutlandır.' },
+        visual: { title: 'Işık deneyi', kind: 'Deney · Grafik', pitch: 'Bir çizginin hareketli bir desene dönüşmesini izle.' }
+      };
+      let selectedProject = 'game';
+      function save() {
+        if (window.openai?.setWidgetState) window.openai.setWidgetState({ modelContent: { selectedProject }, privateContent: null }).catch(() => {});
+      }
+      function selectProject(section, id, group) {
+        const project = projects[id];
+        if (!project) return;
+        section.querySelectorAll(`[${group}]`).forEach(button => button.setAttribute('aria-pressed', String(button.getAttribute(group) === id)));
+        const preview = section.querySelector('.preview');
+        preview.querySelector('h3').textContent = project.title;
+        preview.querySelector('.kind').textContent = project.kind;
+        preview.querySelector('.pitch').textContent = project.pitch;
+        const scene = section.querySelector('.scene');
+        scene.dataset.scene = id;
+        scene.classList.remove('running');
+        const play = section.querySelector('[data-preview]');
+        play.setAttribute('aria-pressed', 'false');
+        play.textContent = 'Önizlemeyi oynat';
+      }
+      root.querySelectorAll('[data-project], [data-route]').forEach(button => button.addEventListener('click', () => {
+        const group = button.hasAttribute('data-project') ? 'data-project' : 'data-route';
+        selectedProject = button.getAttribute(group);
+        selectProject(button.closest('.aw'), selectedProject, group);
+        save();
+      }));
+      root.querySelectorAll('[data-preview]').forEach(button => button.addEventListener('click', () => {
+        const holder = button.closest('article') || button.closest('.aw');
+        const scene = holder.querySelector('.scene');
+        const running = scene.classList.toggle('running');
+        button.setAttribute('aria-pressed', String(running));
+        button.textContent = running ? 'Önizlemeyi durdur' : 'Önizlemeyi oynat';
+      }));
+      function restore(state) {
+        const id = state?.modelContent?.selectedProject;
+        if (!projects[id]) return;
+        selectedProject = id;
+        selectProject(root.querySelector('[data-variant="Workbench"]'), id, 'data-project');
+        selectProject(root.querySelector('[data-variant="Guided collections"]'), id, 'data-route');
+      }
+      restore(window.openai?.widgetState);
+      window.addEventListener('openai:set_globals', event => restore(event.detail?.globals?.widgetState));
+      if (globalThis.Tweak) {
+        const state = { compact: false };
+        const workbench = root.querySelector('[data-variant="Workbench"]');
+        const tweak = new Tweak({ container: workbench, onChange: () => workbench.classList.toggle('compact', state.compact) });
+        tweak.addToggle(state, 'compact', { label: 'Compact project list' });
+      }
+    })();
+  </script>
+</div>

@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/mebegu/mebegu.github.io/main/schemas/workshop-publication.schema.json",
+  "title": "Atölye public publication",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "publish", "revision", "project"],
+  "properties": {
+    "$schema": { "type": "string", "maxLength": 500 },
+    "schemaVersion": { "const": 1 },
+    "publish": { "type": "boolean" },
+    "revision": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "project": { "$ref": "#/$defs/project" }
+  },
+  "$defs": {
+    "text": { "type": "string", "minLength": 1, "maxLength": 6000 },
+    "localized": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tr", "en"],
+      "properties": {
+        "tr": { "$ref": "#/$defs/text" },
+        "en": { "$ref": "#/$defs/text" }
+      }
+    },
+    "url": {
+      "anyOf": [
+        { "type": "null" },
+        { "type": "string", "minLength": 1, "maxLength": 2000 },
+        { "$ref": "#/$defs/localized" }
+      ]
+    },
+    "link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "url"],
+      "properties": {
+        "label": { "$ref": "#/$defs/localized" },
+        "url": { "$ref": "#/$defs/url" },
+        "primary": { "type": "boolean" }
+      }
+    },
+    "screenshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "src", "alt", "width", "height"],
+      "properties": {
+        "type": { "const": "screenshot" },
+        "src": { "$ref": "#/$defs/text" },
+        "alt": { "$ref": "#/$defs/localized" },
+        "caption": { "$ref": "#/$defs/localized" },
+        "width": { "type": "integer", "minimum": 1, "maximum": 20000 },
+        "height": { "type": "integer", "minimum": 1, "maximum": 20000 }
+      }
+    },
+    "gif": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "src", "poster", "alt", "width", "height"],
+      "properties": {
+        "type": { "const": "gif" },
+        "src": { "$ref": "#/$defs/text" },
+        "poster": { "$ref": "#/$defs/text" },
+        "alt": { "$ref": "#/$defs/localized" },
+        "caption": { "$ref": "#/$defs/localized" },
+        "width": { "type": "integer", "minimum": 1, "maximum": 20000 },
+        "height": { "type": "integer", "minimum": 1, "maximum": 20000 }
+      }
+    },
+    "video": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "src", "alt"],
+      "properties": {
+        "type": { "const": "video" },
+        "src": { "$ref": "#/$defs/text" },
+        "poster": { "$ref": "#/$defs/text" },
+        "alt": { "$ref": "#/$defs/localized" },
+        "caption": { "$ref": "#/$defs/localized" },
+        "captions": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["src", "lang", "label"],
+            "properties": {
+              "src": { "$ref": "#/$defs/text" },
+              "lang": { "enum": ["tr", "en"] },
+              "label": { "$ref": "#/$defs/text" }
+            }
+          }
+        }
+      }
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "status", "title", "hook", "description"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "kind": {
+          "enum": ["apps", "tools", "libraries", "games", "experiments"]
+        },
+        "status": {
+          "enum": [
+            "idea",
+            "in-progress",
+            "released",
+            "completed",
+            "paused",
+            "archived"
+          ]
+        },
+        "title": { "$ref": "#/$defs/localized" },
+        "hook": { "$ref": "#/$defs/localized" },
+        "description": { "$ref": "#/$defs/localized" },
+        "currentFocus": { "$ref": "#/$defs/localized" },
+        "notice": { "$ref": "#/$defs/localized" },
+        "technologies": {
+          "type": "array",
+          "maxItems": 30,
+          "items": { "$ref": "#/$defs/text" }
+        },
+        "platforms": {
+          "type": "array",
+          "maxItems": 15,
+          "items": { "$ref": "#/$defs/text" }
+        },
+        "version": { "$ref": "#/$defs/text" },
+        "updatedAt": { "type": "string", "format": "date" },
+        "visual": { "enum": ["world", "gameplay", "app", "tool", "shader"] },
+        "placeholder": { "const": false },
+        "media": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "anyOf": [
+              { "$ref": "#/$defs/screenshot" },
+              { "$ref": "#/$defs/gif" },
+              { "$ref": "#/$defs/video" }
+            ]
+          }
+        },
+        "links": {
+          "type": "array",
+          "maxItems": 20,
+          "items": { "$ref": "#/$defs/link" }
+        },
+        "limitations": {
+          "type": "array",
+          "maxItems": 20,
+          "items": { "$ref": "#/$defs/localized" }
+        },
+        "updates": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["date", "title", "body"],
+            "properties": {
+              "date": { "type": "string", "format": "date" },
+              "title": { "$ref": "#/$defs/localized" },
+              "body": { "$ref": "#/$defs/localized" },
+              "version": { "$ref": "#/$defs/text" }
+            }
+          }
+        },
+        "roadmap": {
+          "type": "array",
+          "maxItems": 60,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["state", "title"],
+            "properties": {
+              "state": { "enum": ["done", "current", "next"] },
+              "title": { "$ref": "#/$defs/localized" },
+              "body": { "$ref": "#/$defs/localized" }
+            }
+          }
+        },
+        "articles": {
+          "type": "array",
+          "maxItems": 30,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["title", "summary", "url"],
+            "properties": {
+              "title": { "$ref": "#/$defs/localized" },
+              "summary": { "$ref": "#/$defs/localized" },
+              "url": { "$ref": "#/$defs/url" }
+            }
+          }
+        },
+        "participation": {
+          "type": "array",
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["type", "title", "description", "url"],
+            "properties": {
+              "type": { "enum": ["feedback", "feature", "bug", "contribute"] },
+              "title": { "$ref": "#/$defs/localized" },
+              "description": { "$ref": "#/$defs/localized" },
+              "url": { "$ref": "#/$defs/url" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

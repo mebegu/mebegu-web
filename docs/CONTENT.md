@@ -65,16 +65,15 @@ Son görsel tasarım daha sonra bu iskelet üzerinde ayrıca yapılacak.
 
 ## Projeler
 
-`src/components/pages/ProjectsPage.astro`, **Atölye / Workshop** hobi vitrininin iki dilde ortak şablonudur. Mevcut `/projects/` ve `/tr/projects/` rotaları korunur. Hobi oyunları, kişisel yazılım ve deneylere ayrılır; CV’deki profesyonel işler burada yer almaz. İlk kart büyük, diğerleri iki sütunludur; mobilde tek sütuna geçer. Küçük bir istemci filtresi oyun/yazılım/deney kategorilerini süzer; JavaScript kapalıysa bütün kartlar görünür.
+`src/components/pages/ProjectsPage.astro`, **Atölye / Workshop** için iki dilli workbench düzenidir. `/projects/` ve `/tr/projects/` rotaları korunur. Masaüstünde kısa proje dizini ve seçili proje paneli, mobilde seçilen satırın altında açılan tek panel vardır. Tür, durum ve metin araması birlikte çalışır. JavaScript kapalıyken tüm projeler ve bölümler okunur.
 
-`src/data/projects.ts` bağımsız beş temsili hobi kartı içerir. Gerçek hobi işleri sağlandıkça değiştirilir; tamamlanmış kişisel proje iddiası değildir. İki dilde `title`/`description`, `kind`, `technologies`, `visual`, `image`, `demoUrl`, `codeUrl` ve `placeholder` alanları vardır.
+`src/data/projects.ts`, `src/data/projects/<id>.json` yayın kayıtlarını yükler. Tek kayıt, çalışan Cep Arşivi aracını tanıtan `pocket-archive.json` dosyasıdır. Kayıt yoksa otomatik örnek üretilmez. Profesyonel müşteri işleri bu koleksiyona dahil değildir. Durum, yayın bağlantısı ve proje türü birbirinden bağımsızdır. Fikir aşamasındaki, geliştirilmekte olan, yayındaki, tamamlanmış, ara verilmiş ve arşivlenmiş işler aynı modelle sunulur.
 
-- Atölye içeriklerini `projects.ts` içinde düzenleyin. Gerçek hobi işi eklenince `placeholder: false` yapın. İngilizce CV ve Selected work yalnız `resume.ts`/`portfolio.ts` üzerinden düzenlenir; iki koleksiyon birbirinden bağımsızdır.
-- `image` için `public/` altındaki ekran görüntüsünün yolunu kullanın; örneğin `projects/my-game.webp`. `public/` öneki yazılmaz. `null` ise `ProjectVisual.astro` içindeki temsili SVG gösterilir.
-- `demoUrl` ve `codeUrl` gerçek bağlantılardır; boş (`null`) değerler sahte bağlantı oluşturmaz, “eklenmedi” metni gösterilir. Görseller henüz temsili olarak işaretlidir.
-- İlk kayıt büyük kart olarak gösterilir. Sıralamayı veri dosyasında değiştirebilirsiniz.
+Ekran görüntüleri, kullanıcı başlatmalı GIF ve videolar; serbest yayın bağlantıları; mevcut çalışma odağı; tarihli güncellemeler; yol haritası; blog yazıları; geri bildirim, hata bildirimi, özellik isteği ve katkı kanalları desteklenir. Bölümler yalnız ilgili içerik varsa görünür. Gerçek bağlantı verilmeden aktif düğme veya sahte form oluşturulmaz.
 
-Gerçek proje detay sayfası, oyun çalıştırıcısı veya video oynatıcısı bu prototipe eklenmedi; görsel ve bağlantı alanları hazır bırakıldı. Tarayıcı yüzeyi erişilemediği için bu yerleşim görsel olarak doğrulanamadı; build ve yerel bağlantı kontrolleri görsel QA yerine geçmez.
+Alanlar, medya ve bağlantı örnekleri için [Atölye içerik rehberine](WORKSHOP.md) bakın. Tam örnek kaynak `examples/workshop/project.json`, içe aktarılmış karşılığı `src/data/projects/pocket-archive.json` dosyasındadır. Görsellerin üretim promptları `docs/assets/workshop-images.json` içinde kayıtlıdır.
+
+Private projeler kendi CI'larından yalnız `.workshop/public/` altında seçtikleri bilgileri ve referanslı medyayı aktarabilir. Ortak workflow, artan revizyon kontrolü ve diğer projeye verilecek prompt için [Atölye entegrasyon rehberi](WORKSHOP-INTEGRATION.md).
 
 ## Profil ve sosyal hesaplar
 

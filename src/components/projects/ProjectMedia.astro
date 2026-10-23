@@ -1,0 +1,167 @@
+---
+import type { Project } from '../../data/projects';
+import type { Lang } from '../../lib/i18n';
+import { projectUrl } from '../../lib/project-content';
+import ProjectVisual from './ProjectVisual.astro';
+interface Props {
+  project: Project;
+  lang: Lang;
+}
+const { project, lang } = Astro.props;
+const tr = lang === 'tr';
+const mediaLabel = {
+  screenshot: tr ? 'Ekran görüntüsü' : 'Screenshot',
+  gif: 'GIF',
+  video: tr ? 'Video' : 'Video',
+};
+---
+
+<div class="project-gallery" data-project-gallery>
+  {project.media.length ? (
+    <>
+      <div class="project-media-items">
+        {project.media.map((media, index) => (
+          <figure
+            class="project-media-item"
+            data-media-item
+            id={`${project.id}-media-${index}`}
+          >
+            <div class="project-media-frame">
+              {media.type === 'video' ? (
+                <video
+                  controls
+                  playsinline
+                  preload="none"
+                  poster={
+                    media.poster ? projectUrl(media.poster, lang)! : undefined
+                  }
+                  aria-label={media.alt[lang]}
+                >
+                  <source src={projectUrl(media.src, lang)!} />
+                  {media.captions?.map((track) => (
+                    <track
+                      kind="captions"
+                      src={projectUrl(track.src, lang)!}
+                      srclang={track.lang}
+                      label={track.label}
+                      default={track.lang === lang}
+                    />
+                  ))}
+                  <a href={projectUrl(media.src, lang)!}>
+                    {tr ? 'Videoyu indir' : 'Download video'}
+                  </a>
+                </video>
+              ) : (
+                <>
+                  <img
+                    src={projectUrl(
+                      media.type === 'gif' ? media.poster : media.src,
+                      lang,
+                    )!}
+                    alt={media.alt[lang]}
+                    width={media.width}
+                    height={media.height}
+                    loading="lazy"
+                    decoding="async"
+                    data-gif-src={
+                      media.type === 'gif'
+                        ? projectUrl(media.src, lang)!
+                        : undefined
+                    }
+                    data-gif-poster={
+                      media.type === 'gif'
+                        ? projectUrl(media.poster, lang)!
+                        : undefined
+                    }
+                  />
+                  {media.type === 'gif' && (
+                    <button
+                      class="project-gif-control"
+                      type="button"
+                      data-gif-toggle
+                      data-play={tr ? 'GIF’i oynat' : 'Play GIF'}
+                      data-pause={tr ? 'GIF’i durdur' : 'Pause GIF'}
+                      aria-pressed="false"
+                      hidden
+                    >
+                      {tr ? 'GIF’i oynat' : 'Play GIF'}
+                    </button>
+                  )}
+                </>
+              )}
+            </div>
+            {(media.caption || media.type === 'screenshot') && (
+              <figcaption>
+                {media.caption && <span>{media.caption[lang]}</span>}
+                {media.type === 'screenshot' && (
+                  <a
+                    href={projectUrl(media.src, lang)!}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {tr ? 'Tam boy aç' : 'Open full size'}{' '}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+              </figcaption>
+            )}
+          </figure>
+        ))}
+      </div>
+      {project.media.length > 1 && (
+        <div
+          class="project-media-controls"
+          role="group"
+          aria-label={tr ? 'Proje görselleri' : 'Project media'}
+          data-media-controls
+          hidden
+        >
+          {project.media.map((media, index) => (
+            <button
+              type="button"
+              data-media-to={index}
+              aria-pressed={index === 0 ? 'true' : 'false'}
+              aria-controls={`${project.id}-media-${index}`}
+              aria-label={`${mediaLabel[media.type]} ${index + 1}: ${(media.caption ?? media.alt)[lang]}`}
+              title={(media.caption ?? media.alt)[lang]}
+            >
+              {media.type === 'video' && !media.poster ? (
+                <video
+                  muted
+                  playsinline
+                  preload="metadata"
+                  aria-hidden="true"
+                  tabindex="-1"
+                >
+                  <source src={projectUrl(media.src, lang)!} />
+                </video>
+              ) : (
+                <img
+                  src={projectUrl(
+                    media.type === 'screenshot' ? media.src : media.poster!,
+                    lang,
+                  )!}
+                  alt=""
+                  width="88"
+                  height="56"
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
+              {media.type !== 'screenshot' && (
+                <span class="project-media-play" aria-hidden="true">
+                  ▶
+                </span>
+              )}
+            </button>
+          ))}
+        </div>
+      )}
+    </>
+  ) : (
+    <div class={`project-media-placeholder media-${project.visual}`}>
+      <ProjectVisual visual={project.visual} />
+      <p>{tr ? 'Temsili görsel' : 'Illustrative visual'}</p>
+    </div>
+  )}
+</div>

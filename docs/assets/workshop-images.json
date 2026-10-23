@@ -1,0 +1,21 @@
+{
+  "tool": "built-in image_gen",
+  "generatedAt": "2026-10-23",
+  "assets": [
+    {
+      "file": "examples/workshop/media/archive-cover.png",
+      "width": 1536,
+      "height": 1024,
+      "purpose": "Pocket Archive cover illustration",
+      "prompt": "Use case: stylized-concept. Asset type: landscape cover illustration for a personal reading archive software project called Cep Arşivi. Create a polished editorial 3D miniature diorama in a dark graphite and warm brass retrofuturistic style suitable for a personal developer workshop portfolio. A compact, tangible desktop card-index archive with neatly arranged cream reading cards and tiny softly glowing amber bookmark tabs. One brass index drawer is gently pulled open, a small muted teal glass panel and a few elegant paper cards stand above it. Scene feels like organizing and rediscovering saved ideas. Orthographic three-quarter view, precise industrial objects, matte materials, soft atmospheric studio light, subtle fine grain, deep midnight background, warm amber accent, restrained muted teal, ample surrounding breathing room. Wide 3:2 landscape, entirely illustrated scene, no screenshot, no people, no words, no text, no logos, no watermark. Strong recognizable composition even at small thumbnail size."
+    },
+    {
+      "file": "examples/workshop/media/reading-cards.png",
+      "width": 1536,
+      "height": 1024,
+      "purpose": "Pocket Archive reading-card illustration",
+      "prompt": "Use case: stylized-concept. Asset type: second landscape illustration for the same Cep Arşivi personal reading archive project. A quiet overhead editorial still life of three beautifully designed cream paper reading cards, thin brass bookmark clips, a small dark graphite archive tray and a muted teal translucent index divider. Cards are arranged in a clear small cluster as if grouping ideas; very subtle embossed line markings only, no legible text. Premium stylized 3D rendering, soft warm desk light on a midnight graphite surface, warm amber and muted teal accents, delicate material texture and subtle grain. Calm thoughtful mood, compact tangible software metaphor, consistent with a retrofuturistic developer workbench. Wide 3:2 landscape, no screenshot, no people, no words, no letters, no numbers, no logos, no watermark. Distinct from a drawer scene and readable at thumbnail size."
+    }
+  ],
+  "screenshots": "archive-screen.png and reading-flow GIF/MP4 were captured from the working local Pocket Archive app in an isolated browser; they are not generated UI mockups."
+}

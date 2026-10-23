@@ -1,5 +1,40 @@
 # Doğrulama
 
+## Cep Arşivi ve görsel önizlemeli galeri — 23 Ekim 2026
+
+- Empty Page ve boş beyaz medya kaldırıldı. Tek proje artık çalışan Cep Arşivi: bağlantı/not/etiket ekleme, metin araması, okunacak/okunmuş filtreleri, okuma durumu, kaldırma, yerel tarayıcı kaydı ve JSON indirme içerir. İki dilde araç sayfası ve ilgili yapım yazısı vardır; proje metinleri bu işlevleri ve mevcut sınırlarını anlatır.
+- İki yeni illüstrasyon yerleşik imagegen ile üretildi; kaynaklar `examples/workshop/media/`, tam promptlar `docs/assets/workshop-images.json` altında. Gerçek uygulama ekranı ve arama/filtre kullanım kaydı GIF/MP4 olarak alındı. Yedi referanslı varlık gerçek importer ile `pocket-archive.json` kaydına aktarıldı; tekrar aktarım `unchanged` döndü.
+- Galerinin yazılı seçimleri beş küçük görsel önizlemesine dönüştü. Erişilebilir ad, seçili durum, klavye odağı ve GIF/video için durağan poster ile oynatma simgesi korunur. Önizlemeler kendiliğinden oynatılmaz.
+- İzole headless Chrome: ekleme, güvenli metin gösterimi, okundu işaretleme, sayfa yenilemesinde kalıcılık, kaldırma ve gerçek JSON dışa aktarma doğrulandı. TR 320/390 ve EN 1280 pikselde araç ve galeri taşmıyor. Beş sekme, beş thumbnail, üç medya türü, dört katılım bağlantısı, GIF başlatma/durdurma, MP4 oynatma ve medya değişiminde durma kontrolleri geçti; çalışma zamanı hatası yok.
+- Astro check: 75 dosyada sıfır hata/uyarı/ipucu. Testler: 24/24. Yayın ve medya bütünlüğü: 1 kayıt. Build: 35 HTML / 1015 yerel referans; eski blog yazılarının metin, tarih, görsel ve çeviri kontrolleri geçti.
+- Değişiklikler yereldir; canlı GitHub yayını yapılmadı. Aşağıdaki Empty Page notları önceki aşamanın kaydıdır.
+
+## Tek JSON örneği: Empty Page — 23 Ekim 2026
+
+- Yedi temsili proje ve bunlara ait statik görseller kaldırıldı. Atölye yalnız JSON yayın kayıtlarını okur; tek kayıt tam alanlı `empty-page.json` dosyasıdır.
+- `examples/workshop/project.json` tüm proje alanlarını doldurur. PNG, GIF, MP4 ve iki VTT dosyası gerçek yerel importer üzerinden hash’li hedeflere aktarıldı; aynı paket tekrar çalıştırıldığında `unchanged` döndü. Kopyalanabilir kaynak şablonunda yayın kapalı kalır.
+- İki dilde boş sayfa deneyi, çalışan proje/blog bağlantıları, üç yol haritası durumu ve dört katılım kanalı vardır. Blog bağlantısı yazı listesine gider; ayrı bir yapım yazısı yayımlandığı iddia edilmez.
+- Astro check: 74 dosya, sıfır hata/uyarı/ipucu. Importer/API testleri: 11/11 geçti. Yayın/medya bütünlüğü: 1 kayıt doğrulandı. Üretim çıktısı: 33 HTML / 951 yerel referans; mevcut blog içerik kontrolleri geçti.
+- İzole headless Chrome’da TR 320/390 ve EN 1280 piksel: tek kayıt, beş sekme, üç medya türü, dört katılım bağlantısı, GIF başlatma/durdurma, gerçek yerel MP4 oynatma, iki altyazı ve panel değişiminde durdurma doğrulandı. Yatay taşma ve çalışma zamanı hatası yok.
+- Canlı GitHub yayını yapılmadı. Aşağıdaki eski doğrulama notları önceki aşamaları kaydeder; güncel örnek sayısı birdir.
+
+## Private projeden public Atölye yayını — 23 Ekim 2026
+
+- Ortak `publish-workshop.yml` workflow'u, public manifest şeması, yalnız referanslı medya aktaran importer, atomik Git Database API publisher ve başka projeye verilecek bağlantı promptu eklendi. Kimlik yöntemi olarak hedef repo ile sınırlı fine-grained PAT veya kısa ömürlü GitHub App token'ı desteklenir. Bu oturumda canlı secret/App oluşturulmadı ve uzak repoya yayın yapılmadı.
+- 11 yeni aktarım testi geçti: public kapsam, bilinmeyen alanlar/hatalı yerelleştirme/tarih/URL, dosya sınırları, symlink/junction reddi, dry-run, tekrar/eski/çakışan revizyon, bozuk medya özeti, yalnız public Git commit'i, eşzamanlı güncelleme ve izin hataları. Gerçek GitHub API çağrıları yerine yerel API simülasyonu kullanıldı.
+- Mevcut 13 banner testiyle toplam **24 test**, sıfır başarısız/atlanan test. Astro/TypeScript: **71 kaynak dosyası**, sıfır hata/uyarı/ipucu. Format ve Git whitespace kontrolü geçti.
+- Geçici bir public proje paketi gerçek importer ile siteye aktarıldı. İki dilde gerçek Astro çıktısında proje kaydı, hash'li medya yolu, yayın bağlantısı ve temsili örneklerin gizlenmesi doğrulandı; 31 HTML / 893 yerel referans kontrolü geçti. Geçici kayıt ve medyası kaldırılıp normal build geri üretildi.
+- Son normal çıktı: **31 HTML / 909 yerel referans**. Özgün blog metinleri, çeviriler ve banner kontrolleri geçti. Gerçek yayın kaydı henüz yok; örnekler gösterilmeye devam eder. Gerçek hesapta uçtan uca yayın, entegrasyon hedef `main`'e gönderilip kaynak projede App/PAT ayarı yapıldığında denenmelidir.
+
+## Atölye workbench — 23 Ekim 2026
+
+- Atölye iki dilde workbench düzenine geçti. Tür ve durum bağımsız; uygulama, araç, kütüphane, oyun ve deneyler için yedi açıkça işaretlenmiş örnek kayıt var. Medya, yayın bağlantıları, güncel çalışma odağı, güncellemeler, yol haritası, blog yazıları ve katılım kanalları ayrı alanlar.
+- Astro kontrolü: 65 kaynak dosyada sıfır hata/uyarı/ipucu. Üretim build'i 31 sayfa üretir. Kök dağıtımda 909 yerel referans, karşılıklı dil/canonical bağlantıları ve özgün blog gövdeleri kontrol edildi; 13 mevcut banner testi geçti.
+- Ayrı profilli headless Chrome'da Türkçe 320/390 px ve İngilizce 1280 px görünümleri incelendi. Tür/durum/arama birleşimi, Türkçe büyük-küçük harf araması, boş sonuç/sıfırlama, proje seçimi, ekran görüntüsü galerisi, sekmelerin klavye kullanımı, arşiv/deep link ve mobil açma/kapama geçti. Yatay taşma veya tarayıcı çalışma zamanı istisnası görülmedi. Azaltılmış hareket tercihiyle de çalıştırıldı.
+- Mobil ilk görünümde paneller kapalı; ziyaretçi listeyi tarayıp istediği projeyi açabilir. JavaScript devre dışıyken yedi projenin tüm içerikleri okunur. 22 kayıtlık geçici tarayıcı örneğinde ilk sekizden sonraki doğrudan proje bağlantısı ve bunu izleyen “diğer projeleri göster” adımı doğrulandı; yinelenen HTML id'si yok.
+- `/mebegu-web/` alt yolunda **Atölye'nin iki sayfasındaki** yerel bağlantı, medya, stil ve script hedefleri doğru öneki kullanıp mevcut dosyalara çözümlendi. Site geneli alt yol kontrolü, değiştirilmemiş eski seçim analizi yazısındaki `/media/weebly/1407690500-d98b1cb07d.png` adresinde takılır. Özgün blog metinleri korunmuş, bu bağımsız sorun bu kapsamda değiştirilmemiştir. Son `dist/` çıktısı kök dağıtım için üretildi.
+- Gerçek proje, mağaza, blog ilişkisi ve katılım adresleri henüz sağlanmadı; örneklerde sahte aktif bağlantı yok. GIF/video oynatma desteği mevcut, fakat gerçek proje GIF/video dosyaları ve servis gönderim akışları doğrulanmış değildir. Geri bildirim ve özellik istekleri yapılandırılacak dış kanallara yönlenir; backend/form gönderimi eklenmedi. Headless görünüm kontrolü fiziksel cihaz testi değildir.
+
 ## Banner'a özel görseller — 22 Ekim 2026
 
 - Dört öne çıkan yazı için ayrı geniş (1774 × 887) ve mobil (1024 × 1536) kompozisyonlar eklendi. Üçer boyda toplam 24 WebP dosyasının gerçek ölçüleri çözümlenerek doğrulandı; dosyalar büyütülmedi. Dört sahne, dört farklı alan ölçüsünde kadraj tanı görseliyle incelendi. Üretim ve dosya kaydı [BLOG-BANNERS.md](BLOG-BANNERS.md) içindedir.

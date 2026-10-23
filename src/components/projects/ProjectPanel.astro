@@ -1,0 +1,311 @@
+---
+import {
+  projectKinds,
+  projectStatuses,
+  type Project,
+} from '../../data/projects';
+import type { Lang } from '../../lib/i18n';
+import { projectExternal, projectUrl } from '../../lib/project-content';
+import { formatPostDate } from '../../lib/post-dates';
+import ProjectMedia from './ProjectMedia.astro';
+interface Props {
+  project: Project;
+  lang: Lang;
+}
+const { project, lang } = Astro.props;
+const tr = lang === 'tr';
+const category = projectKinds.find((kind) => kind.id === project.kind)!.label[
+  lang
+];
+const status = projectStatuses.find((status) => status.id === project.status)!
+  .label[lang];
+const tabs = [
+  { id: 'overview', label: tr ? 'Genel bakış' : 'Overview', show: true },
+  {
+    id: 'updates',
+    label: tr ? 'Güncellemeler' : 'Updates',
+    show: !!project.updates?.length,
+  },
+  {
+    id: 'roadmap',
+    label: tr ? 'Yol haritası' : 'Roadmap',
+    show: !!project.roadmap?.length,
+  },
+  {
+    id: 'articles',
+    label: tr ? 'Yapım yazıları' : 'Making it',
+    show: !!project.articles?.length,
+  },
+  {
+    id: 'participate',
+    label: tr ? 'Katıl' : 'Get involved',
+    show: !!project.participation?.length,
+  },
+].filter((tab) => tab.show);
+const roadmapLabels = {
+  done: tr ? 'Tamamlandı' : 'Done',
+  current: tr ? 'Şu an' : 'Now',
+  next: tr ? 'Sırada' : 'Next',
+};
+---
+
+<article
+  id={`project-${project.id}`}
+  class={`project-panel project-kind-${project.kind}`}
+  data-project-panel={project.id}
+  aria-labelledby={`${project.id}-title`}
+>
+  <div class="project-panel-topline">
+    <span>{category}</span>
+  </div>
+  <header class="project-detail-heading">
+    <p class={`project-status-label status-${project.status}`}>{status}</p>
+    <h2 id={`${project.id}-title`}>{project.title[lang]}</h2>
+    <p class="project-detail-hook">{project.hook[lang]}</p>
+  </header>
+  <ProjectMedia project={project} lang={lang} />
+  {project.notice && <p class="project-notice">{project.notice[lang]}</p>}
+  {!!project.links.length && (
+    <div
+      class="project-destinations"
+      aria-label={tr ? 'Projeyi bul' : 'Find this project'}
+    >
+      {project.links.map((link) => {
+        const url = projectUrl(link.url, lang);
+        return url ? (
+          <a
+            class:list={['project-destination', { 'is-primary': link.primary }]}
+            href={url}
+            target={projectExternal(url) ? '_blank' : undefined}
+            rel={projectExternal(url) ? 'noopener noreferrer' : undefined}
+          >
+            {link.label[lang]}
+            {projectExternal(url) && <span aria-hidden="true">↗</span>}
+          </a>
+        ) : (
+          <span class="project-destination-pending">
+            {link.label[lang]}
+            <small>{tr ? 'Bağlantı eklenecek' : 'Link to follow'}</small>
+          </span>
+        );
+      })}
+    </div>
+  )}
+  {project.currentFocus && (
+    <div class="project-current">
+      <span>{tr ? 'Şu an üzerinde çalıştığım' : 'Currently working on'}</span>
+      <p>{project.currentFocus[lang]}</p>
+    </div>
+  )}
+  <div
+    class="project-tabs"
+    role="tablist"
+    aria-label={tr ? 'Proje ayrıntıları' : 'Project details'}
+    data-project-tabs
+    hidden
+  >
+    {tabs.map((tab, index) => (
+      <button
+        type="button"
+        role="tab"
+        id={`${project.id}-tab-${tab.id}`}
+        aria-selected={index === 0 ? 'true' : 'false'}
+        aria-controls={`${project.id}-section-${tab.id}`}
+        tabindex={index === 0 ? 0 : -1}
+        data-project-tab={tab.id}
+      >
+        {tab.label}
+      </button>
+    ))}
+  </div>
+  <section
+    class="project-section"
+    id={`${project.id}-section-overview`}
+    data-project-section="overview"
+  >
+    <h3>{tr ? 'Proje hakkında' : 'About this project'}</h3>
+    <p>{project.description[lang]}</p>
+    {!!project.limitations?.length && (
+      <div class="project-limitations">
+        <h4>{tr ? 'Bilinen sınırlar' : 'Known limitations'}</h4>
+        <ul>
+          {project.limitations.map((item) => (
+            <li>{item[lang]}</li>
+          ))}
+        </ul>
+      </div>
+    )}
+    {(project.platforms?.length || project.version || project.updatedAt) && (
+      <dl class="project-facts">
+        {!!project.platforms?.length && (
+          <div>
+            <dt>{tr ? 'Platform' : 'Platform'}</dt>
+            <dd>{project.platforms.join(' · ')}</dd>
+          </div>
+        )}
+        {project.version && (
+          <div>
+            <dt>{tr ? 'Sürüm' : 'Version'}</dt>
+            <dd>{project.version}</dd>
+          </div>
+        )}
+        {project.updatedAt && (
+          <div>
+            <dt>{tr ? 'Son güncelleme' : 'Last updated'}</dt>
+            <dd>
+              <time datetime={project.updatedAt}>
+                {formatPostDate(project.updatedAt, lang)}
+              </time>
+            </dd>
+          </div>
+        )}
+      </dl>
+    )}
+    {!!project.technologies.length && (
+      <ul
+        class="project-tags"
+        aria-label={tr ? 'Teknolojiler' : 'Technologies'}
+      >
+        {project.technologies.map((technology) => (
+          <li>{technology}</li>
+        ))}
+      </ul>
+    )}
+  </section>
+  {!!project.updates?.length && (
+    <section
+      class="project-section"
+      id={`${project.id}-section-updates`}
+      data-project-section="updates"
+    >
+      <h3>{tr ? 'Geliştirme günlüğü' : 'Development log'}</h3>
+      <ol class="project-update-list">
+        {[...project.updates]
+          .sort((a, b) => b.date.localeCompare(a.date))
+          .map((update) => (
+            <li>
+              <div class="project-update-meta">
+                <time datetime={update.date}>
+                  {formatPostDate(update.date, lang)}
+                </time>
+                {update.version && <span>v{update.version}</span>}
+              </div>
+              <h4>{update.title[lang]}</h4>
+              <p>{update.body[lang]}</p>
+            </li>
+          ))}
+      </ol>
+    </section>
+  )}
+  {!!project.roadmap?.length && (
+    <section
+      class="project-section"
+      id={`${project.id}-section-roadmap`}
+      data-project-section="roadmap"
+    >
+      <h3>{tr ? 'Nerede, nereye gidiyor?' : 'Where it is headed'}</h3>
+      <p class="project-section-intro">
+        {tr
+          ? 'Bir yön haritası; tarihlendirilmiş bir söz değil.'
+          : 'A direction, rather than a dated promise.'}
+      </p>
+      <ol class="project-roadmap">
+        {project.roadmap.map((item) => (
+          <li class={`roadmap-${item.state}`}>
+            <span class="roadmap-state">{roadmapLabels[item.state]}</span>
+            <div>
+              <h4>{item.title[lang]}</h4>
+              {item.body && <p>{item.body[lang]}</p>}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )}
+  {!!project.articles?.length && (
+    <section
+      class="project-section"
+      id={`${project.id}-section-articles`}
+      data-project-section="articles"
+    >
+      <h3>
+        {tr
+          ? 'Projenin arkasındaki yazılar'
+          : 'The writing behind this project'}
+      </h3>
+      <div class="project-article-list">
+        {project.articles.map((article) => {
+          const url = projectUrl(article.url, lang);
+          return (
+            <div>
+              <h4>
+                {url ? (
+                  <a
+                    href={url}
+                    target={projectExternal(url) ? '_blank' : undefined}
+                    rel={
+                      projectExternal(url) ? 'noopener noreferrer' : undefined
+                    }
+                  >
+                    {article.title[lang]} <span aria-hidden="true">↗</span>
+                  </a>
+                ) : (
+                  article.title[lang]
+                )}
+              </h4>
+              <p>{article.summary[lang]}</p>
+              {!url && (
+                <small>
+                  {tr
+                    ? 'Blog yazısı henüz eklenmedi'
+                    : 'Blog post not added yet'}
+                </small>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  )}
+  {!!project.participation?.length && (
+    <section
+      class="project-section"
+      id={`${project.id}-section-participate`}
+      data-project-section="participate"
+    >
+      <h3>{tr ? 'Birlikte daha iyi olabilir' : 'Help make it better'}</h3>
+      <div class="project-participation">
+        {project.participation.map((channel) => {
+          const url = projectUrl(channel.url, lang);
+          return (
+            <div>
+              <h4>
+                {url ? (
+                  <a
+                    href={url}
+                    target={projectExternal(url) ? '_blank' : undefined}
+                    rel={
+                      projectExternal(url) ? 'noopener noreferrer' : undefined
+                    }
+                  >
+                    {channel.title[lang]} <span aria-hidden="true">↗</span>
+                  </a>
+                ) : (
+                  channel.title[lang]
+                )}
+              </h4>
+              <p>{channel.description[lang]}</p>
+              {!url && (
+                <small>
+                  {tr
+                    ? 'İletişim kanalı henüz eklenmedi'
+                    : 'Channel not added yet'}
+                </small>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  )}
+</article>

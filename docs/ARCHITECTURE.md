@@ -38,6 +38,10 @@ Repo, bir backend’e ihtiyaç duymadan GitHub Pages’te yayımlanır. Astro bu
 
 `Markdown → içerik şeması → Astro sayfaları → dist → GitHub Pages`
 
+Atölye için ek akış: `private proje CI → açıkça public JSON + referanslı medya → atomik site repo commit'i → mevcut validate/deploy`. `src/data/projects/<id>.json` kayıtları şema ile doğrulanır; site private kaynağı okumaz. Tekrarlanan ve eski revizyonlar değişiklik üretmez. [Bağlantı rehberi](WORKSHOP-INTEGRATION.md) ve [diğer projeye verilecek prompt](prompts/connect-workshop.md).
+
+Cep Arşivi, Atölye'deki ilk çalışan araçtır. İki dildeki `/tools/pocket-archive/` rotaları ortak `PocketArchivePage.astro` bileşenini kullanır. `src/lib/pocket-archive.ts`, yalnız tarayıcıda bağlantı/not/etiket ve okuma durumunu yönetir; kayıtlar sürümlü bir localStorage anahtarında tutulur ve JSON olarak indirilebilir. Sunucu veya hesap servisi yoktur. Projenin tanıtım kaydı yine ortak JSON yayın akışından gelir.
+
 `draft: true` içerik koleksiyonda bulunabilir fakat katalogda veya detay route’unda yayımlanmaz. Katalog, `catalog` metaverisi taşıyan özgün yazıları `translationKey` üzerinden eşleştirir; arayüz dilinde sürüm varsa onu, yoksa özgün dildeki yazıyı gösterir. Makale route’ları kendi `lang` değerindeki içerikleri çeker. Atlantis sayfası ayrıca `category: Atlantis` filtresini kullanır. Şimdilik geleceğe tarihli yazılar otomatik planlanmaz: `draft: false` ise build sırasında yayımlanır. RSS route’ları, keşif bağlantıları ve bağımlılığı kaldırılmıştır.
 
 ## Dil stratejisi

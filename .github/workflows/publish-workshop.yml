@@ -1,0 +1,77 @@
+name: Publish public Workshop package
+
+on:
+  workflow_call:
+    inputs:
+      project-id:
+        description: Public project slug; must match project.json
+        required: true
+        type: string
+      app-client-id:
+        description: Optional GitHub App client ID; use with WORKSHOP_APP_PRIVATE_KEY
+        required: false
+        type: string
+        default: ''
+    secrets:
+      WORKSHOP_PUBLISH_TOKEN:
+        description: GitHub App installation token or fine-grained PAT; Contents write on mebegu/mebegu.github.io only
+        required: false
+      WORKSHOP_APP_PRIVATE_KEY:
+        description: Optional private key for an App installed only on the site repository
+        required: false
+    outputs:
+      changed:
+        description: Whether the public site repository was updated
+        value: ${{ jobs.publish.outputs.changed }}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: workshop-publication-${{ inputs.project-id }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.event_name != 'pull_request' && github.event_name != 'pull_request_target'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      changed: ${{ steps.publish.outputs.changed }}
+    steps:
+      - name: Check out private source in the caller context
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: workshop-source
+          persist-credentials: false
+      - name: Check out public site publishing tools
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: mebegu/mebegu.github.io
+          ref: main
+          path: workshop-site
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: workshop-site/.node-version
+          package-manager-cache: false
+      - name: Create a short-lived site-only App token
+        if: inputs.app-client-id != ''
+        id: app-token
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ inputs.app-client-id }}
+          private-key: ${{ secrets.WORKSHOP_APP_PRIVATE_KEY }}
+          owner: mebegu
+          repositories: mebegu.github.io
+          permission-contents: write
+      - name: Validate and publish only explicit public data
+        id: publish
+        env:
+          PUBLIC_PROJECT_ID: ${{ inputs.project-id }}
+          WORKSHOP_PUBLISH_TOKEN: ${{ steps.app-token.outputs.token || secrets.WORKSHOP_PUBLISH_TOKEN }}
+        run: >-
+          node workshop-site/scripts/publish-workshop.mjs
+          --source workshop-source/.workshop/public
+          --id "$PUBLIC_PROJECT_ID"

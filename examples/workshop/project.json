@@ -1,0 +1,251 @@
+{
+  "$schema": "https://raw.githubusercontent.com/mebegu/mebegu.github.io/main/schemas/workshop-publication.schema.json",
+  "schemaVersion": 1,
+  "publish": false,
+  "revision": 1,
+  "project": {
+    "id": "pocket-archive",
+    "kind": "tools",
+    "status": "in-progress",
+    "title": { "tr": "Cep Arşivi", "en": "Pocket Archive" },
+    "hook": {
+      "tr": "Sonra okuyacağın bağlantıları, neden sakladığını unutmadan biriktir.",
+      "en": "Save things to read later, along with the reason you kept them."
+    },
+    "description": {
+      "tr": "Açık sekmelerin arasında kaybolan yazılar için küçük bir okuma arşivi. Bir bağlantı bırak, yanına kısa bir not ekle, birkaç etiketle düzenle. İhtiyacın olduğunda başlık, not veya etiketle bul; bitirdiğinde okundu olarak işaretle.",
+      "en": "A small reading archive for articles lost among open tabs. Save a link, leave a short note and organize it with a few tags. Find it again by title, note or tag, then mark it as read when you are done."
+    },
+    "currentFocus": {
+      "tr": "Bağlantı ekleme ve okuma kuyruğunu mobilde ve klavyeyle rahat kullanılacak hale getirmek.",
+      "en": "Making the save-and-read flow comfortable on a phone and with a keyboard."
+    },
+    "notice": {
+      "tr": "Hesap açman gerekmez. Arşivin kullandığın tarayıcıda saklanır; bir kopyasını JSON olarak indirebilirsin.",
+      "en": "No account needed. Your archive stays in this browser, and you can download a copy as JSON."
+    },
+    "technologies": ["Astro", "TypeScript", "Local Storage"],
+    "platforms": ["Web"],
+    "version": "0.1.0",
+    "updatedAt": "2026-10-23",
+    "visual": "tool",
+    "placeholder": false,
+    "media": [
+      {
+        "type": "screenshot",
+        "src": "media/archive-cover.png",
+        "width": 1536,
+        "height": 1024,
+        "alt": {
+          "tr": "Pirinç detaylı bir arşiv çekmecesinde düzenlenmiş okuma kartları illüstrasyonu.",
+          "en": "An illustration of reading cards organized in a brass-trimmed archive drawer."
+        },
+        "caption": {
+          "tr": "Cep Arşivi · Saklanan fikirlere bir yer",
+          "en": "Pocket Archive · A place for saved ideas"
+        }
+      },
+      {
+        "type": "screenshot",
+        "src": "media/archive-screen.png",
+        "width": 1200,
+        "height": 900,
+        "alt": {
+          "tr": "Cep Arşivi'nin bağlantı ekleme formu ve notlarla birlikte okuma listesi.",
+          "en": "Pocket Archive's save-link form and reading list with personal notes."
+        },
+        "caption": {
+          "tr": "Arayüz · Bir bağlantı, bir not, birkaç etiket",
+          "en": "The interface · A link, a note, a few tags"
+        }
+      },
+      {
+        "type": "screenshot",
+        "src": "media/reading-cards.png",
+        "width": 1536,
+        "height": 1024,
+        "alt": {
+          "tr": "Koyu bir masada pirinç ataşlarla gruplandırılmış üç okuma kartı illüstrasyonu.",
+          "en": "An illustration of three reading cards grouped with brass clips on a dark desk."
+        },
+        "caption": {
+          "tr": "Görsel fikir · Bağlantının yanına düşünceni de koy",
+          "en": "The visual idea · Keep the thought beside the link"
+        }
+      },
+      {
+        "type": "gif",
+        "src": "media/reading-flow.gif",
+        "poster": "media/archive-screen.png",
+        "width": 1200,
+        "height": 900,
+        "alt": {
+          "tr": "Okuma listesinde arama yapma ve okunacakları filtreleme akışı.",
+          "en": "Searching the reading list and filtering links to read."
+        },
+        "caption": {
+          "tr": "Kullanım akışı · Aradığını yeniden bul",
+          "en": "The flow · Find it again"
+        }
+      },
+      {
+        "type": "video",
+        "src": "media/reading-flow.mp4",
+        "poster": "media/archive-screen.png",
+        "alt": {
+          "tr": "Cep Arşivi'nde arama ve okuma durumu filtrelerinin kısa gösterimi.",
+          "en": "A short demonstration of search and reading-status filters in Pocket Archive."
+        },
+        "caption": {
+          "tr": "Kısa gösterim · Okuma kuyruğunu düzenle",
+          "en": "A short tour · Organize your reading queue"
+        },
+        "captions": [
+          { "src": "media/tr.vtt", "lang": "tr", "label": "Türkçe" },
+          { "src": "media/en.vtt", "lang": "en", "label": "English" }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "label": { "tr": "Arşivi dene", "en": "Try the archive" },
+        "url": {
+          "tr": "tr/tools/pocket-archive/",
+          "en": "tools/pocket-archive/"
+        },
+        "primary": true
+      },
+      {
+        "label": { "tr": "Kaynak kodu", "en": "Source code" },
+        "url": "https://github.com/mebegu/mebegu.github.io/blob/main/src/lib/pocket-archive.ts",
+        "primary": false
+      }
+    ],
+    "limitations": [
+      {
+        "tr": "Cihazlar ve tarayıcılar arasında otomatik eşitleme yok. Tarayıcı verilerini temizlemek arşivi de kaldırır.",
+        "en": "There is no automatic sync across devices or browsers. Clearing browser data also removes the archive."
+      },
+      {
+        "tr": "Yazıların içeriğini indirmez ve çevrimdışı okuma kopyası oluşturmaz; bağlantı, not ve etiket saklar.",
+        "en": "It does not download article content or create offline reading copies; it stores links, notes and tags."
+      },
+      {
+        "tr": "JSON dışa aktarma var; dosyadan geri yükleme henüz eklenmedi.",
+        "en": "JSON export is available; restoring from a file is not implemented yet."
+      }
+    ],
+    "updates": [
+      {
+        "date": "2026-10-23",
+        "version": "0.1.0",
+        "title": { "tr": "İlk okuma kuyruğu", "en": "The first reading queue" },
+        "body": {
+          "tr": "Bağlantı ekleme, kısa notlar, etiketlerde arama, okundu işaretleme ve JSON indirme aynı küçük arayüzde bir araya geldi. Kayıtlar sayfa yenilendiğinde tarayıcıdan geri yükleniyor.",
+          "en": "Saving links, short notes, tag search, read status and JSON export now share one small interface. Entries are restored from browser storage after a page reload."
+        }
+      }
+    ],
+    "roadmap": [
+      {
+        "state": "done",
+        "title": {
+          "tr": "Kaydet, ara, okundu işaretle",
+          "en": "Save, search, mark as read"
+        },
+        "body": {
+          "tr": "Başlık, bağlantı, not ve etiketlerle çalışan yerel arşiv; JSON dışa aktarma.",
+          "en": "A local archive with titles, links, notes and tags, plus JSON export."
+        }
+      },
+      {
+        "state": "current",
+        "title": {
+          "tr": "Küçük ekranlarda daha rahat kullanım",
+          "en": "A more comfortable flow on small screens"
+        },
+        "body": {
+          "tr": "Kayıt eklerken ve okuma durumunu değiştirirken daha az kaydırma ve daha anlaşılır geri bildirim.",
+          "en": "Less scrolling and clearer feedback when saving links and changing reading status."
+        }
+      },
+      {
+        "state": "next",
+        "title": {
+          "tr": "Arşivi dosyadan geri yüklemek",
+          "en": "Restore an archive from a file"
+        },
+        "body": {
+          "tr": "İndirilen JSON'u başka bir tarayıcıda açmak ve yinelenen bağlantıları birleştirmek.",
+          "en": "Open exported JSON in another browser and merge duplicate links."
+        }
+      }
+    ],
+    "articles": [
+      {
+        "title": {
+          "tr": "Bir bağlantıyı neden sakladığını hatırlamak",
+          "en": "Remembering why you saved a link"
+        },
+        "summary": {
+          "tr": "Cep Arşivi'ni neden bağlantı, kısa not ve etiketlerden kurdum; ilk sürümde neleri küçük tuttum?",
+          "en": "Why Pocket Archive starts with a link, a short note and tags, and what stayed small in the first version."
+        },
+        "url": {
+          "tr": "tr/writing/cep-arsivi/",
+          "en": "writing/pocket-archive/"
+        }
+      }
+    ],
+    "participation": [
+      {
+        "type": "feedback",
+        "title": {
+          "tr": "Okuma alışkanlığını anlat",
+          "en": "Share your reading habits"
+        },
+        "description": {
+          "tr": "Bağlantıları bugün nerede saklıyorsun? Arşivinde bulmakta zorlandığın şey ne?",
+          "en": "Where do you save links today? What is hard to find again in your archive?"
+        },
+        "url": "mailto:mbgurcay@gmail.com?subject=Cep%20Arsivi%20-%20Feedback"
+      },
+      {
+        "type": "feature",
+        "title": {
+          "tr": "Sıradaki özelliği öner",
+          "en": "Suggest the next feature"
+        },
+        "description": {
+          "tr": "Geri yükleme, etiket filtreleri veya başka bir ihtiyaç: hangi küçük ekleme işini kolaylaştırır?",
+          "en": "Restoring an archive, tag filters or something else: which small addition would help you?"
+        },
+        "url": "mailto:mbgurcay@gmail.com?subject=Cep%20Arsivi%20-%20Feature%20request"
+      },
+      {
+        "type": "bug",
+        "title": {
+          "tr": "Takıldığın yeri bildir",
+          "en": "Report something that broke"
+        },
+        "description": {
+          "tr": "Hangi adımda ne beklediğini, ne olduğunu ve kullandığın tarayıcıyı paylaş.",
+          "en": "Share what you expected, what happened, the steps you took and your browser."
+        },
+        "url": "mailto:mbgurcay@gmail.com?subject=Cep%20Arsivi%20-%20Bug%20report"
+      },
+      {
+        "type": "contribute",
+        "title": {
+          "tr": "Birlikte geliştirelim",
+          "en": "Help improve the archive"
+        },
+        "description": {
+          "tr": "Okuma akışı, erişilebilirlik veya yerel veri yönetimi için kaynak koduna katkıda bulun.",
+          "en": "Contribute to the reading flow, accessibility or local data handling."
+        },
+        "url": "https://github.com/mebegu/mebegu.github.io/blob/main/src/lib/pocket-archive.ts"
+      }
+    ]
+  }
+}

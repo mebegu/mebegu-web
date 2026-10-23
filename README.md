@@ -39,7 +39,7 @@ Ana sayfa: aşağıda yalnız karakter ve zemin, yukarıda **Profesyonel / Blog 
 - Profesyonel sayfa: paylaşılan güncel CV’den hazırlanmış İngilizce özgeçmiş, yalnız CV’yi yazdıran A4 baskı stili ve on bir profesyonel çalışma özeti (Selected work).
 - Blog: tam genişlikte dört yazılık banner ve üç rafta sekiz gerçek yazı kartı; hover/odakta 180° dönerek özet/tarih gösterir, tam metni yeni sekmede açar. Altı Türkçe yazının İngilizce çevirileri de vardır.
 - Alamori: tanıtım, geçici kapak, henüz pasif PDF ve geri bildirim alanları.
-- Atölye / Workshop: hobi oyunları, kişisel yazılım ve deneyler için beş temsili kart. Profesyonel müşteri işleri burada yer almaz. Mevcut `/projects/` adresi korunur.
+- Atölye / Workshop: uygulama, araç, kütüphane, oyun ve deneyler için seçilebilir workbench. Durum, küçük görsel önizlemeli galeri, yayın bağlantıları, geliştirme günlüğü, yol haritası, blog yazıları ve katkı kanalları desteklenir. Yalnız JSON kayıtları yüklenir; tek kayıt çalışan **Cep Arşivi** okuma aracıdır. Profesyonel müşteri işleri burada yer almaz. [İçerik rehberi](docs/WORKSHOP.md), [private repo CI bağlantısı](docs/WORKSHOP-INTEGRATION.md), [diğer projeye verilecek prompt](docs/prompts/connect-workshop.md).
 - Önceki Hakkımda ve Atlantis sayfaları ile ortak 404 adresi korunur.
 - İngilizce `/`, Türkçe `/tr/`; sayfa karşılığına giden dil geçişi. CV ve portföy içeriği kullanıcı tercihiyle her iki rotada İngilizce kalır.
 - Markdown yazı koleksiyonu ve gerçek katalog: Weebly’den sekiz özgün yazı, altı İngilizce çeviri, özgün görseller/tarihler ve kart özetleri. Taslaklar yayımlanmaz.

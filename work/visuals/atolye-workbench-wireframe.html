@@ -1,0 +1,256 @@
+<div id="atolye-workbench-wireframe">
+  <style>
+    #atolye-workbench-wireframe { color-scheme: light dark; }
+    #atolye-workbench-wireframe .device-tabs { margin-bottom: 16px; }
+    #atolye-workbench-wireframe .wf-site {
+      --wf-bg: light-dark(#fafaf8, #17191b);
+      --wf-surface: light-dark(#efefec, #24272a);
+      --wf-ink: light-dark(#25282b, #eeeeeb);
+      --wf-muted: light-dark(#62666a, #b3b7ba);
+      --wf-line: light-dark(#c6c9ca, #4a4e51);
+      --wf-selected: light-dark(#e4e6e5, #353a3d);
+      color: var(--wf-ink); background: var(--wf-bg);
+      font: 400 14px/1.55 Arial, sans-serif;
+      min-width: 0;
+    }
+    #atolye-workbench-wireframe .wf-site * { box-sizing: border-box; }
+    #atolye-workbench-wireframe .wf-site [hidden] { display: none !important; }
+    #atolye-workbench-wireframe .wf-site button { color: inherit; font: inherit; }
+    #atolye-workbench-wireframe .wf-site h1,
+    #atolye-workbench-wireframe .wf-site h2,
+    #atolye-workbench-wireframe .wf-site p { margin: 0; }
+    #atolye-workbench-wireframe .wf-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 25px; padding: 18px 30px; border-bottom: 1px solid var(--wf-line); }
+    #atolye-workbench-wireframe .wf-brand { font-size: 23px; font-weight: 500; letter-spacing: -1px; }
+    #atolye-workbench-wireframe .wf-navigation { display: flex; flex-wrap: wrap; gap: 10px 23px; font-size: 12px; color: var(--wf-muted); }
+    #atolye-workbench-wireframe .wf-navigation [aria-current] { color: var(--wf-ink); text-decoration: underline; text-underline-offset: 7px; }
+    #atolye-workbench-wireframe .wf-language { font-size: 12px; color: var(--wf-muted); }
+    #atolye-workbench-wireframe .wf-main { padding: 30px; }
+    #atolye-workbench-wireframe .wf-heading { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
+    #atolye-workbench-wireframe .wf-eyebrow { font-size: 11px; color: var(--wf-muted); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 8px !important; }
+    #atolye-workbench-wireframe .wf-heading h1 { font-size: 40px; font-weight: 500; line-height: 1.1; letter-spacing: -1.7px; }
+    #atolye-workbench-wireframe .wf-heading-copy { max-width: 290px; color: var(--wf-muted); }
+    #atolye-workbench-wireframe .wf-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 15px 0; border-top: 1px solid var(--wf-line); border-bottom: 1px solid var(--wf-line); }
+    #atolye-workbench-wireframe .wf-filters { display: flex; flex-wrap: wrap; gap: 5px; }
+    #atolye-workbench-wireframe .wf-filter { background: transparent; border: 1px solid transparent; padding: 7px 12px; min-height: 44px; border-radius: 3px; }
+    #atolye-workbench-wireframe .wf-filter[aria-pressed=true] { border-color: var(--wf-ink); background: var(--wf-selected); }
+    #atolye-workbench-wireframe .wf-count { color: var(--wf-muted); font-size: 12px; }
+    #atolye-workbench-wireframe .wf-workbench { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: 28px; padding-top: 24px; align-items: start; }
+    #atolye-workbench-wireframe .wf-list { padding: 0; margin: 0; list-style: none; min-width: 0; }
+    #atolye-workbench-wireframe .wf-item { border-bottom: 1px solid var(--wf-line); }
+    #atolye-workbench-wireframe .wf-choice { width: 100%; display: grid; grid-template-columns: 40px minmax(0, 1fr) 15px; align-items: center; gap: 12px; border: 0; border-left: 3px solid transparent; background: transparent; padding: 15px 10px; text-align: left; min-height: 85px; }
+    #atolye-workbench-wireframe .wf-choice[aria-pressed=true] { background: var(--wf-selected); border-left-color: var(--wf-ink); }
+    #atolye-workbench-wireframe .wf-thumb { width: 40px; height: 40px; border: 1px solid var(--wf-line); background: linear-gradient(45deg, transparent calc(50% - .5px), var(--wf-line) 50%, transparent calc(50% + .5px)), var(--wf-surface); }
+    #atolye-workbench-wireframe .wf-choice-title { display: block; font-weight: 500; }
+    #atolye-workbench-wireframe .wf-hook { display: block; color: var(--wf-muted); font-size: 12px; margin-top: 4px; line-height: 1.45; }
+    #atolye-workbench-wireframe .wf-arrow { font-size: 17px; }
+    #atolye-workbench-wireframe .wf-more { display: block; background: transparent; border: 1px solid var(--wf-line); min-height: 44px; margin: 18px 0 0; padding: 9px 14px; }
+    #atolye-workbench-wireframe .wf-detail { min-width: 0; }
+    #atolye-workbench-wireframe .wf-media { position: relative; display: flex; align-items: center; justify-content: center; min-height: 225px; padding: 24px; border: 1px solid var(--wf-line); background: var(--wf-surface); color: var(--wf-muted); text-align: center; }
+    #atolye-workbench-wireframe .wf-media::before,
+    #atolye-workbench-wireframe .wf-media::after { position: absolute; content: ''; top: 50%; left: 8%; right: 8%; height: 1px; background: var(--wf-line); transform: rotate(20deg); }
+    #atolye-workbench-wireframe .wf-media::after { transform: rotate(-20deg); }
+    #atolye-workbench-wireframe .wf-media-label { position: relative; z-index: 1; background: var(--wf-surface); padding: 6px 12px; font-size: 12px; }
+    #atolye-workbench-wireframe .wf-media.is-demo::before,
+    #atolye-workbench-wireframe .wf-media.is-demo::after { display: none; }
+    #atolye-workbench-wireframe .wf-detail-copy { padding-top: 22px; }
+    #atolye-workbench-wireframe .wf-kind { color: var(--wf-muted); font-size: 12px; margin-bottom: 8px !important; }
+    #atolye-workbench-wireframe .wf-detail h2 { font-size: 27px; font-weight: 500; letter-spacing: -.6px; line-height: 1.2; margin-bottom: 12px; }
+    #atolye-workbench-wireframe .wf-description { color: var(--wf-muted); max-width: 490px; }
+    #atolye-workbench-wireframe .wf-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 20px 0; }
+    #atolye-workbench-wireframe .wf-primary { background: var(--wf-ink); color: var(--wf-bg) !important; border: 1px solid var(--wf-ink); min-height: 44px; padding: 9px 20px; border-radius: 3px; }
+    #atolye-workbench-wireframe .wf-secondary { background: transparent; border: 1px solid var(--wf-line); min-height: 44px; padding: 9px 17px; border-radius: 3px; }
+    #atolye-workbench-wireframe .wf-source { padding: 12px 0; color: var(--wf-muted); border-top: 1px solid var(--wf-line); font-size: 12px; }
+    #atolye-workbench-wireframe .wf-notes { padding: 15px 0; border-top: 1px solid var(--wf-line); }
+    #atolye-workbench-wireframe .wf-notes summary { font-weight: 500; min-height: 32px; }
+    #atolye-workbench-wireframe .wf-notes p { padding-top: 10px; color: var(--wf-muted); }
+    #atolye-workbench-wireframe .wf-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--wf-line); color: var(--wf-muted); font-size: 11px; }
+    #atolye-workbench-wireframe .wf-mobile { max-width: 390px; margin-inline: auto; }
+    #atolye-workbench-wireframe .wf-mobile .wf-header { padding: 16px 20px; }
+    #atolye-workbench-wireframe .wf-mobile .wf-navigation { order: 3; width: 100%; gap: 18px; }
+    #atolye-workbench-wireframe .wf-mobile .wf-main { padding: 24px 20px; }
+    #atolye-workbench-wireframe .wf-mobile .wf-heading { display: block; }
+    #atolye-workbench-wireframe .wf-mobile .wf-heading-copy { margin-top: 14px; }
+    #atolye-workbench-wireframe .wf-mobile .wf-heading h1 { font-size: 35px; }
+    #atolye-workbench-wireframe .wf-mobile .wf-workbench { display: block; padding-top: 16px; }
+    #atolye-workbench-wireframe .wf-mobile .wf-filter { padding-inline: 10px; }
+    #atolye-workbench-wireframe .wf-mobile .wf-choice { grid-template-columns: 34px minmax(0, 1fr) 15px; gap: 10px; }
+    #atolye-workbench-wireframe .wf-mobile .wf-thumb { width: 34px; height: 34px; }
+    #atolye-workbench-wireframe .wf-mobile .wf-detail { padding: 17px 10px 24px; }
+    #atolye-workbench-wireframe .wf-mobile .wf-media { min-height: 160px; padding-inline: 10px; }
+    #atolye-workbench-wireframe .wf-mobile .wf-detail h2 { font-size: 24px; }
+    #atolye-workbench-wireframe .wf-mobile .wf-footer { margin-top: 24px; }
+    #atolye-workbench-wireframe .wf-site.compact-hooks .wf-hook { display: none; }
+    #atolye-workbench-wireframe .wf-site.compact-hooks .wf-choice { min-height: 66px; }
+    @media (max-width: 620px) {
+      #atolye-workbench-wireframe .wf-header { padding: 16px 20px; }
+      #atolye-workbench-wireframe .wf-navigation { order: 3; width: 100%; gap: 18px; }
+      #atolye-workbench-wireframe .wf-main { padding: 24px 20px; }
+      #atolye-workbench-wireframe .wf-heading { display: block; }
+      #atolye-workbench-wireframe .wf-heading-copy { margin-top: 14px; }
+      #atolye-workbench-wireframe .wf-workbench { display: block; padding-top: 16px; }
+      #atolye-workbench-wireframe .wf-detail { padding: 17px 10px 24px; }
+      #atolye-workbench-wireframe .wf-media { min-height: 160px; padding-inline: 10px; }
+      #atolye-workbench-wireframe .wf-choice { grid-template-columns: 34px minmax(0, 1fr) 15px; gap: 10px; }
+      #atolye-workbench-wireframe .wf-thumb { width: 34px; height: 34px; }
+      #atolye-workbench-wireframe .wf-filter { padding-inline: 10px; }
+    }
+  </style>
+  <div class="nav nav-pills device-tabs" role="tablist" aria-label="Wireframe device">
+    <button id="aw-desktop-tab" class="nav-link active" role="tab" aria-controls="aw-desktop-panel" aria-selected="true" type="button">Desktop</button>
+    <button id="aw-mobile-tab" class="nav-link" role="tab" aria-controls="aw-mobile-panel" aria-selected="false" type="button">Mobile</button>
+  </div>
+  <section id="aw-desktop-panel" role="tabpanel" aria-labelledby="aw-desktop-tab"><div class="wf-site" data-device="desktop" aria-label="Atölye desktop wireframe"></div></section>
+  <section id="aw-mobile-panel" role="tabpanel" aria-labelledby="aw-mobile-tab" hidden><div class="wf-site wf-mobile" data-device="mobile" aria-label="Atölye mobile wireframe"></div></section>
+  <template id="aw-page-template">
+    <header class="wf-header">
+      <span class="wf-brand">mebegu.</span>
+      <nav class="wf-navigation" aria-label="Site bölümleri"><span>Profesyonel</span><span>Blog</span><span>Alamori</span><span aria-current="page">Atölye</span></nav>
+      <span class="wf-language">TR / EN</span>
+    </header>
+    <main class="wf-main">
+      <header class="wf-heading"><div><p class="wf-eyebrow">Kişisel projeler</p><h1>Atölye.</h1></div><p class="wf-heading-copy">Biraz oyna, bir şeyler kurcala.<br>Belki işine yarayan bir şey bulursun.</p></header>
+      <div class="wf-toolbar"><div class="wf-filters" role="group" aria-label="Ne yapmak istersin?"><button class="wf-filter cursor-interaction" type="button" data-filter="all" aria-pressed="true">Tümü</button><button class="wf-filter cursor-interaction" type="button" data-filter="game" aria-pressed="false">Oyna</button><button class="wf-filter cursor-interaction" type="button" data-filter="tool" aria-pressed="false">Kullan</button><button class="wf-filter cursor-interaction" type="button" data-filter="experiment" aria-pressed="false">Keşfet</button></div><p class="wf-count" aria-live="polite">8 örnek proje</p></div>
+      <div class="wf-workbench">
+        <div class="wf-browser"><ul class="wf-list" aria-label="Proje seç"></ul><button class="wf-more cursor-interaction" type="button">Diğer projeleri göster</button></div>
+        <section class="wf-detail" aria-label="Seçili proje">
+          <div class="wf-media" role="img" aria-label="Proje görseli için yer tutucu"><span class="wf-media-label">Ekran görüntüsü / kısa video</span></div>
+          <div class="wf-detail-copy"><p class="wf-kind"></p><h2></h2><p class="wf-description"></p><div class="wf-actions"><button class="wf-primary cursor-interaction" type="button" data-launch>Oyunu aç ↗</button><button class="wf-secondary cursor-interaction" type="button" data-about>Nasıl yaptım?</button></div><details class="wf-notes"><summary class="cursor-interaction">Yapım notları</summary><p></p></details><p class="wf-source"></p></div>
+        </section>
+      </div>
+      <footer class="wf-footer"><span>Yerleşim için örnek içerik</span><span>Oyunlar · Araçlar · Deneyler</span></footer>
+    </main>
+  </template>
+  <script>
+    (() => {
+      const root = document.getElementById('atolye-workbench-wireframe');
+      const projects = [
+        { id: 'tek-tus', title: 'Tek tuş', kind: 'game', hook: 'Tek tuşla oynanan küçük bir platform oyunu.', description: 'Zıpla, ritmi yakala, bir sonraki platforma ulaş. Bütün oyun tek bir kontrolün etrafında dönüyor.', platform: 'Tarayıcıda oynanır', action: 'Oyunu aç ↗', media: 'Oynanış videosu / ekran görüntüsü', notes: 'Bir oyunu tek bir kontrole indirince ne değişir? Kontroller, mekanikler ve prototipten öğrendiklerim burada yer alır.', tech: 'Unity · C#' },
+        { id: 'cep-araci', title: 'Cep aracı', kind: 'tool', hook: 'Bir klasör görseli tek hamlede boyutlandır.', description: 'Tek tek dosya açmadan, birden fazla görseli aynı boyuta getiren küçük bir yardımcı.', platform: 'Tarayıcıda kullanılır', action: 'Aracı dene ↗', media: 'Aracın öncesi / sonrası', notes: 'Günlük bir ihtiyacı küçük bir araca dönüştürme süreci. İş akışı ve yaptığım tercihler burada yer alır.', tech: 'Web · Görsel işleme' },
+        { id: 'isigin-izi', title: 'Işığın izi', kind: 'experiment', hook: 'İmleç hareketinden doğan çizgiler.', description: 'İmleci hareket ettir, çizgilerin izini değiştir. Küçük hareketlerden farklı desenler oluşturan görsel bir deney.', platform: 'Etkileşimli deney', action: 'Deneyi aç ↗', media: 'Etkileşimin kısa kaydı', notes: 'Hareketin görsel bir iz bırakması üzerine bir deneme. Fikir, parametreler ve denemeler burada yer alır.', tech: 'Grafik · Etkileşim' },
+        { id: 'minik-bulmaca', title: 'Minik bulmaca', kind: 'game', hook: 'Parçaları çevir, tek bir yol oluştur.', description: 'Küçük parçaların yönünü değiştirerek başlangıçtan sona kesintisiz bir yol kur.', platform: 'Tarayıcıda oynanır', action: 'Oyunu aç ↗', media: 'Bir bulmacanın çözülüşü', notes: 'Tek bir mekanikten farklı bulmacalar üretme denemesi. Tasarım süreci burada yer alır.', tech: 'Oyun · Prototip' },
+        { id: 'not-cebi', title: 'Not cebi', kind: 'tool', hook: 'Dağınık notlardan aranabilir bir arşiv.', description: 'Kısa notları bir araya getirip daha sonra bulmayı kolaylaştıran kişisel bir araç.', platform: 'Kişisel araç', action: 'Aracı dene ↗', media: 'Arayüz / kullanım örneği', notes: 'Kendi not alma alışkanlığımdan doğan fikir ve arayüz kararları burada yer alır.', tech: 'Web · Arama' },
+        { id: 'yercekimi', title: 'Yerçekimi', kind: 'experiment', hook: 'Aynı sahne, farklı fizik kuralları.', description: 'Yerçekimini değiştir ve aynı nesnelerin nasıl farklı davrandığını gözlemle.', platform: 'Etkileşimli deney', action: 'Deneyi aç ↗', media: 'Fizik denemesinin kısa kaydı', notes: 'Bir parametrenin sahnenin davranışını nasıl değiştirdiğini araştıran prototip.', tech: 'Fizik · Simülasyon' },
+        { id: 'gece-yuruyusu', title: 'Gece yürüyüşü', kind: 'game', hook: 'Yolunu ışıkla bulduğun kısa bir keşif.', description: 'Karanlık bir çevrede küçük bir ışığın rehberliğinde dolaştığın oyun fikri.', platform: 'Oyun prototipi', action: 'Oyunu aç ↗', media: 'Oyun dünyasından bir sahne', notes: 'Işık, yön bulma ve atmosfer üzerine denemeler burada yer alır.', tech: 'Unity · Keşif' },
+        { id: 'rutin', title: 'Rutin', kind: 'tool', hook: 'Tekrarlanan küçük işlere bir kısayol.', description: 'Her gün tekrar edilen bir iş akışını birkaç adıma indiren küçük bir otomasyon.', platform: 'Kişisel araç', action: 'Aracı dene ↗', media: 'İş akışının önceki / sonraki hali', notes: 'Tekrarlanan bir işi otomatikleştirme süreci ve sınırları burada yer alır.', tech: 'Otomasyon · Araç' }
+      ];
+      const labels = { game: 'Oyun', tool: 'Araç', experiment: 'Deney' };
+      const controllers = [];
+      const mediaQuery = window.matchMedia('(max-width: 620px)');
+      function mount(site) {
+        site.append(root.querySelector('#aw-page-template').content.cloneNode(true));
+        const device = site.dataset.device;
+        const list = site.querySelector('.wf-list');
+        const detail = site.querySelector('.wf-detail');
+        const workbench = site.querySelector('.wf-workbench');
+        const more = site.querySelector('.wf-more');
+        const count = site.querySelector('.wf-count');
+        const state = { selected: projects[0].id, filter: 'all', expanded: true, limit: 6 };
+        detail.id = 'aw-detail-' + device;
+        const isMobile = () => device === 'mobile' || mediaQuery.matches;
+        const filtered = () => projects.filter(project => state.filter === 'all' || project.kind === state.filter);
+        function save() {
+          if (window.openai?.setWidgetState) window.openai.setWidgetState({ modelContent: { selectedProject: state.selected, category: state.filter }, privateContent: { device } }).catch(() => {});
+        }
+        function positionDetail() {
+          const item = list.querySelector('[data-id="' + state.selected + '"]');
+          if (isMobile() && item) item.append(detail);
+          else workbench.append(detail);
+          detail.hidden = isMobile() && !state.expanded;
+          list.querySelectorAll('.wf-choice').forEach(button => {
+            const active = button.parentElement.dataset.id === state.selected;
+            button.setAttribute('aria-pressed', String(active));
+            if (isMobile()) button.setAttribute('aria-expanded', String(active && state.expanded));
+            else button.removeAttribute('aria-expanded');
+            button.querySelector('.wf-arrow').textContent = active ? (isMobile() ? (state.expanded ? '−' : '+') : '→') : (isMobile() ? '+' : '');
+          });
+        }
+        function updateDetail() {
+          const project = projects.find(item => item.id === state.selected);
+          site.querySelectorAll('.wf-filter').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === state.filter)));
+          detail.querySelector('h2').textContent = project.title;
+          detail.querySelector('.wf-kind').textContent = labels[project.kind] + ' · ' + project.platform;
+          detail.querySelector('.wf-description').textContent = project.description;
+          detail.querySelector('.wf-notes p').textContent = project.notes;
+          detail.querySelector('.wf-notes').open = false;
+          detail.querySelector('.wf-source').textContent = 'Yapıldığı araçlar: ' + project.tech;
+          detail.querySelector('[data-launch]').textContent = project.action;
+          detail.querySelector('.wf-media-label').textContent = project.media;
+          detail.querySelector('.wf-media').classList.remove('is-demo');
+          positionDetail();
+        }
+        function renderList() {
+          workbench.append(detail);
+          list.replaceChildren();
+          const matches = filtered();
+          const shown = matches.slice(0, state.limit);
+          for (const project of shown) {
+            const item = document.createElement('li');
+            item.className = 'wf-item';
+            item.dataset.id = project.id;
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'wf-choice cursor-interaction';
+            button.setAttribute('aria-controls', detail.id);
+            const thumb = document.createElement('span');
+            thumb.className = 'wf-thumb'; thumb.setAttribute('aria-hidden', 'true');
+            const copy = document.createElement('span');
+            const title = document.createElement('span');
+            title.className = 'wf-choice-title'; title.textContent = project.title;
+            const hook = document.createElement('span');
+            hook.className = 'wf-hook'; hook.textContent = project.hook;
+            const arrow = document.createElement('span');
+            arrow.className = 'wf-arrow'; arrow.setAttribute('aria-hidden', 'true');
+            copy.append(title, hook); button.append(thumb, copy, arrow); item.append(button); list.append(item);
+            button.addEventListener('click', () => {
+              state.expanded = isMobile() && state.selected === project.id ? !state.expanded : true;
+              state.selected = project.id;
+              updateDetail(); save();
+            });
+          }
+          count.textContent = matches.length + ' örnek proje';
+          more.hidden = shown.length === matches.length;
+          more.textContent = 'Diğer ' + (matches.length - shown.length) + ' projeyi göster';
+          updateDetail();
+        }
+        site.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
+          state.filter = button.dataset.filter;
+          state.limit = 6;
+          if (!filtered().some(project => project.id === state.selected)) state.selected = filtered()[0].id;
+          state.expanded = true;
+          renderList(); save();
+        }));
+        more.addEventListener('click', () => { state.limit = projects.length; renderList(); save(); });
+        detail.querySelector('[data-about]').addEventListener('click', () => { detail.querySelector('.wf-notes').open = !detail.querySelector('.wf-notes').open; });
+        detail.querySelector('[data-launch]').addEventListener('click', () => {
+          const media = detail.querySelector('.wf-media');
+          const launched = media.classList.toggle('is-demo');
+          const project = projects.find(item => item.id === state.selected);
+          detail.querySelector('.wf-media-label').textContent = launched ? 'Proje açılış alanı · wireframe' : project.media;
+          detail.querySelector('[data-launch]').textContent = launched ? 'Önizlemeye dön' : project.action;
+        });
+        function restore(saved) {
+          const selected = projects.find(project => project.id === saved?.modelContent?.selectedProject);
+          if (!selected) return;
+          const category = saved.modelContent.category;
+          state.filter = ['all', 'game', 'tool', 'experiment'].includes(category) ? category : 'all';
+          if (state.filter !== 'all' && selected.kind !== state.filter) state.filter = 'all';
+          state.selected = selected.id;
+          state.limit = projects.length;
+          state.expanded = true;
+          renderList();
+        }
+        renderList();
+        restore(window.openai?.widgetState);
+        controllers.push({ positionDetail, restore });
+        if (globalThis.Tweak) {
+          const settings = { showHooks: true };
+          const tweak = new Tweak({ container: site, onChange: () => site.classList.toggle('compact-hooks', !settings.showHooks) });
+          tweak.addToggle(settings, 'showHooks', { label: 'Show project hooks' });
+        }
+      }
+      root.querySelectorAll('[data-device]').forEach(mount);
+      mediaQuery.addEventListener('change', () => controllers.forEach(controller => controller.positionDetail()));
+      window.addEventListener('openai:set_globals', event => controllers.forEach(controller => controller.restore(event.detail?.globals?.widgetState)));
+    })();
+  </script>
+</div>
