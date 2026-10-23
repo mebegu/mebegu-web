@@ -27,6 +27,17 @@ async function fixture(fn) {
   await mkdir(site);
   const record = structuredClone(baseline);
   record.revision = 1;
+  // Publication tests own their sample posts; the live page can have none.
+  record.book.articles = ['alamori-fixture-story', 'alamori-fixture-notes'].map((id) => ({
+    title: { tr: 'Test yazısı', en: 'Test post' },
+    summary: { tr: 'Test özeti.', en: 'Test summary.' },
+    url: { tr: `tr/writing/${id}-tr/`, en: `writing/${id}-en/` },
+    post: {
+      id,
+      published: '2026-10-23',
+      paragraphs: [{ tr: 'Test paragrafı.', en: 'Test paragraph.' }],
+    },
+  }));
   for (const [lang, image] of Object.entries(record.book.covers)) {
     image.src = `media/cover-${lang}.png`;
     await writeFile(
@@ -68,10 +79,10 @@ test('explicit public package exports only referenced assets, plain posts and no
     await checkStoredAlamori(stored, site);
     assert.equal((await importAlamori(bundle, site)).reason, 'unchanged');
     const content = await readFile(
-      path.join(site, 'src/content/writing/alamori-story-tr.md'),
+      path.join(site, 'src/content/writing/alamori-fixture-story-tr.md'),
       'utf8',
     );
-    assert.ok(content.includes('translationKey: "alamori-story"'));
+    assert.ok(content.includes('translationKey: "alamori-fixture-story"'));
   }));
 test('dry run, disabled publication, monotonic revisions and conflicting replay are enforced', () =>
   fixture(async ({ source, site, record }) => {
@@ -91,6 +102,18 @@ test('dry run, disabled publication, monotonic revisions and conflicting replay 
     await writeFile(path.join(source, 'page.json'), JSON.stringify(record));
     await importAlamori(await prepareAlamori(source), site);
     assert.equal((await importAlamori(bundle, site)).reason, 'stale');
+    record.revision = 3;
+    record.book.articles = [];
+    await writeFile(path.join(source, 'page.json'), JSON.stringify(record));
+    await importAlamori(await prepareAlamori(source), site);
+    for (const id of ['alamori-fixture-story', 'alamori-fixture-notes']) {
+      for (const lang of ['tr', 'en']) {
+        await assert.rejects(
+          readFile(path.join(site, `src/content/writing/${id}-${lang}.md`)),
+          { code: 'ENOENT' },
+        );
+      }
+    }
     record.publish = false;
     await writeFile(path.join(source, 'page.json'), JSON.stringify(record));
     assert.equal(
@@ -136,7 +159,7 @@ test('symlinked sources and manually authored destination posts are protected', 
     await writeFile(path.join(source, 'page.json'), JSON.stringify(record));
     await mkdir(path.join(site, 'src/content/writing'), { recursive: true });
     await writeFile(
-      path.join(site, 'src/content/writing/alamori-story-tr.md'),
+      path.join(site, 'src/content/writing/alamori-fixture-story-tr.md'),
       'A manually authored post',
     );
     await assert.rejects(
@@ -145,7 +168,7 @@ test('symlinked sources and manually authored destination posts are protected', 
     );
     assert.equal(
       await readFile(
-        path.join(site, 'src/content/writing/alamori-story-tr.md'),
+        path.join(site, 'src/content/writing/alamori-fixture-story-tr.md'),
         'utf8',
       ),
       'A manually authored post',

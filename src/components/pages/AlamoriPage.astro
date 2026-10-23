@@ -45,7 +45,7 @@ const navigation = [
     ? [['roadmap', tr ? 'Yol haritası' : 'Roadmap']]
     : []),
   ...(alamori.articles.length
-    ? [['journal', tr ? 'Yazım günlüğü' : 'Writing journal']]
+    ? [['journal', tr ? 'Blog yazıları' : 'Blog posts']]
     : []),
 ];
 ---
@@ -61,9 +61,7 @@ const navigation = [
   <div class="alamori-page">
     <header class="alamori-heading">
       <div>
-        <p class="eyebrow">
-          {tr ? 'Bir romanın yolculuğu' : 'The making of a novel'}
-        </p>
+        <p class="eyebrow">{tr ? 'Roman' : 'Novel'}</p>
         <h1>
           Alamori<span>.</span>
         </h1>
@@ -92,11 +90,6 @@ const navigation = [
           height={cover.height}
           fetchpriority="high"
         />
-        <figcaption>
-          {tr
-            ? 'Hikâyeye açılan ilk kapı'
-            : 'Your first doorway into the story'}
-        </figcaption>
       </figure>
       <aside
         class="alamori-project-card"
@@ -124,16 +117,16 @@ const navigation = [
             </a>
             <span>
               {preview.language === 'tr' ? 'Türkçe' : 'English'} · PDF ·{' '}
-              {tr ? 'Ücretsiz önizleme' : 'Free reading preview'}
+              {tr ? 'Okuma önizlemesi' : 'Reading preview'}
             </span>
           </div>
         )}
         <div class="alamori-current">
-          <span>{tr ? 'Yazım masasında' : 'On the writing desk'}</span>
+          <span>{tr ? 'Şu an' : 'Current work'}</span>
           <p>{alamori.currentFocus[lang]}</p>
         </div>
         <p class="alamori-last-updated">
-          {tr ? 'Son not' : 'Last update'}{' '}
+          {tr ? 'Güncelleme' : 'Updated'}{' '}
           <time datetime={alamori.updatedAt}>
             {formatPostDate(alamori.updatedAt, lang)}
           </time>
@@ -151,9 +144,7 @@ const navigation = [
     <section id="story" class="alamori-section" aria-labelledby="story-heading">
       <div class="alamori-section-heading">
         <p class="eyebrow">01 / {tr ? 'Hikâye' : 'The story'}</p>
-        <h2 id="story-heading">
-          {tr ? 'Bir kitapla başlar.' : 'It begins with a book.'}
-        </h2>
+        <h2 id="story-heading">{tr ? 'Hikâye' : 'The story'}</h2>
       </div>
       <div class="alamori-section-content alamori-story-copy">
         {alamori.synopsis.map((paragraph) => (
@@ -175,14 +166,14 @@ const navigation = [
       aria-labelledby="preview-heading"
     >
       <div class="alamori-section-heading">
-        <p class="eyebrow">02 / {tr ? 'İçeri bir bakış' : 'A look inside'}</p>
+        <p class="eyebrow">02 / {tr ? 'Önizleme' : 'Preview'}</p>
         <h2 id="preview-heading">
-          {tr ? 'Önce birkaç sayfa.' : 'Start with a few pages.'}
+          {tr ? 'Okuma önizlemesi' : 'Reading preview'}
         </h2>
         <p>
           {tr
-            ? 'Anlatıcının sesiyle tanış, ilk sahnelerin peşinden git.'
-            : 'Meet the narrator’s voice and follow the opening scenes.'}
+            ? 'Türkçe ve İngilizce PDF önizlemesi.'
+            : 'PDF preview in Turkish and English.'}
         </p>
       </div>
       <div class="alamori-section-content">
@@ -229,11 +220,11 @@ const navigation = [
       >
         <div class="alamori-section-heading">
           <p class="eyebrow">03 / {tr ? 'Gelişmeler' : 'Updates'}</p>
-          <h2 id="updates-heading">{tr ? 'Yol boyunca.' : 'Along the way.'}</h2>
+          <h2 id="updates-heading">{tr ? 'Güncellemeler' : 'Updates'}</h2>
           <p>
             {tr
-              ? 'Hikâyeden ve yazım masasından seçilmiş kısa notlar.'
-              : 'Selected short notes from the story and the writing desk.'}
+              ? 'Önizleme ve metindeki güncellemeler.'
+              : 'Updates to the text and preview.'}
           </p>
         </div>
         <div class="alamori-section-content">
@@ -261,13 +252,11 @@ const navigation = [
       >
         <div class="alamori-section-heading">
           <p class="eyebrow">04 / {tr ? 'Yol haritası' : 'Roadmap'}</p>
-          <h2 id="roadmap-heading">
-            {tr ? 'Nerede, nereye?' : 'Where it is headed.'}
-          </h2>
+          <h2 id="roadmap-heading">{tr ? 'Yazım durumu' : 'Writing status'}</h2>
           <p>
             {tr
-              ? 'Yazımın bugünkü yönü. Bir takvim sözü değil, süreçten bir kesit.'
-              : 'The current direction of the writing. A view of the process rather than a promised schedule.'}
+              ? 'Tamamlanan, devam eden ve sıradaki işler.'
+              : 'Completed, ongoing and planned work.'}
           </p>
         </div>
         <div class="alamori-section-content">
@@ -295,15 +284,9 @@ const navigation = [
         aria-labelledby="journal-heading"
       >
         <div class="alamori-section-heading">
-          <p class="eyebrow">05 / {tr ? 'Yazım günlüğü' : 'Writing journal'}</p>
-          <h2 id="journal-heading">
-            {tr ? 'Sayfaların arkasında.' : 'Behind the pages.'}
-          </h2>
-          <p>
-            {tr
-              ? 'Nasıl yazıyorum, neyi yeniden düşünüyorum, neler oluyor?'
-              : 'How I write, what I am reconsidering, and what is happening.'}
-          </p>
+          <p class="eyebrow">05 / {tr ? 'Blog yazıları' : 'Blog posts'}</p>
+          <h2 id="journal-heading">{tr ? 'Blog yazıları' : 'Blog posts'}</h2>
+          <p>{tr ? 'Kitapla ilgili yazılar.' : 'Posts about the book.'}</p>
         </div>
         <div class="alamori-section-content alamori-articles">
           {alamori.articles.map((article) => (
@@ -325,7 +308,7 @@ const navigation = [
       aria-labelledby="feedback-heading"
     >
       <div>
-        <p class="eyebrow">{tr ? 'Okurdan yazara' : 'From reader to writer'}</p>
+        <p class="eyebrow">{tr ? 'İletişim' : 'Contact'}</p>
         <h2 id="feedback-heading">{alamori.feedback.title[lang]}</h2>
         <p>{alamori.feedback.description[lang]}</p>
       </div>
@@ -339,7 +322,7 @@ const navigation = [
         }
         rel="noopener noreferrer"
       >
-        {tr ? 'Bir okur notu gönder' : 'Send a reader note'}{' '}
+        {tr ? 'E-posta gönder' : 'Send an email'}{' '}
         <span aria-hidden="true">↗</span>
       </a>
     </section>
