@@ -1,6 +1,6 @@
 <script is:inline>
-  // A bounded, motion-aware paint veil prevents a flash of the book page.
-  // If the enhancement fails to load, the regular page is revealed automatically.
+  // Start only while the page is fresh; slow or missing JS leaves it readable.
+  // The controller fades the mirror in over the page, without an opaque boot veil.
   try {
     const navigation = performance.getEntriesByType('navigation')[0];
     if (
@@ -18,20 +18,3 @@
     /* Plain content remains available. */
   }
 </script>
-<style is:global>
-  html[data-alamori-entry='pending']::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    background: #78857ee8;
-    -webkit-backdrop-filter: blur(36px) saturate(0.15);
-    backdrop-filter: blur(36px) saturate(0.15);
-    pointer-events: none;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    html[data-alamori-entry='pending']::before {
-      display: none;
-    }
-  }
-</style>

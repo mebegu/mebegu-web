@@ -1,4 +1,5 @@
 ﻿const DURATION = 4400;
+const FADE_IN = 240;
 const smooth = (a: number, b: number, value: number) => {
   const p = Math.min(1, Math.max(0, (value - a) / (b - a)));
   return p * p * (3 - 2 * p);
@@ -202,6 +203,7 @@ export function initMirrorArrival(overlay: HTMLElement) {
         ? document.activeElement
         : null;
     resize();
+    overlay.style.opacity = '0';
     overlay.hidden = false;
     overlay.dataset.phase = 'glass';
     overlay.style.setProperty('--entry-collapse', '1');
@@ -242,7 +244,9 @@ export function initMirrorArrival(overlay: HTMLElement) {
           '--entry-ink-opacity',
           String(1 - smooth(0.51, 0.59, p)),
         );
-        overlay.style.opacity = String(1 - smooth(0.84, 1, p));
+        overlay.style.opacity = String(
+          smooth(0, FADE_IN / DURATION, p) * (1 - smooth(0.84, 1, p)),
+        );
         overlay.dataset.phase =
           p < 0.18
             ? 'glass'

@@ -1,5 +1,11 @@
 # Doğrulama
 
+## Alamori aynası hızlı fade-in — 23 Ekim 2026
+
+- Bir anda beliren başlangıç örtüsü kaldırıldı. Ayna ilk açılışta ve yeniden oynatmada sıfır opaklıktan 240 ms içinde belirir; toplam 4,4 saniyelik geçiş değişmez.
+- İzole Chrome: otomatik açılışta kademeli opaklık kareleri ve yaklaşık 240 ms fade-in doğrulandı; mobil yeniden oynatma sıfır opaklıkla başlar. Fade sırasında atlama odağı geri yükler; azaltılmış hareket doğrudan sayfayı açar. JavaScript modülü engellenirse sayfa görünür kalır. Çalışma zamanı hatası yok.
+- Astro check 82 dosyada sıfır hata/uyarı/ipucu; üretim çıktısı 35 HTML / 1027 yerel referans kontrolünü geçti.
+
 ## Alamori metin ve Blog temizliği — 23 Ekim 2026
 
 - Kaynak yayın revizyonu 3, `articles: []` ile iki üretilmiş yazıyı ve iki çevirisini importer üzerinden kaldırdı. Kaynağa gerçek ve yazar onaylı yazı olmadan örnek Blog metni üretilmemesi kuralı eklendi. Webdeki başlıklar, PDF yönlendirmeleri, tanıtım ve iletişim metni sadeleştirildi; slogan ve hayali yazım günlüğü kaldırıldı.
