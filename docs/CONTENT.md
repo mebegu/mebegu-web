@@ -53,15 +53,16 @@ Aynı klasöre `category: Atlantis` yazısı ekleyin. Yazı Atlantis sayfasında
 
 ## Alamori şablonu
 
-`src/components/pages/AlamoriPage.astro` iki dilde ortak kitap şablonudur. Kısa tanıtım, geçici tipografik kapak, PDF indirme alanı, geri bildirim önizlemesi ve yazım notları içerir. Kitabın konusu veya içeriği uydurulmadı; Atlantis ile aynı eser olduğu varsayılmaz.
+`src/components/pages/AlamoriPage.astro` iki dilde ortak kitap vitrini. Gerçek kapak, spoiler içermeyen tanıtım, ilk 20 sayfanın Türkçe/İngilizce PDF önizlemesi, yazım durumu, seçilmiş güncellemeler, yol haritası, Blog yazıları ve okur notu bağlantısı içerir. Para toplama veya mesaj saklama formu yoktur.
 
-`src/data/alamori.ts` içinde:
+`src/data/alamori.ts`, şemadan doğrulanan `src/data/alamori.json` public snapshot'ını yükler. İçeriğin otoritesi kitap reposundaki ayrı yayın paketidir; web reposu private kaynağı okumaz. Kitap reposu isteğe bağlı CI ile yalnız seçilmiş JSON, kapaklar ve kısıtlı PDF'leri bu repoya gönderir. Blog yazıları da paketteki açıkça seçilen paragraflardan üretilebilir.
 
-- `synopsis`: gerçek tanıtım için `{ tr: '…', en: '…' }`; boşsa açık placeholder metni.
-- `pdfPath`: `public/` altındaki gerçek dosyanın yolu, örneğin `books/alamori.pdf`. Baştaki `public/` yazılmaz. `null` iken indirme düğmesi pasiftir; dosya eklenince repo alt yolunu kullanan yerel indirme bağlantısı oluşur.
-- `feedbackUrl`: ileride bağlanacak gerçek geri bildirim sayfasının adresi. `null` iken alanlar devre dışıdır; veri gönderilmez veya kaydedilmez. URL eklendiğinde önizlemenin yerini bağlantı alır. Bu aşamada mesaj saklayan bir backend kurulmadı.
+- `synopsis`, `statusNote`, `currentFocus`, `updates` ve `roadmap`: yalnız public olarak seçilen iki dilli içerik.
+- `covers` ve `previews`: importer tarafından hash'li yerel yollara dönüştürülen seçili dosyalar. Önizleme sayfa sayısı kapak ve açılış sayfalarını da içerir.
+- `articles`: public Blog referansları veya kaynak paketten üretilen iki dilli yazılar; üretilmiş dosyalar elle düzenlenmez.
+- `feedback`: gerçek okur iletişim bağlantısı; backend veya gönderim formu oluşturmaz.
 
-Son görsel tasarım daha sonra bu iskelet üzerinde ayrıca yapılacak.
+Ayrıntılar ve gizlilik sınırı: [Alamori yayın rehberi](ALAMORI-PUBLICATION.md).
 
 ## Projeler
 

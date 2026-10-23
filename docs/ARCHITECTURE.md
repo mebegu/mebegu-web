@@ -42,6 +42,8 @@ Atölye için ek akış: `private proje CI → açıkça public JSON + referansl
 
 Cep Arşivi, Atölye'deki ilk çalışan araçtır. İki dildeki `/tools/pocket-archive/` rotaları ortak `PocketArchivePage.astro` bileşenini kullanır. `src/lib/pocket-archive.ts`, yalnız tarayıcıda bağlantı/not/etiket ve okuma durumunu yönetir; kayıtlar sürümlü bir localStorage anahtarında tutulur ve JSON olarak indirilebilir. Sunucu veya hesap servisi yoktur. Projenin tanıtım kaydı yine ortak JSON yayın akışından gelir.
 
+Alamori akışı: `kitap reposunun isteğe bağlı yayını → allowlist JSON + seçili kapaklar + kısıtlı PDF → tek public commit → Pages`. `src/data/alamori.json` bir public snapshot'tır; sayfanın içerik kaynağı kitap reposudur. Blog yazıları da public paketteki düz metin paragraflarından üretilebilir. Web sitesi private kaynağı sorgulamaz ve onun erişim anahtarını taşımaz. [Alamori yayın sınırı ve kurulum](ALAMORI-PUBLICATION.md).
+
 `draft: true` içerik koleksiyonda bulunabilir fakat katalogda veya detay route’unda yayımlanmaz. Katalog, `catalog` metaverisi taşıyan özgün yazıları `translationKey` üzerinden eşleştirir; arayüz dilinde sürüm varsa onu, yoksa özgün dildeki yazıyı gösterir. Makale route’ları kendi `lang` değerindeki içerikleri çeker. Atlantis sayfası ayrıca `category: Atlantis` filtresini kullanır. Şimdilik geleceğe tarihli yazılar otomatik planlanmaz: `draft: false` ise build sırasında yayımlanır. RSS route’ları, keşif bağlantıları ve bağımlılığı kaldırılmıştır.
 
 ## Dil stratejisi

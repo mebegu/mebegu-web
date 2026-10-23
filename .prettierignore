@@ -4,3 +4,4 @@ dist/
 pnpm-lock.yaml
 reports/
 research_notes/
+src/content/writing/alamori-*.md

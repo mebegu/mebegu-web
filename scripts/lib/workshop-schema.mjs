@@ -1,11 +1,20 @@
 import schema from '../../schemas/workshop-publication.schema.json' with { type: 'json' };
 
 // Only the keywords used by our versioned, local schema are interpreted.
-function inspect(value, rule, at) {
+function inspect(value, rule, at, definitions = schema.$defs) {
   if (rule.$ref)
-    return inspect(value, schema.$defs[rule.$ref.split('/').at(-1)], at);
+    return inspect(
+      value,
+      definitions[rule.$ref.split('/').at(-1)],
+      at,
+      definitions,
+    );
   if (rule.anyOf) {
-    if (!rule.anyOf.some((option) => inspect(value, option, at).length === 0))
+    if (
+      !rule.anyOf.some(
+        (option) => inspect(value, option, at, definitions).length === 0,
+      )
+    )
       return [`${at}: invalid shape`];
     return [];
   }
@@ -33,14 +42,17 @@ function inspect(value, rule, at) {
     for (const [key, item] of Object.entries(value)) {
       if (!Object.hasOwn(rule.properties || {}, key))
         errors.push(`${at}: unknown field`);
-      else errors.push(...inspect(item, rule.properties[key], `${at}.${key}`));
+      else
+        errors.push(
+          ...inspect(item, rule.properties[key], `${at}.${key}`, definitions),
+        );
     }
   }
   if (Array.isArray(value) && rule.items) {
     if (rule.maxItems !== undefined && value.length > rule.maxItems)
       errors.push(`${at}: too many items`);
     value.forEach((item, index) =>
-      errors.push(...inspect(item, rule.items, `${at}[${index}]`)),
+      errors.push(...inspect(item, rule.items, `${at}[${index}]`, definitions)),
     );
   }
   if (typeof value === 'string') {
@@ -66,7 +78,7 @@ function inspect(value, rule, at) {
   return errors;
 }
 
-function publicLink(value, at) {
+export function publicLink(value, at) {
   if (value === null) return;
   if (typeof value === 'object') {
     publicLink(value.tr, `${at}.tr`);
@@ -94,6 +106,12 @@ function publicLink(value, at) {
   )
     return;
   throw Error(`${at}: use a public HTTP(S), mailto or site-relative URL`);
+}
+
+export function validateShape(value, rule) {
+  const errors = inspect(value, rule, 'publication', rule.$defs);
+  if (errors.length) throw Error(errors.slice(0, 8).join('\n'));
+  return value;
 }
 
 export function validatePublication(value) {

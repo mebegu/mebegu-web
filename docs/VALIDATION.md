@@ -1,5 +1,13 @@
 # Doğrulama
 
+## Alamori kitap vitrini ve kaynak kontrollü yayın — 23 Ekim 2026
+
+- Eski pasif şablon; gerçek kapak, spoiler içermeyen tanıtım, yazım durumu, iki dilde ilk 20 sayfalık PDF, güncellemeler, yol haritası, iki Blog yazısı ve gerçek okur iletişim bağlantısıyla değiştirildi. Para toplama veya backend formu yok.
+- İçerik şeması bilinmeyen alanları reddeder; importer yalnız seçili public JSON, referanslı kapak/PDF ve sahiplik işaretli Blog metinlerini yazar. Private depo URL'si, kaynak dosyalar veya commit kimliği public snapshot'a eklenmedi. Normal kitap düzeninden üretilen önizlemeler yeni PDF belgesine yalnız ilk 20 sayfa alınarak temizlendi; kaynak metadata, notlar, ekler ve belge yapıları taşınmadı.
+- Kaynakta yalnız manuel çalışan, 20 sayfa varsayılanlı yayın işi ve web reposuna özel deploy key bağlantısı hazırlandı. Kaynak testleri; seçilmeyen sayfa/ek/metadata sentinel'lerinin taşınmadığını, sayfa sınırlarını ve deterministik PDF temizlemeyi doğruladı. Her iki PDF'in kapak, iç sayfa ve 20. sayfası render edilip incelendi.
+- Web testleri: 28/28. Astro: 78 dosyada sıfır hata/uyarı/ipucu. Çıktı: 39 HTML / 1135 yerel referans; eski blog metni ve banner kontrolleri geçti. Public snapshot, dört hash'li varlık ve dört üretilmiş Blog dosyası doğrulandı.
+- İzole Chrome: TR 320/390 ve EN 1280 pikselde kapak yükleniyor, iki gerçek PDF indirme ve iki ilgili Blog hedefi açılıyor; üç yol haritası durumu, sayfa içi navigasyon, boş/fake form bulunmaması ve yatay taşma olmaması doğrulandı. Çalışma zamanı hatası yok.
+
 ## Cep Arşivi ve görsel önizlemeli galeri — 23 Ekim 2026
 
 - Empty Page ve boş beyaz medya kaldırıldı. Tek proje artık çalışan Cep Arşivi: bağlantı/not/etiket ekleme, metin araması, okunacak/okunmuş filtreleri, okuma durumu, kaldırma, yerel tarayıcı kaydı ve JSON indirme içerir. İki dilde araç sayfası ve ilgili yapım yazısı vardır; proje metinleri bu işlevleri ve mevcut sınırlarını anlatır.

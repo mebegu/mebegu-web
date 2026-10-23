@@ -49,6 +49,10 @@ jobs:
         run: pnpm test:workshop
       - name: Validate imported Workshop records and media
         run: pnpm check:workshop
+      - name: Check book publication boundaries
+        run: pnpm test:alamori
+      - name: Validate Alamori public content and previews
+        run: pnpm check:alamori
       - name: Check Astro and TypeScript
         run: pnpm check
       - name: Configure Pages

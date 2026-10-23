@@ -1,479 +1,334 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { type Lang } from '../../lib/i18n';
+import type { Lang } from '../../lib/i18n';
 import { href } from '../../lib/urls';
-import { site } from '../../data/site';
+import { projectUrl, projectExternal } from '../../lib/project-content';
+import { formatPostDate } from '../../lib/post-dates';
 import { alamori } from '../../data/alamori';
+import '../../styles/alamori.css';
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const tr = lang === 'tr';
-const text = tr
+const cover = alamori.covers[lang];
+const preview =
+  alamori.previews.find((item) => item.language === lang) ??
+  alamori.previews[0];
+const states: Record<string, string> = tr
   ? {
-      eyebrow: 'Bir hikâyenin izinde',
-      intro: 'Yazdığım hikâyeye açılan bir kapı.',
-      template: 'Sayfa taslağı',
-      cover: 'Geçici kapak',
-      about: 'Hikâye hakkında',
-      aboutPlaceholder:
-        'Alamori’nin kısa tanıtımı burada yer alacak. Hikâyenin dünyasını ve çıkış noktasını, sürprizlerini bozmadan anlatan birkaç paragraf.',
-      aboutNote:
-        'Tanıtım metni ve kitaptan paylaşılacak parçalar henüz eklenmedi.',
-      read: 'Kitabı oku',
-      readIntro:
-        'Paylaşıma hazır metin eklendiğinde PDF dosyasını buradan indirebilirsin.',
-      download: 'PDF’yi indir',
-      pdfPending: 'PDF henüz eklenmedi.',
-      feedback: 'Geri bildirim',
-      feedbackIntro:
-        'Hikâye hakkında düşüncelerin, soruların ve dikkatini çeken detaylar için bir alan.',
-      feedbackPending:
-        'Bu form şimdilik bir önizleme. Mesaj gönderilmez veya kaydedilmez.',
-      feedbackLink: 'Geri bildirim bırak',
-      name: 'Adın (isteğe bağlı)',
-      message: 'Düşüncelerin',
-      messagePlaceholder: 'Hikâyede aklında kalan ne oldu?',
-      send: 'Geri bildirim gönder',
-      notes: 'Yazım notları',
-      notesText:
-        'Yeni bölümler ve yazma sürecinden kısa güncellemeler zamanla burada yer alacak.',
+      writing: 'Yazım sürüyor',
+      revising: 'Yeniden yazım',
+      editing: 'Düzenleme',
+      completed: 'Tamamlandı',
+      paused: 'Ara verildi',
     }
   : {
-      eyebrow: 'Following a story',
-      intro: 'A doorway into the story I am writing.',
-      template: 'Page draft',
-      cover: 'Placeholder cover',
-      about: 'About the story',
-      aboutPlaceholder:
-        'A short introduction to Alamori will live here. A few paragraphs about its world and the idea behind it, without spoiling the story.',
-      aboutNote:
-        'The introduction and excerpts from the book have not been added yet.',
-      read: 'Read the book',
-      readIntro:
-        'Once a text is ready to share, you will be able to download its PDF here.',
-      download: 'Download PDF',
-      pdfPending: 'No PDF has been added yet.',
-      feedback: 'Feedback',
-      feedbackIntro:
-        'A place for your thoughts, questions, and the details that caught your attention.',
-      feedbackPending:
-        'This form is a preview for now. No message is sent or saved.',
-      feedbackLink: 'Leave feedback',
-      name: 'Your name (optional)',
-      message: 'Your thoughts',
-      messagePlaceholder: 'What stayed with you from the story?',
-      send: 'Send feedback',
-      notes: 'Writing notes',
-      notesText:
-        'New chapters and short updates from the writing process will find a home here over time.',
+      writing: 'Writing in progress',
+      revising: 'Revising',
+      editing: 'Editing',
+      completed: 'Completed',
+      paused: 'On hold',
     };
+const roadmapStates: Record<string, string> = tr
+  ? { done: 'Tamamlandı', current: 'Şu an', next: 'Sırada' }
+  : { done: 'Done', current: 'Now', next: 'Next' };
+const navigation = [
+  ['story', tr ? 'Hikâye' : 'The story'],
+  ['preview', tr ? 'Önizleme' : 'Preview'],
+  ...(alamori.updates.length
+    ? [['updates', tr ? 'Güncellemeler' : 'Updates']]
+    : []),
+  ...(alamori.roadmap.length
+    ? [['roadmap', tr ? 'Yol haritası' : 'Roadmap']]
+    : []),
+  ...(alamori.articles.length
+    ? [['journal', tr ? 'Yazım günlüğü' : 'Writing journal']]
+    : []),
+];
 ---
 
 <BaseLayout
   title="Alamori"
   lang={lang}
-  description={
-    tr
-      ? 'Alamori — Mehmet Berk Gürçay’ın hikâyesi.'
-      : 'Alamori — a story by Mehmet Berk Gürçay.'
-  }
+  bodyClass="alamori-body"
+  description={alamori.tagline[lang]}
 >
   <div class="alamori-page">
-    <header class="alamori-hero">
-      <div class="alamori-introduction">
-        <p class="eyebrow">{text.eyebrow}</p>
-        <h1>
-          Alamori<span class="accent">.</span>
-        </h1>
-        <p class="alamori-author">{site.name}</p>
-        <p class="lead">{text.intro}</p>
-        <nav
-          class="alamori-jumps"
-          aria-label={tr ? 'Bu sayfada' : 'On this page'}
-        >
-          <a href="#story">
-            {text.about} <span aria-hidden="true">↓</span>
-          </a>
-          <a href="#download">
-            PDF <span aria-hidden="true">↓</span>
-          </a>
-          <a href="#feedback">
-            {text.feedback} <span aria-hidden="true">↓</span>
-          </a>
-        </nav>
-      </div>
-      <figure class="alamori-cover-preview">
-        <div class="alamori-cover" aria-hidden="true">
-          <span class="cover-small">{site.name}</span>
-          <span class="cover-orbit"></span>
-          <span class="cover-title">Alamori</span>
-          <span class="cover-small">{text.template}</span>
-        </div>
-        <figcaption>{text.cover}</figcaption>
-      </figure>
-    </header>
-
-    <section id="story" class="alamori-section" aria-labelledby="story-heading">
+    <header class="alamori-heading">
       <div>
+        <p class="eyebrow">
+          {tr ? 'Bir romanın yolculuğu' : 'The making of a novel'}
+        </p>
+        <h1>
+          Alamori<span>.</span>
+        </h1>
+        <p class="alamori-subtitle">{alamori.subtitle[lang]}</p>
+      </div>
+      <p class="alamori-byline">
+        {alamori.author}
+        <span>{alamori.genres.map((genre) => genre[lang]).join(' · ')}</span>
+      </p>
+    </header>
+    <div class="alamori-hero">
+      <figure class="alamori-cover-stage">
+        <img
+          src={href(cover.src)}
+          alt={cover.alt[lang]}
+          width={cover.width}
+          height={cover.height}
+          fetchpriority="high"
+        />
+        <figcaption>
+          {tr
+            ? 'Hikâyeye açılan ilk kapı'
+            : 'Your first doorway into the story'}
+        </figcaption>
+      </figure>
+      <aside
+        class="alamori-project-card"
+        aria-label={
+          tr ? 'Kitabın durumu ve önizleme' : 'Book status and preview'
+        }
+      >
+        <p class={`alamori-status status-${alamori.status}`}>
+          <span aria-hidden="true"></span>
+          {states[alamori.status]}
+        </p>
+        <h2>{alamori.tagline[lang]}</h2>
+        <p>{alamori.statusNote[lang]}</p>
+        {preview && (
+          <div class="alamori-hero-download">
+            <a
+              class="alamori-button"
+              href={href(preview.src)}
+              download={`Alamori-${preview.language}-preview.pdf`}
+            >
+              {tr
+                ? `İlk ${preview.pages} sayfayı oku`
+                : `Read the first ${preview.pages} pages`}{' '}
+              <span aria-hidden="true">↓</span>
+            </a>
+            <span>
+              {preview.language === 'tr' ? 'Türkçe' : 'English'} · PDF ·{' '}
+              {tr ? 'Ücretsiz önizleme' : 'Free reading preview'}
+            </span>
+          </div>
+        )}
+        <div class="alamori-current">
+          <span>{tr ? 'Yazım masasında' : 'On the writing desk'}</span>
+          <p>{alamori.currentFocus[lang]}</p>
+        </div>
+        <p class="alamori-last-updated">
+          {tr ? 'Son not' : 'Last update'}{' '}
+          <time datetime={alamori.updatedAt}>
+            {formatPostDate(alamori.updatedAt, lang)}
+          </time>
+        </p>
+      </aside>
+    </div>
+    <nav
+      class="alamori-navigation"
+      aria-label={tr ? 'Bu sayfada' : 'On this page'}
+    >
+      {navigation.map(([id, label]) => (
+        <a href={`#${id}`}>{label}</a>
+      ))}
+    </nav>
+    <section id="story" class="alamori-section" aria-labelledby="story-heading">
+      <div class="alamori-section-heading">
         <p class="eyebrow">01 / {tr ? 'Hikâye' : 'The story'}</p>
         <h2 id="story-heading">
-          {text.about}
-          <span class="accent">.</span>
+          {tr ? 'Bir kitapla başlar.' : 'It begins with a book.'}
         </h2>
       </div>
-      <div class="alamori-copy">
-        <p>{alamori.synopsis?.[lang] ?? text.aboutPlaceholder}</p>
-        {!alamori.synopsis && <p class="alamori-note">{text.aboutNote}</p>}
+      <div class="alamori-section-content alamori-story-copy">
+        {alamori.synopsis.map((paragraph) => (
+          <p>{paragraph[lang]}</p>
+        ))}
+        <dl class="alamori-facts">
+          {alamori.facts?.map((fact) => (
+            <div>
+              <dt>{fact.label[lang]}</dt>
+              <dd>{fact.value[lang]}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
-
     <section
-      id="download"
+      id="preview"
       class="alamori-section"
-      aria-labelledby="download-heading"
+      aria-labelledby="preview-heading"
     >
-      <div>
-        <p class="eyebrow">02 / PDF</p>
-        <h2 id="download-heading">
-          {text.read}
-          <span class="accent">.</span>
+      <div class="alamori-section-heading">
+        <p class="eyebrow">02 / {tr ? 'İçeri bir bakış' : 'A look inside'}</p>
+        <h2 id="preview-heading">
+          {tr ? 'Önce birkaç sayfa.' : 'Start with a few pages.'}
         </h2>
+        <p>
+          {tr
+            ? 'Anlatıcının sesiyle tanış, ilk sahnelerin peşinden git.'
+            : 'Meet the narrator’s voice and follow the opening scenes.'}
+        </p>
       </div>
-      <div class="alamori-copy">
-        <p>{text.readIntro}</p>
-        {alamori.pdfPath ? (
-          <a
-            class="alamori-button"
-            href={href(alamori.pdfPath)}
-            download="Alamori.pdf"
-          >
-            {text.download}
-            <span aria-hidden="true">↓</span>
-          </a>
+      <div class="alamori-section-content">
+        {alamori.previews.length ? (
+          <div class="alamori-previews">
+            {alamori.previews.map((item) => (
+              <a
+                class="alamori-preview-card"
+                href={href(item.src)}
+                download={`Alamori-${item.language}-preview.pdf`}
+              >
+                <span class="alamori-preview-icon" aria-hidden="true">
+                  ↙
+                </span>
+                <div>
+                  <h3>{item.language === 'tr' ? 'Türkçe' : 'English'}</h3>
+                  <p>
+                    {item.pages} {tr ? 'sayfa' : 'pages'} · PDF
+                  </p>
+                  <span>{tr ? 'Önizlemeyi indir' : 'Download preview'}</span>
+                </div>
+              </a>
+            ))}
+          </div>
         ) : (
-          <>
-            <button
-              class="alamori-button"
-              type="button"
-              disabled
-              aria-describedby="pdf-status"
-            >
-              {text.download}
-              <span aria-hidden="true">↓</span>
-            </button>
-            <p id="pdf-status" class="alamori-note">
-              {text.pdfPending}
-            </p>
-          </>
+          <p>
+            {tr
+              ? 'Okuma önizlemesi hazırlanıyor. Yeni dosya burada yerini alacak.'
+              : 'The reading preview is being prepared. The next file will appear here.'}
+          </p>
         )}
+        <p class="alamori-small-note">
+          {tr
+            ? 'Kapak ve açılış sayfaları önizlemeye dahildir. Metin yazım sürecinde değişebilir.'
+            : 'The preview includes the cover and opening pages. The text may change during writing.'}
+        </p>
       </div>
     </section>
-
+    {!!alamori.updates.length && (
+      <section
+        id="updates"
+        class="alamori-section"
+        aria-labelledby="updates-heading"
+      >
+        <div class="alamori-section-heading">
+          <p class="eyebrow">03 / {tr ? 'Gelişmeler' : 'Updates'}</p>
+          <h2 id="updates-heading">{tr ? 'Yol boyunca.' : 'Along the way.'}</h2>
+          <p>
+            {tr
+              ? 'Hikâyeden ve yazım masasından seçilmiş kısa notlar.'
+              : 'Selected short notes from the story and the writing desk.'}
+          </p>
+        </div>
+        <div class="alamori-section-content">
+          <ol class="alamori-updates">
+            {[...alamori.updates]
+              .sort((a, b) => b.date.localeCompare(a.date))
+              .map((update) => (
+                <li>
+                  <time datetime={update.date}>
+                    {formatPostDate(update.date, lang)}
+                  </time>
+                  <h3>{update.title[lang]}</h3>
+                  <p>{update.body[lang]}</p>
+                </li>
+              ))}
+          </ol>
+        </div>
+      </section>
+    )}
+    {!!alamori.roadmap.length && (
+      <section
+        id="roadmap"
+        class="alamori-section"
+        aria-labelledby="roadmap-heading"
+      >
+        <div class="alamori-section-heading">
+          <p class="eyebrow">04 / {tr ? 'Yol haritası' : 'Roadmap'}</p>
+          <h2 id="roadmap-heading">
+            {tr ? 'Nerede, nereye?' : 'Where it is headed.'}
+          </h2>
+          <p>
+            {tr
+              ? 'Yazımın bugünkü yönü. Bir takvim sözü değil, süreçten bir kesit.'
+              : 'The current direction of the writing. A view of the process rather than a promised schedule.'}
+          </p>
+        </div>
+        <div class="alamori-section-content">
+          <ol class="alamori-roadmap">
+            {alamori.roadmap.map((step) => (
+              <li class={`roadmap-${step.state}`}>
+                <span class="alamori-roadmap-dot" aria-hidden="true"></span>
+                <div>
+                  <span class="alamori-roadmap-state">
+                    {roadmapStates[step.state]}
+                  </span>
+                  <h3>{step.title[lang]}</h3>
+                  <p>{step.body[lang]}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+    )}
+    {!!alamori.articles.length && (
+      <section
+        id="journal"
+        class="alamori-section"
+        aria-labelledby="journal-heading"
+      >
+        <div class="alamori-section-heading">
+          <p class="eyebrow">05 / {tr ? 'Yazım günlüğü' : 'Writing journal'}</p>
+          <h2 id="journal-heading">
+            {tr ? 'Sayfaların arkasında.' : 'Behind the pages.'}
+          </h2>
+          <p>
+            {tr
+              ? 'Nasıl yazıyorum, neyi yeniden düşünüyorum, neler oluyor?'
+              : 'How I write, what I am reconsidering, and what is happening.'}
+          </p>
+        </div>
+        <div class="alamori-section-content alamori-articles">
+          {alamori.articles.map((article) => (
+            <a href={projectUrl(article.url, lang)!}>
+              <span>
+                {tr ? 'Blog’dan' : 'From the blog'}{' '}
+                <span aria-hidden="true">↗</span>
+              </span>
+              <h3>{article.title[lang]}</h3>
+              <p>{article.summary[lang]}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
     <section
       id="feedback"
-      class="alamori-section"
+      class="alamori-reader-note"
       aria-labelledby="feedback-heading"
     >
       <div>
-        <p class="eyebrow">03 / {tr ? 'Okur notları' : 'Reader notes'}</p>
-        <h2 id="feedback-heading">
-          {text.feedback}
-          <span class="accent">.</span>
-        </h2>
-        <p class="alamori-note">{text.feedbackIntro}</p>
+        <p class="eyebrow">{tr ? 'Okurdan yazara' : 'From reader to writer'}</p>
+        <h2 id="feedback-heading">{alamori.feedback.title[lang]}</h2>
+        <p>{alamori.feedback.description[lang]}</p>
       </div>
-      <div class="alamori-copy">
-        {alamori.feedbackUrl ? (
-          <a class="alamori-button" href={alamori.feedbackUrl}>
-            {text.feedbackLink}
-            <span aria-hidden="true">↗</span>
-          </a>
-        ) : (
-          <>
-            <p class="alamori-feedback-status" id="feedback-status">
-              {text.feedbackPending}
-            </p>
-            <fieldset
-              class="alamori-feedback-preview"
-              disabled
-              aria-describedby="feedback-status"
-            >
-              <legend class="sr-only">{text.feedback}</legend>
-              <label for="reader-name">{text.name}</label>
-              <input id="reader-name" type="text" autocomplete="off" />
-              <label for="reader-message">{text.message}</label>
-              <textarea
-                id="reader-message"
-                rows="4"
-                placeholder={text.messagePlaceholder}
-              ></textarea>
-              <button class="alamori-button" type="button" disabled>
-                {text.send}
-                <span aria-hidden="true">↗</span>
-              </button>
-            </fieldset>
-          </>
-        )}
-      </div>
-    </section>
-    <section
-      class="alamori-writing-notes"
-      aria-labelledby="writing-notes-heading"
-    >
-      <p class="eyebrow">{text.notes}</p>
-      <h2 id="writing-notes-heading">
-        {tr ? 'Yol boyunca' : 'Along the way'}
-        <span class="accent">.</span>
-      </h2>
-      <p>{text.notesText}</p>
+      <a
+        class="alamori-button alamori-button-secondary"
+        href={projectUrl(alamori.feedback.url, lang)!}
+        target={
+          projectExternal(projectUrl(alamori.feedback.url, lang)!)
+            ? '_blank'
+            : undefined
+        }
+        rel="noopener noreferrer"
+      >
+        {tr ? 'Bir okur notu gönder' : 'Send a reader note'}{' '}
+        <span aria-hidden="true">↗</span>
+      </a>
     </section>
   </div>
 </BaseLayout>
-
-<style>
-  .alamori-page {
-    max-width: 1080px;
-    margin-inline: auto;
-  }
-  .alamori-hero {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    align-items: center;
-    gap: 60px;
-    padding: 76px 0 70px;
-  }
-  .alamori-introduction h1 {
-    font:
-      400 clamp(68px, 8vw, 112px)/1.05 Georgia,
-      serif;
-    letter-spacing: -0.05em;
-    margin-bottom: 16px;
-  }
-  .alamori-author {
-    color: #c9b18d;
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    margin-bottom: 26px;
-  }
-  .alamori-introduction .lead {
-    font-size: 20px;
-    max-width: 390px;
-  }
-  .alamori-jumps {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 25px;
-    margin-top: 28px;
-  }
-  .alamori-jumps a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    gap: 12px;
-    font-size: 12px;
-    color: var(--muted);
-  }
-  .alamori-jumps a:hover,
-  .alamori-jumps a span {
-    color: var(--accent);
-  }
-  .alamori-cover-preview {
-    margin: 0;
-    justify-self: center;
-    width: min(100%, 240px);
-  }
-  .alamori-cover {
-    position: relative;
-    isolation: isolate;
-    aspect-ratio: 2/3;
-    padding: 30px 22px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    background: #273331;
-    color: #e2d6bf;
-    border: 1px solid #7f8b7555;
-    box-shadow: 12px 18px 36px #0003;
-  }
-  .alamori-cover::before {
-    content: '';
-    position: absolute;
-    inset: 13px;
-    border: 1px solid #c5b68b40;
-    z-index: -1;
-  }
-  .cover-title {
-    font:
-      400 41px/1.2 Georgia,
-      serif;
-    letter-spacing: 0.025em;
-  }
-  .cover-small {
-    max-width: 100%;
-    text-align: center;
-    font-size: 9px;
-    letter-spacing: 0.1em;
-  }
-  .cover-orbit {
-    position: absolute;
-    z-index: -1;
-    width: 160px;
-    height: 230px;
-    border: 1px solid #c5b68b40;
-    border-radius: 50%;
-    top: 65px;
-    transform: rotate(-24deg);
-  }
-  .alamori-cover-preview figcaption {
-    text-align: center;
-    color: var(--subtle);
-    font-size: 10px;
-    margin-top: 15px;
-  }
-  .alamori-section {
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 60px;
-    padding: 58px 0;
-    border-top: 1px solid var(--line);
-  }
-  .alamori-section .eyebrow {
-    font-size: 10px;
-    margin-bottom: 18px;
-  }
-  .alamori-section h2,
-  .alamori-writing-notes h2 {
-    font-size: 34px;
-    line-height: 1.15;
-    margin-bottom: 18px;
-  }
-  .alamori-copy {
-    color: #bdc5c0;
-    font-size: 16px;
-    line-height: 1.85;
-  }
-  .alamori-note {
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 1.8;
-    max-width: 460px;
-  }
-  .alamori-copy .alamori-note {
-    margin: 15px 0 0;
-  }
-  .alamori-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 46px;
-    padding: 10px 17px;
-    gap: 35px;
-    border: 1px solid #c9b18d88;
-    background: #c9b18d0b;
-    color: #e0c59e;
-    border-radius: 3px;
-    font-size: 13px;
-  }
-  .alamori-button:disabled {
-    border-color: #69716d;
-    color: #a0a9a4;
-    background: #ffffff04;
-    cursor: default;
-  }
-  .alamori-button:hover:not(:disabled) {
-    background: #c9b18d18;
-  }
-  .alamori-feedback-status {
-    font-size: 12px;
-    color: #b4bba9;
-    padding: 10px 13px;
-    border-left: 2px solid #b4bba955;
-    background: #b4bba908;
-    margin-bottom: 24px;
-  }
-  .alamori-feedback-preview {
-    padding: 0;
-    border: 0;
-    margin: 0;
-    min-width: 0;
-  }
-  .alamori-feedback-preview label {
-    display: block;
-    color: #acb6af;
-    font-size: 12px;
-    margin: 18px 0 8px;
-  }
-  .alamori-feedback-preview input,
-  .alamori-feedback-preview textarea {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    background: #191f1e;
-    border: 1px solid #515a5480;
-    border-radius: 3px;
-    color: #aeb8b1;
-    font: 13px/1.6 var(--font);
-    opacity: 1;
-  }
-  .alamori-feedback-preview textarea {
-    resize: none;
-    margin-bottom: 20px;
-  }
-  .alamori-feedback-preview textarea::placeholder {
-    color: #89978e;
-  }
-  .alamori-writing-notes {
-    padding: 45px 0 60px;
-    border-top: 1px solid var(--line);
-  }
-  .alamori-writing-notes .eyebrow {
-    font-size: 10px;
-    margin-bottom: 17px;
-  }
-  .alamori-writing-notes > p:last-child {
-    font-size: 14px;
-    color: var(--muted);
-    max-width: 520px;
-  }
-  @media (max-width: 700px) {
-    .alamori-hero {
-      gap: 30px;
-      padding: 45px 0;
-      grid-template-columns: 1fr;
-    }
-    .alamori-introduction h1 {
-      font-size: clamp(68px, 16vw, 95px);
-    }
-    .alamori-cover-preview {
-      width: 180px;
-    }
-    .alamori-cover {
-      padding: 25px 18px;
-    }
-    .cover-title {
-      font-size: 32px;
-    }
-    .cover-small {
-      font-size: 8px;
-    }
-    .cover-orbit {
-      width: 120px;
-      height: 180px;
-      top: 44px;
-    }
-    .alamori-section {
-      grid-template-columns: 1fr;
-      gap: 14px;
-      padding-block: 38px;
-    }
-    .alamori-section h2 {
-      font-size: 31px;
-    }
-    .alamori-copy {
-      font-size: 15px;
-    }
-  }
-</style>

@@ -16,7 +16,9 @@
     "test:carousel": "node --test scripts/test-blog-banner.mjs",
     "test:workshop": "node --test scripts/test-workshop.mjs",
     "check:workshop": "node scripts/check-workshop.mjs",
-    "validate": "node --test scripts/test-blog-banner.mjs scripts/test-workshop.mjs && node scripts/check-workshop.mjs && astro check && astro build && node scripts/check-output.mjs && node scripts/check-blog-publication.mjs",
+    "test:alamori": "node --test scripts/test-alamori.mjs",
+    "check:alamori": "node scripts/check-alamori.mjs",
+    "validate": "node --test scripts/test-blog-banner.mjs scripts/test-workshop.mjs scripts/test-alamori.mjs && node scripts/check-workshop.mjs && node scripts/check-alamori.mjs && astro check && astro build && node scripts/check-output.mjs && node scripts/check-blog-publication.mjs",
     "format": "prettier --write src docs scripts README.md"
   },
   "dependencies": {

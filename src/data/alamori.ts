@@ -1,12 +1,6 @@
-import type { Lang } from '../lib/i18n';
+import record from './alamori.json';
+import { validateAlamori } from '../../scripts/lib/alamori-bundle.mjs';
 
-/** Fill these when the book content is ready. Paths are relative to public/. */
-export const alamori: {
-  synopsis: Record<Lang, string> | null;
-  pdfPath: string | null;
-  feedbackUrl: string | null;
-} = {
-  synopsis: null,
-  pdfPath: null,
-  feedbackUrl: null,
-};
+// This is a public build snapshot. Its source of truth is the book's publication package.
+validateAlamori(record);
+export const alamori = record.book;

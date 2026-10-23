@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Alamori public page publication",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "publish", "revision", "book"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "publish": { "type": "boolean" },
+    "revision": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "book": { "$ref": "#/$defs/book" }
+  },
+  "$defs": {
+    "text": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "localized": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tr", "en"],
+      "properties": {
+        "tr": { "$ref": "#/$defs/text" },
+        "en": { "$ref": "#/$defs/text" }
+      }
+    },
+    "image": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["src", "alt", "width", "height"],
+      "properties": {
+        "src": { "$ref": "#/$defs/text" },
+        "alt": { "$ref": "#/$defs/localized" },
+        "width": { "type": "integer", "minimum": 1, "maximum": 10000 },
+        "height": { "type": "integer", "minimum": 1, "maximum": 10000 }
+      }
+    },
+    "preview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["language", "pages", "src", "updatedAt"],
+      "properties": {
+        "language": { "enum": ["tr", "en"] },
+        "pages": { "type": "integer", "minimum": 1, "maximum": 50 },
+        "src": { "$ref": "#/$defs/text" },
+        "updatedAt": { "type": "string", "format": "date" }
+      }
+    },
+    "post": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "published", "paragraphs"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^alamori-[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "published": { "type": "string", "format": "date" },
+        "paragraphs": {
+          "type": "array",
+          "maxItems": 30,
+          "items": { "$ref": "#/$defs/localized" }
+        }
+      }
+    },
+    "book": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "subtitle",
+        "author",
+        "tagline",
+        "synopsis",
+        "genres",
+        "status",
+        "statusNote",
+        "currentFocus",
+        "updatedAt",
+        "covers",
+        "previews",
+        "updates",
+        "roadmap",
+        "articles",
+        "feedback"
+      ],
+      "properties": {
+        "id": { "const": "alamori" },
+        "title": { "const": "Alamori" },
+        "subtitle": { "$ref": "#/$defs/localized" },
+        "author": { "$ref": "#/$defs/text" },
+        "tagline": { "$ref": "#/$defs/localized" },
+        "synopsis": {
+          "type": "array",
+          "maxItems": 6,
+          "items": { "$ref": "#/$defs/localized" }
+        },
+        "genres": {
+          "type": "array",
+          "maxItems": 5,
+          "items": { "$ref": "#/$defs/localized" }
+        },
+        "status": {
+          "enum": ["writing", "revising", "editing", "completed", "paused"]
+        },
+        "statusNote": { "$ref": "#/$defs/localized" },
+        "currentFocus": { "$ref": "#/$defs/localized" },
+        "updatedAt": { "type": "string", "format": "date" },
+        "covers": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tr", "en"],
+          "properties": {
+            "tr": { "$ref": "#/$defs/image" },
+            "en": { "$ref": "#/$defs/image" }
+          }
+        },
+        "previews": {
+          "type": "array",
+          "maxItems": 2,
+          "items": { "$ref": "#/$defs/preview" }
+        },
+        "facts": {
+          "type": "array",
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["label", "value"],
+            "properties": {
+              "label": { "$ref": "#/$defs/localized" },
+              "value": { "$ref": "#/$defs/localized" }
+            }
+          }
+        },
+        "updates": {
+          "type": "array",
+          "maxItems": 60,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["date", "title", "body"],
+            "properties": {
+              "date": { "type": "string", "format": "date" },
+              "title": { "$ref": "#/$defs/localized" },
+              "body": { "$ref": "#/$defs/localized" }
+            }
+          }
+        },
+        "roadmap": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["state", "title", "body"],
+            "properties": {
+              "state": { "enum": ["done", "current", "next"] },
+              "title": { "$ref": "#/$defs/localized" },
+              "body": { "$ref": "#/$defs/localized" }
+            }
+          }
+        },
+        "articles": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["title", "summary", "url"],
+            "properties": {
+              "title": { "$ref": "#/$defs/localized" },
+              "summary": { "$ref": "#/$defs/localized" },
+              "url": { "$ref": "#/$defs/localized" },
+              "post": { "$ref": "#/$defs/post" }
+            }
+          }
+        },
+        "feedback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "description", "url"],
+          "properties": {
+            "title": { "$ref": "#/$defs/localized" },
+            "description": { "$ref": "#/$defs/localized" },
+            "url": { "$ref": "#/$defs/localized" }
+          }
+        }
+      }
+    }
+  }
+}
