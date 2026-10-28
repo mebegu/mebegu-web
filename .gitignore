@@ -11,3 +11,6 @@ Thumbs.db
 .local/
 __pycache__/
 *.pyc
+# Private first-round CV previews contain the unredacted upstream release.
+docs/cv-concepts/*
+!docs/cv-concepts/WEB-RESEARCH.md

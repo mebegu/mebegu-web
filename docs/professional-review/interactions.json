@@ -1,0 +1,15 @@
+{
+  "contactBounds": {
+    "left": 20,
+    "right": 348.9375,
+    "width": 390
+  },
+  "expanded": 12,
+  "collapsed": 0,
+  "skills": {
+    "cloud": 3,
+    "signal": 2,
+    "graph": 2
+  },
+  "printStateRestored": true
+}

@@ -1,0 +1,239 @@
+{
+  "name": "Mehmet Berk Gürçay",
+  "role": "Senior Cloud & Backend Engineer",
+  "contact": [
+    "Munich, Germany",
+    "mbgurcay@gmail.com",
+    "linkedin.com/in/mehmet-berk-gurcay",
+    "github.com/mebegu",
+    "mebegu.github.io"
+  ],
+  "sections": {
+    "Summary": [
+      "Backend engineer with 7+ years building serverless and event-driven systems on AWS, most recently on an IoT platform for more than 20 million connected tools and gateways. Earlier led the team behind a Client B CRM knowledge graph and built data pipelines and Power BI reporting for enterprise sales. Owns services through design, Terraform, and production debugging."
+    ],
+    "Skill Highlights": [
+      "- {cloud} AWS Serverless & Event-Driven :: IoT Platform · Battery Quality · CRM KG",
+      "- {arch} Solution Design & Architecture :: IoT Platform · Battery Quality · Client D",
+      "- {signal} IoT Platforms :: IoT Platform (20M+ devices) · Client D",
+      "- {db} Data Engineering :: Sales Analytics · CRM KG",
+      "- {layers} Infrastructure as Code :: IoT Platform · Client C · Battery Quality",
+      "- {graph} Graph Data Modeling :: CRM KG · Customer Feedback",
+      "- {team} Technical Leadership :: CRM KG (8-person team, 3+ years)",
+      "- {pulse} Production Ops & Observability :: IoT Platform · CRM KG · Sales Analytics",
+      "- {agent} Agentic Software Development :: IoT Platform · Battery Quality · Client C · SOC",
+      "Core tech: Python · TypeScript / Node.js · Docker & Kubernetes · GitLab CI/CD"
+    ],
+    "Experience": [
+      {
+        "role": "IoT Consultant",
+        "company": "Concept Reply GmbH",
+        "city": "Munich",
+        "period": "2024-11 – now",
+        "bullets": [
+          "Designed and built OTA updates, device commands, and telemetry routing for Client A's AWS IoT platform (20M+ devices).",
+          "Built the infrastructure, four-eyes approval, and audit trail for a Client A battery service as the sole Concept Reply engineer.",
+          "Set up multi-account networking for the Client C AWS Landing Zone, developed an eBPF forensics pipeline for an open-source Kubernetes SOC, and built a GraphRAG chatbot at a Client B and Neo4j hackathon."
+        ],
+        "projects": []
+      },
+      {
+        "role": "Tech Consultant",
+        "company": "Motius GmbH",
+        "city": "Munich",
+        "period": "2019-05 – 2024-07",
+        "bullets": [
+          "Led an 8-person Scrum team for 3+ years on the Client B CRM knowledge graph: 19 analytical engines, Python ETL into Neo4j, and RAG with OpenAI.",
+          "Built dbt models on Snowflake and Power BI reports for Client B sales leadership, and delivered projects for Client F, Client E, and a government office."
+        ],
+        "projects": []
+      },
+      {
+        "role": "Co-Founder",
+        "company": "Loopcake",
+        "city": "Istanbul",
+        "period": "2016-02 – 2017-12",
+        "bullets": [
+          "Built a Git-integrated learning platform; national entrepreneurship competition runner-up."
+        ],
+        "projects": []
+      },
+      "Details: Project details with roles, team sizes, and full stacks follow on the next pages."
+    ],
+    "Education": [
+      "- **Master of Science, Informatics** | Technical University of Munich (TUM) | 2021",
+      "- **Bachelor of Science, Computer Engineering** | Koç University, Istanbul | 2017",
+      "Internships: Client B R&D, Istanbul (Java plugin for JIRA) · İş Bank, Istanbul (network engineering)"
+    ],
+    "Certifications": [
+      "- **AWS Certified Solutions Architect – Associate** | 2026",
+      "- **Neo4j Certified Professional** | 2024"
+    ],
+    "Languages": [
+      "- **Turkish** | Native",
+      "- **English** | Advanced",
+      "- **German** | Intermediate (written), pre-intermediate (spoken)"
+    ],
+    "Project Details": [
+      {
+        "role": "IoT Consultant",
+        "company": "Concept Reply GmbH",
+        "city": "Munich",
+        "period": "2024-11 – now",
+        "bullets": [],
+        "projects": [
+          {
+            "title": "Client A – Battery Quality Service",
+            "bullets": [
+              "Built the Terraform infrastructure: Lambda, SQS with a dead-letter queue, DynamoDB, S3 with compliance-mode object lock, Secrets Manager, and IAM.",
+              "Implemented four-eyes approval roles, lock issuance with prior and active lock checks, run counters, and audit records.",
+              "Added structured logging, correlation IDs, CloudWatch alarms, an operations dashboard, and saved Logs Insights queries, and mapped legacy audit fields onto the new data model.",
+              "Wrote the solution design for execution reporting and built the baseline report generator, working spec-driven with Kiro."
+            ],
+            "meta": "**Client:** Client A, construction technology · **Role:** only Concept Reply engineer · **Team:** a Client A business department and Client A developers",
+            "context": "A service that issues batch State-of-Health lock commands to batteries flagged by quality analysis, with four-eyes approval and a permanent audit trail.",
+            "stack": "AWS Lambda, SQS, DynamoDB, S3, CloudWatch, Terraform, Kiro, Kotlin, Quarkus"
+          },
+          {
+            "title": "Client A – Next Generation IoT Platform",
+            "bullets": [
+              "Designed and built the over-the-air update pipeline with malware scanning, firmware signing, Step Functions orchestration, and fleet-wide job management.",
+              "Developed the software update query service (compatibility evaluation, version comparison, OAuth scope-based visibility) and a signed device command interface on IoT device shadows with audit logging.",
+              "Implemented an event-driven processor for device state changes and cross-account MQTT routing for parallel telemetry processing during the migration.",
+              "Defined the Terraform for these services across 8 AWS accounts with several stages each and worked with AWS Professional Services on cross-account security.",
+              "Debugged production issues with CloudWatch and X-Ray, and wrote requirements and designs as Kiro specs before implementation."
+            ],
+            "meta": "**Client:** Client A, construction technology · **Role:** core contributor · **Team:** 16 developers, including AWS Professional Services",
+            "context": "A multi-account AWS-native platform to manage, update, and monitor more than 20 million connected power tools and gateways.",
+            "stack": "AWS Lambda, IoT Core, Step Functions, API Gateway, DynamoDB, SQS, Terraform, Python, Kiro"
+          },
+          {
+            "title": "Client C – AWS Landing Zone Extension",
+            "bullets": [
+              "Set up VPC and Transit Gateway structures for inter-account networking and supported the Route 53 delegation design.",
+              "Automated provisioning with Terraform and GitLab CI/CD and documented account onboarding."
+            ],
+            "meta": "**Client:** Client C, CAD/CAM software · **Role:** sole Concept Reply engineer, with a Reply product owner",
+            "context": "Extending an existing AWS Landing Zone with more automation and consistent multi-account governance.",
+            "stack": "Control Tower, Organizations, Transit Gateway, Route 53, Terraform, Claude Code, Codex"
+          },
+          {
+            "title": "Adaptive Kubernetes SOC (open source)",
+            "bullets": [
+              "Developed the eBPF-based pipeline (Pixie, Kubescape, Tetragon) that detects anomalies, triggers forensic traces, and builds STIX attack graphs.",
+              "Designed Hive Sentinel, a Flask API that ingests telemetry through Pixie and Vector into ClickHouse, and built ETL pipelines for HTTP, DNS, and syscall logs.",
+              "Maintained honeycluster, added STIX integration to Pixie, and contributed to a KubeCon Europe 2026 submission."
+            ],
+            "meta": "**Project:** grant-funded open-source security project · **Role:** detection and forensics pipeline",
+            "context": "A sovereign Kubernetes security operations center in which all security evidence stays in the operator's own infrastructure.",
+            "stack": "Kubernetes, Pixie, Tetragon, Kubescape, ClickHouse, Flask, GitHub Actions, Claude Code, Codex"
+          },
+          {
+            "title": "GraphRAGical – Client B and Neo4j hackathon",
+            "bullets": [
+              "Built a two-stage LLM agent with an intent classifier on top of vector search and graph pattern matching in Neo4j."
+            ],
+            "meta": "**Role:** started the repository and built the chatbot · **Team:** about 7, including Client B and Neo4j engineers",
+            "context": "A GraphRAG assistant that recommends Client B Xcelerator portfolio items based on a user's needs and industry.",
+            "stack": "Neo4j, neo4j-graphrag, Azure OpenAI, LangChain, Streamlit, Python"
+          },
+          {
+            "title": "Client D – Device Management Platform",
+            "bullets": [
+              "Reviewed the existing architecture and proposed improvements.",
+              "Migrated the device registry data layer to TypeORM, fixed device metrics upserts, introduced a shared Redis client, and automated ER diagram generation."
+            ],
+            "meta": "**Client:** Client D, industrial IoT for energy efficiency · **Role:** architecture review and device registry · **Team:** 4",
+            "context": "Integrating IoT data from multi-protocol industrial devices into a cloud platform.",
+            "stack": "TypeScript, NestJS, TypeORM, PostgreSQL, Redis, Kafka, EMQX, MQTT, Sparkplug B, Azure DevOps"
+          }
+        ]
+      },
+      {
+        "role": "Tech Consultant",
+        "company": "Motius GmbH",
+        "city": "Munich",
+        "period": "2019-05 – 2024-07",
+        "bullets": [],
+        "projects": [
+          {
+            "title": "Client B – CRM Knowledge Graph (CRM KG)",
+            "bullets": [
+              "Led an 8-person Scrum team for 3+ years, ran code reviews, trained juniors and interns, and set up Jest and SonarQube checks.",
+              "Designed 19 analytical engines on AWS Glue, Lambda, SQS, and Kafka, with Python ETL from tabular data into a Neo4j graph model, and operated the pipelines in production.",
+              "Synchronized data with a third-party vendor working on the same CRM system and implemented a RAG system with OpenAI and the Neo4j vector index."
+            ],
+            "meta": "**Client:** Client B · **Role:** backend lead, cloud engineer · **Team:** 8, Scrum",
+            "context": "The knowledge graph behind a new CRM system for the sales department.",
+            "stack": "Neo4j, Cypher, Python, AWS Glue, AWS Lambda, SQS, DynamoDB, Kafka, GraphQL, Jest"
+          },
+          {
+            "title": "Client B – Sales Analytics",
+            "bullets": [
+              "Built dbt models and SQL transformations on Snowflake and the Power BI reports on recommendation accuracy and impact, published through Power BI Service, Teams, and SharePoint.",
+              "Investigated failed loads and data quality issues in the existing ingestion pipelines and added smaller extensions."
+            ],
+            "meta": "**Client:** Client B · **Role:** analytics engineer · **Audience:** sales teams, team leads, and senior management",
+            "context": "Next-best-action recommendations for sales: trending products, potential customers, and high-profit sectors.",
+            "stack": "Snowflake, dbt, SQL, Power BI, GitLab"
+          },
+          {
+            "title": "Government – Project Management Platform",
+            "bullets": [
+              "Built a project management platform with task lifecycles, confidential PDF reports, and real-time notifications."
+            ],
+            "meta": "**Client:** Government office (2020) · **Role:** backend engineer · **Team:** 6, Scrum",
+            "context": "A project management and communication tool with confidential reporting.",
+            "stack": "PostgreSQL, Express, React, Node.js, TypeScript, TypeORM, Swagger, Docker, GitLab CI/CD"
+          },
+          {
+            "title": "Client B – Customer Feedback Service",
+            "bullets": [
+              "Designed a graph-based feedback system that lets representatives review historical feedback, with Python ETL into Neo4j and GraphQL APIs."
+            ],
+            "meta": "**Client:** Client B · **Role:** backend engineer · **Team:** 6, Scrum",
+            "context": "A catalog of customer feedback and follow-up actions for sales representatives.",
+            "stack": "Neo4j, AWS Lambda, DynamoDB, S3, TypeScript, GraphQL, Docker"
+          },
+          {
+            "title": "Client E – In-Car Chassis Telemetry Games",
+            "bullets": [
+              "Built four Unity3D games and a menu hub driven by live chassis telemetry, shipped as an in-car demo."
+            ],
+            "meta": "**Client:** Client E · **Role:** Unity developer · **Team:** 3",
+            "context": "Gamified infotainment screens driven by real-time chassis data.",
+            "stack": "Unity3D, C#"
+          },
+          {
+            "title": "Client F – Car-Sharing Route Planner",
+            "bullets": [
+              "Built real-time car availability and departure-time planning from the client API and Google Maps traffic data."
+            ],
+            "meta": "**Client:** Client F · **Role:** sole developer, with a Motius product owner",
+            "context": "Departure-time planning for a car-sharing platform.",
+            "stack": "Node.js, Express, TypeScript, MongoDB"
+          }
+        ]
+      }
+    ],
+    "Skills": [
+      "- **AWS:** Lambda, IoT Core, Step Functions, API Gateway, ECS, Glue, DynamoDB, S3, RDS, SQS, SNS, KMS, CloudWatch, X-Ray, Bedrock, VPC, Transit Gateway, Route 53, Organizations, Control Tower, IAM Identity Center",
+      "- **Code:** Python, TypeScript, JavaScript, SQL, Cypher, C#, Kotlin, NestJS, Express, Flask, Quarkus, TypeORM, LangChain, Streamlit, Powertools for AWS Lambda, Pydantic",
+      "- **Data & messaging:** Snowflake, dbt, Neo4j, PostgreSQL, ClickHouse, MongoDB, Redis, Power BI, Kafka, MQTT, Sparkplug B, EMQX",
+      "- **Infrastructure:** Terraform, AWS CDK, CloudFormation, Docker, Kubernetes, Helm, GitLab CI/CD, GitHub Actions, Azure DevOps",
+      "- **Quality & AI:** pytest, Jest, Testcontainers, SonarQube, Kiro, Claude Code, GitHub Copilot, Codex"
+    ],
+    "Teaching & Community": [
+      "TUM teaching assistant, Software Project Organization and Management (2019) · KU-GameDev founder at Koç University, 13-person core team (2014 – 2017) · Neo4j for IoT and GenAI session, Concept Reply (2026)"
+    ],
+    "Interests": [
+      "Writing a sci-fi fantasy novel · indie game development · chess and board games · space · football · cooking · travel"
+    ]
+  },
+  "provenance": {
+    "repository": "mebegu/career-docs",
+    "revision": "85ddc0cb1580a2b1a837028cd3a097a50e1e5152",
+    "path": "personal-cv/versions/v2_2026-10-28/cv.md",
+    "publication": "Client names replaced using the owner-requested private publication policy. Phone omitted. Other CV wording preserved."
+  }
+}

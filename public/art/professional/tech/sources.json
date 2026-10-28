@@ -1,0 +1,126 @@
+{
+  "revision": "32fe1d3b3f36ad11f90ab94f7db59738139c2bf6",
+  "repository": "https://github.com/devicons/devicon",
+  "icons": [
+    {
+      "slug": "amazonwebservices",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/amazonwebservices/amazonwebservices-original.svg",
+      "sha256": "5b4d8371d79a5c0d3a27ea4e929f772e68d47f7d267496bf9211d5f60fcf8084"
+    },
+    {
+      "slug": "apachekafka",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/apachekafka/apachekafka-original.svg",
+      "sha256": "2505c5b688c18c8fd5dd8e888561eb7b23a56a75d291ff17e8ee18770193f3e8"
+    },
+    {
+      "slug": "azure",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/azure/azure-original.svg",
+      "sha256": "7923db83e3f9755bd412241a683fa996fb7a9d0259b5084de449e6be92f7ca20"
+    },
+    {
+      "slug": "csharp",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/csharp/csharp-original.svg",
+      "sha256": "7093478d0888e22a224b6fa832da6c9ffd14c433de8bd14aab0c1cb50925f3ee"
+    },
+    {
+      "slug": "docker",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/docker/docker-original.svg",
+      "sha256": "3fd830ea69431ed7a0b8d068cd5b34ad3f00a1a78195d50f13ff56713f2462e1"
+    },
+    {
+      "slug": "flask",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/flask/flask-original.svg",
+      "sha256": "7a27bb8cb739a080c285066c16c75828bc2eca4d76fa06eff76d556e0274a9d7"
+    },
+    {
+      "slug": "github",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/github/github-original.svg",
+      "sha256": "45262793de6292206a895ed63593cdb1eaed82074173f7f4b5bdb3e427ca805a"
+    },
+    {
+      "slug": "gitlab",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/gitlab/gitlab-original.svg",
+      "sha256": "d057a46d414f4edcb7edf96976ef7b91c2b347a990e99685e48d38de737967b0"
+    },
+    {
+      "slug": "graphql",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/graphql/graphql-plain.svg",
+      "sha256": "1fafe03a1f77be5a1c25c20db6e52f292ed8ae5a9b2536f807ee2a3d2e78d3d3"
+    },
+    {
+      "slug": "helm",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/helm/helm-original.svg",
+      "sha256": "83efc74139c06f09c29cab6592fdad80c8ce9e5090fc1da3ba39d40686fb511b"
+    },
+    {
+      "slug": "javascript",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/javascript/javascript-original.svg",
+      "sha256": "0656ff65fc8eeacda5c78d7f9ffe91ec1eb919db64f56e0b7dcd460af4bbd36c"
+    },
+    {
+      "slug": "jest",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/jest/jest-plain.svg",
+      "sha256": "56aa3bd209339d2253cdce508143109d20f6d7342db07db7a2d1e8a59ba202f3"
+    },
+    {
+      "slug": "kubernetes",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/kubernetes/kubernetes-original.svg",
+      "sha256": "fb31e4163238978201cfde0601728ee5168b74e476c32c37739bed626fa281ae"
+    },
+    {
+      "slug": "mongodb",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/mongodb/mongodb-original.svg",
+      "sha256": "d9f2bf7041264f4747e9969fb82ede0199c0ac97dfa8632aa0687d702ec05f7b"
+    },
+    {
+      "slug": "neo4j",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/neo4j/neo4j-original.svg",
+      "sha256": "5048bfdf1ddf41d9f1d9653ed84092972aa569a7ebac4010483f9a2b203caa7e"
+    },
+    {
+      "slug": "nestjs",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/nestjs/nestjs-original.svg",
+      "sha256": "97ae5e5666850f1f6119871a4197bef2da3472cd2d40a32e9420792a8bfcd360"
+    },
+    {
+      "slug": "nodejs",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/nodejs/nodejs-original.svg",
+      "sha256": "3218687c5ea24a4d4c0a33dc5c287da38c33a72dcfe9382469d7ce4e0bf661fb"
+    },
+    {
+      "slug": "postgresql",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/postgresql/postgresql-original.svg",
+      "sha256": "f220a436258ed014c512ba4f9c0de6b9e5c2c4b55331a0a29f8c7a1a12c36443"
+    },
+    {
+      "slug": "pytest",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/pytest/pytest-original.svg",
+      "sha256": "e3073e7f520866f93a40e76b633efc29715539150423178cdb2e33f7077e4be1"
+    },
+    {
+      "slug": "python",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/python/python-original.svg",
+      "sha256": "71493b4a732f0532b3a03a7a95da3ee11a65766367c8303b901ffbe7bf91a3a2"
+    },
+    {
+      "slug": "redis",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/redis/redis-original.svg",
+      "sha256": "4707378b190878f36f7e6e1c01fa3ee7e7884c76101809d191dddd943a2e6bdb"
+    },
+    {
+      "slug": "terraform",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/terraform/terraform-original.svg",
+      "sha256": "0be6427291ae47f057b75f9010dffd6f58a40f0c83c43606ff68851cef1621dc"
+    },
+    {
+      "slug": "typescript",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/typescript/typescript-original.svg",
+      "sha256": "c9191199f4049920c2fc19035b8a6664f37f4689fcd9e8434e786097e78863f0"
+    },
+    {
+      "slug": "unity",
+      "url": "https://raw.githubusercontent.com/devicons/devicon/32fe1d3b3f36ad11f90ab94f7db59738139c2bf6/icons/unity/unity-original.svg",
+      "sha256": "92f5736155fc1d6a4829b6b5798e0821f56ba7b61d2999c0fca6840cc1f7b6af"
+    }
+  ]
+}

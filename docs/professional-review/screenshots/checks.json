@@ -1,0 +1,1243 @@
+{
+  "capturedAt": "2026-10-28T20:02:33.227Z",
+  "intent": "Selected constellation concept: distant seated silhouette, useful skill-to-project navigation, complete source content, anonymous clients in page/PDF, legible technology/provider logos, concept illustrations, bilingual site navigation, no narrow-screen clipping.",
+  "humanReview": {
+    "verdict": "PASS for implementation review; final owner review pending",
+    "notes": "../REVIEW.md",
+    "nativePrintDialog": "not captured; actual Edge print-rendered PDF and both pages inspected"
+  },
+  "results": [
+    {
+      "width": 1280,
+      "documentWidth": 1280,
+      "headings": [
+        "Summary",
+        "Skill Highlights",
+        "Experience",
+        "Skills",
+        "Education",
+        "Certifications",
+        "Languages",
+        "Teaching & Community",
+        "Interests",
+        "Project Details"
+      ],
+      "sectionOrderOK": true,
+      "missingText": [],
+      "longDashes": 0,
+      "phoneLinks": 0,
+      "bodyFont": "\"DM Sans\", Arial, sans-serif",
+      "fontFaces": [
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        }
+      ],
+      "fontsOK": true,
+      "contrastFailures": [],
+      "checkedTextNodes": 528,
+      "fontsReady": "loaded",
+      "overflow": [],
+      "h1Count": 1,
+      "downloadPath": "/cv/mehmet-berk-gurcay-cv.pdf",
+      "detailsCount": 14,
+      "englishContent": true,
+      "route": "professional-en",
+      "viewport": {
+        "width": 1280,
+        "height": 1100,
+        "captureFull": true
+      },
+      "status": 200,
+      "consoleErrors": [],
+      "failedAssets": [],
+      "download": {
+        "status": 200,
+        "contentType": "application/pdf"
+      },
+      "detailsOpens": true,
+      "overflowWhenExpanded": false,
+      "summaryFocusStyle": {
+        "outline": "solid",
+        "width": "2px",
+        "color": "rgb(217, 174, 120)"
+      },
+      "pass": true
+    },
+    {
+      "width": 390,
+      "documentWidth": 390,
+      "headings": [
+        "Summary",
+        "Skill Highlights",
+        "Experience",
+        "Skills",
+        "Education",
+        "Certifications",
+        "Languages",
+        "Teaching & Community",
+        "Interests",
+        "Project Details"
+      ],
+      "sectionOrderOK": true,
+      "missingText": [],
+      "longDashes": 0,
+      "phoneLinks": 0,
+      "bodyFont": "\"DM Sans\", Arial, sans-serif",
+      "fontFaces": [
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        }
+      ],
+      "fontsOK": true,
+      "contrastFailures": [],
+      "checkedTextNodes": 531,
+      "fontsReady": "loaded",
+      "overflow": [],
+      "h1Count": 1,
+      "downloadPath": "/cv/mehmet-berk-gurcay-cv.pdf",
+      "detailsCount": 14,
+      "englishContent": true,
+      "route": "professional-en",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "captureFull": true
+      },
+      "status": 200,
+      "consoleErrors": [],
+      "failedAssets": [],
+      "download": {
+        "status": 200,
+        "contentType": "application/pdf"
+      },
+      "detailsOpens": true,
+      "overflowWhenExpanded": false,
+      "summaryFocusStyle": {
+        "outline": "solid",
+        "width": "2px",
+        "color": "rgb(217, 174, 120)"
+      },
+      "pass": true
+    },
+    {
+      "width": 360,
+      "documentWidth": 360,
+      "headings": [
+        "Summary",
+        "Skill Highlights",
+        "Experience",
+        "Skills",
+        "Education",
+        "Certifications",
+        "Languages",
+        "Teaching & Community",
+        "Interests",
+        "Project Details"
+      ],
+      "sectionOrderOK": true,
+      "missingText": [],
+      "longDashes": 0,
+      "phoneLinks": 0,
+      "bodyFont": "\"DM Sans\", Arial, sans-serif",
+      "fontFaces": [
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        }
+      ],
+      "fontsOK": true,
+      "contrastFailures": [],
+      "checkedTextNodes": 531,
+      "fontsReady": "loaded",
+      "overflow": [],
+      "h1Count": 1,
+      "downloadPath": "/cv/mehmet-berk-gurcay-cv.pdf",
+      "detailsCount": 14,
+      "englishContent": true,
+      "route": "professional-en",
+      "viewport": {
+        "width": 360,
+        "height": 844
+      },
+      "status": 200,
+      "consoleErrors": [],
+      "failedAssets": [],
+      "download": {
+        "status": 200,
+        "contentType": "application/pdf"
+      },
+      "pass": true
+    },
+    {
+      "width": 768,
+      "documentWidth": 768,
+      "headings": [
+        "Summary",
+        "Skill Highlights",
+        "Experience",
+        "Skills",
+        "Education",
+        "Certifications",
+        "Languages",
+        "Teaching & Community",
+        "Interests",
+        "Project Details"
+      ],
+      "sectionOrderOK": true,
+      "missingText": [],
+      "longDashes": 0,
+      "phoneLinks": 0,
+      "bodyFont": "\"DM Sans\", Arial, sans-serif",
+      "fontFaces": [
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        }
+      ],
+      "fontsOK": true,
+      "contrastFailures": [],
+      "checkedTextNodes": 528,
+      "fontsReady": "loaded",
+      "overflow": [],
+      "h1Count": 1,
+      "downloadPath": "/cv/mehmet-berk-gurcay-cv.pdf",
+      "detailsCount": 14,
+      "englishContent": true,
+      "route": "professional-en",
+      "viewport": {
+        "width": 768,
+        "height": 1000
+      },
+      "status": 200,
+      "consoleErrors": [],
+      "failedAssets": [],
+      "download": {
+        "status": 200,
+        "contentType": "application/pdf"
+      },
+      "pass": true
+    },
+    {
+      "route": "professional-en",
+      "print": {
+        "hiddenChrome": true,
+        "background": "rgb(255, 255, 255)",
+        "textColor": "rgb(17, 17, 17)"
+      }
+    },
+    {
+      "width": 1280,
+      "documentWidth": 1280,
+      "headings": [
+        "Summary",
+        "Skill Highlights",
+        "Experience",
+        "Skills",
+        "Education",
+        "Certifications",
+        "Languages",
+        "Teaching & Community",
+        "Interests",
+        "Project Details"
+      ],
+      "sectionOrderOK": true,
+      "missingText": [],
+      "longDashes": 0,
+      "phoneLinks": 0,
+      "bodyFont": "\"DM Sans\", Arial, sans-serif",
+      "fontFaces": [
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        }
+      ],
+      "fontsOK": true,
+      "contrastFailures": [],
+      "checkedTextNodes": 528,
+      "fontsReady": "loaded",
+      "overflow": [],
+      "h1Count": 1,
+      "downloadPath": "/cv/mehmet-berk-gurcay-cv.pdf",
+      "detailsCount": 14,
+      "englishContent": true,
+      "route": "professional-tr",
+      "viewport": {
+        "width": 1280,
+        "height": 1100,
+        "captureFull": true
+      },
+      "status": 200,
+      "consoleErrors": [],
+      "failedAssets": [],
+      "download": {
+        "status": 200,
+        "contentType": "application/pdf"
+      },
+      "detailsOpens": true,
+      "overflowWhenExpanded": false,
+      "summaryFocusStyle": {
+        "outline": "solid",
+        "width": "2px",
+        "color": "rgb(217, 174, 120)"
+      },
+      "pass": true
+    },
+    {
+      "width": 390,
+      "documentWidth": 390,
+      "headings": [
+        "Summary",
+        "Skill Highlights",
+        "Experience",
+        "Skills",
+        "Education",
+        "Certifications",
+        "Languages",
+        "Teaching & Community",
+        "Interests",
+        "Project Details"
+      ],
+      "sectionOrderOK": true,
+      "missingText": [],
+      "longDashes": 0,
+      "phoneLinks": 0,
+      "bodyFont": "\"DM Sans\", Arial, sans-serif",
+      "fontFaces": [
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        }
+      ],
+      "fontsOK": true,
+      "contrastFailures": [],
+      "checkedTextNodes": 531,
+      "fontsReady": "loaded",
+      "overflow": [],
+      "h1Count": 1,
+      "downloadPath": "/cv/mehmet-berk-gurcay-cv.pdf",
+      "detailsCount": 14,
+      "englishContent": true,
+      "route": "professional-tr",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "captureFull": true
+      },
+      "status": 200,
+      "consoleErrors": [],
+      "failedAssets": [],
+      "download": {
+        "status": 200,
+        "contentType": "application/pdf"
+      },
+      "detailsOpens": true,
+      "overflowWhenExpanded": false,
+      "summaryFocusStyle": {
+        "outline": "solid",
+        "width": "2px",
+        "color": "rgb(217, 174, 120)"
+      },
+      "pass": true
+    },
+    {
+      "width": 360,
+      "documentWidth": 360,
+      "headings": [
+        "Summary",
+        "Skill Highlights",
+        "Experience",
+        "Skills",
+        "Education",
+        "Certifications",
+        "Languages",
+        "Teaching & Community",
+        "Interests",
+        "Project Details"
+      ],
+      "sectionOrderOK": true,
+      "missingText": [],
+      "longDashes": 0,
+      "phoneLinks": 0,
+      "bodyFont": "\"DM Sans\", Arial, sans-serif",
+      "fontFaces": [
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        }
+      ],
+      "fontsOK": true,
+      "contrastFailures": [],
+      "checkedTextNodes": 531,
+      "fontsReady": "loaded",
+      "overflow": [],
+      "h1Count": 1,
+      "downloadPath": "/cv/mehmet-berk-gurcay-cv.pdf",
+      "detailsCount": 14,
+      "englishContent": true,
+      "route": "professional-tr",
+      "viewport": {
+        "width": 360,
+        "height": 844
+      },
+      "status": 200,
+      "consoleErrors": [],
+      "failedAssets": [],
+      "download": {
+        "status": 200,
+        "contentType": "application/pdf"
+      },
+      "pass": true
+    },
+    {
+      "width": 768,
+      "documentWidth": 768,
+      "headings": [
+        "Summary",
+        "Skill Highlights",
+        "Experience",
+        "Skills",
+        "Education",
+        "Certifications",
+        "Languages",
+        "Teaching & Community",
+        "Interests",
+        "Project Details"
+      ],
+      "sectionOrderOK": true,
+      "missingText": [],
+      "longDashes": 0,
+      "phoneLinks": 0,
+      "bodyFont": "\"DM Sans\", Arial, sans-serif",
+      "fontFaces": [
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "DM Sans",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "unloaded"
+        },
+        {
+          "family": "Space Grotesk",
+          "status": "loaded"
+        }
+      ],
+      "fontsOK": true,
+      "contrastFailures": [],
+      "checkedTextNodes": 528,
+      "fontsReady": "loaded",
+      "overflow": [],
+      "h1Count": 1,
+      "downloadPath": "/cv/mehmet-berk-gurcay-cv.pdf",
+      "detailsCount": 14,
+      "englishContent": true,
+      "route": "professional-tr",
+      "viewport": {
+        "width": 768,
+        "height": 1000
+      },
+      "status": 200,
+      "consoleErrors": [],
+      "failedAssets": [],
+      "download": {
+        "status": 200,
+        "contentType": "application/pdf"
+      },
+      "pass": true
+    }
+  ]
+}

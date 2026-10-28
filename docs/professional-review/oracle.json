@@ -1,0 +1,93 @@
+{
+  "baseURL": "http://127.0.0.1:4323",
+  "intent": "Selected constellation concept: distant seated silhouette, useful skill-to-project navigation, complete source content, anonymous clients in page/PDF, legible technology/provider logos, concept illustrations, bilingual site navigation, no narrow-screen clipping.",
+  "contentSelector": ".professional-page",
+  "highlightSelector": "#skill-highlights",
+  "projectSelector": "[data-project]",
+  "sectionOrder": [
+    "Summary",
+    "Skill Highlights",
+    "Experience",
+    "Skills",
+    "Education",
+    "Certifications",
+    "Languages",
+    "Teaching & Community",
+    "Interests",
+    "Project Details"
+  ],
+  "requiredFonts": [
+    "DM Sans",
+    "Space Grotesk"
+  ],
+  "expectedText": [
+    "Mehmet Berk Gürçay",
+    "Senior Cloud & Backend Engineer",
+    "Backend engineer with 7+ years building serverless and event-driven systems on AWS, most recently on an IoT platform for more than 20 million connected tools and gateways. Earlier led the team behind a Client B CRM knowledge graph and built data pipelines and Power BI reporting for enterprise sales. Owns services through design, Terraform, and production debugging.",
+    "AWS Serverless & Event-Driven",
+    "Solution Design & Architecture",
+    "IoT Platforms",
+    "Data Engineering",
+    "Infrastructure as Code",
+    "Graph Data Modeling",
+    "Technical Leadership",
+    "Production Ops & Observability",
+    "Agentic Software Development",
+    "Battery Quality Service",
+    "Next Generation IoT Platform",
+    "AWS Landing Zone Extension",
+    "Adaptive Kubernetes SOC (open source)",
+    "GraphRAGical – Client B and Neo4j hackathon",
+    "Device Management Platform",
+    "CRM Knowledge Graph (CRM KG)",
+    "Sales Analytics",
+    "Project Management Platform",
+    "Customer Feedback Service",
+    "In-Car Chassis Telemetry Games",
+    "Car-Sharing Route Planner",
+    "A service that issues batch State-of-Health lock commands to batteries flagged by quality analysis, with four-eyes approval and a permanent audit trail.",
+    "A multi-account AWS-native platform to manage, update, and monitor more than 20 million connected power tools and gateways.",
+    "Extending an existing AWS Landing Zone with more automation and consistent multi-account governance.",
+    "A sovereign Kubernetes security operations center in which all security evidence stays in the operator's own infrastructure.",
+    "A GraphRAG assistant that recommends Client B Xcelerator portfolio items based on a user's needs and industry.",
+    "Integrating IoT data from multi-protocol industrial devices into a cloud platform.",
+    "The knowledge graph behind a new CRM system for the sales department.",
+    "Next-best-action recommendations for sales: trending products, potential customers, and high-profit sectors.",
+    "A project management and communication tool with confidential reporting.",
+    "A catalog of customer feedback and follow-up actions for sales representatives.",
+    "Gamified infotainment screens driven by real-time chassis data.",
+    "Departure-time planning for a car-sharing platform."
+  ],
+  "routes": [
+    {
+      "id": "professional-en",
+      "path": "/professional/",
+      "print": true
+    },
+    {
+      "id": "professional-tr",
+      "path": "/tr/professional/",
+      "print": false
+    }
+  ],
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 1100,
+      "captureFull": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "captureFull": true
+    },
+    {
+      "width": 360,
+      "height": 844
+    },
+    {
+      "width": 768,
+      "height": 1000
+    }
+  ]
+}
