@@ -1110,7 +1110,7 @@ details[open] > summary > .detail-symbol {
   }
 }
 
-/* The approved 01 composition: one sky scene, compact identity, organic map. */
+/* Approved direction 02: sparse entrance and an irregular, unconnected star cluster. */
 @media screen {
   .professional-body main.shell {
     width: 100%;
@@ -1124,108 +1124,110 @@ details[open] > summary > .detail-symbol {
     --scene-gutter: max(40px, calc((100vw - 1168px) / 2));
     position: relative;
     isolation: isolate;
-    min-height: 620px;
-    padding-top: 28px;
-    background: #090e16;
+    min-height: 740px;
+    height: calc(100svh - 76px);
+    max-height: 1050px;
+    padding: 0;
+    background: #070b11;
   }
   .opening-sky {
     position: absolute;
     z-index: -2;
-    inset: 0;
+    left: 0;
+    bottom: 0;
+    top: auto;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
     object-position: center bottom;
-    filter: brightness(0.88) saturate(0.9);
+    filter: none;
+    mask-image: linear-gradient(to bottom, transparent, #000 35%);
   }
   .professional-opening::after {
     content: '';
     position: absolute;
     z-index: -1;
     inset: 0;
-    background: linear-gradient(180deg, #060a1250, #060a1210 70%, transparent);
+    background: linear-gradient(90deg, #070b1120, transparent 60%);
     pointer-events: none;
   }
   .professional-opening .cv-heading {
-    position: relative;
+    position: absolute;
+    top: 31%;
+    left: var(--scene-gutter);
+    width: 39%;
     display: block;
-    margin: 0 var(--scene-gutter);
+    margin: 0;
     padding: 0;
-    min-height: 110px;
+    min-height: 0;
   }
   .professional-opening .cv-identity {
-    position: relative;
-    padding-left: 49px;
-  }
-  .identity-disc {
-    position: absolute;
-    left: 0;
-    top: 2px;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: #ab9678;
+    padding: 0;
   }
   .professional-opening .cv-heading h1 {
-    font-size: 25px;
-    font-weight: 500;
+    font: 400 clamp(25px, 2.6vw, 34px)/1.25 var(--display);
     letter-spacing: -0.035em;
-    line-height: 1.2;
-    margin: 0 0 4px;
+    margin: 0 0 8px;
+    color: #ecebe7;
   }
   .professional-opening .cv-role {
-    font: 400 14px/1.5 var(--font);
-    color: #d3d7dc;
+    font: 400 15px/1.6 var(--font);
+    color: #b6bdc3;
+    margin: 0;
   }
   .professional-opening .cv-actions {
-    margin-top: 14px;
-    gap: 8px;
+    display: flex;
+    gap: 18px;
+    margin-top: 24px;
+    flex-wrap: nowrap;
   }
   .professional-opening .cv-actions a,
   .professional-opening .cv-actions button {
-    min-height: 40px;
-    padding: 9px 12px;
-    gap: 12px;
-    font-size: 12px;
-    border-radius: 3px;
-  }
-  .professional-opening .cv-download {
-    min-width: 128px;
+    flex: none;
+    min-height: 44px;
+    padding: 10px 16px;
+    font-size: 13px;
+    gap: 16px;
   }
   .professional-opening .cv-print {
-    min-width: 65px;
-    background: #0c111bb3;
-    border-color: #929aa1;
+    border: 0;
+    padding: 10px 4px;
   }
   .professional-opening .cv-contact {
-    position: absolute;
-    left: 214px;
-    top: 65px;
+    position: relative;
     display: block;
-    width: 60px;
-  }
-  .professional-opening .cv-contact-links > summary {
-    min-height: 40px;
-    font-size: 12px;
-    color: #d0d6dc;
-    text-decoration-color: #8e989f;
+    width: 100%;
+    margin-top: 13px;
+    top: auto;
+    left: auto;
   }
   .professional-opening .cv-contact-links {
     position: static;
   }
+  .professional-opening .cv-contact-links > summary {
+    min-height: 40px;
+    font-size: 12px;
+    color: #bbc2c8;
+    text-decoration-color: #67717b;
+  }
   .professional-opening .cv-contact-links ul {
-    left: -214px;
+    position: absolute;
+    left: 0;
     right: auto;
-    top: 110px;
+    top: 100%;
     width: min(340px, calc(100vw - 40px));
-    background: #0d131cf5;
-    border-color: #79848d;
+    padding: 14px 20px;
+    background: #0d121a;
+    border: 1px solid #58636c;
+    z-index: 10;
+    box-shadow: none;
   }
   .professional-opening .cv-contact-links li {
     line-height: 1.7;
   }
-  .professional-opening .cv-contact-links li:first-child {
-    padding: 6px 0;
+  .professional-opening .cv-contact-links li a {
+    min-height: 40px;
   }
   .professional-opening .cv-summary,
   .profile-disclosure {
@@ -1233,449 +1235,356 @@ details[open] > summary > .detail-symbol {
   }
   .profile-disclosure > summary {
     position: absolute;
-    z-index: 4;
-    top: 93px;
-    left: calc(var(--scene-gutter) + 282px);
-    display: inline-flex;
+    z-index: 3;
+    left: 73%;
+    top: 10%;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: flex;
     align-items: center;
-    min-height: 40px;
-    color: #d0d6dc;
-    font-size: 12px;
-    text-decoration: underline;
-    text-decoration-color: #8e989f;
-    text-underline-offset: 4px;
+    justify-content: center;
     cursor: pointer;
+    list-style: none;
   }
-  .profile-summary-panel {
-    position: absolute;
-    z-index: 5;
-    top: 145px;
-    left: var(--scene-gutter);
-    width: min(680px, calc(100% - 2 * var(--scene-gutter)));
-    padding: 24px;
-    border: 1px solid #79848d;
-    border-radius: 3px;
-    background: #0d131cf5;
-    box-shadow: 0 20px 60px #0006;
+  .profile-disclosure > summary::-webkit-details-marker {
+    display: none;
   }
-  .profile-summary-panel h2 {
-    font-size: 18px;
-    margin: 0 0 12px;
-    color: var(--ink);
+  .profile-star-dot {
+    width: 3px;
+    height: 3px;
+    background: #dfe9f0;
+    border-radius: 50%;
+    box-shadow: 0 0 7px 2px #c2dcf050;
   }
-  .profile-summary-panel p {
-    font-size: 15px;
-    line-height: 1.85;
-    margin: 0;
-    color: #d3d7dc;
+  .profile-disclosure > summary:hover .career-star-label,
+  .profile-disclosure > summary:focus-visible .career-star-label {
+    opacity: 1;
+  }
+  .profile-disclosure .career-star-label {
+    left: auto;
+    right: 34px;
+    text-align: right;
   }
   .professional-opening .skill-atlas {
-    position: relative;
-    isolation: auto;
-    width: min(1168px, calc(100% - 80px));
-    height: 470px;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 12%;
+    width: min(43%, 570px);
+    height: min(62%, 540px);
     min-height: 0;
-    margin: 2px auto 0;
+    display: block;
+    margin: 0;
     padding: 0;
     border: 0;
-    border-radius: 0;
-    background: transparent;
+    background: none;
+    isolation: auto;
+    overflow: visible;
   }
   .professional-opening .skill-atlas::before {
     display: none;
   }
-  .professional-opening .atlas-connections {
-    display: block;
-    stroke: #d9ae7899;
-    stroke-width: 1.1;
-    filter: drop-shadow(0 0 3px #eeb77430);
-  }
-  .atlas-junctions {
-    fill: #e7b679;
-    stroke: #f4ca91;
-    stroke-width: 0.7;
-    filter: drop-shadow(0 0 4px #ffc778);
-  }
-  .professional-opening .atlas-skills,
-  .professional-opening .atlas-projects {
-    display: block;
-  }
-  .professional-opening .atlas-skill {
-    position: absolute;
-    width: 24%;
-    padding: 0;
-    border: 0;
-  }
-  .professional-opening .atlas-skill-1 {
-    left: 27%;
-    top: 13%;
-  }
-  .professional-opening .atlas-skill-2 {
-    left: 23%;
-    top: 47%;
-  }
-  .professional-opening .atlas-skill-3 {
-    left: 28%;
-    top: 78%;
-  }
-  .professional-opening .atlas-skill-button {
-    display: flex;
-    align-items: baseline;
-    min-height: 44px;
-    gap: 12px;
-    padding: 3px 4px 3px 0;
-    font: 500 19px/1.4 var(--display);
-    letter-spacing: -0.02em;
-    background: none;
-    box-shadow: none;
-    color: #f1f0e9;
-    text-shadow:
-      0 1px 4px #000,
-      0 0 14px #000;
-  }
-  .professional-opening .atlas-skill-button:hover {
-    color: #f6d2a0;
-  }
-  .professional-opening .atlas-skill-button[aria-pressed='true'] {
-    color: #f6d2a0;
-  }
-  .professional-opening .atlas-point {
-    flex-basis: 6px;
-    width: 6px;
-    height: 6px;
-    background: #f1be80;
-    box-shadow:
-      0 0 4px #ffd294,
-      0 0 15px 3px #f7b26680;
-  }
-  .professional-opening .atlas-project {
-    position: absolute;
-    width: 24%;
-  }
-  .professional-opening .atlas-project-1 {
-    left: 69%;
-    top: 1%;
-  }
-  .professional-opening .atlas-project-2 {
-    left: 66%;
-    top: 43%;
-  }
-  .professional-opening .atlas-project-3 {
-    left: 70%;
-    top: 81%;
-  }
-  .professional-opening .atlas-project > a {
-    min-height: 44px;
-    gap: 12px;
-    padding: 4px 6px 4px 0;
-    font: 500 18px/1.4 var(--display);
-    color: #f1f0e9;
-    background: none;
-    box-shadow: none;
-    text-shadow:
-      0 1px 4px #000,
-      0 0 14px #000;
-  }
-  .professional-opening
-    .atlas-project
-    > a[aria-current='true']
-    .atlas-project-label {
-    text-decoration: underline;
-    text-decoration-color: #d9ae78;
-    text-underline-offset: 7px;
-  }
-  .professional-opening .atlas-project.is-related > a {
-    text-decoration: none;
-    color: #ffd49a;
-  }
-  .featured-project {
-    position: relative;
-    z-index: 2;
-    width: min(1168px, calc(100% - 80px));
-    margin: -44px auto 0;
-    padding: 0;
-    border: 1px solid #53616b;
-    border-radius: 4px;
-    background: #10161e;
-    box-shadow: 0 14px 38px #0004;
-  }
-  .feature-panel {
-    display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(260px, 1fr);
-    gap: 30px;
-    padding: 24px 26px;
-    align-items: center;
-  }
-  .feature-kicker {
-    color: #e3b477;
-    font-size: 12px;
-    margin: 0 0 8px;
-  }
-  .feature-copy > h3 {
-    font: 500 27px/1.25 var(--display);
-    letter-spacing: -0.035em;
-    margin: 0 0 12px;
-  }
-  .feature-context {
-    max-width: 63ch;
-    margin: 0 0 10px;
-    font-size: 14px;
-    line-height: 1.8;
-    color: #bac2ca;
-  }
-  .feature-link {
-    display: inline-flex;
-    align-items: center;
-    min-height: 40px;
-    gap: 16px;
-    font-size: 13px;
-    color: #e3b477;
-  }
-  .feature-link:hover {
-    text-decoration: underline;
-    text-underline-offset: 5px;
-  }
-  .feature-art {
-    margin: 0;
-  }
-  .feature-art img {
-    display: block;
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-    border-radius: 2px;
-  }
-  .feature-art figcaption {
-    color: #adb8c1;
-    font-size: 10px;
-    margin-top: 6px;
-  }
-  .cv-document > .skill-highlights,
-  .cv-document > .cv-section,
-  .professional-projects {
-    width: min(1168px, calc(100% - 80px));
-    margin-inline: auto;
-  }
-  .cv-document > .skill-highlights {
-    padding-top: 18px;
-  }
-  .cv-document > .skill-highlights > .atlas-heading {
+  .cluster-help {
     position: absolute;
     width: 1px;
     height: 1px;
-    padding: 0;
     margin: -1px;
+    padding: 0;
     overflow: hidden;
     clip-path: inset(50%);
     white-space: nowrap;
   }
+  .cluster-dust,
+  .career-stars {
+    position: absolute;
+    inset: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .cluster-dust {
+    pointer-events: none;
+  }
+  .cluster-dust span {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background: #dbe5f1;
+    opacity: var(--opacity);
+    box-shadow: 0 0 3px #d0dded40;
+  }
+  .career-stars li {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: 44px;
+    height: 44px;
+    transform: translate(-50%, -50%);
+  }
+  .career-star {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    padding: 0;
+    color: #cdd5dd;
+    border-radius: 50%;
+  }
+  .career-star-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #e2eaf4;
+    box-shadow: 0 0 6px 2px #a4c4e150;
+    transition: box-shadow 0.15s;
+  }
+  .career-star.is-pinned .career-star-dot {
+    width: 4px;
+    height: 4px;
+    background: #e6c18f;
+    box-shadow: 0 0 8px 2px #d9b47e55;
+  }
+  .career-star.star-experience .career-star-dot {
+    width: 4px;
+    height: 4px;
+    background: #edf1f4;
+    box-shadow: 0 0 9px 2px #c7ddf060;
+  }
+  .career-star:hover .career-star-dot,
+  .career-star:focus-visible .career-star-dot,
+  .career-star[aria-expanded='true'] .career-star-dot {
+    box-shadow: 0 0 10px 4px #d8e6f5a0;
+  }
+  .career-star-label {
+    position: absolute;
+    left: 34px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: max-content;
+    max-width: 140px;
+    font: 400 12px/1.5 var(--font);
+    color: #b9c3cd;
+    opacity: 0;
+    pointer-events: none;
+    text-shadow: 0 1px 5px #000;
+  }
+  .career-star.label-left .career-star-label {
+    left: auto;
+    right: 34px;
+    text-align: right;
+  }
+  .career-star.is-pinned .career-star-label {
+    opacity: 1;
+  }
+  .career-star:hover .career-star-label,
+  .career-star:focus-visible .career-star-label {
+    opacity: 1;
+    color: #f1ede5;
+  }
+  .career-readout,
+  .profile-summary-panel {
+    position: absolute;
+    z-index: 5;
+    left: var(--scene-gutter);
+    top: calc(31% + 183px);
+    width: min(39%, 450px);
+    padding: 18px 0 4px;
+    border: 0;
+    border-top: 1px solid #45515d;
+    background: #080d14;
+    box-shadow: none;
+    border-radius: 0;
+    max-height: calc(69% - 214px);
+    overflow: auto;
+    scrollbar-width: thin;
+  }
+  .career-readout > div {
+    padding-right: 8px;
+  }
+  .career-close {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    z-index: 1;
+    min-height: 44px;
+    margin: 0;
+    padding: 0 6px;
+    border: 0;
+    background: none;
+    color: #b9c3cd;
+    font: 400 12px var(--font);
+    cursor: pointer;
+  }
+  .career-subtitle {
+    min-height: 30px;
+    padding-right: 55px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #b4bec6;
+    margin: 0 0 6px;
+  }
+  .career-readout h3,
+  .profile-summary-panel h2 {
+    font: 400 21px/1.35 var(--display);
+    letter-spacing: -0.02em;
+    color: #ecebe7;
+    margin: 0 0 9px;
+  }
+  .career-meta {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #b4bec6;
+    margin: 0 0 10px;
+  }
+  .career-context,
+  .profile-summary-panel p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #c5cdd3;
+    margin: 0 0 12px;
+  }
+  .career-more {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    gap: 12px;
+    font-size: 12px;
+    color: #d9b47d;
+  }
+  .skill-highlights,
+  .cv-section,
+  #project-details {
+    width: min(1168px, calc(100% - 80px));
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .skill-highlights {
+    padding-top: 30px;
+  }
+  .skill-highlights .atlas-heading {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
   .other-highlights {
-    margin-top: 0;
+    margin: 0;
   }
-  .cv-core {
-    color: #aeb8c1;
-  }
-  .professional-projects {
-    padding-top: 70px;
-  }
-
-  @media (max-width: 1000px) and (min-width: 701px) {
+  @media (min-width: 701px) and (max-width: 1000px) {
     .professional-opening {
       --scene-gutter: 32px;
     }
-    .professional-opening .skill-atlas,
-    .featured-project,
-    .cv-document > .skill-highlights,
-    .cv-document > .cv-section,
-    .professional-projects {
+    .professional-opening .cv-heading {
+      width: 43%;
+    }
+    .professional-opening .cv-heading h1 {
+      font-size: 27px;
+    }
+    .professional-opening .skill-atlas {
+      left: 48%;
+      width: 48%;
+    }
+    .career-readout,
+    .profile-summary-panel {
+      width: 42%;
+    }
+    .career-star-label {
+      font-size: 11px;
+      max-width: 112px;
+    }
+    .skill-highlights,
+    .cv-section,
+    #project-details {
       width: calc(100% - 64px);
-    }
-    .professional-opening .atlas-skill-button {
-      font-size: 17px;
-    }
-    .professional-opening .atlas-project > a {
-      font-size: 16px;
-    }
-    .feature-panel {
-      grid-template-columns: minmax(0, 1.3fr) minmax(200px, 1fr);
-      gap: 24px;
-      padding: 22px;
-    }
-    .feature-copy > h3 {
-      font-size: 24px;
     }
   }
   @media (max-width: 700px) {
     .professional-opening {
       --scene-gutter: 20px;
-      min-height: 560px;
-      padding-top: 24px;
-    }
-    .opening-sky {
-      object-position: 10% bottom;
+      height: calc(100svh - 112px);
+      min-height: 730px;
+      max-height: 950px;
     }
     .professional-opening .cv-heading {
-      min-height: 108px;
-    }
-    .professional-opening .cv-identity {
-      padding-left: 39px;
-    }
-    .identity-disc {
-      width: 27px;
-      height: 27px;
-      top: 3px;
+      top: 32px;
+      left: 20px;
+      width: calc(100% - 40px);
     }
     .professional-opening .cv-heading h1 {
-      font-size: 21px;
-      line-height: 1.25;
+      font-size: 25px;
     }
     .professional-opening .cv-role {
-      font-size: 12px;
-      line-height: 1.7;
+      font-size: 13px;
     }
     .professional-opening .cv-actions {
-      width: auto;
-      margin-top: 14px;
-      flex-wrap: nowrap;
+      margin-top: 18px;
+      gap: 18px;
     }
     .professional-opening .cv-actions a,
     .professional-opening .cv-actions button {
-      min-height: 42px;
-      font-size: 11px;
-      padding: 10px;
-    }
-    .professional-opening .cv-actions .cv-download {
-      min-width: 126px;
-      flex: none;
-    }
-    .professional-opening .cv-actions .cv-print {
-      min-width: 62px;
+      font-size: 12px;
     }
     .professional-opening .cv-contact {
-      left: 208px;
-      top: 60px;
-    }
-    .professional-opening .cv-contact-links > summary {
-      font-size: 11px;
-      min-height: 44px;
+      margin-top: 6px;
     }
     .professional-opening .cv-contact-links ul {
-      left: -208px;
-      top: 108px;
+      top: 100%;
+      width: calc(100vw - 40px);
+      padding: 12px 18px;
+    }
+    .professional-opening .skill-atlas {
+      top: 224px;
+      left: 20px;
+      width: calc(100% - 40px);
+      height: 350px;
     }
     .profile-disclosure > summary {
-      top: 84px;
-      left: calc(var(--scene-gutter) + 267px);
-      min-height: 44px;
+      left: calc(50% - 22px);
+      top: 150px;
+    }
+    .career-star-label {
       font-size: 11px;
+      max-width: 125px;
     }
+    .career-readout,
     .profile-summary-panel {
-      top: 138px;
+      left: 20px;
+      top: 210px;
+      bottom: auto;
       width: calc(100% - 40px);
-      padding: 20px;
+      max-height: 350px;
+      padding: 20px 16px 12px;
+      background: #0b111a;
+      border-top: 1px solid #68747f;
     }
+    .career-readout h3,
+    .profile-summary-panel h2 {
+      font-size: 20px;
+    }
+    .career-readout > div {
+      padding: 0;
+    }
+    .career-context,
     .profile-summary-panel p {
       font-size: 14px;
     }
-    .professional-opening .skill-atlas {
+    .career-close {
+      top: 10px;
+      right: 10px;
+    }
+    .skill-highlights,
+    .cv-section,
+    #project-details {
       width: calc(100% - 40px);
-      height: 380px;
-      min-height: 0;
-      margin-top: 14px;
-    }
-    .professional-opening .atlas-connections,
-    .professional-opening .atlas-projects {
-      display: block;
-    }
-    .professional-opening .atlas-skill {
-      position: absolute;
-      width: 44%;
-      padding: 0;
-      border: 0;
-    }
-    .professional-opening .atlas-skill-1 {
-      left: 1%;
-      top: 12%;
-    }
-    .professional-opening .atlas-skill-2 {
-      left: 8%;
-      top: 47%;
-    }
-    .professional-opening .atlas-skill-3 {
-      left: 3%;
-      top: 77%;
-    }
-    .professional-opening .atlas-skill-button {
-      font-size: 14px;
-      line-height: 1.45;
-      min-height: 44px;
-      padding: 0;
-      gap: 8px;
-    }
-    .professional-opening .atlas-point {
-      flex-basis: 5px;
-      width: 5px;
-      height: 5px;
-    }
-    .professional-opening .atlas-project {
-      position: absolute;
-      width: 33%;
-    }
-    .professional-opening .atlas-project-1 {
-      left: 66%;
-      top: 2%;
-    }
-    .professional-opening .atlas-project-2 {
-      left: 65%;
-      top: 44%;
-    }
-    .professional-opening .atlas-project-3 {
-      left: 69%;
-      top: 81%;
-      width: 29%;
-    }
-    .professional-opening .atlas-project > a {
-      min-height: 44px;
-      font-size: 13px;
-      line-height: 1.5;
-      gap: 8px;
-      padding: 0;
-    }
-    .featured-project {
-      width: calc(100% - 40px);
-      margin-top: -28px;
-    }
-    .feature-panel {
-      grid-template-columns: 1fr;
-      gap: 16px;
-      padding: 20px;
-    }
-    .feature-copy > h3 {
-      font-size: 23px;
-      margin-bottom: 10px;
-    }
-    .feature-context {
-      font-size: 13px;
-      line-height: 1.8;
-      margin-bottom: 4px;
-    }
-    .feature-art {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-    .feature-art img {
-      height: 132px;
-    }
-    .feature-art figcaption {
-      font-size: 10px;
-    }
-    .cv-document > .skill-highlights,
-    .cv-document > .cv-section,
-    .professional-projects {
-      width: calc(100% - 40px);
-    }
-    .cv-document > .skill-highlights {
-      padding-top: 14px;
     }
   }
 }

@@ -1,5 +1,17 @@
 # Professional page illustration sources
 
+## Minimal entrance background, version 2
+
+`public/art/professional/quiet-sky-v2.webp` is the current entrance background. Generated with the built-in ImageGen tool using the existing observer sky as a reference, then encoded to WebP (1774 × 887, approximately 40KB). Original: `exec-fa7d0db9-e60e-47ea-bf1c-dd4a3fa392f7.png` in the same generation library. The old version remains available; it was not overwritten. All interactive cluster points, labels and career information are HTML/CSS, not part of this image.
+
+Final prompt:
+
+```text
+Create a restrained new background artwork for the minimalist personal website direction approved as '02 natural star cluster'. Landscape panoramic image approx 2:1. No text, no UI, no labels, no logos, no diagrams, no connection lines. Existing attached image is a reference only for seated observer pose and nighttime theme. Dramatically simplify and mute it. Nearly black graphite navy sky fills 92 percent of the frame, subtle fine photographic grain, calm dark low contrast open space especially left and center. Sparse very faint small cool stars, not a dense galaxy texture, no Milky Way band, no nebula, no galaxy cloud, no lens flare. We will add an interactive star cluster in HTML afterward, so do not paint a cluster or bright major stars. Distant low gently sloping black hillside occupies only the bottom 8 percent. Very small plain black silhouette of a man sitting at the lower left around 12 percent from the left edge, leaning back with both palms behind him supporting his body, looking at the sky. Figure no taller than 3 percent of total image height, absolutely not a foreground character, no face or clothes details. Very restrained dim desaturated dusty amber atmospheric glow just along the far horizon, no vivid orange sunset, no purple saturation. Premium understated editorial photography/concept art, subtly natural imperfect terrain, quiet and spacious. Keep the image dark enough for small white HTML text on top. No extra mountains or decorative objects.
+```
+
+## Earlier assets
+
 Generated on 28 October 2026 with the built-in ImageGen tool, then encoded as optimized WebP for the site. These are concept illustrations, not photographs, client deliverables or human-authorship claims. The original full-resolution PNGs remain in the generation library; the website consumes the workspace copies below.
 
 | Asset                                            | Role                                                          | Generation-library filename                     |

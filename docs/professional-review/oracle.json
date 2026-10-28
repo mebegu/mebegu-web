@@ -1,6 +1,6 @@
 {
   "baseURL": "http://127.0.0.1:4323",
-  "intent": "Selected constellation concept: distant seated silhouette, useful skill-to-project navigation, complete source content, anonymous clients in page/PDF, legible technology/provider logos, concept illustrations, bilingual site navigation, no narrow-screen clipping.",
+  "intent": "Approved minimal concept 02: natural unconnected star cluster, distant seated silhouette, sparse identity/PDF entrance, career information revealed only on star selection, complete source CV below, anonymous clients in page/PDF, bilingual navigation, no narrow-screen clipping.",
   "contentSelector": ".professional-page",
   "highlightSelector": "#skill-highlights",
   "projectSelector": "[data-project]",

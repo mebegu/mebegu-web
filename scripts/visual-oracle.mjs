@@ -5,6 +5,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { inspectScopes, requireScopes } from './oracle-scopes.mjs';
 
 const args = Object.fromEntries(
   process.argv.slice(2).reduce((items, value, i, all) => {
@@ -59,6 +60,23 @@ try {
         new URL(route.path, config.baseURL).href,
         { waitUntil: 'networkidle' },
       );
+      requireScopes(
+        await page.evaluate(
+          inspectScopes,
+          [
+            config.contentSelector || 'main',
+            ...(config.highlightSelector ? [config.highlightSelector] : []),
+            ...(config.englishSelectors || ['#cv', '#project-details']),
+          ].filter((value, index, all) => all.indexOf(value) === index),
+        ),
+      );
+      if (
+        config.projectSelector &&
+        !(await page.locator(config.projectSelector).count())
+      )
+        throw new Error(
+          `Required project selector missing: ${config.projectSelector}`,
+        );
       await page.evaluate(() => document.fonts.ready);
       await page.evaluate(async () => {
         document
@@ -69,7 +87,13 @@ try {
         );
       });
       const result = await page.evaluate(
-        ({ sectionOrder, contentSelector, expectedText, requiredFonts }) => {
+        ({
+          sectionOrder,
+          contentSelector,
+          expectedText,
+          requiredFonts,
+          englishSelectors,
+        }) => {
           const scope = document.querySelector(contentSelector);
           const normalize = (s) => s.replace(/\s+/g, ' ').trim();
           const content = normalize(scope?.textContent || '');
@@ -183,9 +207,9 @@ try {
               .querySelector('a[download]')
               ?.getAttribute('href'),
             detailsCount: document.querySelectorAll('details').length,
-            englishContent: [
-              ...document.querySelectorAll('#cv, .projects-shell'),
-            ].every((x) => x.lang === 'en'),
+            englishContent: englishSelectors.every(
+              (selector) => document.querySelector(selector)?.lang === 'en',
+            ),
           };
         },
         {
@@ -193,6 +217,10 @@ try {
           contentSelector: config.contentSelector || 'main',
           expectedText: config.expectedText,
           requiredFonts: config.requiredFonts,
+          englishSelectors: config.englishSelectors || [
+            '#cv',
+            '#project-details',
+          ],
         },
       );
       result.route = route.id;
@@ -266,6 +294,7 @@ try {
         !result.phoneLinks &&
         !result.overflowWhenExpanded &&
         result.fontsOK &&
+        result.englishContent &&
         !result.contrastFailures.length &&
         (!result.download || result.download.status === 200);
       if (!result.pass) failures++;
@@ -277,6 +306,15 @@ try {
     if (route.print) {
       await page.setViewportSize({ width: 1280, height: 1000 });
       await page.goto(new URL(route.path, config.baseURL).href);
+      requireScopes(
+        await page.evaluate(inspectScopes, [
+          '#cv',
+          '#project-details',
+          '.site-toolbar',
+          '.footer',
+          '.cv-actions',
+        ]),
+      );
       await page.evaluate(() => document.fonts.ready);
       await page.emulateMedia({ media: 'print' });
       await page.pdf({
@@ -285,24 +323,25 @@ try {
         printBackground: false,
         preferCSSPageSize: true,
       });
-      report.results.push({
+      const printResult = {
         route: route.id,
         print: await page.evaluate(() => ({
           hiddenChrome: [
             '.site-toolbar',
             '.footer',
-            '.projects-shell',
-            '.actions',
-            '.concept-switch',
+            '#project-details',
+            '.cv-actions',
           ].every(
             (s) =>
-              !document.querySelector(s) ||
               getComputedStyle(document.querySelector(s)).display === 'none',
           ),
           background: getComputedStyle(document.body).backgroundColor,
           textColor: getComputedStyle(document.querySelector('#cv')).color,
         })),
-      });
+      };
+      printResult.pass = printResult.print.hiddenChrome;
+      if (!printResult.print.hiddenChrome) failures++;
+      report.results.push(printResult);
     }
     await context.close();
   }

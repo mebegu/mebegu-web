@@ -1,0 +1,100 @@
+{
+  "homeText": "mebegu\n.\nEN\n/\nTR\nMehmet Berk Gürçay\nProfessional\n\nCV & selected work\n\nBlog\n\nNotes, ideas, discoveries\n\nAlamori\n\nFollowing a story\n\nWorkshop\n\nSide projects & experiments\n\n© 2026 mebegu",
+  "homeProfessionalLinks": 1,
+  "landing": {
+    "url": "/professional/",
+    "summaryVisible": false,
+    "height": 6328
+  },
+  "profile": "Summary\n\nBackend engineer with 7+ years building serverless and event-driven systems on AWS, most recently on an IoT platform for more than 20 million connected tools and gateways. Earlier led the team behind a Client B CRM knowledge graph and built data pipelines and Power BI reporting for enterprise sales. Owns services through design, Terraform, and production debugging.",
+  "contact": "Munich, Germany\nmbgurcay@gmail.com\nlinkedin.com/in/mehmet-berk-gurcay\ngithub.com/mebegu\nmebegu.github.io",
+  "beforeStar": {
+    "scrollY": 0,
+    "hash": "",
+    "title": "Next Generation IoT Platform"
+  },
+  "afterStar": {
+    "scrollY": 0,
+    "hash": "",
+    "title": "CRM Knowledge Graph (CRM KG)",
+    "focus": "CRM KG",
+    "liveRegions": 0
+  },
+  "project": "07\nMotius GmbH\nCRM Knowledge Graph (CRM KG)\nThe knowledge graph behind a new CRM system for the sales department.\n+\nClient:Client B\nRole:backend lead, cloud engineer\nTeam:8, Scrum\nContributions\nLed an 8-person Scrum team for 3+ years, ran code reviews, trained juniors and interns, and set up Jest and SonarQube checks.\nDesigned 19 analytical engines on AWS Glue, Lambda, SQS, and Kafka, with Python ETL from tabular data into a Neo4j graph model, and operated the pipelines in production.\nSynchronized data with a third-party vendor working on the same CRM system and implemented a RAG system with OpenAI and the Neo4j vector index.\nTechnologies\nNeo4j\nCypher\nPython\nAWS Glue\nAWS Lambda\nSQS\nDynamoDB\nKafka\nGraphQL\nJest\nConcept illustration\nBack to skill highlights\n↑",
+  "projectState": {
+    "scrollY": 4848,
+    "hash": "#project-crm-knowledge-graph-crm-kg",
+    "focused": "SUMMARY",
+    "rect": {
+      "x": 56,
+      "y": 200.5625,
+      "width": 1168,
+      "height": 156.328125,
+      "top": 200.5625,
+      "right": 1224,
+      "bottom": 356.890625,
+      "left": 56
+    }
+  },
+  "back": {
+    "scrollY": 0,
+    "hash": ""
+  },
+  "download": {
+    "name": "mehmet-berk-gurcay-cv.pdf",
+    "failure": null
+  },
+  "mobilePositions": {
+    ".featured-project": {
+      "y": 644,
+      "height": 392.109375
+    },
+    "#experience": {
+      "y": 1167.890625,
+      "height": 1308.984375
+    },
+    "#skills": {
+      "y": 2476.875,
+      "height": 1255.953125
+    },
+    "#education": {
+      "y": 3732.828125,
+      "height": 416.96875
+    },
+    "#certifications": {
+      "y": 4149.796875,
+      "height": 328.78125
+    },
+    "#languages": {
+      "y": 4478.578125,
+      "height": 275.78125
+    },
+    "#project-details": {
+      "y": 5162.359375,
+      "height": 2660.46875
+    }
+  },
+  "mobileSelection": {
+    "scrollY": 197,
+    "selectedTitle": {
+      "x": 41,
+      "y": 495.1875,
+      "width": 308,
+      "height": 57.5,
+      "top": 495.1875,
+      "right": 349,
+      "bottom": 552.6875,
+      "left": 41
+    },
+    "atlas": {
+      "x": 20,
+      "y": 61,
+      "width": 350,
+      "height": 380,
+      "top": 61,
+      "right": 370,
+      "bottom": 441,
+      "left": 20
+    }
+  }
+}

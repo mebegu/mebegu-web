@@ -35,9 +35,9 @@ These are invented examples for this guide, not replacements for CV text.
 
 ## Review loop
 
-1. Read only the changed visible copy, then read it within the whole page. Include headings, navigation, buttons, captions, empty states, accessible labels and mobile-only text.
+1. Read only the changed visible copy and its surrounding paragraph/section. Include changed headings, navigation, buttons, captions, empty states, accessible labels and mobile-only text. Expand to the whole page only when context or repetition requires it.
 2. Mark each issue with the exact sentence, reason, ownership and a proposed correction. For `cv.json`, `resume.ts` and `portfolio.ts`, record an upstream issue instead of editing generated text.
-3. Run `python scripts/check-editorial.py --root dist --out .local/editorial-review.json` after building. It produces candidates for a reader to assess. It neither rewrites text nor certifies authorship.
+3. `pnpm oracle:plan` produces lexical candidates from added source lines, including new src/public files. Check whether each candidate is actually visible copy; source code can match too. Read changed copy even with zero candidates. For a deliberate whole-site audit, use `python scripts/check-editorial.py --root dist --out .local/editorial-review.json` after building. Neither tool rewrites text or certifies authorship.
 4. Check EN and TR separately. A good English sentence does not prove that its Turkish counterpart works.
 5. Read the revised page aloud. Accept only after both language and [visual review](VISUAL-ORACLE.md) pass. Quote exceptions explicitly; do not silently waive them.
 

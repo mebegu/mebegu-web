@@ -1,0 +1,57 @@
+{
+  "baseURL": "http://127.0.0.1:4321",
+  "widths": [1280, 390, 360, 768],
+  "screenshots": [1280, 390],
+  "rules": [
+    {
+      "match": "(?:HomePage|/night/|night\\.css|night-|sky-layout|/sections\\.|/socials\\.|SocialLinks|CoverHeader|src/pages/(?:tr/)?index\\.astro$)",
+      "routes": ["/", "/tr/"]
+    },
+    {
+      "match": "(?:ProfessionalPage|professional\\.css|/cv[./]|/resume\\.|/portfolio\\.|/art/professional/)",
+      "routes": ["/professional/", "/tr/professional/"]
+    },
+    {
+      "match": "(?:AlamoriPage|alamori|/stories/)",
+      "routes": ["/alamori/", "/tr/alamori/"]
+    },
+    {
+      "match": "(?:ProjectsPage|workshop|/projects\\.astro)",
+      "routes": ["/projects/", "/tr/projects/"]
+    },
+    {
+      "match": "(?:AboutPage|/about\\.astro)",
+      "routes": ["/about/", "/tr/about/"]
+    },
+    {
+      "match": "(?:AtlantisPage|atlantis)",
+      "routes": ["/atlantis/", "/tr/atlantis/"]
+    },
+    {
+      "match": "(?:PocketArchivePage|pocket-archive)",
+      "routes": ["/tools/pocket-archive/", "/tr/tools/pocket-archive/"]
+    },
+    {
+      "match": "(?:WritingPage|ArticlePage|/writing/|/blog|/articles/)",
+      "routes": ["/writing/", "/tr/writing/"]
+    }
+  ],
+  "sharedRoutes": [
+    "/",
+    "/tr/",
+    "/professional/",
+    "/tr/professional/",
+    "/writing/",
+    "/tr/writing/",
+    "/projects/",
+    "/tr/projects/",
+    "/alamori/",
+    "/tr/alamori/",
+    "/about/",
+    "/tr/about/",
+    "/atlantis/",
+    "/tr/atlantis/",
+    "/tools/pocket-archive/",
+    "/tr/tools/pocket-archive/"
+  ]
+}

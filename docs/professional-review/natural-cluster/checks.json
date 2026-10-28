@@ -1,0 +1,47 @@
+[
+  {
+    "route": "/professional/",
+    "width": 1280,
+    "result": "PASS"
+  },
+  {
+    "route": "/professional/",
+    "width": 768,
+    "result": "PASS"
+  },
+  {
+    "route": "/professional/",
+    "width": 390,
+    "result": "PASS"
+  },
+  {
+    "route": "/professional/",
+    "width": 360,
+    "result": "PASS"
+  },
+  {
+    "route": "/tr/professional/",
+    "width": 1280,
+    "result": "PASS"
+  },
+  {
+    "route": "/tr/professional/",
+    "width": 768,
+    "result": "PASS"
+  },
+  {
+    "route": "/tr/professional/",
+    "width": 390,
+    "result": "PASS"
+  },
+  {
+    "route": "/tr/professional/",
+    "width": 360,
+    "result": "PASS"
+  },
+  {
+    "javascript": false,
+    "exclusivePanels": "PASS",
+    "missingScopes": "FAIL as expected"
+  }
+]

@@ -1,5 +1,7 @@
 # Professional constellation correction
 
+Historical review, superseded by the owner's approved minimalist concept 02. Current implementation and evidence: [Natural career cluster](natural-cluster/REVIEW.md). Do not use this earlier composition as the current visual baseline.
+
 28 October 2026, branch `cv-sync`.
 
 ## Rejected implementation

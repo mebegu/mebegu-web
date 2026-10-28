@@ -8,6 +8,10 @@
     "node": ">=24"
   },
   "scripts": {
+    "oracle:plan": "node scripts/oracle-plan.mjs",
+    "oracle:browser": "node scripts/oracle-browser.mjs",
+    "test:oracles": "node --test scripts/test-oracle-plan.mjs",
+    "test:professional:browser": "node --test scripts/test-professional-browser.mjs",
     "dev": "astro dev --host 127.0.0.1",
     "build": "astro build",
     "preview": "astro preview --host 127.0.0.1",
@@ -18,7 +22,7 @@
     "check:workshop": "node scripts/check-workshop.mjs",
     "test:alamori": "node --test scripts/test-alamori.mjs",
     "check:alamori": "node scripts/check-alamori.mjs",
-    "validate": "node --test scripts/test-blog-banner.mjs scripts/test-workshop.mjs scripts/test-alamori.mjs && node scripts/check-workshop.mjs && node scripts/check-alamori.mjs && astro check && astro build && node scripts/check-output.mjs && node scripts/check-blog-publication.mjs",
+    "validate": "node --test scripts/test-blog-banner.mjs scripts/test-workshop.mjs scripts/test-alamori.mjs scripts/test-oracle-plan.mjs && node scripts/check-workshop.mjs && node scripts/check-alamori.mjs && astro check && astro build && node scripts/check-output.mjs && node scripts/check-blog-publication.mjs",
     "format": "prettier --write src docs scripts README.md"
   },
   "dependencies": {

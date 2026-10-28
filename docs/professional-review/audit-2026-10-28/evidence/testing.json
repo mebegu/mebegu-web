@@ -1,0 +1,659 @@
+{
+  "browser": "156.0.4314.50",
+  "base": "http://127.0.0.1:4325",
+  "viewports": [
+    {
+      "route": "/professional/",
+      "width": 1280,
+      "documentWidth": 1280,
+      "overflow": [],
+      "contact": {
+        "width": 1280,
+        "documentWidth": 1280,
+        "overflow": []
+      },
+      "bothOpen": {
+        "contactVisible": true,
+        "profileVisible": true,
+        "overlap": 58325.9375,
+        "topAtContact": "Munich, Germanymbgurcay@gmail.comlinkedin.com/in/mehmet-berk-gurcaygithub.com/me"
+      },
+      "escapeClosed": false,
+      "expanded": {
+        "width": 1280,
+        "documentWidth": 1280,
+        "overflow": []
+      },
+      "expandedCount": 12
+    },
+    {
+      "route": "/professional/",
+      "width": 768,
+      "documentWidth": 768,
+      "overflow": [],
+      "contact": {
+        "width": 768,
+        "documentWidth": 768,
+        "overflow": []
+      },
+      "bothOpen": {
+        "contactVisible": true,
+        "profileVisible": true,
+        "overlap": 58325.9375,
+        "topAtContact": "Munich, Germanymbgurcay@gmail.comlinkedin.com/in/mehmet-berk-gurcaygithub.com/me"
+      },
+      "escapeClosed": false,
+      "expanded": {
+        "width": 768,
+        "documentWidth": 768,
+        "overflow": []
+      },
+      "expandedCount": 12
+    },
+    {
+      "route": "/professional/",
+      "width": 390,
+      "documentWidth": 390,
+      "overflow": [],
+      "contact": {
+        "width": 390,
+        "documentWidth": 390,
+        "overflow": []
+      },
+      "bothOpen": {
+        "contactVisible": true,
+        "profileVisible": true,
+        "overlap": 76144.0625,
+        "topAtContact": "Munich, Germanymbgurcay@gmail.comlinkedin.com/in/mehmet-berk-gurcaygithub.com/me"
+      },
+      "escapeClosed": false,
+      "expanded": {
+        "width": 390,
+        "documentWidth": 390,
+        "overflow": []
+      },
+      "expandedCount": 12,
+      "targets": [
+        {
+          "text": "Contact",
+          "width": 41.484375,
+          "height": 44
+        },
+        {
+          "text": "Profile",
+          "width": 31.671875,
+          "height": 44
+        },
+        {
+          "text": "AWS Serverless & Event-Driven",
+          "width": 154,
+          "height": 44
+        },
+        {
+          "text": "IoT Platforms",
+          "width": 97.859375,
+          "height": 44
+        },
+        {
+          "text": "Graph Data Modeling",
+          "width": 149.078125,
+          "height": 44
+        },
+        {
+          "text": "IoT Platform",
+          "width": 88.34375,
+          "height": 44
+        },
+        {
+          "text": "Battery Quality",
+          "width": 108.03125,
+          "height": 44
+        },
+        {
+          "text": "CRM KG",
+          "width": 60.5,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "route": "/professional/",
+      "width": 360,
+      "documentWidth": 360,
+      "overflow": [],
+      "contact": {
+        "width": 360,
+        "documentWidth": 360,
+        "overflow": []
+      },
+      "bothOpen": {
+        "contactVisible": true,
+        "profileVisible": true,
+        "overlap": 71665,
+        "topAtContact": "Munich, Germanymbgurcay@gmail.comlinkedin.com/in/mehmet-berk-gurcaygithub.com/me"
+      },
+      "escapeClosed": false,
+      "expanded": {
+        "width": 360,
+        "documentWidth": 360,
+        "overflow": []
+      },
+      "expandedCount": 12
+    },
+    {
+      "route": "/professional/",
+      "width": 320,
+      "documentWidth": 320,
+      "overflow": [],
+      "contact": {
+        "width": 320,
+        "documentWidth": 320,
+        "overflow": []
+      },
+      "bothOpen": {
+        "contactVisible": true,
+        "profileVisible": true,
+        "overlap": 62706.875,
+        "topAtContact": "Munich, Germanymbgurcay@gmail.comlinkedin.com/in/mehmet-berk-gurcaygithub.com/me"
+      },
+      "escapeClosed": false,
+      "expanded": {
+        "width": 320,
+        "documentWidth": 320,
+        "overflow": []
+      },
+      "expandedCount": 12
+    },
+    {
+      "route": "/tr/professional/",
+      "width": 1280,
+      "documentWidth": 1280,
+      "overflow": [],
+      "contact": {
+        "width": 1280,
+        "documentWidth": 1280,
+        "overflow": []
+      },
+      "bothOpen": {
+        "contactVisible": true,
+        "profileVisible": true,
+        "overlap": 58325.9375,
+        "topAtContact": "Munich, Germanymbgurcay@gmail.comlinkedin.com/in/mehmet-berk-gurcaygithub.com/me"
+      },
+      "escapeClosed": false,
+      "expanded": {
+        "width": 1280,
+        "documentWidth": 1280,
+        "overflow": []
+      },
+      "expandedCount": 12
+    },
+    {
+      "route": "/tr/professional/",
+      "width": 768,
+      "documentWidth": 768,
+      "overflow": [],
+      "contact": {
+        "width": 768,
+        "documentWidth": 768,
+        "overflow": []
+      },
+      "bothOpen": {
+        "contactVisible": true,
+        "profileVisible": true,
+        "overlap": 58325.9375,
+        "topAtContact": "Munich, Germanymbgurcay@gmail.comlinkedin.com/in/mehmet-berk-gurcaygithub.com/me"
+      },
+      "escapeClosed": false,
+      "expanded": {
+        "width": 768,
+        "documentWidth": 768,
+        "overflow": []
+      },
+      "expandedCount": 12
+    },
+    {
+      "route": "/tr/professional/",
+      "width": 390,
+      "documentWidth": 390,
+      "overflow": [],
+      "contact": {
+        "width": 390,
+        "documentWidth": 390,
+        "overflow": []
+      },
+      "bothOpen": {
+        "contactVisible": true,
+        "profileVisible": true,
+        "overlap": 76144.0625,
+        "topAtContact": "Munich, Germanymbgurcay@gmail.comlinkedin.com/in/mehmet-berk-gurcaygithub.com/me"
+      },
+      "escapeClosed": false,
+      "expanded": {
+        "width": 390,
+        "documentWidth": 390,
+        "overflow": []
+      },
+      "expandedCount": 12,
+      "targets": [
+        {
+          "text": "Contact",
+          "width": 41.484375,
+          "height": 44
+        },
+        {
+          "text": "Profile",
+          "width": 31.671875,
+          "height": 44
+        },
+        {
+          "text": "AWS Serverless & Event-Driven",
+          "width": 154,
+          "height": 44
+        },
+        {
+          "text": "IoT Platforms",
+          "width": 97.859375,
+          "height": 44
+        },
+        {
+          "text": "Graph Data Modeling",
+          "width": 149.078125,
+          "height": 44
+        },
+        {
+          "text": "IoT Platform",
+          "width": 88.34375,
+          "height": 44
+        },
+        {
+          "text": "Battery Quality",
+          "width": 108.03125,
+          "height": 44
+        },
+        {
+          "text": "CRM KG",
+          "width": 60.5,
+          "height": 44
+        }
+      ]
+    },
+    {
+      "route": "/tr/professional/",
+      "width": 360,
+      "documentWidth": 360,
+      "overflow": [],
+      "contact": {
+        "width": 360,
+        "documentWidth": 360,
+        "overflow": []
+      },
+      "bothOpen": {
+        "contactVisible": true,
+        "profileVisible": true,
+        "overlap": 71665,
+        "topAtContact": "Munich, Germanymbgurcay@gmail.comlinkedin.com/in/mehmet-berk-gurcaygithub.com/me"
+      },
+      "escapeClosed": false,
+      "expanded": {
+        "width": 360,
+        "documentWidth": 360,
+        "overflow": []
+      },
+      "expandedCount": 12
+    },
+    {
+      "route": "/tr/professional/",
+      "width": 320,
+      "documentWidth": 320,
+      "overflow": [],
+      "contact": {
+        "width": 320,
+        "documentWidth": 320,
+        "overflow": []
+      },
+      "bothOpen": {
+        "contactVisible": true,
+        "profileVisible": true,
+        "overlap": 62706.875,
+        "topAtContact": "Munich, Germanymbgurcay@gmail.comlinkedin.com/in/mehmet-berk-gurcaygithub.com/me"
+      },
+      "escapeClosed": false,
+      "expanded": {
+        "width": 320,
+        "documentWidth": 320,
+        "overflow": []
+      },
+      "expandedCount": 12
+    }
+  ],
+  "cases": {
+    "escape": {
+      "open": [
+        "cv-contact-links",
+        "profile-disclosure"
+      ],
+      "after": 2
+    },
+    "selection": {
+      "pressed": "IoT Platforms",
+      "current": "CRM KG",
+      "related": [
+        "IoT Platform"
+      ],
+      "liveRegions": 0,
+      "featureRole": null
+    },
+    "keyboardSelection": "CRM Knowledge Graph (CRM KG)",
+    "focus": {
+      "outline": "rgb(217, 174, 120) solid 2px",
+      "rect": {
+        "x": 873.59375,
+        "y": 596.6875,
+        "width": 89.765625,
+        "height": 44,
+        "top": 596.6875,
+        "right": 963.359375,
+        "bottom": 640.6875,
+        "left": 873.59375
+      }
+    },
+    "nextTab": "Print",
+    "text": {
+      "lang": "en",
+      "cvLang": "en",
+      "projectsLang": "en",
+      "h1": 1,
+      "h2": [
+        "Summary",
+        "Skill Highlights",
+        "Experience",
+        "Skills",
+        "Education",
+        "Certifications",
+        "Languages",
+        "Teaching & Community",
+        "Interests",
+        "Project Details"
+      ],
+      "longDashes": 0,
+      "sourceSentence": "Project details with roles, team sizes, and full stacks follow on the next pages.",
+      "ariaLive": 0
+    },
+    "localLinks": [
+      {
+        "href": "/",
+        "label": "mebegu.",
+        "status": 200
+      },
+      {
+        "href": "/professional/",
+        "label": "EN",
+        "status": 200
+      },
+      {
+        "href": "/writing/",
+        "label": "Blog",
+        "status": 200
+      },
+      {
+        "href": "/alamori/",
+        "label": "Alamori",
+        "status": 200
+      },
+      {
+        "href": "/projects/",
+        "label": "Workshop",
+        "status": 200
+      },
+      {
+        "href": "/tr/professional/",
+        "label": "TR",
+        "status": 200
+      },
+      {
+        "href": "/cv/mehmet-berk-gurcay-cv.pdf",
+        "label": "Download PDF ↓",
+        "status": 200
+      }
+    ],
+    "fragments": [],
+    "meta": {
+      "title": "Professional — Mehmet Berk Gürçay",
+      "description": "Mehmet Berk Gürçay: cloud and backend engineering experience, skills and project details.",
+      "canonical": "https://mebegu.github.io/professional/",
+      "alternate": [
+        {
+          "lang": "en",
+          "href": "https://mebegu.github.io/professional/"
+        },
+        {
+          "lang": "tr",
+          "href": "https://mebegu.github.io/tr/professional/"
+        }
+      ]
+    },
+    "resources": {
+      "navigation": [
+        {
+          "domContentLoaded": 40.700000047683716,
+          "load": 41.200000047683716
+        }
+      ],
+      "resources": [
+        {
+          "name": "/_astro/BaseLayout.Cgen0g5W.css",
+          "bytes": 14082,
+          "duration": 0
+        },
+        {
+          "name": "/_astro/ProfessionalPage.De5W4xNf.css",
+          "bytes": 38010,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/observer-sky-v1.webp",
+          "bytes": 137308,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/infrastructure-v1.webp",
+          "bytes": 80662,
+          "duration": 0
+        },
+        {
+          "name": "/art/social/instagram.svg",
+          "bytes": 1213,
+          "duration": 0
+        },
+        {
+          "name": "/art/social/youtube.svg",
+          "bytes": 761,
+          "duration": 0
+        },
+        {
+          "name": "/art/social/x-twitter.svg",
+          "bytes": 447,
+          "duration": 0
+        },
+        {
+          "name": "/art/social/facebook-f.svg",
+          "bytes": 456,
+          "duration": 0
+        },
+        {
+          "name": "/art/social/linkedin-in.svg",
+          "bytes": 591,
+          "duration": 0
+        },
+        {
+          "name": "/art/social/github.svg",
+          "bytes": 1595,
+          "duration": 0
+        },
+        {
+          "name": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Space+Grotesk:wght@400;500;600;700&display=swap",
+          "bytes": 0,
+          "duration": 1.2000000476837158
+        },
+        {
+          "name": "/art/professional/data-notes-v1.webp",
+          "bytes": 43152,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/amazonwebservices.svg",
+          "bytes": 3743,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/python.svg",
+          "bytes": 2300,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/typescript.svg",
+          "bytes": 943,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/javascript.svg",
+          "bytes": 1144,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/neo4j.svg",
+          "bytes": 1222,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/csharp.svg",
+          "bytes": 851,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/nestjs.svg",
+          "bytes": 5571,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/nodejs.svg",
+          "bytes": 1806,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/flask.svg",
+          "bytes": 9161,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/postgresql.svg",
+          "bytes": 9178,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/mongodb.svg",
+          "bytes": 5611,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/redis.svg",
+          "bytes": 1728,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/apachekafka.svg",
+          "bytes": 1711,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/terraform.svg",
+          "bytes": 376,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/docker.svg",
+          "bytes": 4452,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/kubernetes.svg",
+          "bytes": 8951,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/helm.svg",
+          "bytes": 2370,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/gitlab.svg",
+          "bytes": 1151,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/github.svg",
+          "bytes": 1866,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/azure.svg",
+          "bytes": 1713,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/pytest.svg",
+          "bytes": 689,
+          "duration": 0
+        },
+        {
+          "name": "/art/professional/tech/jest.svg",
+          "bytes": 3118,
+          "duration": 0
+        },
+        {
+          "name": "/_astro/font-1.BOFOeGcA.woff2",
+          "bytes": 18228,
+          "duration": 0
+        },
+        {
+          "name": "/_astro/font-2.Xz1IZZA0.woff2",
+          "bytes": 36932,
+          "duration": 0
+        },
+        {
+          "name": "/_astro/font-5.BhU9QXUp.woff2",
+          "bytes": 22288,
+          "duration": 0
+        },
+        {
+          "name": "/favicon.svg",
+          "bytes": 280,
+          "duration": 0.7000000476837158
+        }
+      ],
+      "images": [
+        "http://127.0.0.1:4325/art/professional/tech/graphql.svg",
+        "http://127.0.0.1:4325/art/professional/tech/graphql.svg",
+        "http://127.0.0.1:4325/art/professional/tech/unity.svg"
+      ],
+      "imageMeasurementNote": "The early images array includes unrequested lazy images. Use cases.assets after eager decoding for the final broken-image verdict."
+    },
+    "printRestored": true,
+    "noJS": {
+      "projects": 12,
+      "buttonsEnabled": 0,
+      "hash": "#project-crm-knowledge-graph-crm-kg",
+      "openProjects": 0,
+      "profileFresh": true,
+      "targetVisible": true,
+      "manualExpand": true,
+      "automationLimit": "Locator.click on Profile after a fragment jump timed out during stability checks; a fresh-page physical pointer click works. Not classified as a proven Profile failure."
+    },
+    "assets": {
+      "images": 132,
+      "broken": [],
+      "errors": []
+    }
+  }
+}
