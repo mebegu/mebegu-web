@@ -1,0 +1,79 @@
+[
+  {
+    "lang": "en",
+    "width": 1280,
+    "scroll": 1280,
+    "overflow": [],
+    "interactions": "pass",
+    "expandedProjects": 12,
+    "errors": []
+  },
+  {
+    "lang": "en",
+    "width": 768,
+    "scroll": 768,
+    "overflow": [],
+    "interactions": "pass",
+    "expandedProjects": 12,
+    "errors": []
+  },
+  {
+    "lang": "en",
+    "width": 390,
+    "scroll": 390,
+    "overflow": [],
+    "interactions": "pass",
+    "expandedProjects": 12,
+    "errors": []
+  },
+  {
+    "lang": "en",
+    "width": 360,
+    "scroll": 360,
+    "overflow": [],
+    "interactions": "pass",
+    "expandedProjects": 12,
+    "errors": []
+  },
+  {
+    "lang": "tr",
+    "width": 1280,
+    "scroll": 1280,
+    "overflow": [],
+    "interactions": "pass",
+    "expandedProjects": 12,
+    "errors": []
+  },
+  {
+    "lang": "tr",
+    "width": 768,
+    "scroll": 768,
+    "overflow": [],
+    "interactions": "pass",
+    "expandedProjects": 12,
+    "errors": []
+  },
+  {
+    "lang": "tr",
+    "width": 390,
+    "scroll": 390,
+    "overflow": [],
+    "interactions": "pass",
+    "expandedProjects": 12,
+    "errors": []
+  },
+  {
+    "lang": "tr",
+    "width": 360,
+    "scroll": 360,
+    "overflow": [],
+    "interactions": "pass",
+    "expandedProjects": 12,
+    "errors": []
+  },
+  {
+    "javaScript": false,
+    "projects": 12,
+    "anchorFallback": "pass"
+  }
+]

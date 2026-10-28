@@ -85,9 +85,7 @@ const primaryKeys = ['cloud', 'signal', 'graph'];
 const primaryHighlights = primaryKeys.map((key) =>
   highlights.find((item) => item.key === key)!,
 );
-const otherHighlights = highlights.filter(
-  (item) => !primaryKeys.includes(item.key),
-);
+const otherHighlights = highlights;
 const stars = [
   {
     label: 'IoT Platform',
@@ -100,17 +98,10 @@ const stars = [
     related: 'cloud',
   },
   { label: 'CRM KG', id: projectRefs['CRM KG'], related: 'cloud graph' },
-  {
-    label: 'Device Platform',
-    id: projectRefs['Device Platform'],
-    related: 'signal',
-  },
-  {
-    label: 'Customer Feedback',
-    id: projectRefs['Customer Feedback'],
-    related: 'graph',
-  },
 ];
+const featuredProjects = stars.map((star) =>
+  projects.find((project) => project.id === star.id)!,
+);
 const record = (line: string) =>
   line.replace(/^- /, '').split(' | ').map(plain);
 const skillGroups = sections.Skills.map((line) => {
@@ -167,77 +158,89 @@ const projectMeta = (value: string) =>
 >
   <div class="professional-page" lang="en">
     <article id="cv" class="cv-document" aria-labelledby="cv-name" lang="en">
-      <header class="cv-heading">
-        <div class="cv-identity">
-          <p class="cv-kicker cv-screen-only">Professional</p>
-          <h1 id="cv-name">{source.name}</h1>
-          <p class="cv-role">{source.role}</p>
-        </div>
-        <div class="cv-actions cv-screen-only">
-          <a
-            class="cv-download"
-            href={href('cv/mehmet-berk-gurcay-cv.pdf')}
-            download
-          >
-            Download PDF <span aria-hidden="true">↓</span>
-          </a>
-          <button class="cv-print" type="button" data-print-cv hidden>
-            Print
-          </button>
-        </div>
-        <div class="cv-contact">
-          <span>{source.contact[0]}</span>
-          <a href={`mailto:${source.contact[1]}`}>{source.contact[1]}</a>
-          <details class="cv-contact-links">
-            <summary>Contact links</summary>
-            <ul>
-              {source.contact.slice(2).map((contact) => (
+      <div class="professional-opening">
+        <img
+          class="opening-sky cv-screen-only"
+          src={href('art/professional/observer-sky-v1.webp')}
+          alt=""
+          width="1800"
+          height="819"
+          fetchpriority="high"
+        />
+        <header class="cv-heading">
+          <div class="cv-identity">
+            <span
+              class="identity-disc cv-screen-only"
+              aria-hidden="true"
+            ></span>
+            <h1 id="cv-name">{source.name}</h1>
+            <p class="cv-role">{source.role}</p>
+          </div>
+          <div class="cv-actions cv-screen-only">
+            <a
+              class="cv-download"
+              href={href('cv/mehmet-berk-gurcay-cv.pdf')}
+              download
+            >
+              Download PDF <span aria-hidden="true">↓</span>
+            </a>
+            <button class="cv-print" type="button" data-print-cv hidden>
+              Print
+            </button>
+          </div>
+          <div class="cv-contact">
+            <details class="cv-contact-links">
+              <summary>Contact</summary>
+              <ul>
+                <li>{source.contact[0]}</li>
                 <li>
-                  <a href={`https://${contact}`}>{contact}</a>
+                  <a href={`mailto:${source.contact[1]}`}>
+                    {source.contact[1]}
+                  </a>
                 </li>
-              ))}
-            </ul>
-          </details>
-        </div>
-      </header>
-
-      <section class="cv-summary" aria-labelledby="cv-summary-title">
-        <h2 id="cv-summary-title">Summary</h2>
-        <p>{publicText(sections.Summary.join(' '))}</p>
-      </section>
-
-      <section
-        class="skill-highlights"
-        id="skill-highlights"
-        aria-labelledby="cv-highlights-title"
-      >
-        <header class="atlas-heading">
-          <h2 id="cv-highlights-title">Skill Highlights</h2>
-          <p class="cv-screen-only">Follow a skill to its projects.</p>
+                {source.contact.slice(2).map((contact) => (
+                  <li>
+                    <a href={`https://${contact}`}>{contact}</a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          </div>
         </header>
-        <div class="skill-atlas" data-skill-atlas>
-          <img
-            class="atlas-sky cv-screen-only"
-            src={href('art/professional/observer-sky-v1.webp')}
-            alt=""
-            width="1800"
-            height="819"
-            fetchpriority="high"
-          />
+        <section class="cv-summary" aria-labelledby="cv-summary-title">
+          <details class="profile-disclosure">
+            <summary>Profile</summary>
+            <div class="profile-summary-panel">
+              <h2 id="cv-summary-title">Summary</h2>
+              <p>{publicText(sections.Summary.join(' '))}</p>
+            </div>
+          </details>
+        </section>
+        <nav
+          class="skill-atlas cv-screen-only"
+          id="skill-highlights"
+          data-skill-atlas
+          aria-label="Skill and project constellation"
+        >
           <svg
-            class="atlas-connections cv-screen-only"
+            class="atlas-connections"
             viewBox="0 0 1000 500"
             preserveAspectRatio="none"
             aria-hidden="true"
           >
             <g data-connections="cloud">
-              <path d="M275 110 L665 65 M275 110 L665 155 M275 110 L665 245" />
+              <path d="M300 95 L480 100 L680 50 M300 95 L480 100 L540 245 L660 240 M300 95 L480 100 L540 245 L470 385 L690 415" />
             </g>
             <g data-connections="signal">
-              <path d="M275 245 L665 65 M275 245 L665 335" />
+              <path d="M250 245 L540 245 L480 100 L680 50" />
             </g>
             <g data-connections="graph">
-              <path d="M275 380 L665 245 M275 380 L665 425" />
+              <path d="M290 390 L470 385 L690 415" />
+            </g>
+            <g class="atlas-junctions">
+              <circle cx="480" cy="100" r="3" />
+              <circle cx="540" cy="245" r="3" />
+              <circle cx="470" cy="385" r="3" />
             </g>
           </svg>
           <ol class="atlas-skills">
@@ -254,47 +257,83 @@ const projectMeta = (value: string) =>
                   <span class="atlas-point" aria-hidden="true"></span>
                   <span>{item.name}</span>
                 </button>
-                <p class="atlas-evidence">
-                  {item.parts.map((part, partIndex) => (
-                    <>
-                      {partIndex > 0 && ' · '}
-                      {part.project ? (
-                        <a href={`#project-${part.project}`} data-project-link>
-                          {part.label}
-                        </a>
-                      ) : (
-                        part.label
-                      )}
-                    </>
-                  ))}
-                </p>
               </li>
             ))}
           </ol>
           <ul
-            class="atlas-projects cv-screen-only"
+            class="atlas-projects"
             id="atlas-projects"
-            aria-label="Projects related to highlighted skills"
+            aria-label="Projects in the constellation"
           >
             {stars.map((star, index) => (
               <li
                 class={`atlas-project atlas-project-${index + 1}`}
                 data-related={star.related}
               >
-                <a href={`#project-${star.id}`} data-project-link>
+                <a
+                  href={`#project-${star.id}`}
+                  data-atlas-project={star.id}
+                  aria-controls={`feature-${star.id}`}
+                  aria-current={index === 0 ? 'true' : undefined}
+                >
                   <span class="atlas-point" aria-hidden="true"></span>
-                  {star.label}
-                  <span class="atlas-project-arrow" aria-hidden="true">
-                    ↗
-                  </span>
+                  <span class="atlas-project-label">{star.label}</span>
                 </a>
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
+      </div>
+
+      <aside
+        class="featured-project cv-screen-only"
+        aria-label="Selected project"
+        data-featured-project
+      >
+        {featuredProjects.map((project, index) => (
+          <div
+            class="feature-panel"
+            id={`feature-${project.id}`}
+            data-feature-panel={project.id}
+            hidden={index !== 0}
+          >
+            <div class="feature-copy">
+              <p class="feature-kicker">Selected Project</p>
+              <h3>{project.title}</h3>
+              <p class="feature-context">{publicText(project.context)}</p>
+              <a
+                class="feature-link"
+                href={`#project-${project.id}`}
+                data-project-link
+              >
+                View project <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <figure class="feature-art">
+              <img
+                src={href(`art/professional/${project.art}`)}
+                alt=""
+                width="1000"
+                height="563"
+                loading={index === 0 ? 'eager' : 'lazy'}
+              />
+              <figcaption>Concept illustration</figcaption>
+            </figure>
+          </div>
+        ))}
+      </aside>
+
+      <section
+        class="skill-highlights"
+        id="all-skill-highlights"
+        aria-labelledby="cv-highlights-title"
+      >
+        <header class="atlas-heading">
+          <h2 id="cv-highlights-title">Skill Highlights</h2>
+        </header>
         <details class="other-highlights" data-print-expand>
           <summary>
-            More skill highlights{' '}
+            All skill highlights{' '}
             <span class="detail-symbol" aria-hidden="true">
               +
             </span>
@@ -584,6 +623,33 @@ const projectMeta = (value: string) =>
       button.hidden = false;
       button.addEventListener('click', () => window.print());
     });
+  const selectProject = (id: string) => {
+    document
+      .querySelectorAll<HTMLElement>('[data-feature-panel]')
+      .forEach((panel) => {
+        panel.hidden = panel.dataset.featurePanel !== id;
+      });
+    document
+      .querySelectorAll<HTMLAnchorElement>('[data-atlas-project]')
+      .forEach((link) => {
+        if (link.dataset.atlasProject === id)
+          link.setAttribute('aria-current', 'true');
+        else link.removeAttribute('aria-current');
+      });
+  };
+  document
+    .querySelectorAll<HTMLAnchorElement>('[data-atlas-project]')
+    .forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        selectProject(link.dataset.atlasProject!);
+        if (matchMedia('(max-width: 700px)').matches) {
+          document
+            .querySelector('[data-featured-project]')
+            ?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+        }
+      });
+    });
   document
     .querySelectorAll<HTMLElement>('[data-skill-atlas]')
     .forEach((atlas) => {
@@ -604,10 +670,21 @@ const projectMeta = (value: string) =>
           const targets = atlas.querySelectorAll(
             `[data-related~="${button.dataset.skill}"] .atlas-point`,
           );
+          const junctions = ['480 100', '540 245', '470 385'];
+          const routes: Record<string, number[][]> = {
+            cloud: [[0], [0, 1], [0, 1, 2]],
+            signal: [[1, 0]],
+            graph: [[2]],
+          };
           path.setAttribute(
             'd',
             Array.from(targets)
-              .map((target) => `M${point(start)} L${point(target)}`)
+              .map((target, index) => {
+                const via = (routes[button.dataset.skill!][index] || [])
+                  .map((junction) => ` L${junctions[junction]}`)
+                  .join('');
+                return `M${point(start)}${via} L${point(target)}`;
+              })
               .join(' '),
           );
         });
@@ -628,6 +705,13 @@ const projectMeta = (value: string) =>
             ),
           );
           atlas.dataset.selected = selected || '';
+          if (selected) {
+            const first = atlas.querySelector<HTMLAnchorElement>(
+              `[data-related~="${selected}"] [data-atlas-project]`,
+            );
+            if (first?.dataset.atlasProject)
+              selectProject(first.dataset.atlasProject);
+          }
           atlas
             .querySelectorAll<HTMLElement>('[data-related]')
             .forEach((item) =>
