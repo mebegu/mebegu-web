@@ -7,6 +7,56 @@ import { resolve, join } from 'node:path';
 import { inspectScopes, requireScopes } from './oracle-scopes.mjs';
 
 test(
+  'career labels work with touch and no hover',
+  {
+    skip: !process.env.ORACLE_PLAYWRIGHT
+      ? 'External browser tooling required'
+      : false,
+  },
+  async () => {
+    const base = process.env.ORACLE_URL || 'http://127.0.0.1:4321';
+    assert.ok(
+      ['localhost', '127.0.0.1', '[::1]'].includes(new URL(base).hostname),
+    );
+    const { chromium } = await import(
+      pathToFileURL(resolve(process.env.ORACLE_PLAYWRIGHT)).href
+    );
+    const browser = await chromium.launch({
+      headless: true,
+      ...(process.env.ORACLE_BROWSER
+        ? { executablePath: process.env.ORACLE_BROWSER }
+        : {}),
+    });
+    try {
+      const page = await browser.newPage({
+        viewport: { width: 390, height: 844 },
+        hasTouch: true,
+        isMobile: true,
+        reducedMotion: 'reduce',
+      });
+      await page.goto(new URL('/professional/', base).href, {
+        waitUntil: 'networkidle',
+      });
+      assert.equal(
+        await page.evaluate(() => matchMedia('(hover: none)').matches),
+        true,
+      );
+      for (const star of await page.locator('.career-star.is-pinned').all()) {
+        await star.locator('.career-star-label').tap();
+        assert.equal(await star.getAttribute('aria-expanded'), 'true');
+        await page.locator('[data-close-career]').tap();
+        assert.equal(
+          await page.locator('[data-featured-project]').isVisible(),
+          false,
+        );
+      }
+    } finally {
+      await browser.close();
+    }
+  },
+);
+
+test(
   'Professional career stars, intro panels, native fallback, print and oracle scopes',
   {
     skip: !process.env.ORACLE_PLAYWRIGHT
@@ -51,6 +101,33 @@ test(
           );
           assert.equal(await page.locator('.atlas-connections').count(), 0);
           assert.equal(await page.locator('[data-skill]').count(), 0);
+          // The visible label extends outside the 44px star: it must be clickable too.
+          for (const star of await page
+            .locator('.career-star.is-pinned')
+            .all()) {
+            const label = star.locator('.career-star-label');
+            const labelBox = await label.boundingBox();
+            const starBox = await star.boundingBox();
+            assert.ok(labelBox && starBox);
+            const x = labelBox.x + labelBox.width / 2;
+            const y = labelBox.y + labelBox.height / 2;
+            assert.ok(x < starBox.x || x > starBox.x + starBox.width);
+            await page.mouse.click(x, y);
+            assert.equal(await star.getAttribute('aria-expanded'), 'true');
+            const borders = await page
+              .locator('[data-featured-project]')
+              .evaluate((el) => {
+                const css = getComputedStyle(el);
+                return [
+                  css.borderTopWidth,
+                  css.borderRightWidth,
+                  css.borderBottomWidth,
+                  css.borderLeftWidth,
+                ];
+              });
+            assert.deepEqual(borders, ['1px', '1px', '1px', '1px']);
+            await page.keyboard.press('Escape');
+          }
           const toCheck =
             width === 1280 ? await stars.all() : [stars.first(), stars.last()];
           for (const star of toCheck) {

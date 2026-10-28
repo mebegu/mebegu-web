@@ -10,6 +10,8 @@ The opening is one quiet, full-height night scene. Compact identity, role, Downl
 
 Choosing a star opens one quiet readout containing its exact public source employer, title, metadata and context. Role stars show the exact first source contribution and link to Experience; complete entries remain below. Focus moves to the readout heading. Close/Escape returns focus to the originating star. Selecting another star replaces the readout; there is no independent filter state to contradict it. Contact/Profile and the readout close each other on pointer interaction. Without JavaScript the project/experience links navigate directly to their original records, while Profile remains a native disclosure. Modifier-click preserves the real link.
 
+Clickable stars share a warm, sharper core and a restrained halo; decorative dust stays faint and cool. Hover/focus and the selected state strengthen that halo. Visible labels are underlined and clickable across their full text, including outside the 44px star area. Invisible labels do not intercept clicks. No continuous animation or introductory instruction is needed. Readouts and the Profile panel have a thin border on all four sides and inset content on desktop and mobile.
+
 All nine highlight/evidence pairs, full CV sections, technology/provider marks and all 12 native project records remain below the entrance. Expand all / Collapse all remains available. The scene is omitted from print, which still contains only the full CV on A4.
 
 ## Source and generation

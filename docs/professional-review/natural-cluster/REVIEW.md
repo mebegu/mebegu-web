@@ -1,5 +1,7 @@
 # Natural career cluster
 
+Follow-up: [29 October affordance and panel-edge correction](../affordance-2026-10-29/README.md). The images below document the initial version; current clickable-star styling and full panel borders are in that follow-up.
+
 Owner approved concept 02 and asked for additional stars that reveal career information. This revision implements that direction; owner review of the finished result remains pending. No additional layout choice was inferred from the rejected information-heavy wireframes.
 
 ## Result and evidence
